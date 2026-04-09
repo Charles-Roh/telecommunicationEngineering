@@ -1,0 +1,3223 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="비전공자도 이해할 수 있도록 일상 비유와 실전 기출 문제로 구성한 통신공학 완전정복 교재. 한전KDN 등 공공기관 채용 필기시험 대비용 자기주도 학습 자료입니다.">
+      
+      
+        <meta name="author" content="노용철TV (EduFlow)">
+      
+      
+      
+        <link rel="prev" href="../chapter15/">
+      
+      
+        <link rel="next" href="../chapter17/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화 - 통신공학 단박에 끝내기</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#16-2g-4g" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-header__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            통신공학 단박에 끝내기
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter05/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter09/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../chapter15/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-nav__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    통신공학 단박에 끝내기
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1차시: 통신공학 전체 그림 그리기 - 신호와 시스템의 기초
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2차시: 신호를 수식으로 표현하기 - 주파수 영역의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3차시: 아날로그 통신의 두 주인공 - AM과 FM 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4차시: 아날로그에서 디지털로 - 표본화와 PCM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5차시: 디지털 신호를 전송하는 방법 - ASK, FSK, PSK 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6차시: 더 효율적으로 전송하기 - QAM과 고차 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7차시: 신뢰성 확보하기 - 오류 검출과 정정 부호
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8차시: Part 2 종합 실전 문제풀이 - 디지털 변복조 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9차시: 통신 채널의 한계 - 샤논 법칙과 채널 용량
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10차시: 한 채널을 여럿이 쓰는 방법 - 다중화 기술의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11차시: 여럿이 동시에 통신하기 - TDMA와 FDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12차시: 간섭 없이 많은 사용자를 수용하기 - CDMA의 원리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="학습 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 핵심 개념 1: 세대별 다중접속 방식
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 핵심 개념 2: 세대별 기술 스펙 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 실습 활동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 도입 — 왜 이동통신은 진화하는가 (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-1-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: 핵심 개념 1 — 다중접속 방식의 진화 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: 핵심 개념 2 — 세대별 기술 스펙 비교 (12분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: 실습 — 비교표 완성과 기출 유형 연습 (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 평가 및 성찰 (7분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 도입 — 왜 이동통신은 계속 진화하는가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 도입 — 왜 이동통신은 계속 진화하는가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤔 왜 이걸 배우는가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📱 이동통신 세대 구분의 큰 그림
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 1: 다중접속 방식의 진화
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 1: 다중접속 방식의 진화">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 다중접속이란 무엇인가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdma-2g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 TDMA — 시간을 나누어 쓰는 방식 (2G)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdma-2g3g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 CDMA — 코드를 나누어 쓰는 방식 (2G~3G)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdma-4g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 OFDMA — 주파수를 잘게 나누어 동적으로 배분하는 방식 (4G)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 다중접속 방식 비교 종합
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 2: 세대별 기술 스펙 종합 비교
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 2: 세대별 기술 스펙 종합 비교">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2g-3g-4g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 2G, 3G, 4G 종합 비교표
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📍 세대 전환의 핵심 동인
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📍 LTE의 주요 기술 요소 상세
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 자주 하는 실수와 주의할 점
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ 자주 하는 실수와 주의할 점">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cdma-3g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 1: CDMA를 3G 전용 기술로 착각
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 2: LTE의 상향/하향링크 다중접속 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 3: 세대 간 "중간 단계"를 무시
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 4: 대역폭과 전송 속도를 같은 것으로 착각
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 실습 활동: 비교표 완성과 기출 유형 연습
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 실습 활동: 비교표 완성과 기출 유형 연습">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        활동 1: 빈칸 채우기 비교표
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        활동 2: 핵심 키워드 연결
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 형성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 다음 차시 미리보기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 이번 차시 핵심 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔮 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18차시: 전체 통합 실전 모의고사 - 시험 완성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19차시: 최종 정리와 시험 전략 - 합격을 위한 마무리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="학습 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 핵심 개념 1: 세대별 다중접속 방식
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 핵심 개념 2: 세대별 기술 스펙 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 실습 활동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 도입 — 왜 이동통신은 진화하는가 (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-1-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: 핵심 개념 1 — 다중접속 방식의 진화 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: 핵심 개념 2 — 세대별 기술 스펙 비교 (12분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: 실습 — 비교표 완성과 기출 유형 연습 (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 평가 및 성찰 (7분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 도입 — 왜 이동통신은 계속 진화하는가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 도입 — 왜 이동통신은 계속 진화하는가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤔 왜 이걸 배우는가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📱 이동통신 세대 구분의 큰 그림
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 1: 다중접속 방식의 진화
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 1: 다중접속 방식의 진화">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 다중접속이란 무엇인가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdma-2g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 TDMA — 시간을 나누어 쓰는 방식 (2G)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdma-2g3g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 CDMA — 코드를 나누어 쓰는 방식 (2G~3G)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdma-4g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 OFDMA — 주파수를 잘게 나누어 동적으로 배분하는 방식 (4G)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 다중접속 방식 비교 종합
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 2: 세대별 기술 스펙 종합 비교
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 2: 세대별 기술 스펙 종합 비교">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2g-3g-4g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 2G, 3G, 4G 종합 비교표
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📍 세대 전환의 핵심 동인
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📍 LTE의 주요 기술 요소 상세
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 자주 하는 실수와 주의할 점
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ 자주 하는 실수와 주의할 점">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cdma-3g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 1: CDMA를 3G 전용 기술로 착각
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-lte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 2: LTE의 상향/하향링크 다중접속 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 3: 세대 간 "중간 단계"를 무시
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 4: 대역폭과 전송 속도를 같은 것으로 착각
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 실습 활동: 비교표 완성과 기출 유형 연습
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 실습 활동: 비교표 완성과 기출 유형 연습">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        활동 1: 빈칸 채우기 비교표
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        활동 2: 핵심 키워드 연결
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 형성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 다음 차시 미리보기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 이번 차시 핵심 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔮 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="네비게이션" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../chapter15/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="16-2g-4g">16차시: 이동통신의 진화 — 2G부터 4G까지의 기술 변화<a class="headerlink" href="#16-2g-4g" title="Permanent link">&para;</a></h1>
+<div class="lesson-banner">
+<p><strong>⏰ 50분</strong> · 다중접속 방식(TDMA/CDMA/OFDMA) · 세대별 핵심 기술 · 스펙트럼 효율 · <strong>난이도</strong> ●●●○○</p>
+<p><strong>학습목표</strong>: 2G, 3G, 4G 각 세대의 다중접속 방식과 핵심 기술 차이를 비교·설명하고, 시험 문제에 적용할 수 있습니다.</p>
+<blockquote>
+<p><strong>오늘의 질문</strong>: "여러분의 스마트폰 화면 상단에 표시되는 'LTE'라는 글자는 무엇을 의미하며, 왜 '3G'가 아닌 '4G'를 쓰고 있는 것일까요?"</p>
+</blockquote>
+</div>
+<hr />
+<h2 id="_1">학습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 2G(GSM), 3G(WCDMA/CDMA2000), 4G(LTE)의 핵심 기술과 진화 이유를 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 각 세대의 다중접속 방식(TDMA → CDMA → OFDMA), 변조 방식, 대역폭을 비교할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 통신 기술이 왜 진화해왔는지(용량·효율·속도 증대)를 이해하고 시험 문제에 적용할 수 있다</li>
+</ul>
+<hr />
+<div class="cards-grid">
+<div class="card card-orange">
+<h3 id="1">🧠 핵심 개념 1: 세대별 다중접속 방식<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>TDMA → CDMA → OFDMA로 진화한 이유와 각 방식의 원리를 학습합니다.</p>
+</div>
+<div class="card card-orange">
+<h3 id="2">🧠 핵심 개념 2: 세대별 기술 스펙 비교<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>속도, 대역폭, 변조 방식, 네트워크 구조의 변화를 체계적으로 정리합니다.</p>
+</div>
+<div class="card card-blue">
+<h3 id="_2">🔧 실습 활동<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>세대별 기술 비교표를 직접 완성하고, 기출 유형 문제를 풀어봅니다.</p>
+</div>
+<div class="card card-red">
+<h3 id="_3">📝 형성 평가<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>객관식 3문항 + 서술형 1문항으로 이해도를 점검합니다.</p>
+</div>
+</div>
+<hr />
+<h2 id="_4">⏱️ 수업 흐름<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="steps">
+<div class="step">
+<h4 id="1-8">1단계: 도입 — 왜 이동통신은 진화하는가 (8분)<a class="headerlink" href="#1-8" title="Permanent link">&para;</a></h4>
+<p>일상 경험에서 출발하여 이동통신 세대 구분의 필요성과 진화의 동인을 파악합니다.</p>
+</div>
+<div class="step">
+<h4 id="2-1-15">2단계: 핵심 개념 1 — 다중접속 방식의 진화 (15분)<a class="headerlink" href="#2-1-15" title="Permanent link">&para;</a></h4>
+<p>TDMA, CDMA, OFDMA의 원리를 비유와 함께 학습하고, 각 방식의 장단점을 비교합니다.</p>
+</div>
+<div class="step">
+<h4 id="3-2-12">3단계: 핵심 개념 2 — 세대별 기술 스펙 비교 (12분)<a class="headerlink" href="#3-2-12" title="Permanent link">&para;</a></h4>
+<p>2G, 3G, 4G의 속도·대역폭·변조 방식·네트워크 구조를 표로 정리하고 핵심 차이를 확인합니다.</p>
+</div>
+<div class="step">
+<h4 id="4-8">4단계: 실습 — 비교표 완성과 기출 유형 연습 (8분)<a class="headerlink" href="#4-8" title="Permanent link">&para;</a></h4>
+<p>빈칸 채우기 비교표를 완성하고, 시험에 자주 출제되는 유형의 문제를 직접 풀어봅니다.</p>
+</div>
+<div class="step">
+<h4 id="5-7">5단계: 평가 및 성찰 (7분)<a class="headerlink" href="#5-7" title="Permanent link">&para;</a></h4>
+<p>형성 평가 문제를 풀고, 자기점검 체크리스트로 학습을 마무리합니다.</p>
+</div>
+</div>
+<hr />
+<h2 id="_5">📚 도입 — 왜 이동통신은 계속 진화하는가<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">🤔 왜 이걸 배우는가<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>여러분이 스마트폰으로 동영상을 스트리밍하거나 화상 통화를 할 때, 그 데이터는 무선 전파를 통해 기지국과 오가고 있습니다. 그런데 1990년대의 휴대폰으로는 텍스트 메시지를 보내는 것조차 느렸습니다. 2000년대 초반에는 저화질 사진 한 장을 전송하는 데도 수십 초가 걸렸습니다. 오늘날 고화질 영상을 실시간으로 주고받을 수 있게 된 것은 이동통신 기술이 세대를 거듭하며 진화한 결과입니다.</p>
+<p>공공기관 통신이론 시험에서 이동통신 세대별 비교는 빈출 주제입니다. 특히 <strong>다중접속 방식</strong>(TDMA, CDMA, OFDMA)의 차이, 각 세대의 <strong>대역폭과 전송 속도</strong>, <strong>변조 방식</strong>의 변화는 거의 매년 출제되고 있습니다. 이 차시를 통해 이들 개념을 체계적으로 정리하면, 관련 문제를 정확하고 빠르게 풀 수 있게 됩니다.</p>
+<h3 id="_7">📱 이동통신 세대 구분의 큰 그림<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>이동통신은 약 10년을 주기로 새로운 세대(<strong>Generation</strong>, 줄여서 <strong>G</strong>)가 등장합니다. 각 세대가 등장한 핵심 이유는 <strong>사용자 수 증가</strong>와 <strong>데이터 수요 폭증</strong>에 대응하기 위한 것입니다.</p>
+<p><em>이동통신 세대의 진화 흐름입니다:</em></p>
+<div class="mermaid">timeline
+    title 이동통신 세대별 진화
+    1991 : 2G 등장&lt;br/&gt;GSM, TDMA&lt;br/&gt;디지털 음성 통화
+    2001 : 3G 등장&lt;br/&gt;WCDMA, CDMA2000&lt;br/&gt;모바일 인터넷
+    2009 : 4G 등장&lt;br/&gt;LTE, OFDMA&lt;br/&gt;고속 데이터 스트리밍
+    2019 : 5G 등장&lt;br/&gt;다음 차시에서 학습</div>
+<p>각 세대를 관통하는 핵심 질문은 다음 세 가지입니다:</p>
+<ol>
+<li><strong>어떻게 여러 사용자가 같은 주파수를 나누어 쓰는가?</strong> → 다중접속 방식</li>
+<li><strong>얼마나 빠르게 데이터를 보낼 수 있는가?</strong> → 전송 속도와 대역폭</li>
+<li><strong>주파수를 얼마나 효율적으로 사용하는가?</strong> → 스펙트럼 효율</li>
+</ol>
+<p>이 세 가지 축을 중심으로 2G, 3G, 4G를 비교하겠습니다.</p>
+<hr />
+<h2 id="1_1">📚 핵심 개념 1: 다중접속 방식의 진화<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h2>
+<h3 id="_8">🎯 다중접속이란 무엇인가<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><strong>다중접속(Multiple Access)</strong>이란, 한정된 무선 주파수 자원을 여러 사용자가 동시에 나누어 사용하는 기술입니다.</p>
+<p>비유로 이해하면 이렇습니다. 하나의 넓은 도로(주파수 대역)를 여러 자동차(사용자)가 동시에 달려야 한다고 가정하겠습니다. 도로를 나누는 방법은 여러 가지가 있습니다:</p>
+<ul>
+<li><strong>시간으로 나누기</strong>: 1분씩 번갈아가며 도로를 독점 → <strong>TDMA</strong></li>
+<li><strong>차선(코드)으로 나누기</strong>: 각 차에 고유한 차선을 배정하여 동시에 달림 → <strong>CDMA</strong></li>
+<li><strong>구간+차선을 모두 나누기</strong>: 도로를 잘게 쪼갠 뒤 차량 상태에 맞게 동적으로 배분 → <strong>OFDMA</strong></li>
+</ul>
+<p>각 방식을 하나씩 살펴보겠습니다.</p>
+<hr />
+<h3 id="tdma-2g">📌 TDMA — 시간을 나누어 쓰는 방식 (2G)<a class="headerlink" href="#tdma-2g" title="Permanent link">&para;</a></h3>
+<p><strong>TDMA(Time Division Multiple Access, 시분할 다중접속)</strong>는 하나의 주파수 채널을 <strong>시간 슬롯(time slot)</strong>으로 나누어 각 사용자에게 순서대로 배정하는 방식입니다.</p>
+<p><strong>원리 설명</strong></p>
+<p>하나의 주파수 채널을 예를 들어 8개의 시간 슬롯으로 나눕니다. 사용자 A는 슬롯 1, 사용자 B는 슬롯 2, 사용자 C는 슬롯 3을 사용합니다. 각 사용자는 자신에게 배정된 시간에만 데이터를 송수신하고, 나머지 시간에는 대기합니다. 슬롯 간 전환이 매우 빠르게 이루어지기 때문에 사용자는 연속적으로 통화하는 것처럼 느끼게 됩니다.</p>
+<p><em>TDMA의 시간 슬롯 배분 구조입니다:</em></p>
+<div class="mermaid">flowchart LR
+    F["하나의 주파수 채널&lt;br/&gt;(200kHz)"] --&gt; S1["슬롯 1&lt;br/&gt;사용자 A"]
+    F --&gt; S2["슬롯 2&lt;br/&gt;사용자 B"]
+    F --&gt; S3["슬롯 3&lt;br/&gt;사용자 C"]
+    F --&gt; S4["슬롯 4~8&lt;br/&gt;다른 사용자"]</div>
+<p><strong>GSM에서의 TDMA 적용</strong></p>
+<p>2G의 대표 표준인 <strong>GSM(Global System for Mobile Communications)</strong>은 TDMA를 기반으로 합니다. GSM의 주요 사양은 다음과 같습니다:</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>사양</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주파수 대역</td>
+<td>900MHz, 1800MHz</td>
+</tr>
+<tr>
+<td>채널 대역폭</td>
+<td>200kHz</td>
+</tr>
+<tr>
+<td>시간 슬롯 수</td>
+<td>8개/프레임</td>
+</tr>
+<tr>
+<td>프레임 길이</td>
+<td>4.615ms</td>
+</tr>
+<tr>
+<td>변조 방식</td>
+<td><strong>GMSK</strong> (Gaussian Minimum Shift Keying)</td>
+</tr>
+<tr>
+<td>최대 전송 속도</td>
+<td>9.6kbps (음성), 이후 GPRS로 171.2kbps</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TDMA의 특징 정리</strong></p>
+<ul>
+<li><strong>장점</strong>: 구현이 상대적으로 단순합니다. 기존 FDMA 시스템에서 업그레이드가 용이합니다.</li>
+<li><strong>단점</strong>: 시간 슬롯 수가 고정되어 있어 수용 가능한 사용자 수에 <strong>하드 리미트(hard limit)</strong>가 존재합니다. 슬롯이 모두 사용 중이면 새 사용자는 접속할 수 없습니다.</li>
+<li><strong>시험 포인트</strong>: GSM = TDMA + FDMA(주파수도 나누고 시간도 나눈다)라는 점을 기억해야 합니다. 엄밀히 GSM은 <strong>FDMA/TDMA 혼합</strong> 방식입니다.</li>
+</ul>
+<blockquote>
+<p><strong>참고</strong>: 1G는 아날로그 방식(FDMA 기반 FM 변조)이었으며, 2G부터 디지털 통신이 시작되었습니다. 시험에서 "디지털 이동통신의 시작 = 2G"라는 점이 자주 출제됩니다.</p>
+</blockquote>
+<hr />
+<h3 id="cdma-2g3g">📌 CDMA — 코드를 나누어 쓰는 방식 (2G~3G)<a class="headerlink" href="#cdma-2g3g" title="Permanent link">&para;</a></h3>
+<p><strong>CDMA(Code Division Multiple Access, 코드분할 다중접속)</strong>는 모든 사용자가 <strong>같은 주파수, 같은 시간</strong>에 동시에 통신하되, 각 사용자에게 <strong>고유한 코드(확산 코드)</strong>를 부여하여 신호를 구분하는 방식입니다.</p>
+<p><strong>비유로 이해하기</strong></p>
+<p>넓은 강당에서 여러 그룹이 동시에 대화하고 있다고 상상하겠습니다. TDMA 방식이라면 한 그룹씩 순서대로 대화해야 합니다. 하지만 CDMA 방식은 각 그룹이 <strong>서로 다른 언어</strong>(한국어, 영어, 일본어...)로 동시에 대화하는 것과 같습니다. 같은 공간에서 동시에 이야기하더라도, 한국어를 아는 사람은 한국어 대화만 골라서 들을 수 있습니다. 여기서 "언어"에 해당하는 것이 바로 <strong>확산 코드(spreading code)</strong>입니다.</p>
+<p><strong>핵심 원리: 대역 확산(Spread Spectrum)</strong></p>
+<p>CDMA의 기술적 토대는 <strong>대역 확산</strong> 기술입니다. 15차시에서 학습한 내용과 연결됩니다.</p>
+<ol>
+<li>송신 측에서 원래의 좁은 대역 신호에 <strong>고속의 확산 코드(PN 코드)</strong>를 곱합니다</li>
+<li>신호가 넓은 대역으로 확산됩니다 (<strong>대역 확산</strong>)</li>
+<li>수신 측에서 동일한 확산 코드를 곱하면 원래 신호가 복원됩니다 (<strong>역확산</strong>)</li>
+<li>다른 사용자의 코드로 곱하면 신호가 잡음처럼 분산되어 무시됩니다</li>
+</ol>
+<p><em>CDMA의 확산/역확산 과정입니다:</em></p>
+<div class="mermaid">flowchart LR
+    A["원본 데이터&lt;br/&gt;(좁은 대역)"] --&gt;|"확산 코드 곱하기"| B["확산된 신호&lt;br/&gt;(넓은 대역)"]
+    B --&gt;|"무선 전송"| C["수신 신호"]
+    C --&gt;|"같은 코드로 역확산"| D["원본 데이터 복원"]
+    C --&gt;|"다른 코드로 역확산"| E["잡음으로 분산"]</div>
+<p><strong>2G CDMA와 3G WCDMA의 차이</strong></p>
+<p>한국에서 널리 사용된 <strong>IS-95(cdmaOne)</strong>는 2G CDMA 방식이며, 이후 3G로 진화하면서 두 가지 갈래로 나뉘었습니다:</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>IS-95 (2G CDMA)</th>
+<th>WCDMA (3G)</th>
+<th>CDMA2000 (3G)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>표준화 기관</td>
+<td>Qualcomm/TIA</td>
+<td>3GPP (유럽 중심)</td>
+<td>3GPP2 (북미 중심)</td>
+</tr>
+<tr>
+<td>칩 레이트</td>
+<td>1.2288 Mcps</td>
+<td><strong>3.84 Mcps</strong></td>
+<td>1.2288 Mcps (1x), 3.6864 Mcps (3x)</td>
+</tr>
+<tr>
+<td>채널 대역폭</td>
+<td>1.25MHz</td>
+<td><strong>5MHz</strong></td>
+<td>1.25MHz (1x)</td>
+</tr>
+<tr>
+<td>최대 하향 속도</td>
+<td>14.4kbps</td>
+<td><strong>384kbps ~ 2Mbps</strong></td>
+<td>153kbps (1x), 3.1Mbps (EV-DO Rev.A)</td>
+</tr>
+<tr>
+<td>변조 방식</td>
+<td>QPSK/BPSK</td>
+<td>QPSK, 16QAM (HSDPA)</td>
+<td>QPSK, 8PSK, 16QAM</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>시험 핵심</strong>: WCDMA의 채널 대역폭 <strong>5MHz</strong>와 칩 레이트 <strong>3.84Mcps</strong>는 매우 자주 출제됩니다. 반드시 암기해야 합니다.</p>
+</blockquote>
+<p><strong>CDMA의 특징 정리</strong></p>
+<ul>
+<li><strong>장점</strong>: 사용자가 늘어나면 통화 품질이 서서히 저하되는 <strong>소프트 캐패시티(soft capacity)</strong> 특성이 있습니다. TDMA처럼 "꽉 찼으니 접속 불가"가 아니라, 품질이 조금씩 나빠지는 형태입니다. <strong>소프트 핸드오프</strong>(두 기지국에 동시 연결)가 가능하여 통화 끊김이 줄어듭니다.</li>
+<li><strong>단점</strong>: <strong>근원 문제(near-far problem)</strong>가 존재합니다. 기지국에 가까운 사용자의 강한 신호가 먼 사용자의 약한 신호를 가려버리는 현상으로, 이를 해결하기 위해 <strong>전력 제어(power control)</strong>가 필수적입니다.</li>
+<li><strong>시험 포인트</strong>: CDMA의 3대 핵심 기술 → <strong>대역 확산, 전력 제어, 소프트 핸드오프</strong></li>
+</ul>
+<hr />
+<h3 id="ofdma-4g">📌 OFDMA — 주파수를 잘게 나누어 동적으로 배분하는 방식 (4G)<a class="headerlink" href="#ofdma-4g" title="Permanent link">&para;</a></h3>
+<p><strong>OFDMA(Orthogonal Frequency Division Multiple Access, 직교 주파수 분할 다중접속)</strong>는 넓은 주파수 대역을 수백~수천 개의 <strong>좁은 부반송파(subcarrier)</strong>로 나누고, 이를 사용자에게 <strong>동적으로 배분</strong>하는 방식입니다.</p>
+<p><strong>비유로 이해하기</strong></p>
+<p>대형 뷔페 레스토랑을 떠올리겠습니다. TDMA 방식이 "한 사람씩 순서대로 음식을 가져오는 것"이고, CDMA 방식이 "모든 사람이 동시에 뷔페에 접근하되 각자 고유한 접시 색깔로 구분하는 것"이라면, OFDMA 방식은 "뷔페의 음식 코너를 잘게 나누어서, 많이 먹는 사람에게는 여러 코너를, 적게 먹는 사람에게는 한두 코너만 배정하는 것"과 같습니다. 채널 상태가 좋은 사용자에게 더 많은 부반송파를 할당하여 전체 효율을 극대화합니다.</p>
+<p><strong>핵심 원리: OFDM + 다중 사용자 배분</strong></p>
+<p>OFDMA는 <strong>OFDM(Orthogonal Frequency Division Multiplexing)</strong>을 다중접속에 확장한 것입니다.</p>
+<ol>
+<li>넓은 대역을 <strong>다수의 직교 부반송파</strong>로 나눕니다</li>
+<li>부반송파 간 간격이 직교 조건을 만족하므로 <strong>상호 간섭이 없습니다</strong></li>
+<li>시간-주파수 <strong>자원 블록(Resource Block)</strong>을 사용자에게 동적으로 할당합니다</li>
+<li>채널 상태가 좋은 부반송파를 우선 배분하여 효율을 높입니다</li>
+</ol>
+<p><em>OFDMA의 자원 배분 구조입니다:</em></p>
+<div class="mermaid">flowchart TD
+    BW["전체 대역폭&lt;br/&gt;(예: 20MHz)"] --&gt; SC["수백 개 부반송파로 분할"]
+    SC --&gt; RB["자원 블록 단위로 그룹화&lt;br/&gt;(12개 부반송파 = 1 RB)"]
+    RB --&gt; UA["사용자 A&lt;br/&gt;5개 RB 할당"]
+    RB --&gt; UB["사용자 B&lt;br/&gt;3개 RB 할당"]
+    RB --&gt; UC["사용자 C&lt;br/&gt;2개 RB 할당"]</div>
+<p><strong>LTE에서의 OFDMA 적용</strong></p>
+<p>4G의 대표 표준인 <strong>LTE(Long Term Evolution)</strong>는 하향링크(기지국→단말)에 OFDMA를, 상향링크(단말→기지국)에 <strong>SC-FDMA(Single Carrier FDMA)</strong>를 사용합니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>LTE 사양</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>하향링크 다중접속</td>
+<td><strong>OFDMA</strong></td>
+</tr>
+<tr>
+<td>상향링크 다중접속</td>
+<td><strong>SC-FDMA</strong></td>
+</tr>
+<tr>
+<td>채널 대역폭</td>
+<td>1.4, 3, 5, 10, 15, <strong>20MHz</strong> (가변)</td>
+</tr>
+<tr>
+<td>부반송파 간격</td>
+<td><strong>15kHz</strong></td>
+</tr>
+<tr>
+<td>자원 블록(RB) 구성</td>
+<td>12 부반송파 × 1 슬롯(0.5ms) = 1 RB</td>
+</tr>
+<tr>
+<td>변조 방식</td>
+<td>QPSK, 16QAM, <strong>64QAM</strong></td>
+</tr>
+<tr>
+<td>최대 하향 속도</td>
+<td>약 <strong>100Mbps</strong> (카테고리 3 기준), LTE-A에서 1Gbps 이상</td>
+</tr>
+<tr>
+<td>이중화 방식</td>
+<td><strong>FDD</strong> 또는 <strong>TDD</strong></td>
+</tr>
+<tr>
+<td>핵심 기술</td>
+<td><strong>MIMO</strong>(다중 안테나), 적응형 변조·코딩(AMC)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>시험 핵심</strong>: LTE의 하향링크 = <strong>OFDMA</strong>, 상향링크 = <strong>SC-FDMA</strong>는 가장 자주 출제되는 조합입니다. 상향링크에 SC-FDMA를 쓰는 이유는 <strong>단말의 전력 효율</strong>을 위해서입니다. OFDMA는 높은 PAPR(Peak-to-Average Power Ratio)로 인해 단말의 배터리 소모가 크기 때문입니다.</p>
+</blockquote>
+<p><strong>OFDMA의 특징 정리</strong></p>
+<ul>
+<li><strong>장점</strong>: 주파수 자원을 동적으로 배분하여 <strong>스펙트럼 효율이 매우 높습니다</strong>. <strong>다중경로 페이딩(multipath fading)</strong>에 강합니다(부반송파별로 평탄한 페이딩 채널이 됨). 가변 대역폭(1.4~20MHz)으로 유연한 주파수 운용이 가능합니다.</li>
+<li><strong>단점</strong>: 부반송파 간 직교성이 깨지면 <strong>ICI(Inter-Carrier Interference, 반송파간 간섭)</strong>가 발생합니다. 정확한 <strong>주파수 동기화</strong>가 필요합니다.</li>
+</ul>
+<hr />
+<h3 id="_9">🔄 다중접속 방식 비교 종합<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>세 가지 다중접속 방식을 한눈에 비교하겠습니다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>TDMA</th>
+<th>CDMA</th>
+<th>OFDMA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>자원 분할 기준</strong></td>
+<td>시간</td>
+<td>코드</td>
+<td>주파수(부반송파) + 시간</td>
+</tr>
+<tr>
+<td><strong>대표 세대</strong></td>
+<td>2G (GSM)</td>
+<td>2G (IS-95), 3G (WCDMA)</td>
+<td>4G (LTE)</td>
+</tr>
+<tr>
+<td><strong>사용자 구분 방법</strong></td>
+<td>시간 슬롯 배정</td>
+<td>고유 확산 코드 배정</td>
+<td>자원 블록 동적 배분</td>
+</tr>
+<tr>
+<td><strong>용량 특성</strong></td>
+<td>하드 캐패시티</td>
+<td>소프트 캐패시티</td>
+<td>동적 스케줄링</td>
+</tr>
+<tr>
+<td><strong>주파수 효율</strong></td>
+<td>낮음</td>
+<td>중간</td>
+<td>높음</td>
+</tr>
+<tr>
+<td><strong>다중경로 대응</strong></td>
+<td>이퀄라이저 필요</td>
+<td>RAKE 수신기</td>
+<td>CP(순환 전치) 사용</td>
+</tr>
+<tr>
+<td><strong>핵심 과제</strong></td>
+<td>슬롯 수 제한</td>
+<td>전력 제어, 근원 문제</td>
+<td>주파수 동기화, PAPR</td>
+</tr>
+</tbody>
+</table>
+<p><em>다중접속 방식의 진화 흐름입니다:</em></p>
+<div class="mermaid">flowchart LR
+    FDMA["1G: FDMA&lt;br/&gt;주파수 분할"] --&gt; TDMA["2G: TDMA&lt;br/&gt;시간 분할"]
+    TDMA --&gt; CDMA["3G: CDMA&lt;br/&gt;코드 분할"]
+    CDMA --&gt; OFDMA["4G: OFDMA&lt;br/&gt;직교 주파수 분할"]
+    OFDMA --&gt; FUTURE["5G: OFDMA 기반&lt;br/&gt;+ 새 기술 추가"]</div>
+<hr />
+<h2 id="2_1">📚 핵심 개념 2: 세대별 기술 스펙 종합 비교<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
+<h3 id="2g-3g-4g">📊 2G, 3G, 4G 종합 비교표<a class="headerlink" href="#2g-3g-4g" title="Permanent link">&para;</a></h3>
+<p>이제 두 번째 핵심 개념으로, 각 세대의 전체적인 기술 사양을 종합적으로 비교하겠습니다. 이 표는 시험에서 직접 출제되는 수치가 다수 포함되어 있으므로 꼼꼼히 확인하시기 바랍니다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>2G (GSM)</th>
+<th>2.5G (GPRS/EDGE)</th>
+<th>3G (WCDMA)</th>
+<th>3.5G (HSDPA/HSUPA)</th>
+<th>4G (LTE)</th>
+<th>4.5G (LTE-A)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>다중접속</strong></td>
+<td>FDMA/TDMA</td>
+<td>FDMA/TDMA</td>
+<td><strong>CDMA</strong> (DS-CDMA)</td>
+<td>CDMA</td>
+<td><strong>OFDMA</strong>/SC-FDMA</td>
+<td>OFDMA/SC-FDMA</td>
+</tr>
+<tr>
+<td><strong>채널 대역폭</strong></td>
+<td>200kHz</td>
+<td>200kHz</td>
+<td><strong>5MHz</strong></td>
+<td>5MHz</td>
+<td>1.4~<strong>20MHz</strong></td>
+<td>최대 100MHz (CA)</td>
+</tr>
+<tr>
+<td><strong>변조 방식</strong></td>
+<td>GMSK</td>
+<td>GMSK / <strong>8PSK</strong> (EDGE)</td>
+<td>QPSK</td>
+<td>QPSK, <strong>16QAM</strong></td>
+<td>QPSK, 16QAM, <strong>64QAM</strong></td>
+<td>최대 256QAM</td>
+</tr>
+<tr>
+<td><strong>최대 하향 속도</strong></td>
+<td>9.6kbps</td>
+<td>171.2kbps / 384kbps</td>
+<td><strong>2Mbps</strong> (정지 시)</td>
+<td><strong>14.4Mbps</strong></td>
+<td><strong>100Mbps</strong></td>
+<td><strong>1Gbps 이상</strong></td>
+</tr>
+<tr>
+<td><strong>최대 상향 속도</strong></td>
+<td>9.6kbps</td>
+<td>동일</td>
+<td>384kbps</td>
+<td>5.76Mbps</td>
+<td>50Mbps</td>
+<td>500Mbps</td>
+</tr>
+<tr>
+<td><strong>이중화</strong></td>
+<td>FDD</td>
+<td>FDD</td>
+<td>FDD</td>
+<td>FDD</td>
+<td>FDD / TDD</td>
+<td>FDD / TDD</td>
+</tr>
+<tr>
+<td><strong>교환 방식</strong></td>
+<td>회선 교환</td>
+<td>패킷 교환 (데이터)</td>
+<td>회선+패킷</td>
+<td>패킷 중심</td>
+<td><strong>All-IP (패킷 전용)</strong></td>
+<td>All-IP</td>
+</tr>
+<tr>
+<td><strong>주요 서비스</strong></td>
+<td>음성, SMS</td>
+<td>모바일 웹</td>
+<td>영상통화, 모바일 인터넷</td>
+<td>고속 인터넷</td>
+<td>HD 동영상, VoLTE</td>
+<td>초고속 데이터, IoT</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">📍 세대 전환의 핵심 동인<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>각 세대가 등장한 근본적인 이유를 정리하면 다음과 같습니다:</p>
+<p><strong>2G → 3G 전환의 이유</strong></p>
+<ol>
+<li><strong>데이터 서비스 수요</strong>: 2G는 음성 통화에 최적화되어 있어 모바일 인터넷 속도가 매우 느렸습니다</li>
+<li><strong>용량 한계</strong>: TDMA의 하드 캐패시티로 인해 가입자 수 증가에 대응하기 어려웠습니다</li>
+<li><strong>CDMA의 용량 우위</strong>: 같은 대역폭에서 CDMA가 TDMA보다 약 3~6배 많은 사용자를 수용할 수 있었습니다</li>
+<li><strong>광대역화</strong>: 채널 대역폭을 200kHz에서 5MHz로 넓혀 전송 속도를 대폭 향상시켰습니다</li>
+</ol>
+<p><strong>3G → 4G 전환의 이유</strong></p>
+<ol>
+<li><strong>스마트폰 보급</strong>: 아이폰(2007년) 등장 이후 모바일 데이터 트래픽이 기하급수적으로 증가했습니다</li>
+<li><strong>스펙트럼 효율</strong>: OFDMA가 CDMA 대비 약 2~3배 높은 스펙트럼 효율을 제공합니다</li>
+<li><strong>저지연</strong>: LTE는 약 10ms 수준의 낮은 지연 시간을 실현하여 실시간 서비스 품질이 크게 향상되었습니다</li>
+<li><strong>All-IP 네트워크</strong>: 음성까지 패킷(IP)으로 처리하는 <strong>VoLTE(Voice over LTE)</strong>로 전환하여 네트워크 구조를 단순화했습니다</li>
+</ol>
+<p><em>세대 전환의 핵심 동인을 시각화한 것입니다:</em></p>
+<div class="mermaid">flowchart TD
+    D1["사용자 수 증가"] --&gt; T["세대 전환&lt;br/&gt;필요성"]
+    D2["데이터 수요 폭증"] --&gt; T
+    D3["스펙트럼 효율 요구"] --&gt; T
+    T --&gt; S1["다중접속 방식 개선"]
+    T --&gt; S2["대역폭 확대"]
+    T --&gt; S3["변조 방식 고도화"]
+    T --&gt; S4["네트워크 구조 혁신"]</div>
+<h3 id="lte">📍 LTE의 주요 기술 요소 상세<a class="headerlink" href="#lte" title="Permanent link">&para;</a></h3>
+<p>LTE는 시험에서 가장 비중 있게 출제되는 세대이므로, 핵심 기술 요소를 추가로 정리하겠습니다.</p>
+<p><strong>MIMO (Multiple Input Multiple Output, 다중 안테나)</strong></p>
+<ul>
+<li>송신기와 수신기 모두 <strong>복수의 안테나</strong>를 사용하여 데이터 전송 속도를 높이는 기술입니다</li>
+<li>LTE 기본: <strong>2×2 MIMO</strong> (송신 2개, 수신 2개 안테나)</li>
+<li>LTE-Advanced: <strong>4×4 MIMO</strong> 이상, 최대 8×8까지 확장 가능</li>
+<li>MIMO 방식: <strong>공간 다중화(Spatial Multiplexing)</strong> — 같은 주파수로 서로 다른 데이터를 동시에 전송</li>
+</ul>
+<p><strong>캐리어 결합 (Carrier Aggregation, CA)</strong></p>
+<ul>
+<li>LTE-Advanced에서 도입된 기술로, <strong>여러 개의 주파수 대역(캐리어)을 동시에 묶어서</strong> 사용합니다</li>
+<li>예: 20MHz 캐리어 5개를 결합하면 최대 100MHz 대역폭 확보</li>
+<li>이를 통해 LTE-A의 이론적 최대 속도 <strong>1Gbps 이상</strong>이 가능해집니다</li>
+</ul>
+<p><strong>자원 블록(Resource Block)과 스케줄링</strong></p>
+<ul>
+<li>LTE의 최소 자원 할당 단위는 <strong>자원 블록(RB)</strong>입니다</li>
+<li>1 RB = 12 부반송파 × 0.5ms(1 슬롯) = <strong>180kHz × 0.5ms</strong></li>
+<li>기지국의 <strong>스케줄러</strong>가 매 1ms(서브프레임)마다 각 사용자에게 RB를 동적으로 배분합니다</li>
+<li>채널 상태가 좋은 사용자에게 우선적으로 더 많은 RB를 할당하는 <strong>적응형 스케줄링</strong> 적용</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>LTE 핵심 수치</th>
+<th>값</th>
+<th>시험 빈출도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>부반송파 간격</td>
+<td><strong>15kHz</strong></td>
+<td>★★★</td>
+</tr>
+<tr>
+<td>1 RB 부반송파 수</td>
+<td><strong>12개</strong></td>
+<td>★★★</td>
+</tr>
+<tr>
+<td>1 RB 대역폭</td>
+<td><strong>180kHz</strong></td>
+<td>★★★</td>
+</tr>
+<tr>
+<td>서브프레임 길이</td>
+<td><strong>1ms</strong></td>
+<td>★★</td>
+</tr>
+<tr>
+<td>슬롯 길이</td>
+<td><strong>0.5ms</strong></td>
+<td>★★</td>
+</tr>
+<tr>
+<td>1 프레임 길이</td>
+<td><strong>10ms</strong></td>
+<td>★★</td>
+</tr>
+<tr>
+<td>20MHz 시 RB 수</td>
+<td><strong>100개</strong></td>
+<td>★★</td>
+</tr>
+<tr>
+<td>FFT 크기 (20MHz)</td>
+<td><strong>2048</strong></td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>계산 확인</strong>: 20MHz 대역폭에서 부반송파 간격 15kHz이면, 부반송파 수 = 20,000kHz ÷ 15kHz ≈ 1333개이지만, 가드 밴드를 제외한 실제 사용 부반송파는 <strong>1200개</strong>입니다. 이를 12개씩 묶으면 1200 ÷ 12 = <strong>100 RB</strong>가 됩니다.</p>
+</blockquote>
+<hr />
+<h2 id="_11">⚠️ 자주 하는 실수와 주의할 점<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="1-cdma-3g">실수 1: CDMA를 3G 전용 기술로 착각<a class="headerlink" href="#1-cdma-3g" title="Permanent link">&para;</a></h3>
+<p>IS-95(cdmaOne)는 <strong>2G</strong> CDMA 방식입니다. CDMA 기술 자체는 2G부터 사용되었고, 3G에서 <strong>광대역(Wideband) CDMA = WCDMA</strong>로 발전한 것입니다. 시험에서 "CDMA는 몇 세대 기술인가?"라는 함정 문제가 나올 수 있습니다.</p>
+<h3 id="2-lte">실수 2: LTE의 상향/하향링크 다중접속 혼동<a class="headerlink" href="#2-lte" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>하향링크(Downlink)</strong>: OFDMA</li>
+<li><strong>상향링크(Uplink)</strong>: SC-FDMA</li>
+</ul>
+<p>이 둘을 바꿔 쓰는 경우가 많습니다. SC-FDMA는 OFDMA와 유사하지만 <strong>단일 반송파</strong> 특성을 가져 PAPR이 낮아 단말의 전력 소모를 줄여줍니다.</p>
+<h3 id="3">실수 3: 세대 간 "중간 단계"를 무시<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>2.5G(GPRS), 2.75G(EDGE), 3.5G(HSDPA/HSUPA), 3.9G(LTE를 처음에 이렇게 불렀음) 등의 중간 단계가 시험에 출제될 수 있습니다. 특히 <strong>HSDPA(High Speed Downlink Packet Access)</strong>는 3.5G의 핵심 기술로 자주 등장합니다.</p>
+<table>
+<thead>
+<tr>
+<th>중간 세대</th>
+<th>핵심 기술</th>
+<th>속도 향상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.5G (GPRS)</td>
+<td>패킷 교환 도입</td>
+<td>최대 171.2kbps</td>
+</tr>
+<tr>
+<td>2.75G (EDGE)</td>
+<td><strong>8PSK</strong> 변조 도입</td>
+<td>최대 384kbps</td>
+</tr>
+<tr>
+<td>3.5G (HSDPA)</td>
+<td>16QAM + <strong>AMC</strong> + <strong>HARQ</strong></td>
+<td>최대 14.4Mbps</td>
+</tr>
+<tr>
+<td>3.75G (HSUPA)</td>
+<td>상향링크 고속화</td>
+<td>최대 5.76Mbps</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">실수 4: 대역폭과 전송 속도를 같은 것으로 착각<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p><strong>대역폭(Bandwidth)</strong>은 사용하는 주파수의 폭(Hz 단위)이고, <strong>전송 속도(Data Rate)</strong>는 초당 보낼 수 있는 비트 수(bps 단위)입니다. 같은 5MHz 대역폭이라도 변조 방식(QPSK vs 16QAM vs 64QAM)과 MIMO 등에 따라 전송 속도는 크게 달라집니다.</p>
+<hr />
+<h2 id="_12">🔧 실습 활동: 비교표 완성과 기출 유형 연습<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">활동 1: 빈칸 채우기 비교표<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<p>아래 표의 빈칸을 채워 보시기 바랍니다. 앞에서 학습한 내용을 떠올려 작성한 후 정답을 확인하십시오.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>2G (GSM)</th>
+<th>3G (WCDMA)</th>
+<th>4G (LTE)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다중접속 방식</td>
+<td>(  ①  )</td>
+<td>DS-CDMA</td>
+<td>(  ②  ) / SC-FDMA</td>
+</tr>
+<tr>
+<td>채널 대역폭</td>
+<td>200kHz</td>
+<td>(  ③  )</td>
+<td>최대 20MHz</td>
+</tr>
+<tr>
+<td>대표 변조 방식</td>
+<td>GMSK</td>
+<td>QPSK</td>
+<td>(  ④  )</td>
+</tr>
+<tr>
+<td>최대 하향 속도</td>
+<td>9.6kbps</td>
+<td>(  ⑤  )</td>
+<td>100Mbps</td>
+</tr>
+<tr>
+<td>교환 방식</td>
+<td>회선 교환</td>
+<td>회선+패킷</td>
+<td>(  ⑥  )</td>
+</tr>
+</tbody>
+</table>
+<details><summary>정답 확인</summary>
+
+| 번호 | 정답 |
+|---|---|
+| ① | FDMA/TDMA |
+| ② | OFDMA |
+| ③ | 5MHz |
+| ④ | QPSK, 16QAM, 64QAM |
+| ⑤ | 2Mbps (정지 시) |
+| ⑥ | All-IP (패킷 전용) |
+
+</details>
+
+<h3 id="2_2">활동 2: 핵심 키워드 연결<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>다음 기술 키워드가 어느 세대에 해당하는지 연결하십시오.</p>
+<table>
+<thead>
+<tr>
+<th>키워드</th>
+<th>해당 세대</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a. RAKE 수신기</td>
+<td>(    )</td>
+</tr>
+<tr>
+<td>b. 자원 블록(RB)</td>
+<td>(    )</td>
+</tr>
+<tr>
+<td>c. 시간 슬롯</td>
+<td>(    )</td>
+</tr>
+<tr>
+<td>d. MIMO</td>
+<td>(    )</td>
+</tr>
+<tr>
+<td>e. 소프트 핸드오프</td>
+<td>(    )</td>
+</tr>
+<tr>
+<td>f. VoLTE</td>
+<td>(    )</td>
+</tr>
+</tbody>
+</table>
+<details><summary>정답 확인</summary>
+
+| 키워드 | 해당 세대 | 설명 |
+|---|---|---|
+| a. RAKE 수신기 | 3G (WCDMA) | CDMA의 다중경로 신호를 결합하는 수신기 |
+| b. 자원 블록(RB) | 4G (LTE) | OFDMA의 최소 자원 할당 단위 |
+| c. 시간 슬롯 | 2G (GSM) | TDMA에서 사용자를 구분하는 단위 |
+| d. MIMO | 4G (LTE) | 다중 안테나로 전송 속도 향상 |
+| e. 소프트 핸드오프 | 3G (WCDMA) | 두 기지국에 동시 연결 |
+| f. VoLTE | 4G (LTE) | IP 기반 음성 통화 |
+
+</details>
+
+<hr />
+<h2 id="_13">📝 형성 평가<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<div class="assessment">
+<h3 id="_14">📝 형성 평가<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p><strong>객관식 1.</strong> LTE 시스템에서 하향링크(Downlink)에 사용되는 다중접속 방식은 무엇입니까?</p>
+<p>① TDMA<br />
+② CDMA<br />
+③ OFDMA<br />
+④ SC-FDMA</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③ OFDMA**
+
+LTE의 하향링크(기지국 → 단말)는 OFDMA를, 상향링크(단말 → 기지국)는 SC-FDMA를 사용합니다. SC-FDMA는 PAPR이 낮아 단말의 전력 효율에 유리합니다.
+
+</details>
+<hr />
+<p><strong>객관식 2.</strong> 3G WCDMA의 채널 대역폭과 칩 레이트를 올바르게 짝지은 것은 어느 것입니까?</p>
+<p>① 1.25MHz, 1.2288Mcps<br />
+② 5MHz, 3.84Mcps<br />
+③ 10MHz, 7.68Mcps<br />
+④ 20MHz, 15.36Mcps</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ② 5MHz, 3.84Mcps**
+
+WCDMA의 채널 대역폭은 5MHz이고, 칩 레이트는 3.84Mcps입니다. ①은 IS-95(cdmaOne)의 사양입니다. 이 두 수치는 시험에서 매우 자주 출제되므로 반드시 암기해야 합니다.
+
+</details>
+<hr />
+<p><strong>객관식 3.</strong> 다음 중 2G(GSM)의 특징으로 올바르지 <strong>않은</strong> 것은 어느 것입니까?</p>
+<p>① 다중접속 방식으로 FDMA/TDMA를 혼합하여 사용한다<br />
+② 변조 방식으로 GMSK를 사용한다<br />
+③ 소프트 핸드오프 기능을 지원한다<br />
+④ 채널 대역폭은 200kHz이다</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③**
+
+소프트 핸드오프(두 기지국에 동시 연결)는 **CDMA** 계열 기술의 특징입니다. GSM(TDMA 기반)은 **하드 핸드오프**(한 기지국 연결을 끊고 다른 기지국에 연결)를 사용합니다.
+
+</details>
+<hr />
+<p><strong>서술형.</strong> 이동통신이 3G에서 4G로 진화하면서 다중접속 방식이 CDMA에서 OFDMA로 변경되었습니다. OFDMA가 4G에서 채택된 기술적 이유를 두 가지 이상 서술하십시오.</p>
+<details>
+<summary>정답 예시 확인</summary>
+
+**모범 답안 예시:**
+
+1. **높은 스펙트럼 효율**: OFDMA는 직교 부반송파를 사용하여 주파수 자원을 겹침 없이 밀도 있게 배치할 수 있으므로, CDMA 대비 약 2~3배 높은 스펙트럼 효율을 달성합니다.
+
+2. **다중경로 페이딩에 대한 강건성**: 넓은 대역을 다수의 좁은 부반송파로 나누므로, 각 부반송파는 평탄한 페이딩 채널을 경험하게 됩니다. 또한 순환 전치(CP, Cyclic Prefix)를 사용하여 심볼 간 간섭(ISI)을 효과적으로 제거합니다.
+
+3. **동적 자원 할당**: 시간-주파수 2차원의 자원 블록을 사용자별 채널 상태에 따라 동적으로 배분할 수 있어, 전체 시스템 용량을 극대화할 수 있습니다.
+
+4. **가변 대역폭 지원**: 1.4MHz부터 20MHz까지 다양한 대역폭을 유연하게 사용할 수 있어 다양한 주파수 환경에 적응할 수 있습니다.
+
+(위 네 가지 중 두 가지 이상을 서술하면 됩니다.)
+
+</details>
+<hr />
+<h3 id="_15">✅ 자기점검 체크리스트<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 2G(GSM), 3G(WCDMA), 4G(LTE)의 핵심 기술과 진화 이유를 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> TDMA, CDMA, OFDMA 각 다중접속 방식의 원리와 차이를 비교할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 각 세대의 대역폭, 변조 방식, 최대 전송 속도 등 핵심 수치를 말할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> WCDMA의 채널 대역폭(5MHz)과 칩 레이트(3.84Mcps)를 기억하고 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> LTE의 하향링크(OFDMA)와 상향링크(SC-FDMA)를 구분할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> LTE의 부반송파 간격(15kHz), 1 RB = 12 부반송파 등 핵심 수치를 알고 있다</li>
+</ul>
+</div>
+<hr />
+<h2 id="_16">💭 성찰 &amp; 다음 차시 미리보기<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h3 id="_17">📌 이번 차시 핵심 정리<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>이번 차시에서는 이동통신의 진화를 두 가지 축으로 학습했습니다.</p>
+<p><strong>첫 번째 축: 다중접속 방식의 진화</strong></p>
+<table>
+<thead>
+<tr>
+<th>세대</th>
+<th>방식</th>
+<th>핵심 원리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2G</td>
+<td>TDMA</td>
+<td>시간 슬롯으로 사용자 구분</td>
+</tr>
+<tr>
+<td>3G</td>
+<td>CDMA</td>
+<td>고유 코드로 사용자 구분</td>
+</tr>
+<tr>
+<td>4G</td>
+<td>OFDMA</td>
+<td>직교 부반송파를 동적 배분</td>
+</tr>
+</tbody>
+</table>
+<p><strong>두 번째 축: 속도와 효율의 진화</strong></p>
+<ul>
+<li>9.6kbps(2G) → 2Mbps(3G) → 100Mbps(4G) → 1Gbps+(LTE-A)</li>
+<li>이 속도 향상은 대역폭 확대, 변조 고도화, MIMO, 캐리어 결합의 결합으로 이루어진 것입니다</li>
+</ul>
+<p>세대가 바뀔 때마다 <strong>"더 많은 사용자에게, 더 빠른 속도로, 더 효율적으로"</strong> 데이터를 전달하는 방향으로 기술이 발전해 왔습니다. 이 큰 흐름을 이해하면, 개별 기술 사양을 단순 암기하는 것이 아니라 논리적으로 연결지어 기억할 수 있습니다.</p>
+<h3 id="_18">🔮 다음 차시 미리보기<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../chapter15/" class="md-footer__link md-footer__link--prev" aria-label="이전: 15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapter17/" class="md-footer__link md-footer__link--next" aria-label="다음: 17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              <div class="md-ellipsis">
+                17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 노용철TV | <a href='https://eduflow-greatsong.fly.dev/'>EduFlow</a>로 제작
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/title-link.js"></script>
+      
+        <script src="../javascripts/mermaid-config.js"></script>
+      
+        <script src="../javascripts/scroll-progress.js"></script>
+      
+        <script src="../javascripts/eduflow-nav.js"></script>
+      
+        <script src="../javascripts/lightbox.js"></script>
+      
+    
+  </body>
+</html>

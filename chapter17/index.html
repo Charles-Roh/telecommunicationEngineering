@@ -1,0 +1,3683 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="비전공자도 이해할 수 있도록 일상 비유와 실전 기출 문제로 구성한 통신공학 완전정복 교재. 한전KDN 등 공공기관 채용 필기시험 대비용 자기주도 학습 자료입니다.">
+      
+      
+        <meta name="author" content="노용철TV (EduFlow)">
+      
+      
+      
+        <link rel="prev" href="../chapter16/">
+      
+      
+        <link rel="next" href="../chapter18/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술 - 통신공학 단박에 끝내기</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#17-5g-6g" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-header__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            통신공학 단박에 끝내기
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter05/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter09/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../chapter15/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-nav__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    통신공학 단박에 끝내기
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1차시: 통신공학 전체 그림 그리기 - 신호와 시스템의 기초
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2차시: 신호를 수식으로 표현하기 - 주파수 영역의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3차시: 아날로그 통신의 두 주인공 - AM과 FM 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4차시: 아날로그에서 디지털로 - 표본화와 PCM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5차시: 디지털 신호를 전송하는 방법 - ASK, FSK, PSK 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6차시: 더 효율적으로 전송하기 - QAM과 고차 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7차시: 신뢰성 확보하기 - 오류 검출과 정정 부호
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8차시: Part 2 종합 실전 문제풀이 - 디지털 변복조 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9차시: 통신 채널의 한계 - 샤논 법칙과 채널 용량
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10차시: 한 채널을 여럿이 쓰는 방법 - 다중화 기술의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11차시: 여럿이 동시에 통신하기 - TDMA와 FDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12차시: 간섭 없이 많은 사용자를 수용하기 - CDMA의 원리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="학습 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5g-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 5G 4대 핵심 기술
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4g-vs-5g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 4G vs 5G 비교 분석
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 6G 미래 전망
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 시나리오 활동
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5g-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도입: 왜 5G가 필요한가? (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5g-4-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 개념 1: 5G의 4대 핵심 기술 (18분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4g-vs-5g-6g-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 개념 2: 4G vs 5G 비교 및 6G 전망 (12분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5g-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        활동: 5G 기술 매칭 실습 (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정리 및 평가 (7분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 도입: 왜 5G가 필요한가?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 도입: 왜 5G가 필요한가?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤔 왜 이걸 배우나요?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4g-5g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📱 4G의 한계, 그리고 5G의 등장
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 이전 학습과의 연결
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-5g-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 1: 5G의 4대 핵심 기술
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 1: 5G의 4대 핵심 기술">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-massive-mimo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ 기술 1: Massive MIMO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ 기술 1: Massive MIMO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        비유로 이해하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정확한 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 원리: 빔포밍
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#massive-mimo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Massive MIMO의 성능 이점
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시험 포인트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mmwave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌊 기술 2: 밀리미터파 (mmWave)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌊 기술 2: 밀리미터파 (mmWave)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        비유로 이해하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정확한 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        왜 밀리미터파인가?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        밀리미터파의 과제와 해결
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시험 포인트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-full-duplex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 기술 3: 전이중화 (Full Duplex)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 기술 3: 전이중화 (Full Duplex)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        비유로 이해하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정확한 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 과제: 자기 간섭 제거
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이중화 방식 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-network-slicing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🍰 기술 4: 네트워크 슬라이싱 (Network Slicing)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🍰 기술 4: 네트워크 슬라이싱 (Network Slicing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        비유로 이해하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정확한 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        슬라이스의 유형과 특성
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        네트워크 슬라이싱이 가능한 이유
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시험 포인트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5g-4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 5G 4대 핵심 기술 종합 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-4g-vs-5g-6g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 2: 4G vs 5G 비교 및 6G 전망
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 2: 4G vs 5G 비교 및 6G 전망">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4glte-5g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 4G(LTE)와 5G의 정량적 비교
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 4G(LTE)와 5G의 정량적 비교">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5g-nr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5G NR의 주요 기술 규격
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6g_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔮 6G: 다음 세대를 향한 전망
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔮 6G: 다음 세대를 향한 전망">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6g_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6G의 예상 목표 수치
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6g_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6G의 핵심 후보 기술
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이동통신 세대별 발전 타임라인
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 자주 하는 실수 &amp; 주의할 점
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5g_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 활동: 5G 기술 매칭 실습
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔬 활동: 5G 기술 매칭 실습">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시나리오 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        선택지
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 활동 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 형성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 다음 차시 미리보기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 이번 차시 핵심 요약
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18차시: 전체 통합 실전 모의고사 - 시험 완성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19차시: 최종 정리와 시험 전략 - 합격을 위한 마무리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="학습 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5g-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 5G 4대 핵심 기술
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4g-vs-5g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 4G vs 5G 비교 분석
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 6G 미래 전망
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 시나리오 활동
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5g-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        도입: 왜 5G가 필요한가? (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-5g-4-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 개념 1: 5G의 4대 핵심 기술 (18분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-4g-vs-5g-6g-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 개념 2: 4G vs 5G 비교 및 6G 전망 (12분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5g-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        활동: 5G 기술 매칭 실습 (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정리 및 평가 (7분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 도입: 왜 5G가 필요한가?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 도입: 왜 5G가 필요한가?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤔 왜 이걸 배우나요?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4g-5g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📱 4G의 한계, 그리고 5G의 등장
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 이전 학습과의 연결
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-5g-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 1: 5G의 4대 핵심 기술
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 1: 5G의 4대 핵심 기술">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-massive-mimo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ 기술 1: Massive MIMO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ 기술 1: Massive MIMO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        비유로 이해하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정확한 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 원리: 빔포밍
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#massive-mimo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Massive MIMO의 성능 이점
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시험 포인트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mmwave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌊 기술 2: 밀리미터파 (mmWave)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌊 기술 2: 밀리미터파 (mmWave)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        비유로 이해하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정확한 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        왜 밀리미터파인가?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        밀리미터파의 과제와 해결
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시험 포인트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-full-duplex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 기술 3: 전이중화 (Full Duplex)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 기술 3: 전이중화 (Full Duplex)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        비유로 이해하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정확한 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 과제: 자기 간섭 제거
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이중화 방식 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-network-slicing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🍰 기술 4: 네트워크 슬라이싱 (Network Slicing)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🍰 기술 4: 네트워크 슬라이싱 (Network Slicing)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        비유로 이해하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정확한 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        슬라이스의 유형과 특성
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        네트워크 슬라이싱이 가능한 이유
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시험 포인트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5g-4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 5G 4대 핵심 기술 종합 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-4g-vs-5g-6g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 2: 4G vs 5G 비교 및 6G 전망
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 2: 4G vs 5G 비교 및 6G 전망">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4glte-5g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 4G(LTE)와 5G의 정량적 비교
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 4G(LTE)와 5G의 정량적 비교">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5g-nr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5G NR의 주요 기술 규격
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6g_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔮 6G: 다음 세대를 향한 전망
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔮 6G: 다음 세대를 향한 전망">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6g_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6G의 예상 목표 수치
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6g_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6G의 핵심 후보 기술
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이동통신 세대별 발전 타임라인
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 자주 하는 실수 &amp; 주의할 점
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5g_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 활동: 5G 기술 매칭 실습
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔬 활동: 5G 기술 매칭 실습">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        시나리오 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        선택지
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 활동 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 형성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 다음 차시 미리보기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 이번 차시 핵심 요약
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="네비게이션" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../chapter15/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="17-5g-6g">17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술<a class="headerlink" href="#17-5g-6g" title="Permanent link">&para;</a></h1>
+<div class="lesson-banner">
+<p><strong>⏰ 50분</strong> · 5G 핵심 기술 · Massive MIMO · 네트워크 슬라이싱 · 6G 전망 · <strong>난이도</strong> ●●●●○</p>
+<p><strong>학습목표</strong>: 5G의 4대 핵심 기술을 설명하고, 4G와의 차이를 수치로 비교하며, 6G의 미래 방향을 제시할 수 있습니다</p>
+<blockquote>
+<p><strong>오늘의 질문</strong>: "스마트폰으로 영화 한 편을 3초 만에 내려받고, 원격 수술이 실시간으로 가능하려면 통신망에 어떤 기술적 변화가 필요한 것일까요?"</p>
+</blockquote>
+</div>
+<hr />
+<h2 id="_1">학습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 5G의 핵심 기술(Massive MIMO, 밀리미터파, 전이중화, 네트워크 슬라이싱)을 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 5G와 4G(LTE)의 차이점(대역폭, 지연시간, 신뢰성, 연결 기기 수)을 수치로 비교할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 6G의 예상 기술과 전망을 이해하고 통신공학의 미래 방향을 설명할 수 있다</li>
+</ul>
+<hr />
+<div class="cards-grid">
+<div class="card card-orange">
+<h3 id="5g-4">🧠 5G 4대 핵심 기술<a class="headerlink" href="#5g-4" title="Permanent link">&para;</a></h3>
+<p>Massive MIMO, 밀리미터파, 전이중화, 네트워크 슬라이싱의 원리와 역할</p>
+</div>
+<div class="card card-blue">
+<h3 id="4g-vs-5g">🔬 4G vs 5G 비교 분석<a class="headerlink" href="#4g-vs-5g" title="Permanent link">&para;</a></h3>
+<p>속도·지연·연결 밀도·신뢰성 4가지 축으로 세대 차이를 정량 비교</p>
+</div>
+<div class="card card-purple">
+<h3 id="6g">🚀 6G 미래 전망<a class="headerlink" href="#6g" title="Permanent link">&para;</a></h3>
+<p>테라헤르츠파, AI 기반 네트워크, 디지털 트윈 등 차세대 기술 방향</p>
+</div>
+<div class="card card-green">
+<h3 id="_2">💬 시나리오 활동<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>자율주행·원격수술·스마트팩토리에 필요한 5G 기술 매칭 연습</p>
+</div>
+</div>
+<hr />
+<h2 id="_3">⏱️ 수업 흐름<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="steps">
+<div class="step">
+<h4 id="5g-5">도입: 왜 5G가 필요한가? (5분)<a class="headerlink" href="#5g-5" title="Permanent link">&para;</a></h4>
+<p>4G의 한계를 실생활 사례로 확인하고, 5G가 해결하려는 3대 목표를 파악합니다.</p>
+</div>
+<div class="step">
+<h4 id="1-5g-4-18">핵심 개념 1: 5G의 4대 핵심 기술 (18분)<a class="headerlink" href="#1-5g-4-18" title="Permanent link">&para;</a></h4>
+<p>Massive MIMO, 밀리미터파, 전이중화, 네트워크 슬라이싱의 원리를 비유와 함께 학습합니다.</p>
+</div>
+<div class="step">
+<h4 id="2-4g-vs-5g-6g-12">핵심 개념 2: 4G vs 5G 비교 및 6G 전망 (12분)<a class="headerlink" href="#2-4g-vs-5g-6g-12" title="Permanent link">&para;</a></h4>
+<p>4G와 5G를 수치로 비교하고, 6G의 예상 기술과 방향을 살펴봅니다.</p>
+</div>
+<div class="step">
+<h4 id="5g-8">활동: 5G 기술 매칭 실습 (8분)<a class="headerlink" href="#5g-8" title="Permanent link">&para;</a></h4>
+<p>실제 응용 시나리오에 적합한 5G 기술을 선택하고 이유를 설명합니다.</p>
+</div>
+<div class="step">
+<h4 id="7">정리 및 평가 (7분)<a class="headerlink" href="#7" title="Permanent link">&para;</a></h4>
+<p>핵심 내용을 요약하고, 형성 평가와 자기점검을 수행합니다.</p>
+</div>
+</div>
+<hr />
+<h2 id="5g">📚 도입: 왜 5G가 필요한가?<a class="headerlink" href="#5g" title="Permanent link">&para;</a></h2>
+<h3 id="_4">🤔 왜 이걸 배우나요?<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>공공기관 통신이론 시험에서 5G 관련 문항은 출제 빈도가 높아지고 있습니다. 특히 <strong>핵심 기술의 원리</strong>와 <strong>4G 대비 성능 차이</strong>를 묻는 문제가 자주 등장합니다. 또한 5G는 앞서 배운 OFDM, MIMO, 다중접속 방식의 <strong>집대성</strong>이라고 할 수 있어서, 이전 차시의 개념들이 실제로 어떻게 결합되는지를 확인하는 좋은 기회입니다.</p>
+<h3 id="4g-5g">📱 4G의 한계, 그리고 5G의 등장<a class="headerlink" href="#4g-5g" title="Permanent link">&para;</a></h3>
+<p>여러분이 대형 콘서트장이나 스포츠 경기장에서 스마트폰으로 사진을 전송하려 했을 때 극도로 느려진 경험이 있을 것입니다. 수만 명이 동시에 접속하면 4G 기지국의 처리 용량이 포화되기 때문입니다. 이것이 4G의 대표적 한계 중 하나입니다.</p>
+<p>5G는 이러한 한계를 극복하기 위해 <strong>세 가지 큰 목표</strong>를 설정했습니다.</p>
+<table>
+<thead>
+<tr>
+<th>목표</th>
+<th>의미</th>
+<th>구체적 수치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>eMBB</strong> (초고속 대용량)</td>
+<td>극도로 빠른 데이터 전송</td>
+<td>최대 20Gbps (목표), 체감 100Mbps 이상</td>
+</tr>
+<tr>
+<td><strong>URLLC</strong> (초저지연·고신뢰)</td>
+<td>거의 지연 없는 실시간 통신</td>
+<td>1ms 이하 지연, 99.999% 신뢰성</td>
+</tr>
+<tr>
+<td><strong>mMTC</strong> (대규모 기기 연결)</td>
+<td>수많은 IoT 기기의 동시 접속</td>
+<td>1km² 당 100만 대 연결</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>참고</strong>: eMBB = enhanced Mobile Broadband, URLLC = Ultra-Reliable Low-Latency Communications, mMTC = massive Machine-Type Communications</p>
+</blockquote>
+<p>이 세 가지 목표는 5G의 모든 핵심 기술이 <strong>왜</strong> 필요한지를 설명하는 출발점입니다.</p>
+<p><em>5G의 3대 목표와 각각의 대표 응용 분야를 나타낸 다이어그램입니다.</em></p>
+<div class="mermaid">flowchart TD
+    A["5G 3대 목표"] --&gt; B["eMBB&lt;br/&gt;초고속 대용량"]
+    A --&gt; C["URLLC&lt;br/&gt;초저지연·고신뢰"]
+    A --&gt; D["mMTC&lt;br/&gt;대규모 기기 연결"]
+    B --&gt; B1["8K 영상 스트리밍&lt;br/&gt;VR/AR 콘텐츠"]
+    C --&gt; C1["자율주행&lt;br/&gt;원격 수술"]
+    D --&gt; D1["스마트시티&lt;br/&gt;산업 IoT"]</div>
+<h3 id="_5">🔗 이전 학습과의 연결<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Part 3에서 학습한 기술들이 5G에서 어떻게 활용되는지 간단히 정리하겠습니다.</p>
+<table>
+<thead>
+<tr>
+<th>이전 학습 개념</th>
+<th>5G에서의 발전</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OFDM</strong> (직교 주파수 분할 다중화)</td>
+<td>→ 5G NR에서 <strong>가변 부반송파 간격</strong>(15~240kHz)으로 확장</td>
+</tr>
+<tr>
+<td><strong>MIMO</strong> (다중 입출력)</td>
+<td>→ <strong>Massive MIMO</strong>로 안테나 수를 수백 개까지 확대</td>
+</tr>
+<tr>
+<td><strong>CDMA/다중접속</strong></td>
+<td>→ OFDMA 기반으로 통합, 더 유연한 자원 할당</td>
+</tr>
+<tr>
+<td><strong>FDD/TDD</strong> (이중화 방식)</td>
+<td>→ 5G에서 <strong>동적 TDD</strong> 및 <strong>전이중화</strong> 기술 적용</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1-5g-4">📚 핵심 개념 1: 5G의 4대 핵심 기술<a class="headerlink" href="#1-5g-4" title="Permanent link">&para;</a></h2>
+<h3 id="1-massive-mimo">🏗️ 기술 1: Massive MIMO<a class="headerlink" href="#1-massive-mimo" title="Permanent link">&para;</a></h3>
+<h4 id="_6">비유로 이해하기<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>일반 MIMO가 <strong>4차선 고속도로</strong>라면, Massive MIMO는 <strong>수백 차선 고속도로</strong>입니다. 차선이 많을수록 동시에 더 많은 차량(데이터)이 이동할 수 있습니다. 그런데 단순히 차선만 많은 것이 아니라, 각 차선이 <strong>특정 목적지로 향하는 전용 도로</strong>처럼 작동합니다. 이것이 바로 <strong>빔포밍(Beamforming)</strong> 입니다.</p>
+<h4 id="_7">정확한 정의<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p><strong>Massive MIMO</strong>는 기지국에 <strong>64개 이상(통상 128~256개)의 안테나 소자</strong>를 배치하여, 다수의 사용자에게 동시에 <strong>독립적인 빔(beam)</strong> 을 형성하는 기술입니다. 각 빔은 특정 사용자 방향으로만 에너지를 집중시켜 간섭을 줄이고, 전체 시스템 용량을 크게 높입니다.</p>
+<h4 id="_8">핵심 원리: 빔포밍<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>기존 기지국은 안테나에서 신호를 사방으로 퍼뜨렸습니다. 이는 교실에서 선생님이 마이크 없이 모든 방향으로 소리를 지르는 것과 같습니다. 에너지가 분산되고, 옆 교실(인접 셀)에도 소리(간섭)가 전달됩니다.</p>
+<p>Massive MIMO의 빔포밍은 <strong>지향성 스피커</strong>와 같습니다. 특정 학생에게만 소리를 집중시키기 때문에 에너지 효율이 높고, 다른 학생에게는 방해가 되지 않습니다.</p>
+<p><em>Massive MIMO에서 빔포밍이 동작하는 방식을 보여주는 다이어그램입니다.</em></p>
+<div class="mermaid">flowchart LR
+    BS["기지국&lt;br/&gt;256개 안테나"] --&gt; |"빔 1"| U1["사용자 A"]
+    BS --&gt; |"빔 2"| U2["사용자 B"]
+    BS --&gt; |"빔 3"| U3["사용자 C"]
+    BS --&gt; |"빔 N"| UN["사용자 N"]</div>
+<h4 id="massive-mimo">Massive MIMO의 성능 이점<a class="headerlink" href="#massive-mimo" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>성능 지표</th>
+<th>기존 MIMO (4×4)</th>
+<th>Massive MIMO (128개 이상)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>동시 사용자 수</td>
+<td>소수 (4~8명)</td>
+<td>다수 (수십 명 이상)</td>
+</tr>
+<tr>
+<td>빔 폭</td>
+<td>넓음 (간섭 큼)</td>
+<td>매우 좁음 (간섭 최소)</td>
+</tr>
+<tr>
+<td>에너지 효율</td>
+<td>신호 분산</td>
+<td>목표 방향 집중</td>
+</tr>
+<tr>
+<td>스펙트럼 효율</td>
+<td>기준</td>
+<td>5~10배 향상</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_9">시험 포인트<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Massive MIMO에서 안테나 수가 증가하면 <strong>빔 폭이 좁아지고</strong> 간섭이 감소합니다</li>
+<li><strong>공간 다중화(Spatial Multiplexing)</strong> 를 통해 같은 주파수·같은 시간에 여러 사용자를 동시 서비스합니다</li>
+<li>채널 추정(Channel Estimation)의 복잡도가 증가하는 것이 기술적 과제입니다</li>
+</ul>
+<hr />
+<h3 id="2-mmwave">🌊 기술 2: 밀리미터파 (mmWave)<a class="headerlink" href="#2-mmwave" title="Permanent link">&para;</a></h3>
+<h4 id="_10">비유로 이해하기<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>주파수 대역을 <strong>토지</strong>에 비유하겠습니다. 기존 4G가 사용하던 주파수(700MHz~2.6GHz)는 <strong>도심의 비싼 땅</strong>과 같습니다. 좁지만 건물(장애물)을 잘 통과합니다. 밀리미터파(28GHz~39GHz)는 <strong>교외의 넓은 땅</strong>입니다. 면적은 훨씬 넓지만, 접근성(전파 도달 거리)이 상대적으로 떨어집니다.</p>
+<h4 id="_11">정확한 정의<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p><strong>밀리미터파(mmWave)</strong> 는 일반적으로 <strong>24GHz 이상</strong>의 초고주파 대역을 지칭하며, 5G에서는 주로 <strong>28GHz, 39GHz</strong> 대역을 사용합니다. 파장이 약 1~10mm 수준으로 짧기 때문에 '밀리미터파'라는 이름이 붙었습니다.</p>
+<h4 id="_12">왜 밀리미터파인가?<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p>핵심 이유는 <strong>대역폭의 확보</strong>입니다.</p>
+<p>아래 표를 통해 주파수 대역별 특성을 비교하겠습니다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>Sub-6GHz (저대역)</th>
+<th>mmWave (28GHz 이상)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대역폭</td>
+<td>수십~수백 MHz</td>
+<td><strong>수백 MHz ~ 수 GHz</strong></td>
+</tr>
+<tr>
+<td>커버리지</td>
+<td>넓음 (수 km)</td>
+<td>좁음 (수백 m)</td>
+</tr>
+<tr>
+<td>장애물 투과</td>
+<td>비교적 양호</td>
+<td>취약 (직진성 강함)</td>
+</tr>
+<tr>
+<td>최대 전송 속도</td>
+<td>수 Gbps 수준</td>
+<td><strong>10~20Gbps 가능</strong></td>
+</tr>
+<tr>
+<td>주요 용도</td>
+<td>광역 커버리지</td>
+<td>핫스팟, 고밀도 지역</td>
+</tr>
+</tbody>
+</table>
+<p>대역폭이 넓다는 것은 <strong>한 번에 더 많은 데이터를 실어 보낼 수 있다</strong>는 의미입니다. 고속도로에서 차선 수가 늘어나는 것과 같은 효과입니다.</p>
+<h4 id="_13">밀리미터파의 과제와 해결<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<p>밀리미터파의 가장 큰 약점은 <strong>전파 감쇠가 크다</strong>는 점입니다. 비, 나뭇잎, 심지어 사람의 손으로도 신호가 차단될 수 있습니다. 이를 해결하기 위해 다음과 같은 기술이 함께 사용됩니다.</p>
+<div class="mermaid">flowchart TD
+    P["밀리미터파의 약점&lt;br/&gt;전파 감쇠·직진성"] --&gt; S1["빔포밍&lt;br/&gt;에너지 집중으로 감쇠 보상"]
+    P --&gt; S2["스몰셀 밀집 배치&lt;br/&gt;기지국 간격을 200~300m로 단축"]
+    P --&gt; S3["빔 추적&lt;br/&gt;사용자 이동 시 빔 방향 자동 조정"]
+    S1 --&gt; R["안정적 mmWave 서비스"]
+    S2 --&gt; R
+    S3 --&gt; R</div>
+<p><em>밀리미터파의 약점과 이를 보완하는 3가지 기술을 정리한 다이어그램입니다.</em></p>
+<h4 id="_14">시험 포인트<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<ul>
+<li>밀리미터파의 주파수 범위: <strong>24GHz 이상</strong> (5G에서는 주로 28GHz, 39GHz)</li>
+<li>장점: <strong>넓은 대역폭</strong> → 초고속 전송</li>
+<li>단점: <strong>전파 감쇠 큼</strong>, 직진성 강함, 커버리지 좁음</li>
+<li>해결책: 빔포밍 + 스몰셀(Small Cell) 밀집 배치</li>
+</ul>
+<hr />
+<h3 id="3-full-duplex">🔄 기술 3: 전이중화 (Full Duplex)<a class="headerlink" href="#3-full-duplex" title="Permanent link">&para;</a></h3>
+<h4 id="_15">비유로 이해하기<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<p>일반 전화 통화를 떠올리겠습니다. <strong>FDD(주파수 분할 이중화)</strong> 는 2차선 도로에서 한 차선은 서울→부산 전용, 다른 차선은 부산→서울 전용으로 고정 배정한 것입니다. <strong>TDD(시분할 이중화)</strong> 는 1차선 도로에서 시간을 나누어 교대로 통행하는 방식입니다.</p>
+<p><strong>전이중화(Full Duplex)</strong> 는 <strong>같은 차선에서 양방향 차량이 동시에 달리는 것</strong>입니다. 물리적으로 불가능해 보이지만, 통신에서는 <strong>자기 간섭 제거(Self-Interference Cancellation, SIC)</strong> 기술을 통해 이를 구현합니다.</p>
+<h4 id="_16">정확한 정의<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<p><strong>전이중화</strong>는 <strong>같은 주파수 대역에서 동시에 송신과 수신을 수행</strong>하는 기술입니다. 이론적으로 주파수 효율을 <strong>2배</strong>까지 향상시킬 수 있습니다.</p>
+<h4 id="_17">핵심 과제: 자기 간섭 제거<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<p>전이중화의 최대 기술적 난관은 <strong>자기 간섭(Self-Interference)</strong> 입니다. 자신이 송신하는 신호가 자신의 수신기에 들어오면, 수신하려는 상대방의 미약한 신호를 덮어버립니다. 자기 간섭 신호는 수신하려는 신호보다 <strong>100dB 이상(10억 배)</strong> 강할 수 있습니다.</p>
+<p>이를 해결하기 위해 <strong>3단계 간섭 제거</strong>가 필요합니다.</p>
+<table>
+<thead>
+<tr>
+<th>제거 단계</th>
+<th>방법</th>
+<th>간섭 제거량</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>안테나 단계</strong></td>
+<td>송·수신 안테나 물리적 분리, 방향 조정</td>
+<td>약 30~40dB</td>
+</tr>
+<tr>
+<td><strong>아날로그 단계</strong></td>
+<td>RF 회로에서 간섭 신호의 역상 신호 생성·상쇄</td>
+<td>약 30~40dB</td>
+</tr>
+<tr>
+<td><strong>디지털 단계</strong></td>
+<td>DSP로 잔여 간섭 추정·제거</td>
+<td>약 30~40dB</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td>3단계 누적</td>
+<td><strong>약 100~120dB</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_18">이중화 방식 비교<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>방식</th>
+<th>주파수 사용</th>
+<th>동시성</th>
+<th>효율</th>
+<th>5G 적용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FDD</strong></td>
+<td>상·하향 별도 주파수</td>
+<td>동시 송수신 가능</td>
+<td>주파수 2배 필요</td>
+<td>Sub-6GHz 대역</td>
+</tr>
+<tr>
+<td><strong>TDD</strong></td>
+<td>같은 주파수, 시간 분할</td>
+<td>교대 송수신</td>
+<td>비대칭 트래픽에 유리</td>
+<td>mmWave 대역 주로 사용</td>
+</tr>
+<tr>
+<td><strong>전이중화</strong></td>
+<td>같은 주파수, 동시</td>
+<td>완전 동시 송수신</td>
+<td>이론상 2배 향상</td>
+<td>연구·부분 도입 단계</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>참고</strong>: 5G NR(New Radio) 표준에서는 TDD가 주된 이중화 방식으로 채택되었으며, 전이중화는 아직 연구 단계에서 부분적으로 도입되고 있습니다. 시험에서는 전이중화의 <strong>원리와 장점</strong>을 묻는 문제가 출제됩니다.</p>
+</blockquote>
+<hr />
+<h3 id="4-network-slicing">🍰 기술 4: 네트워크 슬라이싱 (Network Slicing)<a class="headerlink" href="#4-network-slicing" title="Permanent link">&para;</a></h3>
+<h4 id="_19">비유로 이해하기<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<p>하나의 <strong>물리적 고속도로</strong>를 상상하겠습니다. 이 고속도로를 가상으로 나누어, 한 구간은 <strong>응급차 전용</strong>(초저지연), 다른 구간은 <strong>화물트럭 전용</strong>(대용량), 또 다른 구간은 <strong>일반 승용차 전용</strong>(범용)으로 운영하는 것입니다. 물리적 도로는 하나이지만, 각 구간은 서로 독립적으로 관리됩니다.</p>
+<p>네트워크 슬라이싱은 이와 동일한 개념입니다. <strong>하나의 물리적 5G 네트워크</strong> 위에 <strong>서로 다른 요구사항을 가진 가상 네트워크(슬라이스)</strong> 를 여러 개 만드는 기술입니다.</p>
+<h4 id="_20">정확한 정의<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<p><strong>네트워크 슬라이싱</strong>은 <strong>SDN(Software Defined Networking)</strong> 과 <strong>NFV(Network Functions Virtualization)</strong> 를 기반으로, 하나의 물리적 네트워크 인프라를 <strong>논리적으로 분리된 다수의 가상 네트워크</strong>로 분할하는 기술입니다.</p>
+<ul>
+<li><strong>SDN</strong>: 네트워크 장비의 제어 기능을 소프트웨어로 분리하여 중앙에서 관리하는 방식</li>
+<li><strong>NFV</strong>: 전용 하드웨어 장비의 기능을 가상 소프트웨어로 구현하는 기술</li>
+</ul>
+<h4 id="_21">슬라이스의 유형과 특성<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<p><em>5G 3대 목표에 대응하는 네트워크 슬라이스 유형을 보여주는 다이어그램입니다.</em></p>
+<div class="mermaid">flowchart TD
+    PHY["물리적 5G 인프라&lt;br/&gt;(기지국, 코어망, 전송망)"] --&gt; S1["슬라이스 1: eMBB&lt;br/&gt;초고속 대용량"]
+    PHY --&gt; S2["슬라이스 2: URLLC&lt;br/&gt;초저지연·고신뢰"]
+    PHY --&gt; S3["슬라이스 3: mMTC&lt;br/&gt;대규모 IoT"]
+    S1 --&gt; A1["4K/8K 스트리밍&lt;br/&gt;VR 게임"]
+    S2 --&gt; A2["자율주행&lt;br/&gt;원격 수술"]
+    S3 --&gt; A3["스마트미터&lt;br/&gt;환경 센서"]</div>
+<table>
+<thead>
+<tr>
+<th>슬라이스 유형</th>
+<th>핵심 요구사항</th>
+<th>대역폭</th>
+<th>지연</th>
+<th>연결 밀도</th>
+<th>대표 서비스</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>eMBB</strong></td>
+<td>초고속</td>
+<td>매우 높음</td>
+<td>보통</td>
+<td>보통</td>
+<td>영상 스트리밍, AR/VR</td>
+</tr>
+<tr>
+<td><strong>URLLC</strong></td>
+<td>초저지연·고신뢰</td>
+<td>보통</td>
+<td><strong>1ms 이하</strong></td>
+<td>보통</td>
+<td>자율주행, 원격 수술</td>
+</tr>
+<tr>
+<td><strong>mMTC</strong></td>
+<td>대규모 연결</td>
+<td>낮음</td>
+<td>느려도 무관</td>
+<td><strong>매우 높음</strong></td>
+<td>IoT 센서, 스마트시티</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_22">네트워크 슬라이싱이 가능한 이유<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
+<p>핵심은 <strong>가상화</strong> 기술입니다. 과거에는 하나의 네트워크 기능(라우팅, 방화벽, 부하분산 등)마다 <strong>전용 하드웨어 장비</strong>가 필요했습니다. NFV를 통해 이러한 기능을 <strong>범용 서버 위의 소프트웨어</strong>로 구현하면, 필요에 따라 자원을 유연하게 할당하고 슬라이스를 생성·삭제할 수 있습니다.</p>
+<h4 id="_23">시험 포인트<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
+<ul>
+<li>네트워크 슬라이싱의 기반 기술: <strong>SDN + NFV</strong></li>
+<li>핵심 개념: 하나의 물리적 인프라에서 <strong>다수의 독립적 가상 네트워크</strong> 운영</li>
+<li>각 슬라이스는 서로 다른 <strong>QoS(Quality of Service)</strong> 요구사항에 최적화</li>
+</ul>
+<hr />
+<h3 id="5g-4_1">📋 5G 4대 핵심 기술 종합 정리<a class="headerlink" href="#5g-4_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>기술</th>
+<th>핵심 원리</th>
+<th>주요 효과</th>
+<th>관련 5G 목표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Massive MIMO</strong></td>
+<td>다수 안테나로 빔포밍</td>
+<td>용량 증대, 간섭 감소</td>
+<td>eMBB</td>
+</tr>
+<tr>
+<td><strong>밀리미터파</strong></td>
+<td>28GHz 이상 초고주파 사용</td>
+<td>넓은 대역폭, 초고속</td>
+<td>eMBB</td>
+</tr>
+<tr>
+<td><strong>전이중화</strong></td>
+<td>동일 주파수에서 동시 송수신</td>
+<td>주파수 효율 2배 향상</td>
+<td>eMBB, URLLC</td>
+</tr>
+<tr>
+<td><strong>네트워크 슬라이싱</strong></td>
+<td>SDN/NFV 기반 가상 네트워크</td>
+<td>서비스별 최적 네트워크</td>
+<td>eMBB, URLLC, mMTC</td>
+</tr>
+</tbody>
+</table>
+<div class="mermaid">mindmap
+  root((5G 핵심 기술))
+    Massive MIMO
+      빔포밍
+      공간 다중화
+      안테나 128~256개
+    밀리미터파
+      28GHz, 39GHz
+      넓은 대역폭
+      스몰셀 필요
+    전이중화
+      동시 송수신
+      자기간섭 제거
+      주파수 효율 2배
+    네트워크 슬라이싱
+      SDN
+      NFV
+      가상 네트워크 분리</div>
+<p><em>5G의 4대 핵심 기술과 세부 요소를 한눈에 보여주는 마인드맵입니다.</em></p>
+<hr />
+<h2 id="2-4g-vs-5g-6g">📚 핵심 개념 2: 4G vs 5G 비교 및 6G 전망<a class="headerlink" href="#2-4g-vs-5g-6g" title="Permanent link">&para;</a></h2>
+<h3 id="4glte-5g">📊 4G(LTE)와 5G의 정량적 비교<a class="headerlink" href="#4glte-5g" title="Permanent link">&para;</a></h3>
+<p>시험에서 4G와 5G의 차이를 묻는 문제는 <strong>수치 비교</strong>로 출제되는 경우가 많습니다. 아래 표를 정확히 기억하는 것이 중요합니다.</p>
+<table>
+<thead>
+<tr>
+<th>비교 항목</th>
+<th>4G (LTE-A)</th>
+<th>5G (NR)</th>
+<th>향상 비율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>최대 전송 속도</strong></td>
+<td>1Gbps</td>
+<td>20Gbps</td>
+<td>약 20배</td>
+</tr>
+<tr>
+<td><strong>체감 전송 속도</strong></td>
+<td>10Mbps</td>
+<td>100Mbps 이상</td>
+<td>약 10배</td>
+</tr>
+<tr>
+<td><strong>지연 시간</strong></td>
+<td>10~50ms</td>
+<td><strong>1ms 이하</strong></td>
+<td>약 10~50배</td>
+</tr>
+<tr>
+<td><strong>연결 기기 밀도</strong></td>
+<td>10만 대/km²</td>
+<td><strong>100만 대/km²</strong></td>
+<td>10배</td>
+</tr>
+<tr>
+<td><strong>이동 속도 지원</strong></td>
+<td>350km/h</td>
+<td>500km/h</td>
+<td>약 1.4배</td>
+</tr>
+<tr>
+<td><strong>에너지 효율</strong></td>
+<td>기준</td>
+<td>100배 향상</td>
+<td>100배</td>
+</tr>
+<tr>
+<td><strong>주파수 대역</strong></td>
+<td>~2.6GHz 주로</td>
+<td>Sub-6GHz + mmWave</td>
+<td>대역 확대</td>
+</tr>
+<tr>
+<td><strong>다중접속 방식</strong></td>
+<td>OFDMA</td>
+<td>OFDMA 기반 확장</td>
+<td>가변 부반송파</td>
+</tr>
+<tr>
+<td><strong>이중화 방식</strong></td>
+<td>FDD/TDD</td>
+<td>FDD/TDD + 동적 TDD</td>
+<td>유연성 증가</td>
+</tr>
+</tbody>
+</table>
+<h4 id="5g-nr">5G NR의 주요 기술 규격<a class="headerlink" href="#5g-nr" title="Permanent link">&para;</a></h4>
+<p>5G의 무선 접속 기술은 <strong>NR(New Radio)</strong> 이라 불리며, 3GPP(이동통신 표준화 기관)에서 <strong>Release 15</strong>(2018년)부터 표준화되었습니다.</p>
+<table>
+<thead>
+<tr>
+<th>NR 규격 항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>부반송파 간격</strong></td>
+<td>15, 30, 60, 120, 240kHz (가변)</td>
+</tr>
+<tr>
+<td><strong>최대 대역폭</strong></td>
+<td>Sub-6GHz: 100MHz / mmWave: 400MHz</td>
+</tr>
+<tr>
+<td><strong>변조 방식</strong></td>
+<td>최대 256-QAM</td>
+</tr>
+<tr>
+<td><strong>MIMO 최대 레이어</strong></td>
+<td>하향: 8 / 상향: 4</td>
+</tr>
+<tr>
+<td><strong>채널 코딩</strong></td>
+<td>데이터: LDPC / 제어: Polar Code</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>부반송파 간격이 가변인 이유</strong>: 4G에서는 15kHz로 고정이었지만, 5G에서는 서비스 유형에 따라 달라집니다. URLLC처럼 저지연이 필요한 서비스는 넓은 부반송파 간격(120kHz 등)을 사용하여 <strong>심볼 길이를 짧게</strong> 하고, 이를 통해 전송 지연을 줄입니다.</p>
+</blockquote>
+<hr />
+<h3 id="6g_1">🔮 6G: 다음 세대를 향한 전망<a class="headerlink" href="#6g_1" title="Permanent link">&para;</a></h3>
+<p>6G는 2030년대 상용화를 목표로 현재 연구 단계에 있습니다. 아직 표준이 확정되지 않았지만, 주요 연구 방향은 다음과 같습니다.</p>
+<h4 id="6g_2">6G의 예상 목표 수치<a class="headerlink" href="#6g_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>5G</th>
+<th>6G (예상)</th>
+<th>향상 비율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>최대 전송 속도</strong></td>
+<td>20Gbps</td>
+<td><strong>1Tbps</strong></td>
+<td>약 50배</td>
+</tr>
+<tr>
+<td><strong>지연 시간</strong></td>
+<td>1ms</td>
+<td><strong>0.1ms (100μs)</strong></td>
+<td>10배</td>
+</tr>
+<tr>
+<td><strong>연결 밀도</strong></td>
+<td>100만 대/km²</td>
+<td><strong>1,000만 대/km²</strong></td>
+<td>10배</td>
+</tr>
+<tr>
+<td><strong>주파수 대역</strong></td>
+<td>~39GHz</td>
+<td><strong>테라헤르츠(THz) 대역</strong></td>
+<td>주파수 확장</td>
+</tr>
+<tr>
+<td><strong>에너지 효율</strong></td>
+<td>기준(5G)</td>
+<td>10~100배 향상</td>
+<td>추가 개선</td>
+</tr>
+</tbody>
+</table>
+<h4 id="6g_3">6G의 핵심 후보 기술<a class="headerlink" href="#6g_3" title="Permanent link">&para;</a></h4>
+<div class="mermaid">flowchart LR
+    SIX["6G 핵심&lt;br/&gt;후보 기술"] --&gt; T1["테라헤르츠파&lt;br/&gt;0.1~10THz"]
+    SIX --&gt; T2["AI 기반&lt;br/&gt;네트워크 최적화"]
+    SIX --&gt; T3["디지털 트윈&lt;br/&gt;네트워크"]
+    SIX --&gt; T4["비지상&lt;br/&gt;네트워크"]
+    SIX --&gt; T5["지능형&lt;br/&gt;반사 표면"]</div>
+<p><em>6G에서 연구되고 있는 5가지 핵심 후보 기술을 보여주는 다이어그램입니다.</em></p>
+<p><strong>① 테라헤르츠파 (THz Wave)</strong></p>
+<p>밀리미터파보다 더 높은 주파수(0.1~10THz)를 사용하는 기술입니다. 대역폭이 극도로 넓어 <strong>Tbps급 전송 속도</strong>가 가능하지만, 전파 감쇠가 밀리미터파보다 훨씬 심합니다. 현재 소자·회로 기술의 발전이 핵심 과제입니다.</p>
+<p><strong>② AI 기반 네트워크 최적화</strong></p>
+<p>6G에서는 네트워크 운영의 거의 모든 부분에 <strong>인공지능(AI)</strong> 을 적용할 것으로 예상됩니다. 자원 할당, 빔 관리, 간섭 제어, 핸드오버 판단 등을 AI가 실시간으로 최적화합니다. 현재 5G에서도 부분적으로 도입되고 있지만, 6G에서는 <strong>네이티브 AI(Native AI)</strong> 로서 네트워크 설계 단계부터 AI를 내장할 계획입니다.</p>
+<p><strong>③ 디지털 트윈 네트워크</strong></p>
+<p>물리적 네트워크의 <strong>가상 복제본(디지털 트윈)</strong> 을 만들어, 가상 환경에서 먼저 시뮬레이션하고 최적의 설정을 찾은 후 실제 네트워크에 적용하는 방식입니다.</p>
+<p><strong>④ 비지상 네트워크 (NTN: Non-Terrestrial Network)</strong></p>
+<p>저궤도 위성(LEO Satellite), 고고도 플랫폼(HAPS), 드론 등을 활용하여 <strong>지상 기지국이 없는 지역</strong>까지 통신을 확장하는 기술입니다. 5G에서도 연구가 진행 중이며, 6G에서는 지상-공중-우주 네트워크의 <strong>완전한 통합</strong>이 목표입니다.</p>
+<p><strong>⑤ 지능형 반사 표면 (RIS: Reconfigurable Intelligent Surface)</strong></p>
+<p>건물 벽면이나 천장에 부착하는 <strong>전파 반사판</strong>으로, 반사 방향을 전자적으로 제어할 수 있습니다. 밀리미터파나 테라헤르츠파의 직진성 문제를 해결하여, <strong>장애물 뒤편</strong>에도 신호를 전달할 수 있습니다.</p>
+<h4 id="_24">이동통신 세대별 발전 타임라인<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
+<div class="mermaid">timeline
+    title 이동통신 세대별 발전
+    1980년대 : 1G - 아날로그 음성
+    1990년대 : 2G - 디지털 음성, SMS
+    2000년대 : 3G - 모바일 인터넷
+    2010년대 : 4G - 모바일 브로드밴드
+    2020년대 : 5G - 초고속·초저지연·초연결
+    2030년대 : 6G - THz, AI 네이티브, 1Tbps</div>
+<p><em>1G부터 6G까지 이동통신 세대별 핵심 특성을 보여주는 타임라인입니다.</em></p>
+<hr />
+<h3 id="_25">⚠️ 자주 하는 실수 &amp; 주의할 점<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>실수 유형</th>
+<th>잘못된 이해</th>
+<th>올바른 이해</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Massive MIMO = 안테나가 많은 것</td>
+<td>단순히 안테나 수만 늘리면 된다</td>
+<td>안테나 수 증가 + <strong>빔포밍 + 공간 다중화</strong>가 함께 작동해야 합니다</td>
+</tr>
+<tr>
+<td>밀리미터파 = 5G의 전부</td>
+<td>5G는 밀리미터파만 사용한다</td>
+<td>5G는 <strong>Sub-6GHz + mmWave</strong>를 함께 사용합니다. 광역 커버리지는 Sub-6GHz가 담당합니다</td>
+</tr>
+<tr>
+<td>전이중화 = 5G 필수 기술</td>
+<td>5G에서 전이중화가 완전 상용화되었다</td>
+<td>5G NR에서 전이중화는 아직 <strong>연구·부분 도입 단계</strong>입니다</td>
+</tr>
+<tr>
+<td>네트워크 슬라이싱 = 물리적 분리</td>
+<td>실제로 네트워크 장비를 분리한다</td>
+<td><strong>소프트웨어(SDN/NFV)</strong> 기반의 논리적 분리입니다</td>
+</tr>
+<tr>
+<td>6G = 확정된 기술</td>
+<td>6G 기술이 이미 결정되었다</td>
+<td>6G는 2030년대 목표의 <strong>연구 단계</strong>이며, 기술 후보가 논의 중입니다</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5g_1">🔬 활동: 5G 기술 매칭 실습<a class="headerlink" href="#5g_1" title="Permanent link">&para;</a></h2>
+<p>아래 5가지 시나리오를 읽고, 가장 핵심적으로 필요한 5G 기술(또는 목표)을 선택한 후 그 이유를 설명하는 연습입니다.</p>
+<h3 id="_26">시나리오 문제<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>시나리오</th>
+<th>상황 설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>도심 경기장에서 5만 명이 동시에 4K 영상을 스트리밍합니다</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>고속도로에서 자율주행 차량이 100ms 이내에 전방 사고 정보를 수신해야 합니다</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>스마트 공장에서 10만 개의 센서가 주기적으로 소량의 데이터를 전송합니다</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>도심 빌딩 숲에서 mmWave 신호가 건물에 가로막힙니다</td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
+<td>하나의 통신사 네트워크에서 자율주행(저지연)과 영상 스트리밍(대용량)을 동시에 서비스합니다</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_27">선택지<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p>① Massive MIMO &nbsp;&nbsp; ② 밀리미터파 &nbsp;&nbsp; ③ 전이중화 &nbsp;&nbsp; ④ 네트워크 슬라이싱 &nbsp;&nbsp; ⑤ 스몰셀 밀집 배치 &nbsp;&nbsp; ⑥ URLLC 슬라이스 &nbsp;&nbsp; ⑦ mMTC 슬라이스</p>
+<details><summary>매칭 결과 확인</summary>
+
+| 시나리오 | 핵심 기술/목표 | 이유 |
+|----------|--------------|------|
+| **A** | ① Massive MIMO + ② 밀리미터파 | 다수 사용자에게 동시에 대용량 데이터를 전송해야 하므로, 빔포밍으로 용량을 확보하고 밀리미터파의 넓은 대역폭이 필요합니다 |
+| **B** | ⑥ URLLC 슬라이스 (+ ④ 네트워크 슬라이싱) | 1ms 이하의 초저지연과 99.999%의 신뢰성이 핵심입니다. 네트워크 슬라이싱으로 URLLC 전용 자원을 확보합니다 |
+| **C** | ⑦ mMTC 슬라이스 | 대량 기기의 동시 접속이 핵심이며, 각 기기당 데이터량은 적습니다. mMTC에 최적화된 슬라이스가 필요합니다 |
+| **D** | ⑤ 스몰셀 밀집 배치 (+ Massive MIMO 빔포밍) | mmWave의 직진성 한계를 극복하기 위해 기지국 간격을 좁히고, 빔포밍으로 에너지를 집중합니다 |
+| **E** | ④ 네트워크 슬라이싱 | 하나의 물리 네트워크에서 서로 다른 QoS를 동시에 제공해야 하므로, 논리적 분리가 필수입니다 |
+
+</details>
+
+<h3 id="_28">📝 활동 정리<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<p>이 활동을 통해 확인할 수 있는 핵심은 다음과 같습니다.</p>
+<ol>
+<li>5G의 4대 기술은 <strong>독립적으로 작동하는 것이 아니라 상호 보완적</strong>으로 결합됩니다</li>
+<li>응용 시나리오의 <strong>요구사항(속도, 지연, 연결 수)</strong> 에 따라 적합한 기술 조합이 달라집니다</li>
+<li>네트워크 슬라이싱은 서로 다른 요구사항을 <strong>하나의 인프라</strong>에서 동시에 만족시키는 핵심 메커니즘입니다</li>
+</ol>
+<hr />
+<h2 id="_29">📝 형성 평가<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+<div class="assessment">
+<h3 id="_30">📝 형성 평가<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
+<p><strong>객관식 1.</strong> Massive MIMO에서 안테나 수를 크게 늘리는 주된 목적은 무엇입니까?</p>
+<p>① 전파의 도달 거리를 늘리기 위해
+② 좁은 빔을 형성하여 간섭을 줄이고 용량을 증대시키기 위해
+③ 밀리미터파 대역을 사용하기 위해
+④ 네트워크 슬라이싱을 지원하기 위해</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ②**
+
+Massive MIMO의 핵심은 다수의 안테나로 **빔포밍(Beamforming)** 을 수행하는 것입니다. 안테나 수가 증가하면 빔 폭이 좁아져 특정 사용자 방향으로 에너지를 집중할 수 있으며, 이로 인해 셀 간 간섭이 줄어들고 전체 시스템 용량이 증대됩니다. 전파 도달 거리(①)는 빔포밍으로 일부 향상되지만 주된 목적은 아닙니다.
+
+</details>
+<hr />
+<p><strong>객관식 2.</strong> 5G에서 밀리미터파(mmWave)를 사용하는 가장 큰 이유는 무엇입니까?</p>
+<p>① 장애물을 잘 투과하기 때문에
+② 전파 감쇠가 적어 넓은 지역을 커버할 수 있기 때문에
+③ 높은 주파수 대역에서 넓은 대역폭을 확보할 수 있기 때문에
+④ 기존 4G 안테나를 그대로 사용할 수 있기 때문에</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③**
+
+밀리미터파(28GHz 이상)는 주파수가 높아 **수백 MHz~수 GHz의 넓은 대역폭**을 확보할 수 있습니다. 넓은 대역폭은 곧 높은 전송 속도를 의미합니다. 반면 밀리미터파는 장애물 투과가 취약하고(①은 오답), 전파 감쇠가 커서 커버리지가 좁으며(②는 오답), 기존 4G 안테나와는 호환되지 않습니다(④는 오답).
+
+</details>
+<hr />
+<p><strong>객관식 3.</strong> 네트워크 슬라이싱의 기반이 되는 두 가지 핵심 기술의 조합으로 올바른 것은 무엇입니까?</p>
+<p>① OFDM + CDMA
+② FDD + TDD
+③ SDN + NFV
+④ MIMO + Beamforming</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③**
+
+네트워크 슬라이싱은 **SDN(소프트웨어 정의 네트워킹)** 으로 네트워크 제어를 중앙에서 관리하고, **NFV(네트워크 기능 가상화)** 로 네트워크 기능을 범용 서버 위의 소프트웨어로 구현하여, 하나의 물리 인프라 위에 논리적으로 분리된 가상 네트워크를 만듭니다. OFDM, CDMA, FDD/TDD, MIMO는 무선 접속 기술에 해당하며 네트워크 슬라이싱의 직접적 기반 기술은 아닙니다.
+
+</details>
+<hr />
+<p><strong>서술형 1.</strong> 5G의 전이중화(Full Duplex)가 기존 FDD, TDD 방식과 비교하여 가지는 이론적 장점을 설명하고, 이를 실현하기 위해 해결해야 하는 핵심 기술적 과제를 서술하십시오.</p>
+<details>
+<summary>모범 답안 확인</summary>
+
+**모범 답안**:
+
+전이중화는 **같은 주파수 대역에서 동시에 송신과 수신을 수행**하는 방식입니다. FDD는 상·하향에 별도 주파수가 필요하고, TDD는 같은 주파수를 시간으로 분할하여 교대 사용합니다. 전이중화는 주파수를 분리하거나 시간을 나누지 않으므로, 이론적으로 **주파수 효율을 최대 2배**까지 향상시킬 수 있습니다.
+
+그러나 이를 실현하기 위해서는 **자기 간섭(Self-Interference) 제거**가 필수입니다. 자기 간섭은 자신의 송신 신호가 자신의 수신기에 직접 유입되는 현상으로, 수신하려는 상대방 신호보다 **100dB 이상** 강합니다. 이를 해결하기 위해 **안테나 단계(물리적 분리), 아날로그 단계(RF 역상 상쇄), 디지털 단계(DSP 간섭 추정·제거)** 의 3단계 자기 간섭 제거 기술이 필요합니다.
+
+</details>
+<hr />
+<h3 id="_31">✅ 자기점검 체크리스트<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 5G의 4대 핵심 기술(Massive MIMO, 밀리미터파, 전이중화, 네트워크 슬라이싱)의 원리를 각각 설명할 수 있습니까?</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 4G와 5G의 주요 성능 지표(최대 속도, 지연시간, 연결 밀도)를 수치로 비교할 수 있습니까?</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 6G의 예상 핵심 기술(테라헤르츠파, AI 기반 최적화, RIS 등)을 최소 3가지 이상 열거할 수 있습니까?</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 5G의 3대 목표(eMBB, URLLC, mMTC)와 네트워크 슬라이싱의 관계를 설명할 수 있습니까?</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Massive MIMO에서 빔포밍의 역할을 설명할 수 있습니까?</li>
+</ul>
+</div>
+<hr />
+<h2 id="_32">💭 성찰 &amp; 다음 차시 미리보기<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
+<h3 id="_33">📌 이번 차시 핵심 요약<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<p>이번 차시에서는 5G의 기술적 토대와 6G의 미래 방향을 학습했습니다. 핵심 내용을 세 줄로 정리하면 다음과 같습니다.</p>
+<ol>
+<li><strong>5G의 4대 핵심 기술</strong>: Massive MIMO(빔포밍으로 용량 증대),</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../chapter16/" class="md-footer__link md-footer__link--prev" aria-label="이전: 16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapter18/" class="md-footer__link md-footer__link--next" aria-label="다음: 18차시: 전체 통합 실전 모의고사 - 시험 완성">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              <div class="md-ellipsis">
+                18차시: 전체 통합 실전 모의고사 - 시험 완성
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 노용철TV | <a href='https://eduflow-greatsong.fly.dev/'>EduFlow</a>로 제작
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/title-link.js"></script>
+      
+        <script src="../javascripts/mermaid-config.js"></script>
+      
+        <script src="../javascripts/scroll-progress.js"></script>
+      
+        <script src="../javascripts/eduflow-nav.js"></script>
+      
+        <script src="../javascripts/lightbox.js"></script>
+      
+    
+  </body>
+</html>

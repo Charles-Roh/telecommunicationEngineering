@@ -1,0 +1,3540 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="비전공자도 이해할 수 있도록 일상 비유와 실전 기출 문제로 구성한 통신공학 완전정복 교재. 한전KDN 등 공공기관 채용 필기시험 대비용 자기주도 학습 자료입니다.">
+      
+      
+        <meta name="author" content="노용철TV (EduFlow)">
+      
+      
+      
+        <link rel="prev" href="../chapter03/">
+      
+      
+        <link rel="next" href="../chapter05/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>4차시: 아날로그에서 디지털로 - 표본화와 PCM - 통신공학 단박에 끝내기</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-pcm" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-header__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            통신공학 단박에 끝내기
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4차시: 아날로그에서 디지털로 - 표본화와 PCM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../chapter01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter05/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter09/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter15/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-nav__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    통신공학 단박에 끝내기
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1차시: 통신공학 전체 그림 그리기 - 신호와 시스템의 기초
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2차시: 신호를 수식으로 표현하기 - 주파수 영역의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3차시: 아날로그 통신의 두 주인공 - AM과 FM 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4차시: 아날로그에서 디지털로 - 표본화와 PCM
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4차시: 아날로그에서 디지털로 - 표본화와 PCM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="학습 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 표본화와 나이퀴스트 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcm-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 PCM 3단계 과정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔢 비트율 계산 실습
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 기출 함정 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 왜 디지털 변환이 필요한가? (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: 표본화와 나이퀴스트 정리 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pcm-3-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: PCM 3단계 — 양자화와 부호화 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: 비트율 계산 실습 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 형성 평가 및 성찰 (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 왜 이걸 배우나요?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 1: 표본화(Sampling)와 나이퀴스트 정리
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 1: 표본화(Sampling)와 나이퀴스트 정리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 일상 비유: 영화의 프레임
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 정확한 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nyquist-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 나이퀴스트 정리 (Nyquist Theorem)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 실생활 적용: 전화 통신
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 에일리어싱(Aliasing) — 나이퀴스트 조건을 위반하면?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pcm-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 2: PCM(펄스 부호 변조) 3단계 과정
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 2: PCM(펄스 부호 변조) 3단계 과정">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ 일상 비유: 온도를 기록하는 세 단계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 PCM의 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-sampling_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 1단계: 표본화 (Sampling) — 이미 학습 완료
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 2단계: 양자화 (Quantization) — 가장 중요한 단계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 2단계: 양자화 (Quantization) — 가장 중요한 단계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        개념 설명
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        양자화 레벨 수와 비트 수의 관계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantization-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        양자화 오류 (Quantization Error)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        양자화 잡음의 신호 대 잡음비(SNR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 3단계: 부호화 (Encoding)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bit-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 공식: 비트율(Bit Rate) 계산
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 공식: 비트율(Bit Rate) 계산">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 공식
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 전화(PCM) 비트율 계산 — 반드시 암기!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎵 CD 음질 비트율 계산
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        전화와 CD 비교 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔢 따라하기 실습: 비트율 계산 5단계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔢 따라하기 실습: 비트율 계산 5단계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: 최대 주파수 확인
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: 나이퀴스트 조건으로 최소 표본화 주파수 계산
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: 양자화 비트 수 확인
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: 비트율 공식 적용
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: 단위 확인 및 최종 답
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 기출 함정 &amp; 자주 하는 실수
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ 기출 함정 &amp; 자주 하는 실수">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 1: 나이퀴스트 조건의 "이상(≥)" vs "초과(&gt;)"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 2: "대역폭"과 "최대 주파수"의 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 3: 양자화 레벨 수와 비트 수 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pcm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 4: PCM 과정의 순서
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-snr-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 5: SNR 공식에서 n의 의미
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcm_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 PCM 관련 핵심 공식 총정리
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#companding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 심화: 비균일 양자화와 압신(Companding)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 형성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 다음 차시 미리보기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이번 차시 핵심 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔜 다음 차시 미리보기: 5차시
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5차시: 디지털 신호를 전송하는 방법 - ASK, FSK, PSK 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6차시: 더 효율적으로 전송하기 - QAM과 고차 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7차시: 신뢰성 확보하기 - 오류 검출과 정정 부호
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8차시: Part 2 종합 실전 문제풀이 - 디지털 변복조 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9차시: 통신 채널의 한계 - 샤논 법칙과 채널 용량
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10차시: 한 채널을 여럿이 쓰는 방법 - 다중화 기술의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11차시: 여럿이 동시에 통신하기 - TDMA와 FDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12차시: 간섭 없이 많은 사용자를 수용하기 - CDMA의 원리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18차시: 전체 통합 실전 모의고사 - 시험 완성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19차시: 최종 정리와 시험 전략 - 합격을 위한 마무리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="학습 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 표본화와 나이퀴스트 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcm-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 PCM 3단계 과정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔢 비트율 계산 실습
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 기출 함정 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 왜 디지털 변환이 필요한가? (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: 표본화와 나이퀴스트 정리 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pcm-3-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: PCM 3단계 — 양자화와 부호화 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: 비트율 계산 실습 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 형성 평가 및 성찰 (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 왜 이걸 배우나요?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 1: 표본화(Sampling)와 나이퀴스트 정리
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 1: 표본화(Sampling)와 나이퀴스트 정리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 일상 비유: 영화의 프레임
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 정확한 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nyquist-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 나이퀴스트 정리 (Nyquist Theorem)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 실생활 적용: 전화 통신
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aliasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 에일리어싱(Aliasing) — 나이퀴스트 조건을 위반하면?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pcm-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 2: PCM(펄스 부호 변조) 3단계 과정
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 2: PCM(펄스 부호 변조) 3단계 과정">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ 일상 비유: 온도를 기록하는 세 단계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 PCM의 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-sampling_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 1단계: 표본화 (Sampling) — 이미 학습 완료
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 2단계: 양자화 (Quantization) — 가장 중요한 단계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 2단계: 양자화 (Quantization) — 가장 중요한 단계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        개념 설명
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        양자화 레벨 수와 비트 수의 관계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantization-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        양자화 오류 (Quantization Error)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        양자화 잡음의 신호 대 잡음비(SNR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 3단계: 부호화 (Encoding)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bit-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 공식: 비트율(Bit Rate) 계산
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 공식: 비트율(Bit Rate) 계산">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 공식
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 전화(PCM) 비트율 계산 — 반드시 암기!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎵 CD 음질 비트율 계산
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        전화와 CD 비교 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔢 따라하기 실습: 비트율 계산 5단계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔢 따라하기 실습: 비트율 계산 5단계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: 최대 주파수 확인
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: 나이퀴스트 조건으로 최소 표본화 주파수 계산
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: 양자화 비트 수 확인
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: 비트율 공식 적용
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: 단위 확인 및 최종 답
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 기출 함정 &amp; 자주 하는 실수
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ 기출 함정 &amp; 자주 하는 실수">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 1: 나이퀴스트 조건의 "이상(≥)" vs "초과(&gt;)"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 2: "대역폭"과 "최대 주파수"의 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 3: 양자화 레벨 수와 비트 수 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pcm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 4: PCM 과정의 순서
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-snr-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 5: SNR 공식에서 n의 의미
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcm_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 PCM 관련 핵심 공식 총정리
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#companding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 심화: 비균일 양자화와 압신(Companding)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 형성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 다음 차시 미리보기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이번 차시 핵심 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔜 다음 차시 미리보기: 5차시
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="네비게이션" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../chapter01/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="4-pcm">4차시: 아날로그에서 디지털로 - 표본화와 PCM<a class="headerlink" href="#4-pcm" title="Permanent link">&para;</a></h1>
+<div class="lesson-banner">
+<p><strong>⏰ 50분</strong> · 표본화(Sampling) · 나이퀴스트 정리 · PCM · 비트율 계산 · <strong>난이도</strong> ●●●○○</p>
+<p><strong>학습목표</strong>: 아날로그 신호를 디지털로 변환하는 PCM 과정(표본화→양자화→부호화)을 설명하고, 나이퀴스트 조건과 비트율을 계산할 수 있습니다.</p>
+<blockquote>
+<p><strong>오늘의 질문</strong>: "전화 통화 시 우리 목소리는 어떻게 0과 1의 숫자로 바뀌어 상대방에게 전달되는 것일까요?"</p>
+</blockquote>
+</div>
+<hr />
+<h2 id="_1">학습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 아날로그 신호를 디지털로 변환하는 <strong>표본화(Sampling)</strong>의 필요성과 <strong>나이퀴스트 정리</strong>를 이해할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>PCM(펄스 부호 변조)</strong> 과정과 <strong>양자화 오류</strong>를 설명하고 관련 계산 문제를 풀 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>샘플링 속도</strong>, <strong>비트율</strong> 등 핵심 지표를 계산하여 디지털 신호 설계에 적용할 수 있다</li>
+</ul>
+<hr />
+<div class="cards-grid">
+<div class="card card-orange">
+<h3 id="_2">🧠 표본화와 나이퀴스트 정리<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>아날로그 신호를 일정 간격으로 "찍어서" 디지털 값으로 바꾸는 핵심 원리를 학습합니다</p>
+</div>
+<div class="card card-orange">
+<h3 id="pcm-3">🧠 PCM 3단계 과정<a class="headerlink" href="#pcm-3" title="Permanent link">&para;</a></h3>
+<p>표본화 → 양자화 → 부호화의 전체 흐름과 각 단계별 핵심 개념을 정리합니다</p>
+</div>
+<div class="card card-blue">
+<h3 id="_3">🔢 비트율 계산 실습<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>샘플링 속도 × 양자화 비트 수로 전송 비트율을 직접 계산하는 연습을 합니다</p>
+</div>
+<div class="card card-red">
+<h3 id="_4">⚠️ 기출 함정 정리<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>나이퀴스트 조건 위반, 양자화 오류 등 시험에 자주 출제되는 함정을 점검합니다</p>
+</div>
+</div>
+<hr />
+<h2 id="_5">⏱️ 수업 흐름<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="steps">
+<div class="step">
+<h4 id="1-5">1단계: 왜 디지털 변환이 필요한가? (5분)<a class="headerlink" href="#1-5" title="Permanent link">&para;</a></h4>
+<p>아날로그와 디지털의 차이를 복습하고, 디지털 변환이 필요한 이유를 실생활 예시로 확인합니다.</p>
+</div>
+<div class="step">
+<h4 id="2-15">2단계: 표본화와 나이퀴스트 정리 (15분)<a class="headerlink" href="#2-15" title="Permanent link">&para;</a></h4>
+<p>영화 프레임 비유를 통해 표본화 개념을 이해하고, 나이퀴스트 정리의 수학적 조건을 학습합니다.</p>
+</div>
+<div class="step">
+<h4 id="3-pcm-3-15">3단계: PCM 3단계 — 양자화와 부호화 (15분)<a class="headerlink" href="#3-pcm-3-15" title="Permanent link">&para;</a></h4>
+<p>표본화 이후 양자화(레벨 할당)와 부호화(이진수 변환) 과정을 단계별로 학습합니다.</p>
+</div>
+<div class="step">
+<h4 id="4-10">4단계: 비트율 계산 실습 (10분)<a class="headerlink" href="#4-10" title="Permanent link">&para;</a></h4>
+<p>핵심 공식을 적용하여 실제 시험에 출제되는 유형의 계산 문제를 풀어봅니다.</p>
+</div>
+<div class="step">
+<h4 id="5-5">5단계: 형성 평가 및 성찰 (5분)<a class="headerlink" href="#5-5" title="Permanent link">&para;</a></h4>
+<p>핵심 개념 확인 문제를 풀고, 학습 내용을 정리합니다.</p>
+</div>
+</div>
+<hr />
+<h2 id="_6">📚 왜 이걸 배우나요?<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>3차시에서 우리는 아날로그 변조(AM, FM, PM)를 통해 아날로그 신호를 전송하는 방법을 학습했습니다. 아날로그 변조는 효과적이지만, 한 가지 근본적인 한계가 있습니다. <strong>전송 과정에서 잡음이 한 번 섞이면 원래 신호와 잡음을 구분할 수 없다</strong>는 것입니다.</p>
+<p>여러분이 카세트테이프를 복사한 경험이 있다면(혹은 영상으로 본 적이 있다면), 복사할수록 소리가 뭉개지고 잡음이 커지는 것을 알고 있을 것입니다. 이것이 아날로그 신호의 숙명입니다.</p>
+<p>반면, 음악 파일을 USB에 복사하면 몇 번을 복사해도 음질이 변하지 않습니다. 이것이 <strong>디지털 신호의 핵심 장점</strong>입니다. 0과 1로 된 데이터는 잡음이 약간 섞여도 0인지 1인지 판별이 가능하기 때문입니다.</p>
+<p>이번 차시에서 배울 <strong>PCM(Pulse Code Modulation, 펄스 부호 변조)</strong>은 아날로그 신호를 디지털 신호로 변환하는 가장 기본적이고 중요한 기술입니다. 전화 통신, CD 음악, 디지털 방송 등 현대 통신의 거의 모든 영역에서 사용되며, <strong>공공기관 통신이론 시험에서 매년 출제되는 핵심 주제</strong>이기도 합니다.</p>
+<hr />
+<h2 id="1-sampling">📚 핵심 개념 1: 표본화(Sampling)와 나이퀴스트 정리<a class="headerlink" href="#1-sampling" title="Permanent link">&para;</a></h2>
+<h3 id="_7">🎬 일상 비유: 영화의 프레임<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>영화를 생각하면 표본화의 원리를 직관적으로 이해할 수 있습니다.</p>
+<p>현실 세계의 움직임은 <strong>연속적</strong>입니다. 사람이 걷고, 새가 날고, 공이 굴러갑니다. 이 연속적인 움직임을 영화로 기록하려면, 카메라가 <strong>일정 간격으로 사진을 찍어야</strong> 합니다. 이것이 바로 영화의 <strong>프레임</strong>입니다.</p>
+<ul>
+<li>영화는 보통 <strong>초당 24프레임</strong>을 촬영합니다</li>
+<li>초당 24장의 정지 사진을 빠르게 넘기면, 우리 눈에는 자연스러운 움직임으로 보입니다</li>
+<li>만약 초당 5프레임만 촬영한다면? 움직임이 뚝뚝 끊기는 것처럼 보일 것입니다</li>
+</ul>
+<p><strong>표본화(Sampling)</strong>도 이와 같은 원리입니다. 연속적인 아날로그 신호를 <strong>일정한 시간 간격으로 값을 추출</strong>하는 것입니다. 프레임 속도가 충분히 빠르면 원래 움직임을 재현할 수 있듯이, 표본화 속도가 충분히 빠르면 원래 아날로그 신호를 재현할 수 있습니다.</p>
+<h3 id="_8">📐 정확한 정의<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>표본화(Sampling)</strong>: 연속적인 아날로그 신호 x(t)를 일정한 시간 간격 T_s마다 그 순간의 값을 추출하여 이산적인(discrete) 값의 나열로 변환하는 과정입니다.</p>
+</blockquote>
+<p>여기서 핵심 용어를 정리하겠습니다.</p>
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>기호</th>
+<th>의미</th>
+<th>단위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>표본화 주기</strong></td>
+<td>T_s</td>
+<td>표본을 추출하는 시간 간격</td>
+<td>초(s)</td>
+</tr>
+<tr>
+<td><strong>표본화 주파수(샘플링 레이트)</strong></td>
+<td>f_s</td>
+<td>1초에 추출하는 표본의 수 (= 1/T_s)</td>
+<td>Hz</td>
+</tr>
+<tr>
+<td><strong>최대 주파수</strong></td>
+<td>f_max</td>
+<td>신호에 포함된 가장 높은 주파수 성분</td>
+<td>Hz</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nyquist-theorem">🔑 나이퀴스트 정리 (Nyquist Theorem)<a class="headerlink" href="#nyquist-theorem" title="Permanent link">&para;</a></h3>
+<p>표본화에서 가장 중요한 질문은 <strong>"얼마나 자주 찍어야 원래 신호를 복원할 수 있는가?"</strong>입니다.</p>
+<p>해리 나이퀴스트(Harry Nyquist)가 제시한 답은 명확합니다.</p>
+<blockquote>
+<p><strong>나이퀴스트 정리</strong>: 아날로그 신호를 완벽하게 복원하려면, 표본화 주파수(f_s)는 신호의 최대 주파수(f_max)의 <strong>2배 이상</strong>이어야 합니다.</p>
+<p><strong>f_s ≥ 2 × f_max</strong></p>
+</blockquote>
+<p>이때 <strong>2 × f_max</strong>를 <strong>나이퀴스트 레이트(Nyquist Rate)</strong>라고 부릅니다. 이것이 원래 신호를 왜곡 없이 복원하기 위한 <strong>최소 표본화 주파수</strong>입니다.</p>
+<p><strong>왜 2배인가?</strong> 직관적으로 이해하면, 하나의 파형(사인파)을 표현하려면 최소한 <strong>꼭대기 한 번, 골짜기 한 번</strong> — 즉 한 주기당 최소 2개의 표본이 필요합니다. 1개만 찍으면 올라가는 것인지 내려가는 것인지 구분이 불가능합니다.</p>
+<h3 id="_9">📞 실생활 적용: 전화 통신<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>전화 통신에서 이 원리가 어떻게 적용되는지 살펴보겠습니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>음성 신호의 대역폭</td>
+<td>300Hz ~ 3,400Hz</td>
+<td>전화 품질에 필요한 주파수 범위</td>
+</tr>
+<tr>
+<td>최대 주파수 (f_max)</td>
+<td>4,000Hz (여유 포함)</td>
+<td>실제로는 4kHz로 설정합니다</td>
+</tr>
+<tr>
+<td>나이퀴스트 레이트</td>
+<td>2 × 4,000 = <strong>8,000Hz</strong></td>
+<td>최소 표본화 주파수</td>
+</tr>
+<tr>
+<td>실제 표본화 주파수</td>
+<td><strong>8,000Hz</strong></td>
+<td>1초에 8,000번 표본을 추출합니다</td>
+</tr>
+</tbody>
+</table>
+<p>따라서 전화 통화 시 여러분의 목소리는 <strong>1초에 8,000번</strong> 값이 추출됩니다. 이것은 1/8,000 = 0.000125초, 즉 <strong>125μs(마이크로초)마다 한 번씩</strong> 값을 읽는 것입니다.</p>
+<h3 id="aliasing">⚠️ 에일리어싱(Aliasing) — 나이퀴스트 조건을 위반하면?<a class="headerlink" href="#aliasing" title="Permanent link">&para;</a></h3>
+<p>표본화 주파수가 나이퀴스트 레이트보다 낮으면, <strong>에일리어싱(Aliasing)</strong>이라는 현상이 발생합니다. 이것은 원래 신호에 없던 가짜 주파수 성분이 나타나는 것으로, 복원된 신호가 원래 신호와 전혀 다르게 됩니다.</p>
+<p>영화에서 자동차 바퀴가 빠르게 회전할 때, 오히려 <strong>거꾸로 도는 것처럼</strong> 보이는 현상과 같은 원리입니다. 카메라의 프레임 속도가 바퀴 회전 속도를 따라잡지 못해서 발생하는 착시입니다.</p>
+<p>에일리어싱을 방지하기 위해, 실제 시스템에서는 표본화 전에 <strong>안티에일리어싱 필터(Anti-aliasing Filter)</strong>를 사용하여 f_max보다 높은 주파수 성분을 미리 제거합니다.</p>
+<p>아래 다이어그램은 표본화의 전체 흐름을 정리한 것입니다.</p>
+<div class="mermaid">flowchart LR
+    A["아날로그 신호&lt;br/&gt;x(t)"] --&gt; B["안티에일리어싱&lt;br/&gt;필터&lt;br/&gt;(LPF)"]
+    B --&gt; C["표본화&lt;br/&gt;f_s ≥ 2f_max"]
+    C --&gt; D["이산 신호&lt;br/&gt;x(nT_s)"]
+    D --&gt; E["다음 단계:&lt;br/&gt;양자화"]</div>
+<blockquote>
+<p>▲ 아날로그 신호가 표본화되어 이산 신호로 변환되는 과정입니다.</p>
+</blockquote>
+<hr />
+<h2 id="2-pcm-3">📚 핵심 개념 2: PCM(펄스 부호 변조) 3단계 과정<a class="headerlink" href="#2-pcm-3" title="Permanent link">&para;</a></h2>
+<h3 id="_10">🏗️ 일상 비유: 온도를 기록하는 세 단계<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>매일 기온을 기록하여 디지털 파일로 저장하는 상황을 상상하면 PCM의 세 단계를 자연스럽게 이해할 수 있습니다.</p>
+<ol>
+<li><strong>표본화</strong>: 하루 중 특정 시간(오전 9시, 오후 3시 등)에 온도계를 읽습니다 → <strong>"언제 읽을 것인가"</strong></li>
+<li><strong>양자화</strong>: 온도계가 23.7°C를 가리키는데, 기록지에는 정수만 쓸 수 있다면 24°C로 <strong>반올림</strong>합니다 → <strong>"얼마나 정밀하게 기록할 것인가"</strong></li>
+<li><strong>부호화</strong>: 24°C를 이진수 <strong>11000</strong>으로 변환하여 컴퓨터에 저장합니다 → <strong>"어떤 형식으로 저장할 것인가"</strong></li>
+</ol>
+<p>이것이 PCM의 본질입니다. 이제 각 단계를 자세히 살펴보겠습니다.</p>
+<h3 id="pcm">📐 PCM의 정의<a class="headerlink" href="#pcm" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>PCM(Pulse Code Modulation, 펄스 부호 변조)</strong>: 아날로그 신호를 <strong>표본화(Sampling) → 양자화(Quantization) → 부호화(Encoding)</strong>의 3단계를 거쳐 디지털 이진 부호(0과 1의 조합)로 변환하는 방식입니다.</p>
+</blockquote>
+<p>PCM의 3단계 전체 흐름을 다이어그램으로 정리하겠습니다.</p>
+<div class="mermaid">flowchart LR
+    A["아날로그 신호"] --&gt; B["① 표본화&lt;br/&gt;(Sampling)"]
+    B --&gt; C["② 양자화&lt;br/&gt;(Quantization)"]
+    C --&gt; D["③ 부호화&lt;br/&gt;(Encoding)"]
+    D --&gt; E["디지털 신호&lt;br/&gt;(0과 1)"]</div>
+<blockquote>
+<p>▲ PCM의 3단계: 아날로그 신호가 디지털 이진 부호로 변환됩니다.</p>
+</blockquote>
+<h3 id="1-sampling_1">📌 1단계: 표본화 (Sampling) — 이미 학습 완료<a class="headerlink" href="#1-sampling_1" title="Permanent link">&para;</a></h3>
+<p>앞에서 학습한 내용입니다. 아날로그 신호를 <strong>f_s ≥ 2f_max</strong> 조건에 맞게 일정 간격으로 값을 추출합니다.</p>
+<p>표본화 결과물은 <strong>PAM(Pulse Amplitude Modulation, 펄스 진폭 변조)</strong> 신호라고도 부릅니다. 이 시점에서 신호는 시간적으로는 이산적(discrete)이지만, 진폭 값은 여전히 연속적입니다.</p>
+<h3 id="2-quantization">📌 2단계: 양자화 (Quantization) — 가장 중요한 단계<a class="headerlink" href="#2-quantization" title="Permanent link">&para;</a></h3>
+<h4 id="_11">개념 설명<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>표본화로 추출된 값은 예를 들어 3.72V, 5.14V, 2.89V처럼 <strong>소수점이 포함된 연속적인 값</strong>입니다. 그러나 디지털 시스템에서는 이러한 무한히 정밀한 값을 그대로 저장할 수 없습니다.</p>
+<p><strong>양자화(Quantization)</strong>는 연속적인 표본값을 <strong>미리 정해 놓은 유한 개의 레벨(단계) 중 가장 가까운 값으로 근사</strong>하는 과정입니다.</p>
+<p>자(ruler)로 길이를 재는 것과 비교하면 이해가 쉽습니다.</p>
+<ul>
+<li><strong>밀리미터 눈금이 있는 자</strong>: 12.3cm까지 정밀하게 읽을 수 있습니다 → 양자화 레벨이 많은 경우</li>
+<li><strong>센티미터 눈금만 있는 자</strong>: 12cm 또는 13cm로만 읽을 수 있습니다 → 양자화 레벨이 적은 경우</li>
+</ul>
+<h4 id="_12">양자화 레벨 수와 비트 수의 관계<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p>양자화 레벨의 수는 <strong>비트 수(n)</strong>에 의해 결정됩니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">비트 수 (n)</th>
+<th style="text-align: center;">양자화 레벨 수 (L = 2^n)</th>
+<th>표현 범위</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td>0, 1</td>
+<td>스위치(ON/OFF)</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td>00, 01, 10, 11</td>
+<td>매우 거친 구분</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">8</td>
+<td>000 ~ 111</td>
+<td>단순한 레벨 구분</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">256</td>
+<td>00000000 ~ 11111111</td>
+<td>전화 음질(PCM)</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">65,536</td>
+<td>—</td>
+<td>CD 음질</td>
+</tr>
+</tbody>
+</table>
+<p>핵심 공식은 다음과 같습니다.</p>
+<blockquote>
+<p><strong>양자화 레벨 수: L = 2^n</strong> (n은 비트 수)</p>
+</blockquote>
+<h4 id="quantization-error">양자화 오류 (Quantization Error)<a class="headerlink" href="#quantization-error" title="Permanent link">&para;</a></h4>
+<p>양자화 과정에서 원래 값과 근사된 값 사이에 <strong>반드시 오차가 발생</strong>합니다. 이 오차를 <strong>양자화 오류(Quantization Error)</strong> 또는 <strong>양자화 잡음(Quantization Noise)</strong>이라고 합니다.</p>
+<p>예를 들어 0V ~ 8V 범위를 4개의 레벨(0V, 2V, 4V, 6V → 간격 Δ = 2V)로 양자화한다고 가정하겠습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">원래 표본값</th>
+<th style="text-align: center;">가장 가까운 레벨</th>
+<th style="text-align: center;">양자화 오류</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">3.2V</td>
+<td style="text-align: center;">4V (레벨 2)</td>
+<td style="text-align: center;">+0.8V</td>
+</tr>
+<tr>
+<td style="text-align: center;">5.7V</td>
+<td style="text-align: center;">6V (레벨 3)</td>
+<td style="text-align: center;">+0.3V</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.1V</td>
+<td style="text-align: center;">0V (레벨 0) 또는 2V (레벨 1)</td>
+<td style="text-align: center;">-1.1V 또는 +0.9V</td>
+</tr>
+</tbody>
+</table>
+<p>양자화 오류의 최대값은 <strong>양자화 간격(Δ)의 절반</strong>입니다.</p>
+<blockquote>
+<p><strong>최대 양자화 오류 = Δ/2 = (V_max - V_min) / (2 × L)</strong></p>
+</blockquote>
+<p>양자화 레벨 수를 늘리면(= 비트 수를 늘리면) 양자화 간격이 좁아지고, 양자화 오류가 줄어듭니다. 그러나 비트 수가 늘어나면 전송해야 하는 데이터량도 증가합니다. 이것은 <strong>정밀도와 전송 효율 사이의 트레이드오프(trade-off)</strong>입니다.</p>
+<h4 id="snr">양자화 잡음의 신호 대 잡음비(SNR)<a class="headerlink" href="#snr" title="Permanent link">&para;</a></h4>
+<p>시험에서 자주 출제되는 공식입니다.</p>
+<blockquote>
+<p><strong>SNR(dB) ≈ 6.02n + 1.76</strong> (n은 양자화 비트 수)</p>
+</blockquote>
+<p>이 공식이 의미하는 바는 명확합니다. <strong>비트 수가 1비트 증가할 때마다 SNR이 약 6dB 향상</strong>됩니다. 즉, 양자화 잡음이 줄어들어 신호 품질이 좋아집니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">비트 수 (n)</th>
+<th style="text-align: center;">SNR (dB)</th>
+<th>실제 적용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">≈ 49.9</td>
+<td>전화(PCM)</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">≈ 98.1</td>
+<td>CD 음질</td>
+</tr>
+<tr>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">≈ 146.2</td>
+<td>스튜디오 녹음</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-encoding">📌 3단계: 부호화 (Encoding)<a class="headerlink" href="#3-encoding" title="Permanent link">&para;</a></h3>
+<p>양자화된 레벨 값을 <strong>이진수(0과 1의 조합)</strong>로 변환하는 과정입니다. 이 단계는 비교적 간단합니다.</p>
+<p>예를 들어, 8개의 양자화 레벨(3비트)을 사용하는 경우를 살펴보겠습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">양자화 레벨</th>
+<th style="text-align: center;">이진 부호</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">레벨 0 (0V)</td>
+<td style="text-align: center;">000</td>
+</tr>
+<tr>
+<td style="text-align: center;">레벨 1 (1V)</td>
+<td style="text-align: center;">001</td>
+</tr>
+<tr>
+<td style="text-align: center;">레벨 2 (2V)</td>
+<td style="text-align: center;">010</td>
+</tr>
+<tr>
+<td style="text-align: center;">레벨 3 (3V)</td>
+<td style="text-align: center;">011</td>
+</tr>
+<tr>
+<td style="text-align: center;">레벨 4 (4V)</td>
+<td style="text-align: center;">100</td>
+</tr>
+<tr>
+<td style="text-align: center;">레벨 5 (5V)</td>
+<td style="text-align: center;">101</td>
+</tr>
+<tr>
+<td style="text-align: center;">레벨 6 (6V)</td>
+<td style="text-align: center;">110</td>
+</tr>
+<tr>
+<td style="text-align: center;">레벨 7 (7V)</td>
+<td style="text-align: center;">111</td>
+</tr>
+</tbody>
+</table>
+<p>부호화가 완료되면, 아날로그 신호는 완전한 <strong>디지털 비트 스트림(bit stream)</strong>으로 변환된 것입니다.</p>
+<hr />
+<h2 id="bit-rate">📚 핵심 공식: 비트율(Bit Rate) 계산<a class="headerlink" href="#bit-rate" title="Permanent link">&para;</a></h2>
+<p>PCM에서 가장 실용적이고 시험에 가장 많이 출제되는 계산이 <strong>비트율(Bit Rate)</strong> 계산입니다.</p>
+<h3 id="_13">핵심 공식<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>비트율(R) = f_s × n</strong></p>
+<ul>
+<li>f_s: 표본화 주파수 (Hz, 즉 초당 표본 수)</li>
+<li>n: 양자화 비트 수 (비트/표본)</li>
+<li>R: 비트율 (bps, 즉 초당 전송 비트 수)</li>
+</ul>
+</blockquote>
+<h3 id="pcm_1">📞 전화(PCM) 비트율 계산 — 반드시 암기!<a class="headerlink" href="#pcm_1" title="Permanent link">&para;</a></h3>
+<p>이것은 통신이론 시험의 <strong>단골 문제</strong>입니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>음성 대역폭</td>
+<td>4,000Hz (300~3,400Hz + 여유)</td>
+<td>ITU-T 표준</td>
+</tr>
+<tr>
+<td>표본화 주파수 (f_s)</td>
+<td>8,000Hz</td>
+<td>나이퀴스트: 2 × 4,000</td>
+</tr>
+<tr>
+<td>양자화 비트 수 (n)</td>
+<td>8비트</td>
+<td>256 레벨</td>
+</tr>
+<tr>
+<td><strong>비트율 (R)</strong></td>
+<td><strong>8,000 × 8 = 64,000bps = 64kbps</strong></td>
+<td><strong>핵심 암기</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📌 <strong>전화 1채널의 PCM 비트율 = 64kbps</strong> — 이 숫자는 반드시 기억하시기 바랍니다.</p>
+</blockquote>
+<h3 id="cd">🎵 CD 음질 비트율 계산<a class="headerlink" href="#cd" title="Permanent link">&para;</a></h3>
+<p>비교를 위해 CD의 비트율도 계산하겠습니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>음악 대역폭</td>
+<td>약 20,000Hz (가청 주파수)</td>
+<td>사람의 청각 범위 20Hz~20kHz</td>
+</tr>
+<tr>
+<td>표본화 주파수 (f_s)</td>
+<td>44,100Hz</td>
+<td>나이퀴스트: 2 × 20,000 = 40,000Hz + 여유</td>
+</tr>
+<tr>
+<td>양자화 비트 수 (n)</td>
+<td>16비트</td>
+<td>65,536 레벨</td>
+</tr>
+<tr>
+<td>채널 수</td>
+<td>2 (스테레오)</td>
+<td>좌/우</td>
+</tr>
+<tr>
+<td><strong>비트율 (R)</strong></td>
+<td><strong>44,100 × 16 × 2 = 1,411,200bps ≈ 1.41Mbps</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>전화(64kbps)와 CD(1.41Mbps)의 비트율 차이가 약 22배인 것을 확인할 수 있습니다. 그만큼 CD의 음질이 전화보다 훨씬 정밀한 것입니다.</p>
+<h3 id="cd_1">전화와 CD 비교 정리<a class="headerlink" href="#cd_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>비교 항목</th>
+<th>전화 PCM</th>
+<th>CD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f_max</td>
+<td>4kHz</td>
+<td>20kHz</td>
+</tr>
+<tr>
+<td>f_s</td>
+<td>8kHz</td>
+<td>44.1kHz</td>
+</tr>
+<tr>
+<td>양자화 비트 (n)</td>
+<td>8비트</td>
+<td>16비트</td>
+</tr>
+<tr>
+<td>채널 수</td>
+<td>1 (모노)</td>
+<td>2 (스테레오)</td>
+</tr>
+<tr>
+<td>비트율</td>
+<td>64kbps</td>
+<td>1,411kbps</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">🔢 따라하기 실습: 비트율 계산 5단계<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>아래 문제를 단계별로 따라 풀어보겠습니다.</p>
+<p><strong>문제</strong>: 최대 주파수가 10kHz인 아날로그 신호를 12비트 PCM으로 변환할 때, 최소 비트율은 얼마입니까?</p>
+<div class="steps">
+<div class="step">
+<h4 id="step-1">Step 1: 최대 주파수 확인<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h4>
+<p>문제에서 f_max = 10kHz = 10,000Hz라고 주어졌습니다.</p>
+</div>
+<div class="step">
+<h4 id="step-2">Step 2: 나이퀴스트 조건으로 최소 표본화 주파수 계산<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h4>
+<p>f_s(min) = 2 × f_max = 2 × 10,000 = <strong>20,000Hz</strong></p>
+</div>
+<div class="step">
+<h4 id="step-3">Step 3: 양자화 비트 수 확인<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h4>
+<p>문제에서 n = 12비트로 주어졌습니다.
+(양자화 레벨 수 L = 2^12 = 4,096개)</p>
+</div>
+<div class="step">
+<h4 id="step-4">Step 4: 비트율 공식 적용<a class="headerlink" href="#step-4" title="Permanent link">&para;</a></h4>
+<p>R = f_s × n = 20,000 × 12 = <strong>240,000bps = 240kbps</strong></p>
+</div>
+<div class="step">
+<h4 id="step-5">Step 5: 단위 확인 및 최종 답<a class="headerlink" href="#step-5" title="Permanent link">&para;</a></h4>
+<p>최소 비트율 = <strong>240kbps</strong></p>
+<p>"최소"라고 물었으므로, 나이퀴스트 레이트(2f_max)를 사용한 것이 올바릅니다. 만약 "실제" 비트율을 물었다면, f_s가 2f_max보다 약간 큰 값을 사용할 수 있습니다.</p>
+</div>
+</div>
+<hr />
+<h2 id="_14">⚠️ 기출 함정 &amp; 자주 하는 실수<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>시험에서 자주 출제되는 함정과 실수를 정리합니다. 이 부분은 특히 주의 깊게 읽으시기 바랍니다.</p>
+<h3 id="1-vs">함정 1: 나이퀴스트 조건의 "이상(≥)" vs "초과(&gt;)"<a class="headerlink" href="#1-vs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>조건</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f_s &gt; 2f_max</td>
+<td>원래 신호를 <strong>완벽하게</strong> 복원 가능</td>
+</tr>
+<tr>
+<td>f_s = 2f_max</td>
+<td><strong>이론적으로</strong> 복원 가능 (이상적 조건에서만)</td>
+</tr>
+<tr>
+<td>f_s &lt; 2f_max</td>
+<td><strong>에일리어싱 발생</strong> → 복원 불가</td>
+</tr>
+</tbody>
+</table>
+<p>시험에서는 보통 <strong>f_s ≥ 2f_max</strong>로 출제됩니다. "이상"이라는 표현에 주의하시기 바랍니다. "초과"로 잘못 기억하면 오답을 선택할 수 있습니다.</p>
+<h3 id="2">함정 2: "대역폭"과 "최대 주파수"의 혼동<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>신호의 주파수 범위가 <strong>0Hz ~ 4kHz</strong>이면: f_max = 4kHz, 대역폭 = 4kHz</li>
+<li>신호의 주파수 범위가 <strong>300Hz ~ 3,400Hz</strong>이면: f_max = 3,400Hz, 대역폭 = 3,100Hz</li>
+</ul>
+<p>나이퀴스트 정리에서 사용하는 것은 <strong>대역폭이 아니라 최대 주파수(f_max)</strong>입니다. 그러나 전화 시스템에서는 관례적으로 f_max = 4kHz로 설정합니다(여유분 포함).</p>
+<blockquote>
+<p>📌 시험 팁: 문제에서 "대역폭 4kHz"라고 했을 때, 이것이 기저대역 신호(0~4kHz)인지 확인하시기 바랍니다. 기저대역이면 f_max = 4kHz입니다.</p>
+</blockquote>
+<h3 id="3">함정 3: 양자화 레벨 수와 비트 수 혼동<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>문제에서 "256레벨로 양자화"라고 하면, 비트 수를 직접 구해야 합니다.</p>
+<blockquote>
+<p>2^n = 256 → n = 8비트</p>
+</blockquote>
+<p>반대로 "8비트로 양자화"라고 하면, 레벨 수는 2^8 = 256입니다.</p>
+<table>
+<thead>
+<tr>
+<th>문제 표현</th>
+<th>의미</th>
+<th>계산</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"256레벨로 양자화"</td>
+<td>L = 256</td>
+<td>n = log₂(256) = 8비트</td>
+</tr>
+<tr>
+<td>"8비트로 양자화"</td>
+<td>n = 8</td>
+<td>L = 2^8 = 256레벨</td>
+</tr>
+<tr>
+<td>"128레벨로 양자화"</td>
+<td>L = 128</td>
+<td>n = log₂(128) = 7비트</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-pcm_1">함정 4: PCM 과정의 순서<a class="headerlink" href="#4-pcm_1" title="Permanent link">&para;</a></h3>
+<p>시험에서 <strong>PCM 과정의 순서</strong>를 묻는 문제가 자주 출제됩니다.</p>
+<p>정답은 반드시 <strong>표본화 → 양자화 → 부호화</strong> 순서입니다.</p>
+<div class="mermaid">flowchart LR
+    A["① 표본화"] --&gt;|"시간축 이산화"| B["② 양자화"]
+    B --&gt;|"진폭축 이산화"| C["③ 부호화"]
+    C --&gt;|"이진수 변환"| D["디지털 비트열"]</div>
+<blockquote>
+<p>▲ PCM 순서: 표본화 → 양자화 → 부호화 (표양부로 암기)</p>
+</blockquote>
+<p><strong>암기 팁</strong>: "<strong>표양부</strong>" — 표본화, 양자화, 부호화의 첫 글자를 따서 기억하시면 됩니다.</p>
+<blockquote>
+<p>주의: "부호화 → 양자화 → 표본화"로 순서를 반대로 제시하는 함정 선지가 자주 등장합니다.</p>
+</blockquote>
+<h3 id="5-snr-n">함정 5: SNR 공식에서 n의 의미<a class="headerlink" href="#5-snr-n" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>SNR(dB) ≈ 6.02n + 1.76</p>
+</blockquote>
+<p>이 공식에서 <strong>n은 양자화 비트 수</strong>입니다. 양자화 레벨 수(L)가 아닙니다. 만약 문제에서 "양자화 레벨이 64개"라고 한다면, 먼저 n = log₂(64) = 6으로 변환한 후 공식에 대입해야 합니다.</p>
+<p>SNR(dB) = 6.02 × 6 + 1.76 = 36.12 + 1.76 = <strong>37.88dB</strong></p>
+<hr />
+<h2 id="pcm_2">📊 PCM 관련 핵심 공식 총정리<a class="headerlink" href="#pcm_2" title="Permanent link">&para;</a></h2>
+<p>시험 전에 이 표를 한 번 더 확인하시기 바랍니다.</p>
+<table>
+<thead>
+<tr>
+<th>공식</th>
+<th>수식</th>
+<th>비고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>나이퀴스트 레이트</strong></td>
+<td>f_s(min) = 2 × f_max</td>
+<td>최소 표본화 주파수</td>
+</tr>
+<tr>
+<td><strong>양자화 레벨 수</strong></td>
+<td>L = 2^n</td>
+<td>n: 비트 수</td>
+</tr>
+<tr>
+<td><strong>비트율</strong></td>
+<td>R = f_s × n</td>
+<td>단위: bps</td>
+</tr>
+<tr>
+<td><strong>양자화 간격</strong></td>
+<td>Δ = (V_max - V_min) / L</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>최대 양자화 오류</strong></td>
+<td>e_max = Δ / 2</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>양자화 SNR</strong></td>
+<td>SNR ≈ 6.02n + 1.76 (dB)</td>
+<td>n: 비트 수</td>
+</tr>
+<tr>
+<td><strong>전화 PCM 비트율</strong></td>
+<td>8,000 × 8 = 64kbps</td>
+<td>반드시 암기</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="companding">🔍 심화: 비균일 양자화와 압신(Companding)<a class="headerlink" href="#companding" title="Permanent link">&para;</a></h2>
+<p>시험에 간혹 출제되는 개념이므로, 기본적인 내용을 정리하겠습니다.</p>
+<p>지금까지 설명한 양자화는 모든 구간의 양자화 간격(Δ)이 동일한 <strong>균일 양자화(Uniform Quantization)</strong>입니다. 그러나 실제 음성 신호는 작은 진폭이 훨씬 자주 나타납니다. 속삭이는 소리가 고함치는 소리보다 훨씬 많다는 것입니다.</p>
+<p>균일 양자화에서는 큰 신호와 작은 신호에 동일한 간격을 적용하므로, <strong>작은 신호에 대한 상대적 오류가 큽니다</strong>. 이 문제를 해결하기 위해 <strong>비균일 양자화(Non-uniform Quantization)</strong>를 사용합니다.</p>
+<p>비균일 양자화는 <strong>압신(Companding = Compressing + Expanding)</strong>이라는 기법으로 구현됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>방식</th>
+<th>사용 지역</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>μ-법칙 (μ-law)</strong></td>
+<td>μ = 255</td>
+<td>북미, 한국, 일본</td>
+</tr>
+<tr>
+<td><strong>A-법칙 (A-law)</strong></td>
+<td>A = 87.6</td>
+<td>유럽</td>
+</tr>
+</tbody>
+</table>
+<div class="mermaid">flowchart LR
+    A["입력 신호"] --&gt; B["압축기&lt;br/&gt;(Compressor)"]
+    B --&gt; C["균일 양자화"]
+    C --&gt; D["부호화"]
+    D --&gt; E["전송"]
+    E --&gt; F["복호화"]
+    F --&gt; G["신장기&lt;br/&gt;(Expander)"]
+    G --&gt; H["출력 신호"]</div>
+<blockquote>
+<p>▲ 압신(Companding) 과정: 송신 측에서 압축, 수신 측에서 신장합니다.</p>
+</blockquote>
+<p>핵심 포인트는 다음과 같습니다.
+- 송신 측에서 <strong>작은 신호를 크게 압축(compress)</strong>한 후 균일 양자화를 적용합니다
+- 수신 측에서 <strong>역과정인 신장(expand)</strong>을 수행하여 원래 크기로 복원합니다
+- 결과적으로 <strong>작은 신호의 SNR이 개선</strong>됩니다
+- 한국은 <strong>μ-법칙(μ = 255)</strong>을 사용합니다 — 시험 출제 포인트입니다</p>
+<hr />
+<h2 id="_15">📝 형성 평가<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<div class="assessment">
+<h3 id="_16">📝 형성 평가<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p><strong>객관식 1.</strong> 최대 주파수가 5kHz인 아날로그 신호를 표본화할 때, 나이퀴스트 정리에 따른 최소 표본화 주파수는 얼마입니까?</p>
+<p>① 2,500Hz
+② 5,000Hz
+③ 10,000Hz
+④ 20,000Hz</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③ 10,000Hz**
+
+나이퀴스트 정리에 의해 f_s(min) = 2 × f_max = 2 × 5,000 = 10,000Hz입니다. "최소" 표본화 주파수를 물었으므로 정확히 2배인 값이 정답입니다.
+
+</details>
+<hr />
+<p><strong>객관식 2.</strong> PCM(펄스 부호 변조)의 과정을 올바른 순서로 나열한 것은 어느 것입니까?</p>
+<p>① 부호화 → 표본화 → 양자화
+② 양자화 → 표본화 → 부호화
+③ 표본화 → 양자화 → 부호화
+④ 표본화 → 부호화 → 양자화</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③ 표본화 → 양자화 → 부호화**
+
+PCM은 반드시 표본화(시간축 이산화) → 양자화(진폭축 이산화) → 부호화(이진수 변환) 순서로 진행됩니다. "표양부"로 기억하시면 됩니다.
+
+</details>
+<hr />
+<p><strong>객관식 3.</strong> 음성 신호의 최대 주파수가 4kHz이고, 8비트로 양자화하여 PCM 전송할 때의 비트율은 얼마입니까?</p>
+<p>① 32kbps
+② 48kbps
+③ 64kbps
+④ 128kbps</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③ 64kbps**
+
+f_s = 2 × 4,000 = 8,000Hz
+R = f_s × n = 8,000 × 8 = 64,000bps = 64kbps
+
+이것은 전화 1채널의 표준 PCM 비트율로, 통신이론 시험의 필수 암기 사항입니다.
+
+</details>
+<hr />
+<p><strong>서술형 1.</strong> 양자화 비트 수를 8비트에서 12비트로 증가시켰을 때, 다음 두 가지를 각각 설명하십시오.
+(1) 양자화 SNR은 약 몇 dB 향상됩니까?
+(2) 비트율은 어떻게 변화합니까? (f_s = 8,000Hz 가정)</p>
+<details>
+<summary>정답 확인</summary>
+
+**(1) SNR 향상:**
+- 8비트 SNR = 6.02 × 8 + 1.76 = 49.92dB
+- 12비트 SNR = 6.02 × 12 + 1.76 = 74.00dB
+- **향상분 = 74.00 - 49.92 = 약 24.08dB**
+- (또는 비트 수 4개 증가 × 6dB/비트 ≈ 24dB로 빠르게 계산 가능)
+
+**(2) 비트율 변화:**
+- 8비트: R = 8,000 × 8 = 64,000bps = 64kbps
+- 12비트: R = 8,000 × 12 = 96,000bps = 96kbps
+- **비트율이 64kbps에서 96kbps로 1.5배 증가합니다**
+
+이처럼 양자화 비트 수를 늘리면 신호 품질은 향상되지만, 전송에 필요한 대역폭(비트율)도 함께 증가합니다.
+
+</details>
+<hr />
+<h3 id="_17">✅ 자기점검 체크리스트<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 표본화의 개념과 나이퀴스트 정리(f_s ≥ 2f_max)를 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 에일리어싱이 무엇이며 왜 발생하는지 이해하고 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> PCM의 3단계 과정(표본화 → 양자화 → 부호화)을 순서대로 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 양자화 오류가 무엇이며, 비트 수와의 관계를 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 비트율 = f_s × n 공식으로 전화(64kbps), CD(1.41Mbps) 비트율을 계산할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 양자화 SNR ≈ 6.02n + 1.76 공식을 적용할 수 있다</li>
+</ul>
+</div>
+<hr />
+<h2 id="_18">💭 성찰 &amp; 다음 차시 미리보기<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<h3 id="_19">이번 차시 핵심 정리<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>이번 차시에서는 아날로그 신호를 디지털로 변환하는 <strong>PCM(펄스 부호 변조)</strong>의 전체 과정을 학습했습니다. 핵심 내용을 한 문장으로 정리하면 다음과 같습니다.</p>
+<blockquote>
+<p><strong>아날로그 신호를 디지털로 바꾸려면, 일정 간격으로 값을 읽고(표본화), 유한한 레벨로 근사한 뒤(양자화), 이진수로 표현(부호화)하면 됩니다.</strong></p>
+</blockquote>
+<p>반드시 기억해야 할 세 가지입니다.</p>
+<ol>
+<li><strong>나이퀴스트 조건</strong>: f_s ≥ 2 × f_max</li>
+<li><strong>비트율 공식</strong>: R = f_s × n</li>
+<li><strong>전화 PCM</strong>: 8kHz × 8비트 = <strong>64kbps</strong></li>
+</ol>
+<h3 id="5_1">🔜 다음 차시 미리보기: 5차시<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
+<p>다음 차시에서는 디지털 변조에 대해 학습합니다. 이번 차시에서 PCM을 통해 생성된 <strong>디지털 비트열(0과 1)</strong>을 실제로 전송 채널을 통해 보내려면, 이 비트열을 다시 <strong>전송에 적합한 신호 형태</strong>로 변환해야 합니다. 이것이 디지털 변조(ASK, FSK, PSK 등)의 역할입니다.</p>
+<p>이번 차시에서 배운 PCM이 "아날로그 → 디지털 변환"이었다면, 다음 차시의 디지털 변조는 "디지털 → 전송 가능한 신호로의 변환"입니다. 두 과정이 연결되어 현대 디지털 통신 시스템의 골격을 이루고 있습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../chapter03/" class="md-footer__link md-footer__link--prev" aria-label="이전: 3차시: 아날로그 통신의 두 주인공 - AM과 FM 변조">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                3차시: 아날로그 통신의 두 주인공 - AM과 FM 변조
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapter05/" class="md-footer__link md-footer__link--next" aria-label="다음: 5차시: 디지털 신호를 전송하는 방법 - ASK, FSK, PSK 변조">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              <div class="md-ellipsis">
+                5차시: 디지털 신호를 전송하는 방법 - ASK, FSK, PSK 변조
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 노용철TV | <a href='https://eduflow-greatsong.fly.dev/'>EduFlow</a>로 제작
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/title-link.js"></script>
+      
+        <script src="../javascripts/mermaid-config.js"></script>
+      
+        <script src="../javascripts/scroll-progress.js"></script>
+      
+        <script src="../javascripts/eduflow-nav.js"></script>
+      
+        <script src="../javascripts/lightbox.js"></script>
+      
+    
+  </body>
+</html>

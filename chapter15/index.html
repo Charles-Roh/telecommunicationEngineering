@@ -1,0 +1,3554 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="비전공자도 이해할 수 있도록 일상 비유와 실전 기출 문제로 구성한 통신공학 완전정복 교재. 한전KDN 등 공공기관 채용 필기시험 대비용 자기주도 학습 자료입니다.">
+      
+      
+        <meta name="author" content="노용철TV (EduFlow)">
+      
+      
+      
+        <link rel="prev" href="../chapter14/">
+      
+      
+        <link rel="next" href="../chapter16/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할 - 통신공학 단박에 끝내기</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#15-osi" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-header__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            통신공학 단박에 끝내기
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter05/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter09/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-nav__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    통신공학 단박에 끝내기
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1차시: 통신공학 전체 그림 그리기 - 신호와 시스템의 기초
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2차시: 신호를 수식으로 표현하기 - 주파수 영역의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3차시: 아날로그 통신의 두 주인공 - AM과 FM 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4차시: 아날로그에서 디지털로 - 표본화와 PCM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5차시: 디지털 신호를 전송하는 방법 - ASK, FSK, PSK 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6차시: 더 효율적으로 전송하기 - QAM과 고차 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7차시: 신뢰성 확보하기 - 오류 검출과 정정 부호
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8차시: Part 2 종합 실전 문제풀이 - 디지털 변복조 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9차시: 통신 채널의 한계 - 샤논 법칙과 채널 용량
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10차시: 한 채널을 여럿이 쓰는 방법 - 다중화 기술의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11차시: 여럿이 동시에 통신하기 - TDMA와 FDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12차시: 간섭 없이 많은 사용자를 수용하기 - CDMA의 원리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 학습 목표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 핵심 주제 카드
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 핵심 주제 카드">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#osi-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 OSI 7계층 모델
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 TCP/IP 모델
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 캡슐화 과정 추적
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 계층별 역할 구분
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 왜 계층 구조가 필요한가? (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-osi-7-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: OSI 7계층 — 전체 구조 파악 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tcpip-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: TCP/IP 모델과의 비교 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: 캡슐화 과정 따라가기 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 형성 평가 및 성찰 (7분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        왜 이걸 배우나요?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-osi-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 1: OSI 7계층 모델
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 1: OSI 7계층 모델">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        비유로 이해하기 — 국제 우편 시스템
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#osi-7_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSI 7계층 전체 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        각 계층의 역할 상세
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="각 계층의 역할 상세">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔌 1계층: 물리 계층 (Physical Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-link-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 2계층: 데이터링크 계층 (Data Link Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-network-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 3계층: 네트워크 계층 (Network Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-transport-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚚 4계층: 전송 계층 (Transport Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 5~7계층: 세션·표현·응용 계층
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        계층별 데이터 단위 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tcpip-osi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 2: TCP/IP 모델과 OSI 모델의 관계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 2: TCP/IP 모델과 OSI 모델의 관계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        비유로 이해하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#osi-vs-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSI vs TCP/IP 대응표
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 활동: 캡슐화 과정 따라가기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 활동: 캡슐화 과정 따라가기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encapsulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        캡슐화(Encapsulation)란?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        단계별 추적
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-13-osi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Part 1~3 학습 내용의 OSI 계층 매핑
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 자주 하는 실수와 주의할 점
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ 자주 하는 실수와 주의할 점">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 1: 계층 번호와 이름의 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 2: 데이터링크 계층과 전송 계층의 오류 제어 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-osi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 3: OSI 모델 = 실제 프로토콜이라는 오해
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 4: 허브와 스위치의 계층 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 시험 빈출 포인트 정리
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 시험 빈출 포인트 정리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        출제 유형 1: 계층별 기능 매칭
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-hdlc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        출제 유형 2: HDLC 프레임 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        출제 유형 3: TCP/IP 계층과 프로토콜 매칭
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 개념 통합: 통신 과정 시나리오
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 형성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 다음 차시 미리보기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이번 차시 핵심 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1~3과의 연결
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18차시: 전체 통합 실전 모의고사 - 시험 완성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19차시: 최종 정리와 시험 전략 - 합격을 위한 마무리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 학습 목표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 핵심 주제 카드
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 핵심 주제 카드">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#osi-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 OSI 7계층 모델
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 TCP/IP 모델
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 캡슐화 과정 추적
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 계층별 역할 구분
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 왜 계층 구조가 필요한가? (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-osi-7-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: OSI 7계층 — 전체 구조 파악 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tcpip-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: TCP/IP 모델과의 비교 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: 캡슐화 과정 따라가기 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 형성 평가 및 성찰 (7분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        왜 이걸 배우나요?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-osi-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 1: OSI 7계층 모델
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 1: OSI 7계층 모델">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        비유로 이해하기 — 국제 우편 시스템
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#osi-7_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSI 7계층 전체 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        각 계층의 역할 상세
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="각 계층의 역할 상세">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔌 1계층: 물리 계층 (Physical Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-link-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 2계층: 데이터링크 계층 (Data Link Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-network-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 3계층: 네트워크 계층 (Network Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-transport-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚚 4계층: 전송 계층 (Transport Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#57" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 5~7계층: 세션·표현·응용 계층
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        계층별 데이터 단위 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tcpip-osi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 2: TCP/IP 모델과 OSI 모델의 관계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 2: TCP/IP 모델과 OSI 모델의 관계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        비유로 이해하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#osi-vs-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSI vs TCP/IP 대응표
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 활동: 캡슐화 과정 따라가기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 활동: 캡슐화 과정 따라가기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encapsulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        캡슐화(Encapsulation)란?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        단계별 추적
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-13-osi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Part 1~3 학습 내용의 OSI 계층 매핑
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 자주 하는 실수와 주의할 점
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ 자주 하는 실수와 주의할 점">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 1: 계층 번호와 이름의 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 2: 데이터링크 계층과 전송 계층의 오류 제어 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-osi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 3: OSI 모델 = 실제 프로토콜이라는 오해
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실수 4: 허브와 스위치의 계층 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 시험 빈출 포인트 정리
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 시험 빈출 포인트 정리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        출제 유형 1: 계층별 기능 매칭
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-hdlc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        출제 유형 2: HDLC 프레임 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        출제 유형 3: TCP/IP 계층과 프로토콜 매칭
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 개념 통합: 통신 과정 시나리오
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 형성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 다음 차시 미리보기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이번 차시 핵심 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1~3과의 연결
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="네비게이션" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="15-osi">15차시: 통신 구조의 기본 — OSI 모델과 계층별 역할<a class="headerlink" href="#15-osi" title="Permanent link">&para;</a></h1>
+<div class="lesson-banner">
+<p><strong>⏰ 50분</strong> · OSI 7계층 · TCP/IP 모델 · 프로토콜 · 캡슐화 · <strong>난이도</strong> ●●●○○</p>
+<p><strong>학습목표</strong>: OSI 7계층 모델의 각 계층별 역할을 설명하고, TCP/IP 모델과의 관계를 이해하여 실제 통신 과정을 체계적으로 설명할 수 있습니다.</p>
+<blockquote>
+<p><strong>오늘의 질문</strong>: "스마트폰에서 웹사이트 하나를 열 때, 데이터는 어떤 단계를 거쳐 전달되는 것일까요?"</p>
+</blockquote>
+</div>
+<hr />
+<h2 id="_1">📌 학습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> OSI 7계층 모델의 각 계층 이름과 역할을 순서대로 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 물리계층(신호·변복조), 데이터링크계층(오류 제어), 네트워크계층(라우팅) 등 하위 계층의 기능을 구분할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> TCP/IP 모델과 OSI 모델의 대응 관계를 이해하고 실제 통신 과정(캡슐화/역캡슐화)을 설명할 수 있다</li>
+</ul>
+<hr />
+<h2 id="_2">🎯 핵심 주제 카드<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="cards-grid">
+<div class="card card-orange">
+<h3 id="osi-7">🧠 OSI 7계층 모델<a class="headerlink" href="#osi-7" title="Permanent link">&para;</a></h3>
+<p>통신을 7개 계층으로 분리하여 각 계층의 역할과 책임을 명확히 정의한 국제 표준 참조 모델입니다.</p>
+</div>
+<div class="card card-orange">
+<h3 id="tcpip">🧠 TCP/IP 모델<a class="headerlink" href="#tcpip" title="Permanent link">&para;</a></h3>
+<p>실제 인터넷에서 사용되는 4계층 프로토콜 모델로, OSI 모델을 실용적으로 단순화한 구조입니다.</p>
+</div>
+<div class="card card-blue">
+<h3 id="_3">🔧 캡슐화 과정 추적<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>데이터가 송신 측에서 각 계층을 통과하며 헤더가 붙는 과정을 단계별로 따라가는 활동입니다.</p>
+</div>
+<div class="card card-red">
+<h3 id="_4">📝 계층별 역할 구분<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>시험에서 자주 출제되는 각 계층의 핵심 기능, 프로토콜, 장비를 정리하고 확인합니다.</p>
+</div>
+</div>
+<hr />
+<h2 id="_5">⏱️ 수업 흐름<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="steps">
+<div class="step">
+<h4 id="1-8">1단계: 왜 계층 구조가 필요한가? (8분)<a class="headerlink" href="#1-8" title="Permanent link">&para;</a></h4>
+<p>통신 시스템을 왜 여러 계층으로 나누는지, 일상의 비유를 통해 그 필요성을 이해합니다. Part 1~3에서 배운 신호, 변조, 오류 정정의 위치를 확인합니다.</p>
+</div>
+<div class="step">
+<h4 id="2-osi-7-15">2단계: OSI 7계층 — 전체 구조 파악 (15분)<a class="headerlink" href="#2-osi-7-15" title="Permanent link">&para;</a></h4>
+<p>7개 계층 각각의 이름, 역할, 대표 프로토콜과 장비를 체계적으로 학습합니다. 특히 물리·데이터링크·네트워크 계층을 중심으로 깊이 있게 다룹니다.</p>
+</div>
+<div class="step">
+<h4 id="3-tcpip-10">3단계: TCP/IP 모델과의 비교 (10분)<a class="headerlink" href="#3-tcpip-10" title="Permanent link">&para;</a></h4>
+<p>실제 인터넷에서 사용하는 TCP/IP 4계층 모델을 OSI와 대응시켜 이해합니다.</p>
+</div>
+<div class="step">
+<h4 id="4-10">4단계: 캡슐화 과정 따라가기 (10분)<a class="headerlink" href="#4-10" title="Permanent link">&para;</a></h4>
+<p>웹 페이지를 요청할 때 데이터가 각 계층을 지나며 어떻게 포장(캡슐화)되고 풀리는지(역캡슐화) 단계별로 추적합니다.</p>
+</div>
+<div class="step">
+<h4 id="5-7">5단계: 형성 평가 및 성찰 (7분)<a class="headerlink" href="#5-7" title="Permanent link">&para;</a></h4>
+<p>핵심 내용을 문제로 확인하고, 학습 목표 달성 여부를 스스로 점검합니다.</p>
+</div>
+</div>
+<hr />
+<h2 id="_6">왜 이걸 배우나요?<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>지금까지 Part 1에서 <strong>신호와 주파수</strong>, Part 2에서 <strong>변복조와 디지털 변조</strong>, Part 3에서 <strong>오류 검출과 정정</strong>을 학습했습니다. 이 모든 기술은 통신 시스템이라는 거대한 구조 안에서 각자의 자리를 차지하고 있습니다.</p>
+<p>그런데 한 가지 의문이 생깁니다. 변조는 어디에서 이루어지는 것이고, 오류 정정은 누가 담당하며, 우리가 웹 브라우저에 주소를 입력하는 행위는 어디에 해당하는 것일까요?</p>
+<p><strong>OSI 7계층 모델</strong>은 바로 이 질문에 답하는 틀입니다. 통신에 필요한 모든 기능을 7개 층으로 분리하여, 각 층의 역할과 책임 범위를 명확히 정의합니다. 공공기관 통신이론 시험에서 OSI 모델은 거의 매회 출제되는 핵심 주제이며, 각 계층의 역할·프로토콜·장비를 묻는 문제가 빈번합니다.</p>
+<p>이 차시를 마치면, 지금까지 배운 모든 기술이 통신 구조 안에서 어떤 위치에 있는지 한눈에 파악할 수 있게 됩니다.</p>
+<hr />
+<h2 id="1-osi-7">📚 핵심 개념 1: OSI 7계층 모델<a class="headerlink" href="#1-osi-7" title="Permanent link">&para;</a></h2>
+<h3 id="_7">비유로 이해하기 — 국제 우편 시스템<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>해외에 있는 친구에게 편지를 보내는 상황을 생각하겠습니다.</p>
+<ol>
+<li><strong>여러분(사용자)</strong> 이 편지 내용을 작성합니다</li>
+<li><strong>번역가</strong>가 영어로 번역합니다</li>
+<li><strong>비서</strong>가 봉투에 넣고 주소를 적습니다</li>
+<li><strong>우체국</strong>이 어떤 경로로 보낼지 결정합니다</li>
+<li><strong>운송 회사</strong>가 트럭이나 비행기로 운반합니다</li>
+<li><strong>물류 센터</strong>가 분류하고 올바른 방향으로 전달합니다</li>
+<li><strong>도로와 비행기(물리적 운송수단)</strong> 가 실제로 편지를 이동시킵니다</li>
+</ol>
+<p>각 단계의 담당자는 자기 역할만 수행하고, 다른 단계가 어떻게 작동하는지는 알 필요가 없습니다. OSI 모델도 동일한 원리입니다. 각 계층은 자기 역할에만 집중하고, 위아래 계층과 약속된 방식(인터페이스)으로만 소통합니다.</p>
+<h3 id="_8">정의<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><strong>OSI(Open Systems Interconnection) 7계층 모델</strong>은 1984년 국제표준화기구(ISO)가 제정한 통신 시스템의 <strong>참조 모델</strong>입니다. 서로 다른 제조사의 장비와 소프트웨어가 원활히 통신할 수 있도록, 통신 기능을 7개 계층으로 분류하여 표준화한 것입니다.</p>
+<p>핵심 설계 원칙은 다음과 같습니다.</p>
+<ul>
+<li><strong>계층 독립성</strong>: 각 계층은 독립적으로 설계·변경할 수 있습니다</li>
+<li><strong>서비스 인터페이스</strong>: 상위 계층은 하위 계층이 제공하는 서비스를 이용합니다</li>
+<li><strong>프로토콜</strong>: 같은 계층끼리 통신 규칙(프로토콜)을 정의합니다</li>
+</ul>
+<h3 id="osi-7_1">OSI 7계층 전체 구조<a class="headerlink" href="#osi-7_1" title="Permanent link">&para;</a></h3>
+<p>아래 다이어그램은 OSI 7계층의 전체 구조와 데이터 흐름 방향을 보여줍니다.</p>
+<div class="mermaid">flowchart TB
+    L7["7계층&lt;br/&gt;응용 계층&lt;br/&gt;Application"]
+    L6["6계층&lt;br/&gt;표현 계층&lt;br/&gt;Presentation"]
+    L5["5계층&lt;br/&gt;세션 계층&lt;br/&gt;Session"]
+    L4["4계층&lt;br/&gt;전송 계층&lt;br/&gt;Transport"]
+    L3["3계층&lt;br/&gt;네트워크 계층&lt;br/&gt;Network"]
+    L2["2계층&lt;br/&gt;데이터링크 계층&lt;br/&gt;Data Link"]
+    L1["1계층&lt;br/&gt;물리 계층&lt;br/&gt;Physical"]
+
+    L7 --&gt; L6 --&gt; L5 --&gt; L4 --&gt; L3 --&gt; L2 --&gt; L1</div>
+<p>7계층에서 1계층 방향이 <strong>송신 과정</strong>(데이터를 내려보내는 과정)이고, 1계층에서 7계층 방향이 <strong>수신 과정</strong>(데이터를 올려받는 과정)입니다.</p>
+<p>외우는 방법으로 자주 쓰이는 문구가 있습니다. 1계층부터 순서대로 <strong>"Please Do Not Throw Sausage Pizza Away"</strong>의 앞 글자 — Physical, Data Link, Network, Transport, Session, Presentation, Application — 를 기억하면 됩니다.</p>
+<h3 id="_9">각 계층의 역할 상세<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h4 id="1-physical-layer">🔌 1계층: 물리 계층 (Physical Layer)<a class="headerlink" href="#1-physical-layer" title="Permanent link">&para;</a></h4>
+<p><strong>역할</strong>: 비트(0과 1)를 전기 신호, 빛, 전파 등 <strong>물리적 신호로 변환</strong>하여 전송 매체를 통해 전달합니다.</p>
+<p>Part 1에서 학습한 <strong>아날로그/디지털 신호 변환</strong>, Part 2에서 학습한 <strong>변복조(모뎀)</strong>가 바로 이 계층에 해당합니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>핵심 기능</strong></td>
+<td>비트 전송, 신호 변환, 전송 매체 규격 정의</td>
+</tr>
+<tr>
+<td><strong>데이터 단위</strong></td>
+<td><strong>비트(Bit)</strong></td>
+</tr>
+<tr>
+<td><strong>대표 장비</strong></td>
+<td>리피터(Repeater), 허브(Hub), 모뎀</td>
+</tr>
+<tr>
+<td><strong>관련 기술</strong></td>
+<td>RS-232C, V.35, 광섬유, 동축케이블, 무선 주파수</td>
+</tr>
+<tr>
+<td><strong>Part 1~3 연결</strong></td>
+<td>신호의 주파수 특성, ASK/FSK/PSK 등 디지털 변조</td>
+</tr>
+</tbody>
+</table>
+<p>물리 계층은 데이터의 <strong>의미</strong>에는 관심이 없습니다. 오직 0과 1을 신호로 바꾸어 전달하는 것이 임무입니다.</p>
+<h4 id="2-data-link-layer">🔗 2계층: 데이터링크 계층 (Data Link Layer)<a class="headerlink" href="#2-data-link-layer" title="Permanent link">&para;</a></h4>
+<p><strong>역할</strong>: 인접한 두 노드(장비) 사이에서 <strong>프레임</strong> 단위로 데이터를 전달하며, <strong>오류 검출과 흐름 제어</strong>를 담당합니다.</p>
+<p>Part 3에서 학습한 <strong>패리티 검사, CRC, 해밍 코드</strong> 등의 오류 제어 기법이 이 계층에서 동작합니다. 또한 <strong>ARQ(Automatic Repeat reQuest)</strong> — Stop-and-Wait, Go-Back-N, Selective Repeat — 역시 이 계층의 프로토콜입니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>핵심 기능</strong></td>
+<td>프레이밍, 오류 검출/정정, 흐름 제어, MAC 주소 지정</td>
+</tr>
+<tr>
+<td><strong>데이터 단위</strong></td>
+<td><strong>프레임(Frame)</strong></td>
+</tr>
+<tr>
+<td><strong>대표 장비</strong></td>
+<td>브리지(Bridge), L2 스위치(Switch)</td>
+</tr>
+<tr>
+<td><strong>대표 프로토콜</strong></td>
+<td>HDLC, PPP, Ethernet(IEEE 802.3), Wi-Fi(IEEE 802.11)</td>
+</tr>
+<tr>
+<td><strong>Part 1~3 연결</strong></td>
+<td>CRC, 해밍 코드, ARQ 프로토콜, 흐름 제어</td>
+</tr>
+</tbody>
+</table>
+<p>데이터링크 계층은 두 가지 하위 계층으로 나뉩니다.</p>
+<ul>
+<li><strong>LLC(Logical Link Control)</strong>: 오류 제어, 흐름 제어 담당</li>
+<li><strong>MAC(Media Access Control)</strong>: 매체 접근 제어, MAC 주소 사용</li>
+</ul>
+<blockquote>
+<p><strong>시험 포인트</strong>: HDLC(High-level Data Link Control)는 <strong>비트 지향형</strong> 프로토콜로, 플래그(01111110)로 프레임의 시작과 끝을 구분합니다. 시험에서 HDLC의 프레임 구조와 동작 모드(NRM, ABM, ARM)가 자주 출제됩니다.</p>
+</blockquote>
+<h4 id="3-network-layer">🌐 3계층: 네트워크 계층 (Network Layer)<a class="headerlink" href="#3-network-layer" title="Permanent link">&para;</a></h4>
+<p><strong>역할</strong>: 출발지에서 목적지까지의 <strong>경로(라우팅)를 설정</strong>하고, <strong>논리적 주소(IP 주소)</strong>를 기반으로 패킷을 전달합니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>핵심 기능</strong></td>
+<td>라우팅(경로 설정), 논리적 주소 지정, 패킷 분할/재조립, 혼잡 제어</td>
+</tr>
+<tr>
+<td><strong>데이터 단위</strong></td>
+<td><strong>패킷(Packet)</strong></td>
+</tr>
+<tr>
+<td><strong>대표 장비</strong></td>
+<td>라우터(Router), L3 스위치</td>
+</tr>
+<tr>
+<td><strong>대표 프로토콜</strong></td>
+<td>IP, ICMP, ARP, RARP, OSPF, RIP</td>
+</tr>
+</tbody>
+</table>
+<p>네트워크 계층은 "이 데이터를 어떤 경로로 보낼 것인가?"라는 질문에 답하는 계층입니다. 우체국에서 편지를 어떤 경로(항공, 육상)로 보낼지 결정하는 역할과 같습니다.</p>
+<p><strong>라우팅 프로토콜의 분류</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>분류 기준</th>
+<th>유형</th>
+<th>대표 프로토콜</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>알고리즘</td>
+<td>거리 벡터</td>
+<td>RIP</td>
+<td>홉 수 기반, 주기적 갱신</td>
+</tr>
+<tr>
+<td>알고리즘</td>
+<td>링크 상태</td>
+<td>OSPF</td>
+<td>네트워크 전체 상태 파악, 빠른 수렴</td>
+</tr>
+<tr>
+<td>적용 범위</td>
+<td>내부(IGP)</td>
+<td>RIP, OSPF</td>
+<td>하나의 자율 시스템 내부</td>
+</tr>
+<tr>
+<td>적용 범위</td>
+<td>외부(EGP)</td>
+<td>BGP</td>
+<td>자율 시스템 간 라우팅</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-transport-layer">🚚 4계층: 전송 계층 (Transport Layer)<a class="headerlink" href="#4-transport-layer" title="Permanent link">&para;</a></h4>
+<p><strong>역할</strong>: 종단 간(end-to-end) <strong>신뢰성 있는 데이터 전송</strong>을 보장합니다. 포트 번호를 사용하여 어떤 애플리케이션에 데이터를 전달할지 결정합니다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>핵심 기능</strong></td>
+<td>종단 간 연결 관리, 흐름 제어, 오류 복구, 분할/재조립</td>
+</tr>
+<tr>
+<td><strong>데이터 단위</strong></td>
+<td><strong>세그먼트(Segment)</strong></td>
+</tr>
+<tr>
+<td><strong>대표 프로토콜</strong></td>
+<td>TCP(연결형, 신뢰성), UDP(비연결형, 속도)</td>
+</tr>
+</tbody>
+</table>
+<p>TCP와 UDP의 차이는 시험에서 빈번히 출제됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>특성</th>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>연결 방식</td>
+<td>연결형(3-way handshake)</td>
+<td>비연결형</td>
+</tr>
+<tr>
+<td>신뢰성</td>
+<td>높음(재전송 보장)</td>
+<td>낮음(재전송 없음)</td>
+</tr>
+<tr>
+<td>순서 보장</td>
+<td>보장</td>
+<td>미보장</td>
+</tr>
+<tr>
+<td>속도</td>
+<td>상대적으로 느림</td>
+<td>빠름</td>
+</tr>
+<tr>
+<td>사용 예</td>
+<td>웹(HTTP), 이메일(SMTP), 파일 전송(FTP)</td>
+<td>실시간 스트리밍, DNS, VoIP</td>
+</tr>
+</tbody>
+</table>
+<h4 id="57">📋 5~7계층: 세션·표현·응용 계층<a class="headerlink" href="#57" title="Permanent link">&para;</a></h4>
+<p>상위 3개 계층은 시험에서 하위 계층보다 출제 빈도가 낮지만, 기본 역할을 정확히 알아야 합니다.</p>
+<table>
+<thead>
+<tr>
+<th>계층</th>
+<th>이름</th>
+<th>핵심 기능</th>
+<th>대표 프로토콜/기술</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>5계층</strong></td>
+<td>세션 계층(Session)</td>
+<td>통신 세션의 설정·유지·종료, 동기화</td>
+<td>NetBIOS, RPC</td>
+</tr>
+<tr>
+<td><strong>6계층</strong></td>
+<td>표현 계층(Presentation)</td>
+<td>데이터 형식 변환, 암호화, 압축</td>
+<td>JPEG, MPEG, SSL/TLS, ASCII↔EBCDIC</td>
+</tr>
+<tr>
+<td><strong>7계층</strong></td>
+<td>응용 계층(Application)</td>
+<td>사용자에게 네트워크 서비스 제공</td>
+<td>HTTP, FTP, SMTP, DNS, Telnet, SNMP</td>
+</tr>
+</tbody>
+</table>
+<p>5계층(세션)은 "대화를 시작하고 끝내는 관리자", 6계층(표현)은 "통역사", 7계층(응용)은 "사용자가 직접 마주하는 창구"라고 이해할 수 있습니다.</p>
+<h3 id="_10">계층별 데이터 단위 정리<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>각 계층을 지날 때 데이터에는 해당 계층의 제어 정보(헤더)가 추가되며, 데이터 단위의 이름도 달라집니다. 이 명칭은 시험에서 자주 출제됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>계층</th>
+<th>데이터 단위(PDU)</th>
+<th>추가되는 정보</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7·6·5계층</td>
+<td>데이터(Data)</td>
+<td>응용 정보</td>
+</tr>
+<tr>
+<td>4계층</td>
+<td>세그먼트(Segment)</td>
+<td>포트 번호, 순서 번호</td>
+</tr>
+<tr>
+<td>3계층</td>
+<td>패킷(Packet)</td>
+<td>IP 주소(출발지/목적지)</td>
+</tr>
+<tr>
+<td>2계층</td>
+<td>프레임(Frame)</td>
+<td>MAC 주소, 오류 검출 코드(FCS)</td>
+</tr>
+<tr>
+<td>1계층</td>
+<td>비트(Bit)</td>
+<td>전기/광 신호로 변환</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>시험 포인트</strong>: PDU(Protocol Data Unit) 명칭을 묻는 문제에서 "세그먼트 → 4계층", "프레임 → 2계층", "패킷 → 3계층"의 대응을 정확히 기억해야 합니다.</p>
+</blockquote>
+<hr />
+<h2 id="2-tcpip-osi">📚 핵심 개념 2: TCP/IP 모델과 OSI 모델의 관계<a class="headerlink" href="#2-tcpip-osi" title="Permanent link">&para;</a></h2>
+<h3 id="_11">비유로 이해하기<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>OSI 모델이 건축의 <strong>설계도(이론적 청사진)</strong>라면, TCP/IP 모델은 실제로 <strong>건축된 건물</strong>입니다. 설계도에는 7개 층이 있지만, 실제 건물에서는 일부 층을 합쳐 4개 층으로 운영하고 있는 것입니다.</p>
+<h3 id="_12">정의<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><strong>TCP/IP 모델</strong>은 미국 국방부(DoD)의 ARPANET 프로젝트에서 탄생한 프로토콜 체계로, 현재 인터넷의 실질적인 표준입니다. OSI 모델의 7계층을 4개 계층으로 단순화했습니다.</p>
+<h3 id="osi-vs-tcpip">OSI vs TCP/IP 대응표<a class="headerlink" href="#osi-vs-tcpip" title="Permanent link">&para;</a></h3>
+<p>이 대응 관계는 시험의 단골 출제 포인트입니다.</p>
+<table>
+<thead>
+<tr>
+<th>OSI 모델</th>
+<th>TCP/IP 모델</th>
+<th>대표 프로토콜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7계층 - 응용</td>
+<td><strong>응용 계층</strong><br/>(Application)</td>
+<td>HTTP, FTP, SMTP, DNS, Telnet, SNMP</td>
+</tr>
+<tr>
+<td>6계층 - 표현</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5계층 - 세션</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4계층 - 전송</td>
+<td><strong>전송 계층</strong><br/>(Transport)</td>
+<td>TCP, UDP</td>
+</tr>
+<tr>
+<td>3계층 - 네트워크</td>
+<td><strong>인터넷 계층</strong><br/>(Internet)</td>
+<td>IP, ICMP, ARP, RARP</td>
+</tr>
+<tr>
+<td>2계층 - 데이터링크</td>
+<td><strong>네트워크 접근 계층</strong><br/>(Network Access)</td>
+<td>Ethernet, Wi-Fi, PPP, HDLC</td>
+</tr>
+<tr>
+<td>1계층 - 물리</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>아래 다이어그램은 두 모델의 계층 대응 관계를 시각적으로 보여줍니다.</p>
+<div class="mermaid">flowchart LR
+    subgraph OSI["OSI 7계층"]
+        direction TB
+        O7["7. 응용"]
+        O6["6. 표현"]
+        O5["5. 세션"]
+        O4["4. 전송"]
+        O3["3. 네트워크"]
+        O2["2. 데이터링크"]
+        O1["1. 물리"]
+    end
+
+    subgraph TCPIP["TCP/IP 4계층"]
+        direction TB
+        T4["응용 계층"]
+        T3["전송 계층"]
+        T2["인터넷 계층"]
+        T1["네트워크 접근 계층"]
+    end
+
+    O7 --&gt; T4
+    O6 --&gt; T4
+    O5 --&gt; T4
+    O4 --&gt; T3
+    O3 --&gt; T2
+    O2 --&gt; T1
+    O1 --&gt; T1</div>
+<p>핵심적인 차이를 정리하면 다음과 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th>비교 항목</th>
+<th>OSI 모델</th>
+<th>TCP/IP 모델</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>계층 수</td>
+<td>7계층</td>
+<td>4계층</td>
+</tr>
+<tr>
+<td>성격</td>
+<td>이론적 참조 모델</td>
+<td>실용적 프로토콜 모델</td>
+</tr>
+<tr>
+<td>개발 주체</td>
+<td>ISO(국제표준화기구)</td>
+<td>미국 국방부(DoD)</td>
+</tr>
+<tr>
+<td>개발 시기</td>
+<td>1984년</td>
+<td>1970년대(ARPANET)</td>
+</tr>
+<tr>
+<td>세션·표현 계층</td>
+<td>독립 계층으로 분리</td>
+<td>응용 계층에 통합</td>
+</tr>
+<tr>
+<td>실제 사용</td>
+<td>학습·참조용</td>
+<td>인터넷 실제 동작 표준</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_13">🔧 활동: 캡슐화 과정 따라가기<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>웹 브라우저에서 <code>www.example.com</code>을 입력했을 때, 데이터가 각 계층을 통과하며 어떻게 처리되는지 단계별로 추적하겠습니다.</p>
+<h3 id="encapsulation">캡슐화(Encapsulation)란?<a class="headerlink" href="#encapsulation" title="Permanent link">&para;</a></h3>
+<p><strong>캡슐화</strong>는 상위 계층의 데이터에 해당 계층의 제어 정보(헤더)를 추가하여 하위 계층으로 전달하는 과정입니다. 택배를 보낼 때 물건을 상자에 넣고(내용물), 운송장을 붙이고(주소 정보), 다시 큰 박스에 넣어 분류 코드를 적는 과정과 같습니다.</p>
+<p>수신 측에서는 반대로 <strong>역캡슐화(Decapsulation)</strong>, 즉 각 계층에서 헤더를 제거하며 원래 데이터를 복원합니다.</p>
+<div class="mermaid">flowchart TB
+    D["데이터&lt;br/&gt;(응용·표현·세션)"] --&gt; S["세그먼트&lt;br/&gt;= TCP 헤더 + 데이터"]
+    S --&gt; P["패킷&lt;br/&gt;= IP 헤더 + 세그먼트"]
+    P --&gt; F["프레임&lt;br/&gt;= MAC 헤더 + 패킷 + FCS"]
+    F --&gt; B["비트&lt;br/&gt;= 전기/광 신호로 변환"]</div>
+<h3 id="_14">단계별 추적<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p><strong>[1단계] 응용 계층 (7계층)</strong></p>
+<p>사용자가 웹 브라우저에 URL을 입력하면, 브라우저는 <strong>HTTP 프로토콜</strong>에 따라 "이 페이지를 보내 달라"는 <strong>HTTP 요청 메시지</strong>를 생성합니다. 이때 DNS를 통해 도메인 이름을 IP 주소로 변환합니다.</p>
+<p>→ 생성물: <strong>HTTP 요청 데이터</strong></p>
+<p><strong>[2단계] 전송 계층 (4계층)</strong></p>
+<p>HTTP 데이터를 받은 전송 계층은 <strong>TCP 헤더</strong>를 추가합니다. 여기에는 출발지 포트 번호(예: 50000번), 목적지 포트 번호(HTTP는 80번), 순서 번호 등이 포함됩니다. 또한 TCP는 <strong>3-way handshake</strong>(SYN → SYN+ACK → ACK)로 연결을 먼저 수립합니다.</p>
+<p>→ 생성물: <strong>세그먼트 = TCP 헤더 + HTTP 데이터</strong></p>
+<p><strong>[3단계] 네트워크 계층 (3계층)</strong></p>
+<p>세그먼트에 <strong>IP 헤더</strong>를 추가합니다. 출발지 IP 주소와 목적지 IP 주소가 기록되며, 라우터는 이 정보를 보고 최적 경로를 결정합니다.</p>
+<p>→ 생성물: <strong>패킷 = IP 헤더 + 세그먼트</strong></p>
+<p><strong>[4단계] 데이터링크 계층 (2계층)</strong></p>
+<p>패킷에 <strong>MAC 헤더</strong>(출발지/목적지 MAC 주소)와 <strong>FCS(Frame Check Sequence, 오류 검출 코드)</strong>를 추가합니다. FCS는 Part 3에서 학습한 CRC를 사용하여 계산합니다.</p>
+<p>→ 생성물: <strong>프레임 = MAC 헤더 + 패킷 + FCS</strong></p>
+<p><strong>[5단계] 물리 계층 (1계층)</strong></p>
+<p>프레임의 각 비트를 전기 신호, 광 신호, 또는 전파로 변환하여 전송 매체(케이블, 광섬유, 무선)를 통해 전송합니다. Part 2에서 학습한 변조 방식(ASK, FSK, PSK, QAM 등)이 여기에서 적용됩니다.</p>
+<p>→ 생성물: <strong>비트 스트림(물리적 신호)</strong></p>
+<p>수신 측에서는 이 과정이 정확히 반대로 진행됩니다. 물리 계층에서 신호를 비트로 복원하고, 데이터링크에서 프레임 헤더를 제거하며 오류를 검사하고, 네트워크에서 IP 헤더를 제거하고, 전송에서 TCP 헤더를 제거하여, 최종적으로 응용 계층이 HTTP 응답 데이터를 받아 웹 페이지를 화면에 표시합니다.</p>
+<hr />
+<h2 id="part-13-osi">🔍 Part 1~3 학습 내용의 OSI 계층 매핑<a class="headerlink" href="#part-13-osi" title="Permanent link">&para;</a></h2>
+<p>지금까지 배운 내용이 OSI 모델에서 어디에 위치하는지 정리하겠습니다. 이 매핑은 전체 학습의 연결고리를 강화하는 데 중요합니다.</p>
+<table>
+<thead>
+<tr>
+<th>학습 내용</th>
+<th>해당 차시</th>
+<th>OSI 계층</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>아날로그/디지털 신호, 주파수</td>
+<td>Part 1 (1~3차시)</td>
+<td><strong>1계층 - 물리</strong></td>
+</tr>
+<tr>
+<td>AM, FM, PM (아날로그 변조)</td>
+<td>Part 2 (4~6차시)</td>
+<td><strong>1계층 - 물리</strong></td>
+</tr>
+<tr>
+<td>ASK, FSK, PSK, QAM (디지털 변조)</td>
+<td>Part 2 (7~8차시)</td>
+<td><strong>1계층 - 물리</strong></td>
+</tr>
+<tr>
+<td>PCM, 표본화, 양자화</td>
+<td>Part 2 (5~6차시)</td>
+<td><strong>1계층 - 물리</strong></td>
+</tr>
+<tr>
+<td>패리티 비트, CRC, 해밍 코드</td>
+<td>Part 3 (10~11차시)</td>
+<td><strong>2계층 - 데이터링크</strong></td>
+</tr>
+<tr>
+<td>ARQ (Stop-and-Wait, Go-Back-N 등)</td>
+<td>Part 3 (12차시)</td>
+<td><strong>2계층 - 데이터링크</strong></td>
+</tr>
+<tr>
+<td>채널 용량, 샤넌 정리</td>
+<td>Part 3 (9차시)</td>
+<td><strong>1~2계층 경계</strong></td>
+</tr>
+<tr>
+<td>다중화(FDM, TDM, CDM)</td>
+<td>Part 2~3</td>
+<td><strong>1~2계층</strong></td>
+</tr>
+</tbody>
+</table>
+<p>이 표를 통해, Part 1~3의 학습 내용은 주로 OSI 모델의 <strong>하위 2개 계층(물리, 데이터링크)</strong>에 집중되어 있었음을 알 수 있습니다. 이번 차시부터 Part 4에서는 3계층 이상의 영역과 전체 시스템 관점을 다룹니다.</p>
+<hr />
+<h2 id="_15">⚠️ 자주 하는 실수와 주의할 점<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="1">실수 1: 계층 번호와 이름의 혼동<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>시험에서 "3계층의 기능은?"이라고 물을 때, 3계층이 네트워크 계층인지 전송 계층인지 헷갈리는 경우가 많습니다.</p>
+<p><strong>해결법</strong>: 1계층부터 차례대로 <strong>"물(물리)-데(데이터링크)-네(네트워크)-전(전송)-세(세션)-표(표현)-응(응용)"</strong>으로 7글자를 암기하면 됩니다.</p>
+<h3 id="2">실수 2: 데이터링크 계층과 전송 계층의 오류 제어 혼동<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>두 계층 모두 오류 제어를 수행하지만, 범위가 다릅니다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>데이터링크 계층(2계층)</th>
+<th>전송 계층(4계층)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>오류 제어 범위</td>
+<td><strong>인접 노드 간</strong>(hop-to-hop)</td>
+<td><strong>종단 간</strong>(end-to-end)</td>
+</tr>
+<tr>
+<td>사용 기법</td>
+<td>CRC, 해밍 코드, ARQ</td>
+<td>TCP의 체크섬, 재전송</td>
+</tr>
+<tr>
+<td>대상</td>
+<td>프레임</td>
+<td>세그먼트</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-osi">실수 3: OSI 모델 = 실제 프로토콜이라는 오해<a class="headerlink" href="#3-osi" title="Permanent link">&para;</a></h3>
+<p>OSI 모델은 <strong>참조 모델(Reference Model)</strong>입니다. 실제 인터넷은 TCP/IP 모델에 따라 동작합니다. 시험에서 "현재 인터넷에서 사용되는 프로토콜 모델은?"이라고 물으면 답은 <strong>TCP/IP</strong>입니다.</p>
+<h3 id="4">실수 4: 허브와 스위치의 계층 혼동<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>장비</th>
+<th>동작 계층</th>
+<th>핵심 차이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>리피터/허브</td>
+<td>1계층(물리)</td>
+<td>신호만 증폭/복제, 주소 구분 없음</td>
+</tr>
+<tr>
+<td>브리지/스위치</td>
+<td>2계층(데이터링크)</td>
+<td>MAC 주소 기반 프레임 전달</td>
+</tr>
+<tr>
+<td>라우터</td>
+<td>3계층(네트워크)</td>
+<td>IP 주소 기반 패킷 라우팅</td>
+</tr>
+<tr>
+<td>게이트웨이</td>
+<td>4~7계층</td>
+<td>서로 다른 프로토콜 간 변환</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_16">📌 시험 빈출 포인트 정리<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>공공기관 통신이론 시험에서 OSI 모델 관련 주요 출제 유형을 정리하겠습니다.</p>
+<h3 id="1_1">출제 유형 1: 계층별 기능 매칭<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>"다음 중 네트워크 계층의 기능이 아닌 것은?"</p>
+</blockquote>
+<p>이 유형에 대비하려면 각 계층의 <strong>핵심 기능 키워드</strong>를 정확히 연결해야 합니다.</p>
+<table>
+<thead>
+<tr>
+<th>계층</th>
+<th>핵심 키워드</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1계층</td>
+<td>비트 전송, 신호 변환, 전송 매체, 리피터, 허브</td>
+</tr>
+<tr>
+<td>2계층</td>
+<td>프레임, MAC 주소, 오류 검출(CRC), 흐름 제어, HDLC, 스위치</td>
+</tr>
+<tr>
+<td>3계층</td>
+<td>패킷, IP 주소, 라우팅, 라우터, 혼잡 제어</td>
+</tr>
+<tr>
+<td>4계층</td>
+<td>세그먼트, 포트 번호, TCP/UDP, 종단 간 신뢰성</td>
+</tr>
+<tr>
+<td>5계층</td>
+<td>세션 관리, 동기점, 대화 제어</td>
+</tr>
+<tr>
+<td>6계층</td>
+<td>암호화, 압축, 코드 변환, 데이터 형식</td>
+</tr>
+<tr>
+<td>7계층</td>
+<td>사용자 인터페이스, HTTP, FTP, SMTP, DNS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-hdlc">출제 유형 2: HDLC 프레임 구조<a class="headerlink" href="#2-hdlc" title="Permanent link">&para;</a></h3>
+<p>HDLC는 2계층 프로토콜로 시험에서 프레임 구조를 묻는 문제가 자주 출제됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>크기</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>플래그(Flag)</td>
+<td>8비트(01111110)</td>
+<td>프레임 시작/종료 구분</td>
+</tr>
+<tr>
+<td>주소(Address)</td>
+<td>8비트 이상</td>
+<td>수신국 주소</td>
+</tr>
+<tr>
+<td>제어(Control)</td>
+<td>8 또는 16비트</td>
+<td>프레임 종류(I, S, U) 구분</td>
+</tr>
+<tr>
+<td>정보(Information)</td>
+<td>가변</td>
+<td>전송 데이터</td>
+</tr>
+<tr>
+<td>FCS</td>
+<td>16 또는 32비트</td>
+<td>CRC 오류 검출</td>
+</tr>
+<tr>
+<td>플래그(Flag)</td>
+<td>8비트(01111110)</td>
+<td>프레임 종료</td>
+</tr>
+</tbody>
+</table>
+<p>HDLC의 세 가지 프레임 유형:
+- <strong>I-프레임(Information)</strong>: 사용자 데이터 전송
+- <strong>S-프레임(Supervisory)</strong>: 오류 및 흐름 제어(RR, RNR, REJ, SREJ)
+- <strong>U-프레임(Unnumbered)</strong>: 링크 설정/해제(SABM, DISC, UA)</p>
+<h3 id="3-tcpip">출제 유형 3: TCP/IP 계층과 프로토콜 매칭<a class="headerlink" href="#3-tcpip" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>"ARP 프로토콜이 속하는 TCP/IP 계층은?"</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>TCP/IP 계층</th>
+<th>주요 프로토콜</th>
+<th>시험 빈출 프로토콜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>응용</td>
+<td>HTTP, FTP, SMTP, POP3, DNS, SNMP, Telnet</td>
+<td>DNS(포트 53), HTTP(포트 80)</td>
+</tr>
+<tr>
+<td>전송</td>
+<td>TCP, UDP</td>
+<td>TCP(포트 번호, 3-way handshake)</td>
+</tr>
+<tr>
+<td>인터넷</td>
+<td>IP, ICMP, IGMP, ARP, RARP</td>
+<td>ARP(IP→MAC), RARP(MAC→IP)</td>
+</tr>
+<tr>
+<td>네트워크 접근</td>
+<td>Ethernet, Token Ring, FDDI, PPP</td>
+<td>Ethernet(CSMA/CD)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>ARP와 RARP</strong>는 시험 빈출 항목입니다.
+- <strong>ARP(Address Resolution Protocol)</strong>: IP 주소 → MAC 주소 변환
+- <strong>RARP(Reverse ARP)</strong>: MAC 주소 → IP 주소 변환</p>
+</blockquote>
+<hr />
+<h2 id="_17">🧩 개념 통합: 통신 과정 시나리오<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>학습한 내용을 하나의 시나리오로 통합하겠습니다. 컴퓨터 A에서 컴퓨터 B로 이메일을 보내는 과정입니다.</p>
+<div class="mermaid">sequenceDiagram
+    participant A as 컴퓨터 A
+    participant R as 라우터
+    participant B as 컴퓨터 B
+
+    Note over A: 7계층 - SMTP로 메일 작성
+    Note over A: 4계층 - TCP 연결 수립
+    A-&gt;&gt;R: 3계층 - IP 패킷 전송
+    Note over A,R: 2계층 - 프레임으로 캡슐화
+    Note over A,R: 1계층 - 전기신호로 전송
+    R-&gt;&gt;B: 3계층 - 경로 설정 후 전달
+    Note over R,B: 2계층 - 새 프레임 생성
+    Note over R,B: 1계층 - 전기신호로 전송
+    Note over B: 역캡슐화 진행
+    Note over B: 7계층 - 메일 수신 완료</div>
+<p>이 과정에서 주목할 점이 있습니다. <strong>라우터에서 프레임이 새로 생성됩니다.</strong> 라우터는 3계층 장비이므로, 수신한 프레임에서 2계층 헤더를 제거하고 IP 주소를 확인한 뒤, 다음 구간에 맞는 <strong>새로운 2계층 헤더</strong>를 붙여 전송합니다. 즉, MAC 주소는 구간마다 바뀌지만 IP 주소는 출발지에서 목적지까지 유지됩니다.</p>
+<p>이것이 바로 계층 구조의 핵심입니다. 각 계층은 자신의 역할만 수행하고, 다른 계층의 변화에 영향받지 않습니다.</p>
+<hr />
+<h2 id="_18">📝 형성 평가<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<div class="assessment">
+<h3 id="_19">📝 형성 평가<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p><strong>객관식 1.</strong> OSI 7계층 모델에서 경로 설정(라우팅)을 담당하는 계층은 다음 중 어느 것입니까?</p>
+<p>① 물리 계층(1계층)
+② 데이터링크 계층(2계층)
+③ 네트워크 계층(3계층)
+④ 전송 계층(4계층)</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③**
+
+네트워크 계층(3계층)은 IP 주소를 기반으로 출발지에서 목적지까지의 **최적 경로를 설정(라우팅)**하는 것이 핵심 기능입니다. 대표 장비는 라우터이며, 데이터 단위는 패킷입니다.
+
+</details>
+<hr />
+<p><strong>객관식 2.</strong> 다음 중 OSI 2계층(데이터링크 계층)의 프로토콜에 해당하는 것은 어느 것입니까?</p>
+<p>① IP
+② TCP
+③ HDLC
+④ HTTP</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③**
+
+**HDLC(High-level Data Link Control)**는 데이터링크 계층의 대표적인 비트 지향형 프로토콜입니다. IP는 3계층, TCP는 4계층, HTTP는 7계층에 해당합니다.
+
+</details>
+<hr />
+<p><strong>객관식 3.</strong> TCP/IP 모델에서 OSI 모델의 5·6·7계층에 대응하는 계층은 다음 중 어느 것입니까?</p>
+<p>① 네트워크 접근 계층
+② 인터넷 계층
+③ 전송 계층
+④ 응용 계층</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ④**
+
+TCP/IP 모델에서는 OSI의 세션(5)·표현(6)·응용(7) 계층을 하나의 **응용 계층(Application Layer)**으로 통합합니다. 이는 TCP/IP가 실용성을 중시하여 설계된 결과입니다.
+
+</details>
+<hr />
+<p><strong>서술형 1.</strong> 컴퓨터 A에서 컴퓨터 B로 웹 페이지를 요청할 때, 데이터가 송신 측 각 계층을 지나며 겪는 <strong>캡슐화 과정</strong>을 4계층부터 1계층까지 순서대로 설명하십시오. 각 계층에서 추가되는 정보와 데이터 단위(PDU) 명칭을 포함하여 작성하십시오.</p>
+<details>
+<summary>정답 확인</summary>
+
+**모범 답안:**
+
+1. **4계층(전송 계층)**: 응용 데이터에 **TCP 헤더**(출발지/목적지 포트 번호, 순서 번호)를 추가합니다. 데이터 단위는 **세그먼트(Segment)**입니다.
+
+2. **3계층(네트워크 계층)**: 세그먼트에 **IP 헤더**(출발지/목적지 IP 주소, TTL)를 추가합니다. 데이터 단위는 **패킷(Packet)**입니다.
+
+3. **2계층(데이터링크 계층)**: 패킷에 **MAC 헤더**(출발지/목적지 MAC 주소)와 **FCS(오류 검출 코드)**를 추가합니다. 데이터 단위는 **프레임(Frame)**입니다.
+
+4. **1계층(물리 계층)**: 프레임의 각 비트를 전기 신호, 광 신호, 또는 전파로 변환하여 전송 매체를 통해 전송합니다. 데이터 단위는 **비트(Bit)**입니다.
+
+핵심은 상위 계층에서 내려올수록 헤더가 겹겹이 추가되며(캡슐화), 수신 측에서는 역순으로 헤더를 제거한다(역캡슐화)는 것입니다.
+
+</details>
+<hr />
+<h3 id="_20">✅ 자기점검 체크리스트<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> OSI 7계층의 이름을 1계층부터 7계층까지 순서대로 말할 수 있습니다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 각 계층의 핵심 기능과 대표 장비/프로토콜을 설명할 수 있습니다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 물리 계층에서 변복조가, 데이터링크 계층에서 오류 제어가 이루어진다는 것을 이해했습니다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> TCP/IP 4계층과 OSI 7계층의 대응 관계를 설명할 수 있습니다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 캡슐화 과정에서 각 계층의 PDU 명칭(세그먼트, 패킷, 프레임, 비트)을 구분할 수 있습니다</li>
+</ul>
+</div>
+<hr />
+<h2 id="_21">💭 성찰 &amp; 다음 차시 미리보기<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<h3 id="_22">이번 차시 핵심 정리<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p>이번 차시에서는 통신 시스템의 전체 구조를 <strong>OSI 7계층 모델</strong>이라는 틀로 정리했습니다. 핵심을 세 문장으로 요약하겠습니다.</p>
+<ol>
+<li>OSI 모델은 통신 기능을 7개 계층으로 분리하여, 각 계층이 독립적으로 자기 역할을 수행하도록 설계된 <strong>참조 모델</strong>입니다.</li>
+<li>Part 1~3에서 학습한 신호·변조는 <strong>1계층(물리)</strong>, 오류 제어는 <strong>2계층(데이터링크)</strong>에 해당하며, 이번 차시를 통해 전체 학습의 위치가 명확해졌습니다.</li>
+<li>실제 인터넷은 OSI의 단순화 버전인 <strong>TCP/IP 4계층 모델</strong>로 동작하며, 데이터는 <strong>캡슐화/역캡슐화</strong> 과정을 통해 계층 간 전달됩니다.</li>
+</ol>
+<h3 id="part-13">Part 1~3과의 연결<a class="headerlink" href="#part-13" title="Permanent link">&para;</a></h3>
+<p>이제 돌이켜 보면, 지금까지의 학습이 OSI 모델의 하위 2개 계층을 깊이 있게 다룬 것이었음을 알 수 있습니다. 신호 처리, 변복조, 오류 정정이라는 개별 기술이 어떤 구조 속에서 동작하는지 파악한 것이 이번 차시의 가장 큰 성과입니다.</p>
+<h3 id="_23">다음 차시 미리보기<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p><strong>16차시: 디지털 통신과 무선·이동통신</strong>에서는 현대 통신의 핵심인 <strong>디지털 통신 시스템의 구조</strong>, <strong>무선 통신의 특성과 기술</strong>(CDMA, OFDM, LTE/5G 등), 그리고 <strong>이동통신 세대별 발전</strong>을 다룹니다. OSI 모델의 각 계층에서 이러한 기술들이 어떻게 구현되는지 연결하여 학습할 예정입니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../chapter14/" class="md-footer__link md-footer__link--prev" aria-label="이전: 14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapter16/" class="md-footer__link md-footer__link--next" aria-label="다음: 16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              <div class="md-ellipsis">
+                16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 노용철TV | <a href='https://eduflow-greatsong.fly.dev/'>EduFlow</a>로 제작
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/title-link.js"></script>
+      
+        <script src="../javascripts/mermaid-config.js"></script>
+      
+        <script src="../javascripts/scroll-progress.js"></script>
+      
+        <script src="../javascripts/eduflow-nav.js"></script>
+      
+        <script src="../javascripts/lightbox.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3758 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="비전공자도 이해할 수 있도록 일상 비유와 실전 기출 문제로 구성한 통신공학 완전정복 교재. 한전KDN 등 공공기관 채용 필기시험 대비용 자기주도 학습 자료입니다.">
+      
+      
+        <meta name="author" content="노용철TV (EduFlow)">
+      
+      
+      
+        <link rel="prev" href="../chapter18/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>19차시: 최종 정리와 시험 전략 - 합격을 위한 마무리 - 통신공학 단박에 끝내기</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#19-" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-header__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            통신공학 단박에 끝내기
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              19차시: 최종 정리와 시험 전략 - 합격을 위한 마무리
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter05/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter09/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../chapter15/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-nav__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    통신공학 단박에 끝내기
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1차시: 통신공학 전체 그림 그리기 - 신호와 시스템의 기초
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2차시: 신호를 수식으로 표현하기 - 주파수 영역의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3차시: 아날로그 통신의 두 주인공 - AM과 FM 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4차시: 아날로그에서 디지털로 - 표본화와 PCM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5차시: 디지털 신호를 전송하는 방법 - ASK, FSK, PSK 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6차시: 더 효율적으로 전송하기 - QAM과 고차 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7차시: 신뢰성 확보하기 - 오류 검출과 정정 부호
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8차시: Part 2 종합 실전 문제풀이 - 디지털 변복조 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9차시: 통신 채널의 한계 - 샤논 법칙과 채널 용량
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10차시: 한 채널을 여럿이 쓰는 방법 - 다중화 기술의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11차시: 여럿이 동시에 통신하기 - TDMA와 FDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12차시: 간섭 없이 많은 사용자를 수용하기 - CDMA의 원리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18차시: 전체 통합 실전 모의고사 - 시험 완성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19차시: 최종 정리와 시험 전략 - 합격을 위한 마무리
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19차시: 최종 정리와 시험 전략 - 합격을 위한 마무리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 핵심 주제 카드
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 핵심 주제 카드">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 핵심 정리 압축
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 오답 패턴 분석
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 실전 시험 전략
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 학습 여정 성찰
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 왜 최종 정리가 필요한가 (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-part-14-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: Part 1~4 핵심 공식·개념 총정리 (20분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: 오답 패턴 분석과 대응 전략 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: 실전 시험 전략 완성 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 형성 평가 및 성찰 (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 왜 최종 정리가 필요한가
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-part-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 1: Part 1~4 핵심 공식·개념 총정리
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 1: Part 1~4 핵심 공식·개념 총정리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 전체 학습 내용 구조도
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Part 1: 신호의 기초와 변조 — 핵심 공식 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Part 2: 디지털 전송과 채널 이론 — 핵심 공식 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Part 3: 무선 통신과 정보 이론 — 핵심 공식 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Part 4: 네트워크와 프로토콜 — 핵심 공식·개념 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗂️ 핵심 개념 20선 — 빈출 개념 요약표
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 기출 빈출 유형 10가지
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧮 핵심 공식 빠른 참조 — 계산 문제 대비
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 2: 오답 패턴 분석과 실전 시험 전략
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 2: 오답 패턴 분석과 실전 시험 전략">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 통신이론 시험의 5대 오답 패턴
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 통신이론 시험의 5대 오답 패턴">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        패턴 1: 단위 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        패턴 2: 유사 공식 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        패턴 3: 로그 계산 실수
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        패턴 4: 유사 용어 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        패턴 5: 함정 선지 판별
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ 실전 시험 시간 관리 전략
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏰ 실전 시험 시간 관리 전략">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3회독 전략 상세
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        문제 유형별 시간 배분 가이드
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 선지 판별 실전 기법
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 시험 당일 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Part별 빈출 키워드 빠른 복습
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ 따라하기 실습: 나만의 핵심 정리 시트 만들기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ 따라하기 실습: 나만의 핵심 정리 시트 만들기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: 취약 영역 파악 (2분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-3-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: 취약 공식 3개 선택 (1분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: 오답 노트 작성 (2분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: 시험 당일 전략 확정 (1분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: 최종 확인 (1분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 시험 직전 자주 하는 실수 — 꼭 피해야 할 5가지
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗺️ 합격 이후: 통신공학 실무 학습 로드맵
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 학습 여정 마무리
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 학습 여정 마무리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 18차시를 돌아보며
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 핵심 주제 카드
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 핵심 주제 카드">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 핵심 정리 압축
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 오답 패턴 분석
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 실전 시험 전략
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 학습 여정 성찰
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 왜 최종 정리가 필요한가 (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-part-14-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: Part 1~4 핵심 공식·개념 총정리 (20분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: 오답 패턴 분석과 대응 전략 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: 실전 시험 전략 완성 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 형성 평가 및 성찰 (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 왜 최종 정리가 필요한가
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-part-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 1: Part 1~4 핵심 공식·개념 총정리
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 1: Part 1~4 핵심 공식·개념 총정리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 전체 학습 내용 구조도
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Part 1: 신호의 기초와 변조 — 핵심 공식 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Part 2: 디지털 전송과 채널 이론 — 핵심 공식 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Part 3: 무선 통신과 정보 이론 — 핵심 공식 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Part 4: 네트워크와 프로토콜 — 핵심 공식·개념 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗂️ 핵심 개념 20선 — 빈출 개념 요약표
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 기출 빈출 유형 10가지
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧮 핵심 공식 빠른 참조 — 계산 문제 대비
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 2: 오답 패턴 분석과 실전 시험 전략
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 2: 오답 패턴 분석과 실전 시험 전략">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 통신이론 시험의 5대 오답 패턴
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 통신이론 시험의 5대 오답 패턴">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        패턴 1: 단위 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        패턴 2: 유사 공식 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        패턴 3: 로그 계산 실수
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        패턴 4: 유사 용어 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        패턴 5: 함정 선지 판별
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ 실전 시험 시간 관리 전략
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏰ 실전 시험 시간 관리 전략">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3회독 전략 상세
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        문제 유형별 시간 배분 가이드
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 선지 판별 실전 기법
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 시험 당일 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Part별 빈출 키워드 빠른 복습
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ 따라하기 실습: 나만의 핵심 정리 시트 만들기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ 따라하기 실습: 나만의 핵심 정리 시트 만들기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: 취약 영역 파악 (2분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-3-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: 취약 공식 3개 선택 (1분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: 오답 노트 작성 (2분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: 시험 당일 전략 확정 (1분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: 최종 확인 (1분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 시험 직전 자주 하는 실수 — 꼭 피해야 할 5가지
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗺️ 합격 이후: 통신공학 실무 학습 로드맵
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 학습 여정 마무리
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 학습 여정 마무리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 18차시를 돌아보며
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="네비게이션" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../chapter15/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="19-">19차시: 최종 정리와 시험 전략 - 합격을 위한 마무리<a class="headerlink" href="#19-" title="Permanent link">&para;</a></h1>
+<div class="lesson-banner">
+<p><strong>⏰ 50분</strong> · 핵심공식총정리 · 오답패턴분석 · 실전시험전략 · <strong>난이도</strong> ●●●●○</p>
+<p><strong>학습목표</strong>: Part 1~4 핵심 내용을 압축 정리하고, 오답 패턴을 분석하며, 실전 시험 전략을 완성할 수 있다</p>
+<blockquote>
+<p><strong>오늘의 질문</strong>: "18차시 동안 배운 모든 내용을 시험장에서 60분 안에 꺼내 쓰려면, 어떻게 정리해야 할까요?"</p>
+</blockquote>
+</div>
+<hr />
+<h2 id="_1">학습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Part 1~4의 핵심 공식, 개념, 기출 유형을 체계적인 '요약 정리 시트'로 압축할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 자신의 오답 패턴(계산 실수, 용어 혼동, 함정 선지 오류)을 분석하고 대응책을 세울 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 시험장에서 시간 관리, 문제 우선순위, 스트레스 관리를 포함한 '실전 시험 전략'을 완성할 수 있다</li>
+</ul>
+<hr />
+<h2 id="_2">🎯 핵심 주제 카드<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="cards-grid">
+<div class="card card-orange">
+<h3 id="_3">🧠 핵심 정리 압축<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>18차시 전체 내용을 공식·개념·기출 유형으로 분류하여 한눈에 복습합니다</p>
+</div>
+<div class="card card-red">
+<h3 id="_4">📋 오답 패턴 분석<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>반복되는 실수 유형을 진단하고 구체적 대응책을 마련합니다</p>
+</div>
+<div class="card card-blue">
+<h3 id="_5">🎯 실전 시험 전략<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>시간 배분, 문제 풀이 순서, 선지 판별법을 체계화합니다</p>
+</div>
+<div class="card card-green">
+<h3 id="_6">💬 학습 여정 성찰<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>지금까지의 성장을 돌아보고 앞으로의 학습 방향을 설계합니다</p>
+</div>
+</div>
+<hr />
+<h2 id="_7">⏱️ 수업 흐름<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<div class="steps">
+<div class="step">
+<h4 id="1-5">1단계: 왜 최종 정리가 필요한가 (5분)<a class="headerlink" href="#1-5" title="Permanent link">&para;</a></h4>
+<p>시험 합격을 위한 마지막 점검의 의미를 이해하고, 오늘의 학습 목표를 확인합니다.</p>
+</div>
+<div class="step">
+<h4 id="2-part-14-20">2단계: Part 1~4 핵심 공식·개념 총정리 (20분)<a class="headerlink" href="#2-part-14-20" title="Permanent link">&para;</a></h4>
+<p>18차시에 걸쳐 학습한 핵심 공식 30개, 주요 개념 20개, 기출 빈출 유형 10개를 체계적으로 압축 정리합니다.</p>
+</div>
+<div class="step">
+<h4 id="3-10">3단계: 오답 패턴 분석과 대응 전략 (10분)<a class="headerlink" href="#3-10" title="Permanent link">&para;</a></h4>
+<p>통신이론 시험에서 자주 발생하는 오답 유형을 분류하고, 각 유형별 구체적 대응책을 수립합니다.</p>
+</div>
+<div class="step">
+<h4 id="4-10">4단계: 실전 시험 전략 완성 (10분)<a class="headerlink" href="#4-10" title="Permanent link">&para;</a></h4>
+<p>시간 관리, 문제 풀이 우선순위, 선지 판별법, 시험 당일 준비 사항을 체계화합니다.</p>
+</div>
+<div class="step">
+<h4 id="5-5">5단계: 형성 평가 및 성찰 (5분)<a class="headerlink" href="#5-5" title="Permanent link">&para;</a></h4>
+<p>최종 확인 문제를 풀고, 학습 여정을 돌아보며 앞으로의 방향을 설계합니다.</p>
+</div>
+</div>
+<hr />
+<h2 id="_8">📚 왜 최종 정리가 필요한가<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>여행을 떠나기 전에 짐을 다시 확인하는 것처럼, 시험 직전에는 그동안 학습한 내용을 <strong>한 곳에 모아 점검하는 과정</strong>이 반드시 필요합니다. 18차시에 걸쳐 배운 내용은 방대합니다. 아날로그 변조부터 디지털 전송, 정보 이론, 네트워크 프로토콜까지 다양한 주제를 다루었습니다.</p>
+<p>문제는 시험장에서 이 모든 내용을 60분 안에 꺼내 써야 한다는 것입니다. <strong>체계적으로 정리되지 않은 지식은 시험장에서 떠오르지 않습니다.</strong> 반대로, 핵심 공식과 개념이 하나의 구조 안에 정리되어 있다면 문제를 읽는 순간 관련 지식이 자동으로 연결됩니다.</p>
+<p>이 차시에서는 세 가지 작업을 수행합니다.</p>
+<div class="mermaid">flowchart LR
+    A["핵심 정리&lt;br/&gt;공식·개념·유형 압축"] --&gt; B["오답 분석&lt;br/&gt;실수 패턴 진단"]
+    B --&gt; C["시험 전략&lt;br/&gt;시간·순서·판별법"]
+    C --&gt; D["합격"]</div>
+<blockquote>
+<p>위 흐름은 오늘 차시의 전체 구조입니다. 정리 → 분석 → 전략 순서로 진행됩니다.</p>
+</blockquote>
+<hr />
+<h2 id="1-part-14">📚 핵심 개념 1: Part 1~4 핵심 공식·개념 총정리<a class="headerlink" href="#1-part-14" title="Permanent link">&para;</a></h2>
+<h3 id="_9">🔑 전체 학습 내용 구조도<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>먼저 18차시에 걸쳐 학습한 내용의 전체 구조를 확인하겠습니다.</p>
+<div class="mermaid">mindmap
+  root((통신이론&lt;br/&gt;전체 구조))
+    Part 1 신호와 변조
+      신호 기초
+      아날로그 변조
+      디지털 변조
+      펄스 변조
+    Part 2 디지털 전송
+      PCM과 부호화
+      다중화
+      전송 이론
+      채널 용량
+    Part 3 무선과 정보이론
+      전파와 안테나
+      이동통신
+      정보이론
+      오류 제어
+    Part 4 네트워크
+      OSI와 TCP/IP
+      프로토콜
+      최신 기술</div>
+<h3 id="part-1">📋 Part 1: 신호의 기초와 변조 — 핵심 공식 정리<a class="headerlink" href="#part-1" title="Permanent link">&para;</a></h3>
+<p>Part 1에서는 통신의 출발점인 <strong>신호</strong>와 <strong>변조</strong>를 학습했습니다. 원래의 정보 신호를 먼 곳까지 보내기 위해 반송파에 실어 보내는 과정이 변조입니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">번호</th>
+<th style="text-align: left;">공식/개념</th>
+<th style="text-align: left;">수식</th>
+<th style="text-align: left;">핵심 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><strong>푸리에 급수</strong></td>
+<td style="text-align: left;">주기 신호 = 기본파 + 고조파의 합</td>
+<td style="text-align: left;">모든 신호를 주파수 성분으로 분해</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><strong>데시벨(dB)</strong></td>
+<td style="text-align: left;">dB = 10 log₁₀(P₂/P₁)</td>
+<td style="text-align: left;">전력비 → dB 변환, 3dB = 2배</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><strong>AM 변조지수</strong></td>
+<td style="text-align: left;">m = Eₘ/Eᶜ</td>
+<td style="text-align: left;">m &gt; 1이면 과변조(왜곡 발생)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><strong>AM 변조 효율</strong></td>
+<td style="text-align: left;">η = m²/(2+m²) × 100%</td>
+<td style="text-align: left;">m=1일 때 최대 33.3%</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><strong>AM 대역폭</strong></td>
+<td style="text-align: left;">BW = 2fₘ</td>
+<td style="text-align: left;">상·하 측파대 포함</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><strong>FM 변조지수</strong></td>
+<td style="text-align: left;">mf = Δf/fₘ</td>
+<td style="text-align: left;">Δf: 최대 주파수 편이</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><strong>FM 대역폭(카슨 공식)</strong></td>
+<td style="text-align: left;">BW = 2(Δf + fₘ)</td>
+<td style="text-align: left;">실용적 대역폭 계산</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><strong>SSB 대역폭</strong></td>
+<td style="text-align: left;">BW = fₘ</td>
+<td style="text-align: left;">AM의 절반, 전력 효율 ↑</td>
+</tr>
+</tbody>
+</table>
+<p><strong>자주 출제되는 포인트:</strong>
+- AM과 FM의 대역폭 비교 문제
+- 변조지수에 따른 효율 변화 계산
+- DSB-SC, SSB, VSB 각 방식의 대역폭과 특징 비교</p>
+<h3 id="part-2">📋 Part 2: 디지털 전송과 채널 이론 — 핵심 공식 정리<a class="headerlink" href="#part-2" title="Permanent link">&para;</a></h3>
+<p>Part 2에서는 아날로그 신호를 디지털로 변환하고, 효율적으로 전송하는 방법을 학습했습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">번호</th>
+<th style="text-align: left;">공식/개념</th>
+<th style="text-align: left;">수식</th>
+<th style="text-align: left;">핵심 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;"><strong>나이퀴스트 표본화 정리</strong></td>
+<td style="text-align: left;">fₛ ≥ 2fₘ</td>
+<td style="text-align: left;">최소 표본화 주파수</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;"><strong>양자화 레벨</strong></td>
+<td style="text-align: left;">L = 2ⁿ</td>
+<td style="text-align: left;">n: 비트 수, L: 레벨 수</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;"><strong>PCM 전송률</strong></td>
+<td style="text-align: left;">R = n × fₛ [bps]</td>
+<td style="text-align: left;">비트수 × 표본화율</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;"><strong>양자화 SNR</strong></td>
+<td style="text-align: left;">SNR = 6.02n + 1.76 [dB]</td>
+<td style="text-align: left;">비트 1개 추가 시 약 6dB 개선</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;"><strong>나이퀴스트 채널 용량</strong></td>
+<td style="text-align: left;">C = 2B log₂ L [bps]</td>
+<td style="text-align: left;">무잡음 채널 최대 전송률</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;"><strong>섀넌 채널 용량</strong></td>
+<td style="text-align: left;">C = B log₂(1 + S/N) [bps]</td>
+<td style="text-align: left;">잡음 채널 이론적 최대 한계</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: left;"><strong>TDM 전송률</strong></td>
+<td style="text-align: left;">총 비트율 = 채널 수 × 각 채널 비트율</td>
+<td style="text-align: left;">시간분할 다중화</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;"><strong>FDM 대역폭</strong></td>
+<td style="text-align: left;">총 BW = 채널 수 × 각 채널 BW + 보호대역</td>
+<td style="text-align: left;">주파수분할 다중화</td>
+</tr>
+</tbody>
+</table>
+<p><strong>자주 출제되는 포인트:</strong>
+- PCM의 표본화→양자화→부호화 3단계 순서와 각 단계 계산
+- 섀넌 공식에서 S/N비와 대역폭의 상호 관계
+- TDM과 FDM의 특징 비교 문제</p>
+<h3 id="part-3">📋 Part 3: 무선 통신과 정보 이론 — 핵심 공식 정리<a class="headerlink" href="#part-3" title="Permanent link">&para;</a></h3>
+<p>Part 3에서는 전파의 전달, 안테나, 이동통신, 그리고 오류 제어 기법을 학습했습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">번호</th>
+<th style="text-align: left;">공식/개념</th>
+<th style="text-align: left;">수식</th>
+<th style="text-align: left;">핵심 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">17</td>
+<td style="text-align: left;"><strong>자유공간 전파 손실</strong></td>
+<td style="text-align: left;">Lf = (4πd/λ)²</td>
+<td style="text-align: left;">거리 2배 → 손실 4배(6dB 증가)</td>
+</tr>
+<tr>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;"><strong>안테나 이득</strong></td>
+<td style="text-align: left;">G = 4πAe/λ²</td>
+<td style="text-align: left;">실효 면적과 파장의 관계</td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td style="text-align: left;"><strong>반파장 다이폴 안테나</strong></td>
+<td style="text-align: left;">길이 = λ/2, 이득 ≈ 2.15dBi</td>
+<td style="text-align: left;">가장 기본적인 안테나</td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td style="text-align: left;"><strong>프리스 전송 공식</strong></td>
+<td style="text-align: left;">Pᵣ = Pₜ·Gₜ·Gᵣ·(λ/4πd)²</td>
+<td style="text-align: left;">송수신 전력 관계</td>
+</tr>
+<tr>
+<td style="text-align: center;">21</td>
+<td style="text-align: left;"><strong>엔트로피</strong></td>
+<td style="text-align: left;">H = -Σ P(x) log₂ P(x)</td>
+<td style="text-align: left;">정보량의 평균, 단위: bit</td>
+</tr>
+<tr>
+<td style="text-align: center;">22</td>
+<td style="text-align: left;"><strong>해밍 거리</strong></td>
+<td style="text-align: left;">d_min = t(검출) + 1 = 2t(정정) + 1</td>
+<td style="text-align: left;">오류 검출/정정 능력</td>
+</tr>
+<tr>
+<td style="text-align: center;">23</td>
+<td style="text-align: left;"><strong>CRC 다항식</strong></td>
+<td style="text-align: left;">나눗셈 나머지 = 0이면 오류 없음</td>
+<td style="text-align: left;">프레임 오류 검출</td>
+</tr>
+<tr>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;"><strong>ARQ 방식</strong></td>
+<td style="text-align: left;">Stop-and-Wait, Go-Back-N, Selective Repeat</td>
+<td style="text-align: left;">오류 발생 시 재전송</td>
+</tr>
+</tbody>
+</table>
+<p><strong>자주 출제되는 포인트:</strong>
+- 전파 전파 방식(지표파, 대류권파, 전리층파, 직접파)과 주파수 대역 매칭
+- 해밍 코드의 오류 검출·정정 비트 수 계산
+- ARQ 세 방식의 효율 비교</p>
+<h3 id="part-4">📋 Part 4: 네트워크와 프로토콜 — 핵심 공식·개념 정리<a class="headerlink" href="#part-4" title="Permanent link">&para;</a></h3>
+<p>Part 4에서는 통신 시스템이 실제로 동작하는 네트워크 환경과 최신 기술을 학습했습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">번호</th>
+<th style="text-align: left;">공식/개념</th>
+<th style="text-align: left;">설명</th>
+<th style="text-align: left;">핵심 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">25</td>
+<td style="text-align: left;"><strong>OSI 7계층</strong></td>
+<td style="text-align: left;">물-데-네-전-세-표-응</td>
+<td style="text-align: left;">각 계층 역할과 대표 프로토콜</td>
+</tr>
+<tr>
+<td style="text-align: center;">26</td>
+<td style="text-align: left;"><strong>TCP vs UDP</strong></td>
+<td style="text-align: left;">연결형/신뢰성 vs 비연결형/속도</td>
+<td style="text-align: left;">3-way handshake 유무</td>
+</tr>
+<tr>
+<td style="text-align: center;">27</td>
+<td style="text-align: left;"><strong>IP 주소 클래스</strong></td>
+<td style="text-align: left;">A(1~126), B(128~191), C(192~223)</td>
+<td style="text-align: left;">서브넷 마스크 계산</td>
+</tr>
+<tr>
+<td style="text-align: center;">28</td>
+<td style="text-align: left;"><strong>서브넷팅</strong></td>
+<td style="text-align: left;">호스트 수 = 2ⁿ - 2</td>
+<td style="text-align: left;">n: 호스트 비트 수</td>
+</tr>
+<tr>
+<td style="text-align: center;">29</td>
+<td style="text-align: left;"><strong>전송 효율</strong></td>
+<td style="text-align: left;">η = 데이터 비트 / 전체 비트 × 100%</td>
+<td style="text-align: left;">오버헤드 포함 계산</td>
+</tr>
+<tr>
+<td style="text-align: center;">30</td>
+<td style="text-align: left;"><strong>다중접속 방식</strong></td>
+<td style="text-align: left;">FDMA, TDMA, CDMA, OFDMA</td>
+<td style="text-align: left;">세대별 이동통신 기술 매칭</td>
+</tr>
+</tbody>
+</table>
+<p><strong>자주 출제되는 포인트:</strong>
+- OSI 각 계층의 PDU(프로토콜 데이터 단위) 명칭
+- TCP 3-way handshake 과정
+- 서브넷 마스크로 네트워크/호스트 주소 구분</p>
+<hr />
+<h3 id="20">🗂️ 핵심 개념 20선 — 빈출 개념 요약표<a class="headerlink" href="#20" title="Permanent link">&para;</a></h3>
+<p>공식 외에 <strong>용어와 개념</strong> 자체가 출제되는 문제도 많습니다. 다음은 시험에 가장 자주 등장하는 개념 20개입니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">번호</th>
+<th style="text-align: left;">개념</th>
+<th style="text-align: left;">한 줄 정의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><strong>변조(Modulation)</strong></td>
+<td style="text-align: left;">정보 신호를 반송파에 실어 전송 가능하게 만드는 과정</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><strong>복조(Demodulation)</strong></td>
+<td style="text-align: left;">수신된 변조 신호에서 원래 정보를 추출하는 과정</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><strong>대역폭(Bandwidth)</strong></td>
+<td style="text-align: left;">신호가 차지하는 주파수 범위(Hz)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><strong>SNR(신호 대 잡음비)</strong></td>
+<td style="text-align: left;">원하는 신호와 잡음의 전력 비율</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><strong>표본화(Sampling)</strong></td>
+<td style="text-align: left;">연속 신호를 일정 간격으로 측정하는 과정</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><strong>양자화(Quantization)</strong></td>
+<td style="text-align: left;">표본값을 유한한 레벨로 근사하는 과정</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><strong>부호화(Encoding)</strong></td>
+<td style="text-align: left;">양자화된 값을 이진 코드로 변환하는 과정</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><strong>다중화(Multiplexing)</strong></td>
+<td style="text-align: left;">하나의 채널에 여러 신호를 함께 전송하는 기술</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;"><strong>ISI(심볼간 간섭)</strong></td>
+<td style="text-align: left;">인접 심볼이 서로 영향을 주어 오류를 발생시키는 현상</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;"><strong>아이 패턴(Eye Pattern)</strong></td>
+<td style="text-align: left;">디지털 신호 품질을 시각적으로 판단하는 오실로스코프 패턴</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;"><strong>페이딩(Fading)</strong></td>
+<td style="text-align: left;">무선 채널에서 신호 세기가 시간/장소에 따라 변동하는 현상</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;"><strong>다이버시티(Diversity)</strong></td>
+<td style="text-align: left;">페이딩 극복을 위해 다중 경로/주파수/안테나를 활용하는 기법</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;"><strong>OFDM</strong></td>
+<td style="text-align: left;">직교 부반송파를 이용한 다중 반송파 변조 방식</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;"><strong>스펙트럼 확산</strong></td>
+<td style="text-align: left;">신호를 넓은 대역에 분산시켜 전송하는 기술(DS, FH)</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: left;"><strong>핸드오프(Handoff)</strong></td>
+<td style="text-align: left;">이동 중 기지국 간 통화 채널을 전환하는 과정</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;"><strong>패리티 검사</strong></td>
+<td style="text-align: left;">데이터에 1비트를 추가하여 오류를 검출하는 기법</td>
+</tr>
+<tr>
+<td style="text-align: center;">17</td>
+<td style="text-align: left;"><strong>컨볼루션 부호</strong></td>
+<td style="text-align: left;">현재+이전 비트를 함께 부호화하는 연속적 오류 정정 방식</td>
+</tr>
+<tr>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;"><strong>라우팅(Routing)</strong></td>
+<td style="text-align: left;">네트워크 계층에서 최적 경로를 선택하는 과정</td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td style="text-align: left;"><strong>프로토콜(Protocol)</strong></td>
+<td style="text-align: left;">통신 장치 간 데이터 교환 규칙과 절차의 집합</td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td style="text-align: left;"><strong>QoS(서비스 품질)</strong></td>
+<td style="text-align: left;">네트워크에서 특정 트래픽에 우선순위를 부여하는 메커니즘</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="10">📊 기출 빈출 유형 10가지<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
+<p>통신이론 시험에서 반복적으로 출제되는 문제 유형을 정리했습니다. 이 유형들을 확실히 익히면 전체 문제의 상당 부분을 커버할 수 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">유형</th>
+<th style="text-align: left;">출제 형태</th>
+<th style="text-align: left;">대응 전략</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>유형 1</strong></td>
+<td style="text-align: left;">AM/FM 변조지수 계산</td>
+<td style="text-align: left;">공식 대입 후 단위 확인</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>유형 2</strong></td>
+<td style="text-align: left;">PCM 전송률·양자화 레벨 계산</td>
+<td style="text-align: left;">fₛ × n = R, L = 2ⁿ 확인</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>유형 3</strong></td>
+<td style="text-align: left;">섀넌/나이퀴스트 채널 용량</td>
+<td style="text-align: left;">무잡음 vs 잡음 구분 먼저</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>유형 4</strong></td>
+<td style="text-align: left;">dB 계산(전력비/전압비)</td>
+<td style="text-align: left;">전력 10log, 전압 20log 구분</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>유형 5</strong></td>
+<td style="text-align: left;">OSI 계층별 장비·프로토콜 매칭</td>
+<td style="text-align: left;">7계층 표 암기 필수</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>유형 6</strong></td>
+<td style="text-align: left;">서브넷 마스크·IP 주소 계산</td>
+<td style="text-align: left;">2ⁿ - 2 공식 + 비트 변환</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>유형 7</strong></td>
+<td style="text-align: left;">디지털 변조 방식 비교</td>
+<td style="text-align: left;">ASK, FSK, PSK, QAM 특징 표</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>유형 8</strong></td>
+<td style="text-align: left;">오류 검출·정정 능력 계산</td>
+<td style="text-align: left;">해밍 거리 공식 적용</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>유형 9</strong></td>
+<td style="text-align: left;">안테나 이득·전파 손실 계산</td>
+<td style="text-align: left;">dB 단위 변환에 주의</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>유형 10</strong></td>
+<td style="text-align: left;">다중화 방식(TDM/FDM/CDM) 비교</td>
+<td style="text-align: left;">각 방식 장단점 + 적용 사례</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_10">🧮 핵심 공식 빠른 참조 — 계산 문제 대비<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>시험에서 계산 문제가 차지하는 비중이 높습니다. 다음은 계산에 반드시 필요한 <strong>로그 값과 변환 상수</strong>입니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">값</th>
+<th style="text-align: center;">결과</th>
+<th style="text-align: left;">활용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">log₂ 2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">채널 용량 계산</td>
+</tr>
+<tr>
+<td style="text-align: center;">log₂ 4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">양자화 레벨</td>
+</tr>
+<tr>
+<td style="text-align: center;">log₂ 8</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">양자화 레벨</td>
+</tr>
+<tr>
+<td style="text-align: center;">log₂ 16</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">16-QAM 비트 수</td>
+</tr>
+<tr>
+<td style="text-align: center;">log₂ 64</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">64-QAM 비트 수</td>
+</tr>
+<tr>
+<td style="text-align: center;">log₂ 256</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">256-QAM, PCM 8비트</td>
+</tr>
+<tr>
+<td style="text-align: center;">log₁₀ 2</td>
+<td style="text-align: center;">0.301</td>
+<td style="text-align: left;">dB 계산</td>
+</tr>
+<tr>
+<td style="text-align: center;">log₁₀ 3</td>
+<td style="text-align: center;">0.477</td>
+<td style="text-align: left;">dB 계산</td>
+</tr>
+<tr>
+<td style="text-align: center;">10 log₁₀ 2</td>
+<td style="text-align: center;">3.01 dB</td>
+<td style="text-align: left;">전력 2배</td>
+</tr>
+<tr>
+<td style="text-align: center;">10 log₁₀ 10</td>
+<td style="text-align: center;">10 dB</td>
+<td style="text-align: left;">전력 10배</td>
+</tr>
+<tr>
+<td style="text-align: center;">20 log₁₀ 2</td>
+<td style="text-align: center;">6.02 dB</td>
+<td style="text-align: left;">전압 2배</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>팁</strong>: 시험장에서 "전력이 2배"라는 표현이 나오면 자동으로 <strong>3dB</strong>를 떠올리고, "전압이 2배"라면 <strong>6dB</strong>를 떠올리면 됩니다.</p>
+</blockquote>
+<hr />
+<h2 id="2">📚 핵심 개념 2: 오답 패턴 분석과 실전 시험 전략<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="5">🔍 통신이론 시험의 5대 오답 패턴<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>시험에서 틀리는 이유는 대부분 정해져 있습니다. "몰라서 틀리는 경우"보다 <strong>"알지만 실수로 틀리는 경우"</strong>가 더 많습니다. 다음은 통신이론 시험에서 가장 빈번하게 발생하는 오답 패턴 5가지입니다.</p>
+<div class="mermaid">flowchart TD
+    A["오답 발생"] --&gt; B["패턴 1&lt;br/&gt;단위 혼동"]
+    A --&gt; C["패턴 2&lt;br/&gt;공식 혼동"]
+    A --&gt; D["패턴 3&lt;br/&gt;로그 계산 실수"]
+    A --&gt; E["패턴 4&lt;br/&gt;용어 혼동"]
+    A --&gt; F["패턴 5&lt;br/&gt;함정 선지"]</div>
+<h4 id="1">패턴 1: 단위 혼동<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">실수 유형</th>
+<th style="text-align: left;">예시</th>
+<th style="text-align: left;">대응책</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">kHz와 MHz 혼동</td>
+<td style="text-align: left;">대역폭 200kHz를 0.2MHz로 변환 누락</td>
+<td style="text-align: left;">문제의 모든 값을 <strong>같은 단위</strong>로 통일 후 계산</td>
+</tr>
+<tr>
+<td style="text-align: left;">bps와 kbps 혼동</td>
+<td style="text-align: left;">64kbps를 64,000bps로 변환 누락</td>
+<td style="text-align: left;">답을 구한 후 단위를 다시 확인</td>
+</tr>
+<tr>
+<td style="text-align: left;">dB와 배(倍) 혼동</td>
+<td style="text-align: left;">3dB를 3배로 계산</td>
+<td style="text-align: left;">dB → 배 변환표 암기</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2_1">패턴 2: 유사 공식 혼동<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">혼동 쌍</th>
+<th style="text-align: left;">차이점</th>
+<th style="text-align: left;">구분법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">나이퀴스트 용량 vs 섀넌 용량</td>
+<td style="text-align: left;">무잡음 vs 잡음 채널</td>
+<td style="text-align: left;">문제에 "잡음" 또는 "S/N" 언급 여부</td>
+</tr>
+<tr>
+<td style="text-align: left;">AM 대역폭 vs FM 대역폭</td>
+<td style="text-align: left;">2fₘ vs 2(Δf + fₘ)</td>
+<td style="text-align: left;">FM은 주파수 편이(Δf)가 추가</td>
+</tr>
+<tr>
+<td style="text-align: left;">전력 dB vs 전압 dB</td>
+<td style="text-align: left;">10log vs 20log</td>
+<td style="text-align: left;">"전력비"인지 "전압비"인지 확인</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3">패턴 3: 로그 계산 실수<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<p><strong>가장 흔한 실수</strong>: log₂와 log₁₀을 혼동하는 것입니다.</p>
+<ul>
+<li><strong>섀넌 공식</strong>: log₂를 사용합니다 → 결과 단위가 bps</li>
+<li><strong>dB 계산</strong>: log₁₀을 사용합니다 → 결과 단위가 dB</li>
+<li><strong>밑 변환</strong>: log₂ X = log₁₀ X / log₁₀ 2 = log₁₀ X / 0.301</li>
+</ul>
+<p><strong>대응책</strong>: 문제를 읽고 "결과의 단위가 bps인가, dB인가?"를 먼저 판단한 후 사용할 로그를 결정합니다.</p>
+<h4 id="4">패턴 4: 유사 용어 혼동<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">혼동 쌍</th>
+<th style="text-align: left;">핵심 차이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>변조</strong> vs <strong>부호화</strong></td>
+<td style="text-align: left;">변조: 아날로그 반송파에 정보 실기 / 부호화: 디지털 비트로 변환</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>다중화</strong> vs <strong>다중접속</strong></td>
+<td style="text-align: left;">다중화: 하나의 링크에 여러 신호 / 다중접속: 하나의 채널에 여러 사용자</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>대역폭</strong> vs <strong>전송률</strong></td>
+<td style="text-align: left;">대역폭: Hz 단위 / 전송률: bps 단위</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>반송파</strong> vs <strong>부반송파</strong></td>
+<td style="text-align: left;">반송파: 주 전송 주파수 / 부반송파: 다중 반송파(OFDM) 각 성분</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FDM</strong> vs <strong>FDMA</strong></td>
+<td style="text-align: left;">FDM: 다중화 기술 / FDMA: 다중접속 방식</td>
+</tr>
+</tbody>
+</table>
+<h4 id="5_1">패턴 5: 함정 선지 판별<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h4>
+<p>통신이론 시험의 객관식에는 의도적으로 설계된 <strong>함정 선지</strong>가 포함됩니다. 다음은 자주 사용되는 함정 유형입니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">함정 유형</th>
+<th style="text-align: left;">예시</th>
+<th style="text-align: left;">판별법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>부분적 참</strong></td>
+<td style="text-align: left;">"AM은 FM보다 대역폭이 넓다" → 변조지수에 따라 다름</td>
+<td style="text-align: left;">"항상", "모든" 같은 절대 표현 경계</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>단위 바꿔치기</strong></td>
+<td style="text-align: left;">정답이 6dB인데 선지에 "6배"가 있음</td>
+<td style="text-align: left;">답의 단위를 문제 조건과 대조</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>비슷한 수치</strong></td>
+<td style="text-align: left;">계산 결과 48kbps인데 선지에 48, 64, 96, 128</td>
+<td style="text-align: left;">중간 과정 수치가 선지에 있으면 의심</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>인과 반전</strong></td>
+<td style="text-align: left;">"SNR이 높으면 BER이 높아진다"</td>
+<td style="text-align: left;">인과관계 방향 확인</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_11">⏰ 실전 시험 시간 관리 전략<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>통신이론 시험은 일반적으로 <strong>60분에 60문항</strong> 또는 유사한 비율로 출제됩니다. 문항당 평균 1분입니다. 그러나 모든 문제에 똑같이 1분을 쓰는 것은 비효율적입니다.</p>
+<div class="mermaid">flowchart LR
+    A["1회독&lt;br/&gt;25분&lt;br/&gt;쉬운 문제 해결"] --&gt; B["2회독&lt;br/&gt;25분&lt;br/&gt;어려운 문제 도전"]
+    B --&gt; C["3회독&lt;br/&gt;10분&lt;br/&gt;검토 및 마킹"]</div>
+<h4 id="3_1">3회독 전략 상세<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">회독</th>
+<th style="text-align: center;">시간</th>
+<th style="text-align: left;">대상</th>
+<th style="text-align: left;">행동</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1회독</strong></td>
+<td style="text-align: center;">25분</td>
+<td style="text-align: left;">읽자마자 풀 수 있는 문제</td>
+<td style="text-align: left;">즉시 풀고 답 마킹. 못 풀겠으면 별표(☆) 후 넘김</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2회독</strong></td>
+<td style="text-align: center;">25분</td>
+<td style="text-align: left;">1회독에서 건너뛴 문제</td>
+<td style="text-align: left;">시간을 들여 풀이. 여전히 모르면 △표시</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3회독</strong></td>
+<td style="text-align: center;">10분</td>
+<td style="text-align: left;">△표시 문제 + 전체 검토</td>
+<td style="text-align: left;">찍기 전략 활용. 마킹 오류 확인</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_12">문제 유형별 시간 배분 가이드<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">문제 유형</th>
+<th style="text-align: center;">예상 소요</th>
+<th style="text-align: center;">비율</th>
+<th style="text-align: left;">전략</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">단순 용어/개념</td>
+<td style="text-align: center;">30초</td>
+<td style="text-align: center;">약 30%</td>
+<td style="text-align: left;">1회독에서 즉시 해결</td>
+</tr>
+<tr>
+<td style="text-align: left;">공식 대입 계산</td>
+<td style="text-align: center;">1분</td>
+<td style="text-align: center;">약 35%</td>
+<td style="text-align: left;">공식 떠올리면 바로 풀기</td>
+</tr>
+<tr>
+<td style="text-align: left;">복합 계산</td>
+<td style="text-align: center;">2분</td>
+<td style="text-align: center;">약 20%</td>
+<td style="text-align: left;">2회독에서 집중 풀이</td>
+</tr>
+<tr>
+<td style="text-align: left;">종합 판단/비교</td>
+<td style="text-align: center;">1.5분</td>
+<td style="text-align: center;">약 15%</td>
+<td style="text-align: left;">소거법 활용</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_13">🎯 선지 판별 실전 기법<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>모든 문제를 정확히 풀 수 없는 상황에서 정답 확률을 높이는 기법을 정리하겠습니다.</p>
+<p><strong>기법 1: 소거법</strong></p>
+<p>4개 선지 중 확실히 틀린 것을 먼저 제거합니다. 2개만 제거해도 정답 확률은 25%에서 50%로 올라갑니다.</p>
+<p><strong>기법 2: 극단값 검증</strong></p>
+<p>계산 문제에서 선지에 매우 큰 값이나 매우 작은 값이 있다면, 상식적으로 가능한 범위인지 확인합니다.
+- 예: "PCM 8비트 양자화 레벨 수는?" → 2⁸ = 256. 선지에 512가 있다면 이는 9비트의 결과이므로 제외</p>
+<p><strong>기법 3: 차원 분석</strong></p>
+<p>계산 결과의 단위가 문제에서 요구하는 단위와 일치하는지 확인합니다.
+- 주파수를 물어봤는데 답이 bps 단위라면 풀이 과정에 오류가 있는 것입니다</p>
+<p><strong>기법 4: 선지 간 관계 파악</strong></p>
+<ul>
+<li>선지 중 2개가 매우 비슷하다면(예: 48kbps와 64kbps) 정답은 그 둘 중 하나일 가능성이 높습니다</li>
+<li>선지 중 1개가 다른 3개와 완전히 다른 범위라면 오답일 가능성이 높습니다</li>
+</ul>
+<hr />
+<h3 id="_14">📋 시험 당일 체크리스트<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>시험 실력은 <strong>컨디션 관리</strong>에 의해 크게 좌우됩니다. 시험 당일 준비 사항을 체크리스트로 정리합니다.</p>
+<p><strong>전날 준비:</strong>
+- [ ] 수험표, 신분증, 필기구(연필·지우개·볼펜) 준비
+- [ ] 공학용 계산기 작동 확인 및 배터리 교체
+- [ ] 핵심 정리 시트 1장 최종 점검
+- [ ] 시험장 위치와 이동 경로 확인
+- [ ] 평소와 비슷한 시간에 취침 (수면 7시간 이상 권장)</p>
+<p><strong>당일 준비:</strong>
+- [ ] 시험 시작 30분 전 도착
+- [ ] 가벼운 식사 (과식 금지)
+- [ ] 핵심 정리 시트로 10분 최종 복습
+- [ ] 계산기 초기화 및 모드 확인
+- [ ] 화장실 미리 다녀오기</p>
+<p><strong>시험 중 행동 원칙:</strong>
+- [ ] 문제지 받으면 전체를 30초간 훑어보기
+- [ ] 1회독·2회독·3회독 시간 관리
+- [ ] 모르는 문제에 5분 이상 매달리지 않기
+- [ ] OMR 카드 마킹은 10문제 단위로 수행
+- [ ] 마지막 5분은 마킹 오류 검토에 할당</p>
+<hr />
+<h3 id="part">🔄 Part별 빈출 키워드 빠른 복습<a class="headerlink" href="#part" title="Permanent link">&para;</a></h3>
+<p>시험 직전 10분 복습용으로 각 Part의 <strong>가장 중요한 키워드 5개</strong>를 정리합니다.</p>
+<div class="mermaid">flowchart TD
+    A["Part 1&lt;br/&gt;변조지수 · 카슨공식&lt;br/&gt;SSB · DSB-SC · 대역폭"]
+    B["Part 2&lt;br/&gt;나이퀴스트 · 섀넌&lt;br/&gt;PCM · TDM/FDM · SNR"]
+    C["Part 3&lt;br/&gt;프리스공식 · 해밍거리&lt;br/&gt;페이딩 · OFDM · ARQ"]
+    D["Part 4&lt;br/&gt;OSI 7계층 · TCP/UDP&lt;br/&gt;서브넷팅 · CDMA · QoS"]
+    A --- B --- C --- D</div>
+<hr />
+<h2 id="_15">🛠️ 따라하기 실습: 나만의 핵심 정리 시트 만들기<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>지금까지 정리한 내용을 바탕으로, <strong>자신만의 핵심 정리 시트</strong>를 만드는 실습을 수행하겠습니다. 이 시트는 시험 직전 최종 복습 도구가 됩니다.</p>
+<h3 id="step-1-2">Step 1: 취약 영역 파악 (2분)<a class="headerlink" href="#step-1-2" title="Permanent link">&para;</a></h3>
+<p>아래 표에서 각 Part별로 <strong>자신의 이해도</strong>를 ○(충분), △(보통), ×(부족)으로 체크합니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Part</th>
+<th style="text-align: left;">주요 내용</th>
+<th style="text-align: center;">이해도</th>
+<th style="text-align: center;">추가 학습 필요 여부</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Part 1</td>
+<td style="text-align: left;">아날로그 변조(AM, FM, PM)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Part 1</td>
+<td style="text-align: left;">디지털 변조(ASK, FSK, PSK, QAM)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Part 2</td>
+<td style="text-align: left;">PCM 과정과 계산</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Part 2</td>
+<td style="text-align: left;">채널 용량(나이퀴스트, 섀넌)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Part 3</td>
+<td style="text-align: left;">안테나와 전파 전파</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Part 3</td>
+<td style="text-align: left;">오류 제어(해밍, CRC, ARQ)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Part 4</td>
+<td style="text-align: left;">OSI 모델과 TCP/IP</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Part 4</td>
+<td style="text-align: left;">서브넷팅과 IP 주소</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-2-3-1">Step 2: 취약 공식 3개 선택 (1분)<a class="headerlink" href="#step-2-3-1" title="Permanent link">&para;</a></h3>
+<p>Step 1에서 ×로 표시한 영역의 공식 중 가장 중요한 3개를 선택하여 아래에 적습니다.</p>
+<ol>
+<li>공식명: <strong><em>_</em></strong><strong><em>_</em>_ / 수식: </strong><strong><em>_</em></strong>____</li>
+<li>공식명: <strong><em>_</em></strong><strong><em>_</em>_ / 수식: </strong><strong><em>_</em></strong>____</li>
+<li>공식명: <strong><em>_</em></strong><strong><em>_</em>_ / 수식: </strong><strong><em>_</em></strong>____</li>
+</ol>
+<h3 id="step-3-2">Step 3: 오답 노트 작성 (2분)<a class="headerlink" href="#step-3-2" title="Permanent link">&para;</a></h3>
+<p>그동안 풀어본 문제에서 틀렸던 것 중 가장 자주 반복된 실수 3가지를 적습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">번호</th>
+<th style="text-align: left;">틀린 유형</th>
+<th style="text-align: left;">실수 원인</th>
+<th style="text-align: left;">대응책</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="step-4-1">Step 4: 시험 당일 전략 확정 (1분)<a class="headerlink" href="#step-4-1" title="Permanent link">&para;</a></h3>
+<p>앞에서 설명한 3회독 전략을 자신의 스타일에 맞게 수정합니다.</p>
+<ul>
+<li>1회독 배정 시간: ___분</li>
+<li>2회독 배정 시간: ___분</li>
+<li>3회독(검토) 배정 시간: ___분</li>
+<li>총합: 60분</li>
+</ul>
+<h3 id="step-5-1">Step 5: 최종 확인 (1분)<a class="headerlink" href="#step-5-1" title="Permanent link">&para;</a></h3>
+<p>다음 문장을 읽고 자신에게 적용되는지 확인합니다.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 핵심 공식 30개 중 25개 이상을 기억하고 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 각 Part의 주요 개념을 다른 사람에게 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 기출 빈출 유형 10가지에 대한 풀이 전략을 알고 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 시험 당일 시간 관리 계획이 수립되어 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 오답 패턴을 인식하고 대응책을 준비했다</li>
+</ul>
+<hr />
+<h2 id="5_2">⚠️ 시험 직전 자주 하는 실수 — 꼭 피해야 할 5가지<a class="headerlink" href="#5_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">순위</th>
+<th style="text-align: left;">실수</th>
+<th style="text-align: left;">왜 위험한가</th>
+<th style="text-align: left;">대신 할 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">시험 전날 밤새 공부</td>
+<td style="text-align: left;">집중력과 계산 정확도 급격히 저하</td>
+<td style="text-align: left;">평소처럼 취침, 아침에 핵심 정리만 복습</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">새로운 문제집 시작</td>
+<td style="text-align: left;">모르는 문제에 자신감 하락</td>
+<td style="text-align: left;">이미 풀었던 문제의 오답만 복습</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">한 문제에 5분 이상 매달림</td>
+<td style="text-align: left;">나머지 쉬운 문제를 풀 시간 부족</td>
+<td style="text-align: left;">별표 후 넘기고 2회독에서 재도전</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">OMR 마킹을 마지막에 한꺼번에</td>
+<td style="text-align: left;">시간 부족 시 마킹 못 하는 사고 발생</td>
+<td style="text-align: left;">10문제 단위로 중간 마킹</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">답 변경을 반복</td>
+<td style="text-align: left;">통계적으로 첫 번째 직감이 정답률이 더 높음</td>
+<td style="text-align: left;">확실한 근거가 있을 때만 변경</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_16">🗺️ 합격 이후: 통신공학 실무 학습 로드맵<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>산업기사 시험 합격은 통신공학 학습의 끝이 아니라 <strong>새로운 시작</strong>입니다. 합격 이후 실무 역량을 키우기 위한 학습 경로를 제시합니다.</p>
+<div class="mermaid">flowchart TD
+    A["통신 산업기사&lt;br/&gt;합격"] --&gt; B["무선 설비 실무&lt;br/&gt;전파법·설비 운용"]
+    A --&gt; C["네트워크 심화&lt;br/&gt;CCNA·네트워크 관리사"]
+    A --&gt; D["통신 기사&lt;br/&gt;상위 자격 도전"]
+    B --&gt; E["실무 경험 축적"]
+    C --&gt; E
+    D --&gt; E
+    E --&gt; F["통신 전문가"]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">방향</th>
+<th style="text-align: left;">추천 자격/학습</th>
+<th style="text-align: center;">예상 기간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>상위 자격</strong></td>
+<td style="text-align: left;">정보통신기사, 무선설비기사</td>
+<td style="text-align: center;">6개월~1년</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>네트워크 전문</strong></td>
+<td style="text-align: left;">CCNA, 네트워크관리사</td>
+<td style="text-align: center;">3~6개월</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>보안 분야</strong></td>
+<td style="text-align: left;">정보보안기사, 정보보안산업기사</td>
+<td style="text-align: center;">6개월~1년</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>최신 기술</strong></td>
+<td style="text-align: left;">5G/6G, IoT, 클라우드 네트워크</td>
+<td style="text-align: center;">지속 학습</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_17">📝 평가<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<div class="assessment">
+<h3 id="_18">📝 형성 평가<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p><strong>객관식 1.</strong> FM 신호의 실용적 대역폭을 구하는 카슨 공식은 다음 중 어느 것입니까?</p>
+<p>① BW = 2fₘ
+② BW = 2(Δf + fₘ)
+③ BW = 2Δf
+④ BW = Δf + 2fₘ</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ②**
+
+카슨 공식은 BW = 2(Δf + fₘ)입니다. 여기서 Δf는 최대 주파수 편이, fₘ은 변조 신호의 최대 주파수입니다. ①은 AM의 대역폭 공식이며, ③과 ④는 카슨 공식의 변형된 오류입니다.
+
+</details>
+<hr />
+<p><strong>객관식 2.</strong> 섀넌의 채널 용량 공식 C = B log₂(1 + S/N)에서, 대역폭 B = 4kHz이고 S/N = 255일 때, 채널 용량은 얼마입니까?</p>
+<p>① 16 kbps
+② 32 kbps
+③ 64 kbps
+④ 128 kbps</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ②**
+
+C = B log₂(1 + S/N) = 4,000 × log₂(256) = 4,000 × 8 = 32,000 bps = 32 kbps입니다.
+
+1 + 255 = 256이고, log₂ 256 = 8이므로 계산이 간결합니다. 이처럼 시험에서는 1 + S/N이 2의 거듭제곱이 되는 깔끔한 수치가 자주 출제됩니다.
+
+</details>
+<hr />
+<p><strong>객관식 3.</strong> 통신 시험에서 "모르는 문제에 대한 최적의 전략"으로 가장 적절한 것은 다음 중 어느 것입니까?</p>
+<p>① 끝까지 풀 때까지 매달린다
+② 바로 아무 답이나 찍고 넘어간다
+③ 확실히 틀린 선지를 소거한 후, 남은 선지 중 답을 선택하고 표시하여 2회독에서 재검토한다
+④ 빈칸으로 남겨둔다</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③**
+
+모르는 문제에 매달리면(①) 다른 문제를 풀 시간이 부족해집니다. 아무 답이나 찍는 것(②)보다는 소거법으로 확률을 높이는 것이 효과적입니다. 빈칸으로 남기는 것(④)은 감점이 없더라도 25%의 확률마저 포기하는 것이므로 비효율적입니다. 소거 후 잠정 답을 마킹하고, 시간이 남으면 재검토하는 ③이 최적입니다.
+
+</details>
+<hr />
+<p><strong>서술형 1.</strong> 다음 상황에서 오답이 발생한 원인을 진단하고, 구체적 대응책을 서술하십시오.</p>
+<blockquote>
+<p><strong>상황</strong>: "문제에서 전력비가 4배 증가했다고 했는데, 20 log₁₀ 4 = 12.04dB로 계산하여 오답을 선택했다."</p>
+</blockquote>
+<details>
+<summary>정답 확인</summary>
+
+**원인 진단**: 전력비(Power ratio)에는 10 log₁₀을 사용해야 하는데, 전압비(Voltage ratio)에 사용하는 20 log₁₀을 적용한 **유사 공식 혼동(패턴 2)**에 해당합니다.
+
+**정답 풀이**: 전력비 4배 → 10 log₁₀ 4 = 10 × 0.602 = 6.02 dB
+
+**대응책**:
+1. 문제를 읽을 때 "전력비"인지 "전압비"인지 밑줄을 긋습니다
+2. 전력 → 10log, 전압 → 20log라는 규칙을 공식 옆에 메모합니다
+3. 계산 후 결과가 상식적인 범위인지 확인합니다 (전력 4배는 약 6dB, 전압 4배는 약 12dB)
+
+</details>
+<hr />
+<h3 id="_19">✅ 자기점검 체크리스트<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Part 1~4의 핵심 공식 30개를 정리하고, 25개 이상 기억할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 자신의 주요 오답 패턴 3가지를 파악하고 각각의 대응책을 수립했다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 시험장 시간 관리 전략(3회독법)을 이해하고 자신만의 시간 배분을 확정했다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 선지 판별 기법(소거법, 극단값 검증, 차원 분석)을 활용할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 시험 당일 체크리스트를 확인하고 준비물을 점검했다</li>
+</ul>
+</div>
+<hr />
+<h2 id="_20">💭 성찰 &amp; 학습 여정 마무리<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<h3 id="18">📖 18차시를 돌아보며<a class="headerlink" href="#18" title="Permanent link">&para;</a></h3>
+<p>1차시에서 "통신이란 무엇인가?"라는 질문으로 시작한 학습 여정이 이제 마무리 단계에 도달했습니다.</p>
+<p>그동안의 학습 경로를 간략히 되짚겠습니다.</p>
+<ul>
+<li><strong>Part 1</strong> (1~5차시): 신호의 본질을 이해하고, 아날로그 변조와 디지털 변조의 원리를 학습했습니다</li>
+<li><strong>Part 2</strong> (6~10차시): 아날로그 신호를 디지털로 변환하는 PCM 과정, 다중화 기술, 그리고 채널의 이론적 한계를 탐구했습니다</li>
+<li><strong>Part 3</strong> (11~14차시): 전파의 전달 원리, 안테나, 이동통신, 정보 이론과 오류 제어를 학습했습니다</li>
+<li>**Part 4</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../chapter18/" class="md-footer__link md-footer__link--prev" aria-label="이전: 18차시: 전체 통합 실전 모의고사 - 시험 완성">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                18차시: 전체 통합 실전 모의고사 - 시험 완성
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 노용철TV | <a href='https://eduflow-greatsong.fly.dev/'>EduFlow</a>로 제작
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/title-link.js"></script>
+      
+        <script src="../javascripts/mermaid-config.js"></script>
+      
+        <script src="../javascripts/scroll-progress.js"></script>
+      
+        <script src="../javascripts/eduflow-nav.js"></script>
+      
+        <script src="../javascripts/lightbox.js"></script>
+      
+    
+  </body>
+</html>

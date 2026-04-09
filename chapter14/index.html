@@ -1,0 +1,3467 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="비전공자도 이해할 수 있도록 일상 비유와 실전 기출 문제로 구성한 통신공학 완전정복 교재. 한전KDN 등 공공기관 채용 필기시험 대비용 자기주도 학습 자료입니다.">
+      
+      
+        <meta name="author" content="노용철TV (EduFlow)">
+      
+      
+      
+        <link rel="prev" href="../chapter13/">
+      
+      
+        <link rel="next" href="../chapter15/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복 - 통신공학 단박에 끝내기</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#14-part-3-" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-header__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            통신공학 단박에 끝내기
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter05/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../chapter09/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter15/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-nav__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    통신공학 단박에 끝내기
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1차시: 통신공학 전체 그림 그리기 - 신호와 시스템의 기초
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2차시: 신호를 수식으로 표현하기 - 주파수 영역의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3차시: 아날로그 통신의 두 주인공 - AM과 FM 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4차시: 아날로그에서 디지털로 - 표본화와 PCM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5차시: 디지털 신호를 전송하는 방법 - ASK, FSK, PSK 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6차시: 더 효율적으로 전송하기 - QAM과 고차 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7차시: 신뢰성 확보하기 - 오류 검출과 정정 부호
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8차시: Part 2 종합 실전 문제풀이 - 디지털 변복조 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9차시: 통신 채널의 한계 - 샤논 법칙과 채널 용량
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10차시: 한 채널을 여럿이 쓰는 방법 - 다중화 기술의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11차시: 여럿이 동시에 통신하기 - TDMA와 FDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12차시: 간섭 없이 많은 사용자를 수용하기 - CDMA의 원리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 핵심 주제 카드
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 핵심 주제 카드">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 핵심 공식 총정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 함정 선지 패턴 분석
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 실전 문제 풀이 훈련
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 이동통신 세대별 기술 매핑
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 핵심 공식 &amp; 개념 속성 복습 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: 함정 선지 패턴 분석 (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: 실전 문제 풀이 - 계산형 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: 실전 문제 풀이 - 개념형 &amp; 비교형 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-part-3-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 성찰 &amp; Part 3 마무리 (7분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 1단계: 핵심 공식 &amp; 개념 속성 복습
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 1단계: 핵심 공식 &amp; 개념 속성 복습">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        왜 다시 정리합니까?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 Part 3 핵심 공식 총정리표
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 SNR 단위 변환 — 계산 문제의 첫 번째 관문
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 다중접속 방식 핵심 속성 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 2단계: 함정 선지 패턴 분석
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 2단계: 함정 선지 패턴 분석">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 시험에서 반복되는 5대 함정 패턴
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ 시험에서 반복되는 5대 함정 패턴">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-snr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 1: SNR 단위 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tdma-fdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 2: TDMA와 FDMA 특성 뒤바꾸기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 3: 처리이득 계산 시 단위 불일치
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 4: 나이퀴스트와 샤논 공식 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ofdm-ofdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 5: OFDM과 OFDMA 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 대응 체크 플로우
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 3단계: 실전 문제 풀이 — 계산형
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 3단계: 실전 문제 풀이 — 계산형">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 1: 샤논 채널 용량 기본
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 2: 나이퀴스트 용량과 샤논 용량의 관계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 3: CDMA 처리이득 계산
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-fdma-tdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 4: FDMA + TDMA 복합 사용자 수 계산
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 5: 대역폭 효율 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 4단계: 실전 문제 풀이 — 개념형 &amp; 비교형
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 4단계: 실전 문제 풀이 — 개념형 &amp; 비교형">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-cdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 6: CDMA의 특성
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-ofdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 7: OFDM의 장점
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 8: 이동통신 세대별 다중접속 기술
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 이동통신 세대 진화 타임라인
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 세대별 진화의 핵심 포인트
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 9: 채널 용량과 시스템 설계 종합
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 10: 종합 분석 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 최종 정리 — 시험 직전 체크시트
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 최종 정리 — 시험 직전 체크시트">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3 전체 개념 지도
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ 시험 직전 최종 체크 포인트 10가지
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 형성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 다음 차시 미리보기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 오늘의 학습 성찰
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔜 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18차시: 전체 통합 실전 모의고사 - 시험 완성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19차시: 최종 정리와 시험 전략 - 합격을 위한 마무리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 핵심 주제 카드
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 핵심 주제 카드">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 핵심 공식 총정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 함정 선지 패턴 분석
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 실전 문제 풀이 훈련
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 이동통신 세대별 기술 매핑
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 핵심 공식 &amp; 개념 속성 복습 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: 함정 선지 패턴 분석 (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: 실전 문제 풀이 - 계산형 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: 실전 문제 풀이 - 개념형 &amp; 비교형 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-part-3-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 성찰 &amp; Part 3 마무리 (7분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 1단계: 핵심 공식 &amp; 개념 속성 복습
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 1단계: 핵심 공식 &amp; 개념 속성 복습">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        왜 다시 정리합니까?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 Part 3 핵심 공식 총정리표
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 SNR 단위 변환 — 계산 문제의 첫 번째 관문
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 다중접속 방식 핵심 속성 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 2단계: 함정 선지 패턴 분석
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 2단계: 함정 선지 패턴 분석">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 시험에서 반복되는 5대 함정 패턴
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ 시험에서 반복되는 5대 함정 패턴">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-snr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 1: SNR 단위 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tdma-fdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 2: TDMA와 FDMA 특성 뒤바꾸기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 3: 처리이득 계산 시 단위 불일치
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 4: 나이퀴스트와 샤논 공식 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ofdm-ofdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 5: OFDM과 OFDMA 혼동
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        함정 대응 체크 플로우
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 3단계: 실전 문제 풀이 — 계산형
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 3단계: 실전 문제 풀이 — 계산형">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 1: 샤논 채널 용량 기본
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 2: 나이퀴스트 용량과 샤논 용량의 관계
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 3: CDMA 처리이득 계산
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-fdma-tdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 4: FDMA + TDMA 복합 사용자 수 계산
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 5: 대역폭 효율 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 4단계: 실전 문제 풀이 — 개념형 &amp; 비교형
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 4단계: 실전 문제 풀이 — 개념형 &amp; 비교형">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-cdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 6: CDMA의 특성
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-ofdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 7: OFDM의 장점
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 8: 이동통신 세대별 다중접속 기술
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 이동통신 세대 진화 타임라인
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 세대별 진화의 핵심 포인트
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 9: 채널 용량과 시스템 설계 종합
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 문제 10: 종합 분석 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 최종 정리 — 시험 직전 체크시트
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 최종 정리 — 시험 직전 체크시트">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3 전체 개념 지도
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ 시험 직전 최종 체크 포인트 10가지
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 형성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 다음 차시 미리보기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 오늘의 학습 성찰
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔜 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="네비게이션" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../chapter09/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="14-part-3-">14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복<a class="headerlink" href="#14-part-3-" title="Permanent link">&para;</a></h1>
+<div class="lesson-banner">
+<p><strong>⏰ 50분</strong> · 채널용량 계산 · 다중접속 비교 · 함정 선지 분석 · 이동통신 세대별 기술 · <strong>난이도</strong> ●●●●○</p>
+<p><strong>학습목표</strong>: Part 3의 핵심 공식과 개념을 종합하여 실전 기출 유형 문제를 정확하게 풀 수 있다</p>
+<blockquote>
+<p><strong>오늘의 질문</strong>: "시험장에서 TDMA와 FDMA를 헷갈리는 수험생과, 자신 있게 구분하는 수험생의 차이는 무엇입니까?"</p>
+</blockquote>
+</div>
+<h2 id="_1">학습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Part 3의 샤논 법칙, 다중화, TDMA, FDMA, CDMA, OFDM을 통합하여 실전 기출 문제를 풀 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 다중접속 방식 선택, 용량 계산, 채널 설계 문제를 체계적으로 접근하고 함정 선지를 구분할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 실제 통신 시스템(2G/3G/4G/5G)에서 어떤 기술이 사용되는지 설명할 수 있다</li>
+</ul>
+<hr />
+<h2 id="_2">🎯 핵심 주제 카드<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="cards-grid">
+<div class="card card-orange">
+<h3 id="_3">🧠 핵심 공식 총정리<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>샤논 용량, 처리이득, 대역폭 효율 — 계산 문제의 3대 축을 빠르게 복습합니다</p>
+</div>
+<div class="card card-red">
+<h3 id="_4">⚠️ 함정 선지 패턴 분석<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>시험에서 자주 출제되는 용어 혼동, 단위 오류, 조건 무시 패턴을 정리합니다</p>
+</div>
+<div class="card card-blue">
+<h3 id="_5">🔧 실전 문제 풀이 훈련<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>기출 빈출 유형 10문제를 단계적으로 풀며 풀이 전략을 체득합니다</p>
+</div>
+<div class="card card-purple">
+<h3 id="_6">📡 이동통신 세대별 기술 매핑<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>2G부터 5G까지 각 세대가 채택한 다중접속 기술을 한눈에 정리합니다</p>
+</div>
+</div>
+<hr />
+<h2 id="_7">⏱️ 수업 흐름<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<div class="steps">
+<div class="step">
+<h4 id="1-10">1단계: 핵심 공식 &amp; 개념 속성 복습 (10분)<a class="headerlink" href="#1-10" title="Permanent link">&para;</a></h4>
+<p>Part 3의 주요 공식과 개념을 압축 정리하고, 계산 문제에서 자주 사용되는 공식을 빠르게 확인합니다.</p>
+</div>
+<div class="step">
+<h4 id="2-8">2단계: 함정 선지 패턴 분석 (8분)<a class="headerlink" href="#2-8" title="Permanent link">&para;</a></h4>
+<p>기출 문제에서 반복적으로 등장하는 오답 유도 패턴 5가지를 분석하고, 각 패턴을 구분하는 방법을 학습합니다.</p>
+</div>
+<div class="step">
+<h4 id="3-15">3단계: 실전 문제 풀이 - 계산형 (15분)<a class="headerlink" href="#3-15" title="Permanent link">&para;</a></h4>
+<p>샤논 채널 용량, 처리이득, 사용자 수 계산 등 정량적 문제를 단계별로 풀어봅니다.</p>
+</div>
+<div class="step">
+<h4 id="4-10">4단계: 실전 문제 풀이 - 개념형 &amp; 비교형 (10분)<a class="headerlink" href="#4-10" title="Permanent link">&para;</a></h4>
+<p>다중접속 방식 비교, 이동통신 세대별 기술, OFDM 특성 등 개념 이해를 묻는 문제를 풀어봅니다.</p>
+</div>
+<div class="step">
+<h4 id="5-part-3-7">5단계: 성찰 &amp; Part 3 마무리 (7분)<a class="headerlink" href="#5-part-3-7" title="Permanent link">&para;</a></h4>
+<p>틀리기 쉬운 포인트를 최종 점검하고, 자기점검 체크리스트로 Part 3 학습을 마무리합니다.</p>
+</div>
+</div>
+<hr />
+<h2 id="1">📚 1단계: 핵심 공식 &amp; 개념 속성 복습<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="_8">왜 다시 정리합니까?<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>시험장에서 공식을 떠올리지 못하는 가장 큰 이유는 "공식을 외웠지만 언제 쓰는지 모르는 것"입니다. 이 섹션에서는 각 공식이 <strong>어떤 상황에서</strong> 사용되는지를 중심으로 정리하겠습니다.</p>
+<h3 id="part-3">🔑 Part 3 핵심 공식 총정리표<a class="headerlink" href="#part-3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">번호</th>
+<th>공식</th>
+<th>적용 상황</th>
+<th>주의사항</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">①</td>
+<td><strong>C = B × log₂(1 + SNR)</strong></td>
+<td>채널의 최대 전송률(용량) 계산</td>
+<td>SNR은 <strong>비율</strong>(dB 아님). dB가 주어지면 변환 필수</td>
+</tr>
+<tr>
+<td style="text-align: center;">②</td>
+<td><strong>C = 2B × log₂(M)</strong> 또는 <strong>나이퀴스트: C = 2B</strong> (이진 신호)</td>
+<td>무잡음 채널의 최대 전송률</td>
+<td>잡음이 없는 이상적 조건에서만 적용</td>
+</tr>
+<tr>
+<td style="text-align: center;">③</td>
+<td><strong>처리이득(PG) = 확산 대역폭 / 데이터 대역폭</strong> = <strong>칩률 / 데이터율</strong></td>
+<td>CDMA 시스템의 간섭 억제 능력 계산</td>
+<td>처리이득이 클수록 더 많은 사용자 수용 가능</td>
+</tr>
+<tr>
+<td style="text-align: center;">④</td>
+<td><strong>FDMA 채널 수 = 전체 대역폭 / 채널 대역폭</strong></td>
+<td>주파수 분할 시 수용 사용자 수</td>
+<td>보호대역(Guard Band)을 빼야 하는 경우 주의</td>
+</tr>
+<tr>
+<td style="text-align: center;">⑤</td>
+<td><strong>TDMA 채널 수 = 프레임 내 타임슬롯 수</strong></td>
+<td>시간 분할 시 수용 사용자 수</td>
+<td>FDMA와 결합되면 곱셈(FDMA 채널 × 타임슬롯)</td>
+</tr>
+<tr>
+<td style="text-align: center;">⑥</td>
+<td><strong>대역폭 효율 = 데이터 전송률(bps) / 대역폭(Hz)</strong> [단위: bps/Hz]</td>
+<td>주파수 자원의 활용 효율 비교</td>
+<td>단위를 반드시 확인</td>
+</tr>
+</tbody>
+</table>
+<h3 id="snr">📐 SNR 단위 변환 — 계산 문제의 첫 번째 관문<a class="headerlink" href="#snr" title="Permanent link">&para;</a></h3>
+<p>시험 문제에서 SNR이 <strong>dB 단위</strong>로 주어지는 경우가 많습니다. 샤논 공식에 대입하려면 반드시 <strong>비율(선형) 값</strong>으로 변환해야 합니다.</p>
+<p><strong>변환 공식:</strong></p>
+<ul>
+<li>dB → 비율: <strong>SNR(비율) = 10^(SNR(dB) / 10)</strong></li>
+<li>비율 → dB: <strong>SNR(dB) = 10 × log₁₀(SNR(비율))</strong></li>
+</ul>
+<p><strong>자주 출제되는 dB 변환값:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">SNR (dB)</th>
+<th style="text-align: center;">SNR (비율)</th>
+<th style="text-align: center;">log₂(1+SNR) ≈</th>
+<th>기억 팁</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0 dB</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td>신호 = 잡음</td>
+</tr>
+<tr>
+<td style="text-align: center;">3 dB</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1.585</td>
+<td>2배</td>
+</tr>
+<tr>
+<td style="text-align: center;">10 dB</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">3.459</td>
+<td>10배</td>
+</tr>
+<tr>
+<td style="text-align: center;">20 dB</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">6.658</td>
+<td>100배</td>
+</tr>
+<tr>
+<td style="text-align: center;">30 dB</td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: center;">9.967 ≈ 10</td>
+<td>1000배 → log₂(1001) ≈ 10</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>시험 팁</strong>: 30dB일 때 log₂(1+1000) ≈ 10이라는 사실은 빈출 계산에서 매우 유용합니다.</p>
+</blockquote>
+<h3 id="_9">🔄 다중접속 방식 핵심 속성 비교<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>이 표는 시험에서 "다음 중 옳은/틀린 것은?" 유형에 직접 대응합니다.</p>
+<table>
+<thead>
+<tr>
+<th>속성</th>
+<th>FDMA</th>
+<th>TDMA</th>
+<th>CDMA</th>
+<th>OFDMA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>분할 자원</strong></td>
+<td>주파수</td>
+<td>시간</td>
+<td>코드</td>
+<td>주파수+시간</td>
+</tr>
+<tr>
+<td><strong>사용자 구분</strong></td>
+<td>서로 다른 주파수</td>
+<td>서로 다른 타임슬롯</td>
+<td>서로 다른 확산코드</td>
+<td>서로 다른 부반송파 그룹</td>
+</tr>
+<tr>
+<td><strong>보호 요소</strong></td>
+<td>보호대역(Guard Band)</td>
+<td>보호시간(Guard Time)</td>
+<td>불필요(코드 직교성)</td>
+<td>보호구간(CP: Cyclic Prefix)</td>
+</tr>
+<tr>
+<td><strong>간섭 유형</strong></td>
+<td>인접 채널 간섭</td>
+<td>슬롯 간 간섭</td>
+<td>다중접속 간섭(MAI)</td>
+<td>부반송파 간 간섭(ICI)</td>
+</tr>
+<tr>
+<td><strong>소프트 핸드오버</strong></td>
+<td>불가</td>
+<td>불가</td>
+<td><strong>가능</strong></td>
+<td>제한적</td>
+</tr>
+<tr>
+<td><strong>대표 시스템</strong></td>
+<td>1G(AMPS)</td>
+<td>2G(GSM)</td>
+<td>3G(IS-95, WCDMA)</td>
+<td>4G(LTE)</td>
+</tr>
+<tr>
+<td><strong>대역폭 효율</strong></td>
+<td>낮음</td>
+<td>중간</td>
+<td>중간~높음</td>
+<td>높음</td>
+</tr>
+</tbody>
+</table>
+<p>아래 다이어그램은 자원 분할 방식의 차이를 시각적으로 보여줍니다.</p>
+<div class="mermaid">flowchart TB
+    subgraph FDMA["FDMA: 주파수 분할"]
+        F1["사용자1&lt;br/&gt;주파수 f1"]
+        F2["사용자2&lt;br/&gt;주파수 f2"]
+        F3["사용자3&lt;br/&gt;주파수 f3"]
+    end
+    subgraph TDMA["TDMA: 시간 분할"]
+        T1["슬롯1: 사용자1"]
+        T2["슬롯2: 사용자2"]
+        T3["슬롯3: 사용자3"]
+        T1 --&gt; T2 --&gt; T3
+    end
+    subgraph CDMA["CDMA: 코드 분할"]
+        C1["사용자1: 코드A"]
+        C2["사용자2: 코드B"]
+        C3["사용자3: 코드C"]
+    end</div>
+<hr />
+<h2 id="2">📚 2단계: 함정 선지 패턴 분석<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="5">⚠️ 시험에서 반복되는 5대 함정 패턴<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>시험 출제자는 학습자의 불완전한 이해를 겨냥하여 오답 선지를 설계합니다. 패턴을 알면 함정을 피할 수 있습니다.</p>
+<h4 id="1-snr">함정 1: SNR 단위 혼동<a class="headerlink" href="#1-snr" title="Permanent link">&para;</a></h4>
+<p><strong>문제 예시</strong>: "대역폭 10kHz, SNR 20dB인 채널의 용량은?"</p>
+<ul>
+<li>❌ <strong>함정 풀이</strong>: C = 10,000 × log₂(1 + 20) = 10,000 × 4.39 ≈ 43,900 bps</li>
+<li>✅ <strong>올바른 풀이</strong>: 20dB → 비율 100, C = 10,000 × log₂(1 + 100) = 10,000 × 6.66 ≈ 66,600 bps</li>
+</ul>
+<p><strong>구분법</strong>: 문제에서 "dB"라는 단위가 보이면, 반드시 선형 변환부터 수행합니다.</p>
+<h4 id="2-tdma-fdma">함정 2: TDMA와 FDMA 특성 뒤바꾸기<a class="headerlink" href="#2-tdma-fdma" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>함정 선지</th>
+<th>사실</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"FDMA는 보호시간이 필요하다"</td>
+<td>FDMA는 <strong>보호대역</strong>(주파수), TDMA가 <strong>보호시간</strong>(시간)</td>
+</tr>
+<tr>
+<td>"TDMA는 인접 채널 간섭이 문제이다"</td>
+<td>TDMA는 <strong>슬롯 간 간섭</strong>, FDMA가 <strong>인접 채널 간섭</strong></td>
+</tr>
+<tr>
+<td>"FDMA에서 소프트 핸드오버가 가능하다"</td>
+<td>소프트 핸드오버는 <strong>CDMA</strong>에서만 가능</td>
+</tr>
+</tbody>
+</table>
+<p><strong>구분법</strong>: 각 방식이 분할하는 자원(주파수/시간/코드)을 먼저 떠올리면, 보호 요소와 간섭 유형이 자동으로 결정됩니다.</p>
+<h4 id="3">함정 3: 처리이득 계산 시 단위 불일치<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<p><strong>문제 예시</strong>: "칩률 1.2288Mcps, 데이터율 9.6kbps일 때 처리이득은?"</p>
+<ul>
+<li>❌ <strong>함정</strong>: 1.2288 / 9.6 = 0.128 (단위 통일 안 함)</li>
+<li>✅ <strong>올바른 풀이</strong>: 1,228,800 / 9,600 = <strong>128</strong> (= 약 21dB)</li>
+</ul>
+<p><strong>구분법</strong>: 분자와 분모의 단위를 반드시 같은 단위(bps 또는 cps)로 맞춘 후 계산합니다.</p>
+<h4 id="4">함정 4: 나이퀴스트와 샤논 공식 혼동<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>나이퀴스트</th>
+<th>샤논</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>조건</strong></td>
+<td>무잡음</td>
+<td>잡음 있음</td>
+</tr>
+<tr>
+<td><strong>공식</strong></td>
+<td>C = 2B log₂M</td>
+<td>C = B log₂(1+SNR)</td>
+</tr>
+<tr>
+<td><strong>제한 요소</strong></td>
+<td>ISI(심볼 간 간섭)</td>
+<td>잡음</td>
+</tr>
+</tbody>
+</table>
+<p><strong>함정 선지 예</strong>: "잡음이 있는 채널에서 나이퀴스트 공식으로 용량을 구한다" → <strong>틀림</strong></p>
+<h4 id="5-ofdm-ofdma">함정 5: OFDM과 OFDMA 혼동<a class="headerlink" href="#5-ofdm-ofdma" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>OFDM</th>
+<th>OFDMA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>성격</strong></td>
+<td>변조/전송 <strong>기술</strong></td>
+<td>다중<strong>접속</strong> 방식</td>
+</tr>
+<tr>
+<td><strong>사용자</strong></td>
+<td>1명이 모든 부반송파 사용</td>
+<td>여러 명이 부반송파를 나눠 사용</td>
+</tr>
+<tr>
+<td><strong>적용</strong></td>
+<td>Wi-Fi(단일 사용자 전송)</td>
+<td>LTE(다수 사용자 접속)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>구분법</strong>: 마지막 글자 "A"가 <strong>Access(접속)</strong>를 의미합니다. A가 붙으면 다중접속, 없으면 단일 사용자 전송 기술입니다.</p>
+<h3 id="_10">함정 대응 체크 플로우<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>아래 플로우차트는 문제를 만났을 때 함정을 피하는 사고 과정입니다.</p>
+<div class="mermaid">flowchart TD
+    A["문제 읽기"] --&gt; B{"SNR 단위가&lt;br/&gt;dB인가?"}
+    B -- 예 --&gt; C["선형 변환 수행&lt;br/&gt;10의 dB/10 제곱"]
+    B -- 아니오 --&gt; D{"어떤 공식을&lt;br/&gt;사용하는가?"}
+    C --&gt; D
+    D -- "잡음 있음" --&gt; E["샤논 공식&lt;br/&gt;C = B log₂ 1+SNR"]
+    D -- "무잡음" --&gt; F["나이퀴스트 공식&lt;br/&gt;C = 2B log₂ M"]
+    D -- "처리이득" --&gt; G["단위 통일 확인&lt;br/&gt;PG = 칩률/데이터율"]
+    E --&gt; H["단위 확인 후&lt;br/&gt;답 선택"]
+    F --&gt; H
+    G --&gt; H</div>
+<hr />
+<h2 id="3_1">📚 3단계: 실전 문제 풀이 — 계산형<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h2>
+<p>이제 실제 시험에 나올 수 있는 계산형 문제를 풀어보겠습니다. 각 문제를 먼저 직접 풀어본 후에 풀이를 확인하시기 바랍니다.</p>
+<hr />
+<h3 id="1_1">📝 문제 1: 샤논 채널 용량 기본<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p><strong>대역폭이 4kHz이고 SNR이 30dB인 음성 채널의 최대 전송 용량은 약 얼마입니까?</strong></p>
+<p>① 약 13,300 bps<br />
+② 약 26,600 bps<br />
+③ 약 40,000 bps<br />
+④ 약 53,200 bps</p>
+<details><summary>풀이 과정 확인</summary>
+
+**1단계: SNR 단위 변환**
+- 30dB → 비율 = 10^(30/10) = 10³ = **1000**
+
+**2단계: 샤논 공식 적용**
+- C = B × log₂(1 + SNR)
+- C = 4,000 × log₂(1 + 1000)
+- C = 4,000 × log₂(1001)
+- log₂(1001) ≈ **9.97** ≈ 10
+- C ≈ 4,000 × 10 = **약 40,000 bps**
+
+**정답: ③**
+
+**함정 분석**: ①은 SNR을 30(dB 값 그대로) 대입했을 때, ②는 대역폭을 2배로 적용했을 때 나오는 값입니다. 반드시 dB → 선형 변환을 먼저 수행해야 합니다.
+
+</details>
+
+<hr />
+<h3 id="2_1">📝 문제 2: 나이퀴스트 용량과 샤논 용량의 관계<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p><strong>무잡음 채널의 대역폭이 3kHz이고, 신호 레벨이 8단계일 때 나이퀴스트 최대 전송률은 얼마입니까?</strong></p>
+<p>① 6,000 bps<br />
+② 9,000 bps<br />
+③ 18,000 bps<br />
+④ 24,000 bps</p>
+<details><summary>풀이 과정 확인</summary>
+
+**나이퀴스트 공식 적용:**
+- C = 2B × log₂(M)
+- B = 3,000Hz, M = 8(신호 레벨 수)
+- log₂(8) = **3** (∵ 2³ = 8)
+- C = 2 × 3,000 × 3 = **18,000 bps**
+
+**정답: ③**
+
+**함정 분석**: ①은 2B만 계산하고 log₂M을 빠뜨린 경우, ②는 2를 곱하지 않은 경우입니다. M이 2의 거듭제곱인지 확인하면 log₂ 계산이 쉬워집니다.
+
+</details>
+
+<hr />
+<h3 id="3-cdma">📝 문제 3: CDMA 처리이득 계산<a class="headerlink" href="#3-cdma" title="Permanent link">&para;</a></h3>
+<p><strong>IS-95 시스템에서 칩률이 1.2288Mcps이고 데이터 전송률이 9.6kbps일 때, 처리이득(PG)은 약 얼마입니까?</strong></p>
+<p>① 12.8<br />
+② 128<br />
+③ 1,280<br />
+④ 12,800</p>
+<details><summary>풀이 과정 확인</summary>
+
+**1단계: 단위 통일**
+- 칩률: 1.2288 Mcps = **1,228,800** cps
+- 데이터율: 9.6 kbps = **9,600** bps
+
+**2단계: 처리이득 계산**
+- PG = 칩률 / 데이터율
+- PG = 1,228,800 / 9,600 = **128**
+
+**dB 변환 (참고):**
+- PG(dB) = 10 × log₁₀(128) ≈ 10 × 2.107 ≈ **21.07 dB**
+
+**정답: ②**
+
+**함정 분석**: ①은 Mcps와 kbps를 그대로 나눈 결과(1.2288/9.6 ≈ 0.128에 100을 곱한 것)입니다. 단위를 반드시 cps와 bps로 통일해야 합니다.
+
+</details>
+
+<hr />
+<h3 id="4-fdma-tdma">📝 문제 4: FDMA + TDMA 복합 사용자 수 계산<a class="headerlink" href="#4-fdma-tdma" title="Permanent link">&para;</a></h3>
+<p><strong>전체 대역폭이 12.5MHz이고, FDMA로 각 채널을 200kHz씩 할당합니다. 각 FDMA 채널은 TDMA 방식으로 8개의 타임슬롯을 사용합니다. 전체 시스템이 수용할 수 있는 최대 사용자 수는 몇 명입니까? (보호대역 무시)</strong></p>
+<p>① 62명<br />
+② 500명<br />
+③ 125명<br />
+④ 1,000명</p>
+<details><summary>풀이 과정 확인</summary>
+
+**1단계: FDMA 채널 수 계산**
+- 전체 대역폭 / 채널 대역폭 = 12,500,000 / 200,000 = **62.5**
+- 정수로 내림 → **62개** 채널 (또는 문제 조건에 따라 62)
+
+**2단계: 전체 사용자 수**
+- FDMA 채널 수 × 타임슬롯 수 = 62 × 8 = **496명**
+- 선지 중 가장 가까운 값: ② **500명**
+
+**참고**: 이 문제는 GSM 시스템의 실제 구조를 반영한 것입니다. GSM은 200kHz 채널을 8타임슬롯으로 분할하는 FDMA+TDMA 혼합 방식을 사용합니다.
+
+**정답: ②**
+
+**함정 분석**: ①은 FDMA 채널 수만 구한 것, ③은 대역폭 계산에서 실수한 경우입니다.
+
+</details>
+
+<hr />
+<h3 id="5_1">📝 문제 5: 대역폭 효율 비교<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
+<p><strong>어떤 시스템이 대역폭 5MHz에서 10Mbps의 데이터를 전송합니다. 이 시스템의 대역폭 효율은 얼마입니까?</strong></p>
+<p>① 0.5 bps/Hz<br />
+② 1 bps/Hz<br />
+③ 2 bps/Hz<br />
+④ 5 bps/Hz</p>
+<details><summary>풀이 과정 확인</summary>
+
+**대역폭 효율 공식:**
+- η = 데이터 전송률 / 대역폭
+- η = 10,000,000 bps / 5,000,000 Hz = **2 bps/Hz**
+
+**정답: ③**
+
+이 값은 LTE 시스템의 대역폭 효율(약 1.5~2.5 bps/Hz)과 유사한 수준입니다.
+
+</details>
+
+<hr />
+<h2 id="4_1">📚 4단계: 실전 문제 풀이 — 개념형 &amp; 비교형<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h2>
+<p>계산 문제와 함께, 시험에는 개념의 정확한 이해를 묻는 문제도 다수 출제됩니다. 이 유형은 "얼마나 정확하게 알고 있는가"를 측정합니다.</p>
+<hr />
+<h3 id="6-cdma">📝 문제 6: CDMA의 특성<a class="headerlink" href="#6-cdma" title="Permanent link">&para;</a></h3>
+<p><strong>CDMA 방식의 특성으로 올바른 것은?</strong></p>
+<p>① 각 사용자에게 서로 다른 주파수 대역을 할당한다<br />
+② 각 사용자에게 서로 다른 타임슬롯을 할당한다<br />
+③ 모든 사용자가 같은 주파수 대역을 동시에 사용하며, 고유한 코드로 구분한다<br />
+④ 사용자 수가 증가해도 성능 저하가 전혀 없다</p>
+<details><summary>정답 확인</summary>
+
+**정답: ③**
+
+- ①은 **FDMA**의 설명입니다.
+- ②는 **TDMA**의 설명입니다.
+- ③이 CDMA의 핵심 원리입니다. 모든 사용자가 **같은 주파수 대역**, **같은 시간**에 전송하되, 서로 다른 **확산코드(spreading code)**로 구분합니다.
+- ④는 틀립니다. CDMA도 사용자가 증가하면 **다중접속 간섭(MAI)**이 증가하여 성능이 저하됩니다. 다만, 사용자 수 증가에 따른 성능 저하가 점진적이어서 "**소프트 용량(soft capacity)**"이라고 표현합니다.
+
+</details>
+
+<hr />
+<h3 id="7-ofdm">📝 문제 7: OFDM의 장점<a class="headerlink" href="#7-ofdm" title="Permanent link">&para;</a></h3>
+<p><strong>OFDM(직교 주파수 분할 다중화)의 주요 장점이 아닌 것은?</strong></p>
+<p>① 다중경로 페이딩에 강하다<br />
+② 주파수 이용 효율이 높다<br />
+③ 구현이 단순하여 별도의 등화기가 필요 없다<br />
+④ 높은 첨두 대 평균 전력비(PAPR)가 단점이다</p>
+<details><summary>정답 확인</summary>
+
+**정답: ④** (④는 장점이 아니라 **단점**이므로, "장점이 아닌 것"으로 정답)
+
+문제를 다시 읽어야 합니다. 이 문제는 **"장점이 아닌 것"**을 고르는 문제입니다.
+
+- ①은 장점입니다. 여러 부반송파로 나누어 각 부반송파의 심볼 시간이 길어지므로 다중경로에 강합니다.
+- ②는 장점입니다. 부반송파가 직교하여 겹칠 수 있으므로 주파수 효율이 높습니다.
+- ③은 장점입니다. CP(순환 접두어)를 사용하여 복잡한 등화기 없이도 ISI를 제거할 수 있습니다.
+- ④는 장점이 아니라 **단점**입니다. 여러 부반송파의 합이 때때로 매우 큰 피크를 만들어 **PAPR(Peak-to-Average Power Ratio)**가 높아집니다. 이는 전력 증폭기 설계를 어렵게 합니다.
+
+**함정 분석**: "장점이 아닌 것"이라는 부정형 질문에서 ④를 "OFDM의 특성을 정확히 서술했으므로 올바른 진술"로 착각할 수 있습니다. 문제가 묻는 것이 "장점"인지 "특성"인지를 정확히 구분해야 합니다.
+
+</details>
+
+<hr />
+<h3 id="8">📝 문제 8: 이동통신 세대별 다중접속 기술<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p><strong>다음 중 이동통신 세대와 주요 다중접속 기술의 연결이 올바른 것은?</strong></p>
+<p>① 1G — CDMA<br />
+② 2G(GSM) — FDMA 단독<br />
+③ 3G(WCDMA) — CDMA<br />
+④ 4G(LTE) — TDMA</p>
+<details><summary>정답 확인</summary>
+
+**정답: ③**
+
+| 세대 | 대표 시스템 | 다중접속 기술 |
+|------|-----------|-------------|
+| **1G** | AMPS | **FDMA** |
+| **2G** | GSM | **TDMA** + FDMA |
+| **2G** | IS-95 | **CDMA** |
+| **3G** | WCDMA, CDMA2000 | **CDMA** |
+| **4G** | LTE | **OFDMA**(하향) / SC-FDMA(상향) |
+| **5G** | NR | **OFDMA** + massive MIMO |
+
+- ①은 틀립니다. 1G는 FDMA입니다.
+- ②는 부분적으로 틀립니다. GSM은 FDMA+**TDMA** 혼합 방식입니다.
+- ③이 올바릅니다.
+- ④는 틀립니다. LTE는 OFDMA입니다.
+
+</details>
+
+<hr />
+<h3 id="_11">📡 이동통신 세대 진화 타임라인<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>아래 타임라인은 각 세대의 핵심 기술과 대표적인 서비스를 보여줍니다.</p>
+<div class="mermaid">timeline
+    title 이동통신 세대별 다중접속 기술 진화
+    1980년대 : 1G - AMPS
+             : FDMA
+             : 아날로그 음성
+    1990년대 : 2G - GSM / IS-95
+             : TDMA+FDMA / CDMA
+             : 디지털 음성 + 문자
+    2000년대 : 3G - WCDMA / CDMA2000
+             : CDMA
+             : 음성 + 저속 데이터
+    2010년대 : 4G - LTE
+             : OFDMA
+             : 고속 데이터 + 영상
+    2020년대 : 5G - NR
+             : OFDMA + massive MIMO
+             : 초고속 + 초저지연 + 대규모 IoT</div>
+<h3 id="_12">🔍 세대별 진화의 핵심 포인트<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>시험에서 세대별 기술을 물을 때, 다음 3가지를 기억하면 대부분의 문제에 대응할 수 있습니다.</p>
+<p><strong>1. 왜 FDMA에서 TDMA로?</strong>
+- FDMA는 1사용자 = 1주파수이므로 주파수 낭비가 심합니다
+- TDMA는 하나의 주파수를 시간으로 나누어 <strong>주파수 이용 효율</strong>을 높였습니다</p>
+<p><strong>2. 왜 TDMA에서 CDMA로?</strong>
+- CDMA는 모든 사용자가 전체 대역폭을 공유하여 <strong>소프트 용량</strong> 특성을 가집니다
+- 확산 스펙트럼 기술로 <strong>보안성</strong>과 <strong>간섭 내성</strong>이 우수합니다
+- <strong>소프트 핸드오버</strong>가 가능하여 통화 품질이 향상됩니다</p>
+<p><strong>3. 왜 CDMA에서 OFDMA로?</strong>
+- 고속 데이터 전송 시 CDMA는 다중경로 간섭 처리가 복잡합니다
+- OFDMA는 <strong>다중경로 페이딩에 강하고</strong>, <strong>주파수 스케줄링</strong>이 가능하여 효율적입니다
+- FFT/IFFT로 구현이 효율적이며, 다양한 대역폭에 <strong>유연하게</strong> 적용됩니다</p>
+<div class="mermaid">flowchart LR
+    A["1G: FDMA&lt;br/&gt;주파수 낭비"] --&gt;|"효율 개선"| B["2G: TDMA&lt;br/&gt;시간 분할"]
+    B --&gt;|"용량 증대&lt;br/&gt;보안 강화"| C["3G: CDMA&lt;br/&gt;코드 분할"]
+    C --&gt;|"고속 데이터&lt;br/&gt;페이딩 대응"| D["4G: OFDMA&lt;br/&gt;직교 부반송파"]
+    D --&gt;|"초고속&lt;br/&gt;대규모 연결"| E["5G: OFDMA&lt;br/&gt;+ massive MIMO"]</div>
+<hr />
+<h3 id="9">📝 문제 9: 채널 용량과 시스템 설계 종합<a class="headerlink" href="#9" title="Permanent link">&para;</a></h3>
+<p><strong>대역폭 1MHz, SNR 20dB인 채널이 있습니다. 이 채널에서 다음 중 가능한 최대 전송률에 가장 가까운 것은?</strong></p>
+<p>① 약 2 Mbps<br />
+② 약 4 Mbps<br />
+③ 약 6.6 Mbps<br />
+④ 약 10 Mbps</p>
+<details><summary>풀이 과정 확인</summary>
+
+**1단계: SNR 변환**
+- 20dB → 비율 = 10^(20/10) = 10² = **100**
+
+**2단계: 샤논 공식**
+- C = 1,000,000 × log₂(1 + 100)
+- C = 1,000,000 × log₂(101)
+- log₂(101) ≈ **6.66**
+- C ≈ **6,660,000 bps ≈ 6.6 Mbps**
+
+**정답: ③**
+
+**함정 분석**: ②는 SNR을 dB 그대로 대입했을 때(log₂(21) ≈ 4.39), ④는 대역폭에 10을 곱한 경우입니다.
+
+</details>
+
+<hr />
+<h3 id="10">📝 문제 10: 종합 분석 문제<a class="headerlink" href="#10" title="Permanent link">&para;</a></h3>
+<p><strong>다음 보기 중 CDMA 시스템에서 처리이득을 높이는 방법으로 올바른 것을 모두 고르면?</strong></p>
+<p>ㄱ. 확산 대역폭을 넓힌다<br />
+ㄴ. 데이터 전송률을 높인다<br />
+ㄷ. 칩률을 높인다<br />
+ㄹ. 사용자 수를 줄인다</p>
+<p>① ㄱ, ㄷ<br />
+② ㄱ, ㄴ<br />
+③ ㄴ, ㄹ<br />
+④ ㄱ, ㄷ, ㄹ</p>
+<details><summary>풀이 과정 확인</summary>
+
+**처리이득 공식**: PG = 확산 대역폭 / 데이터 대역폭 = 칩률 / 데이터율
+
+- **ㄱ. 확산 대역폭을 넓힌다** → 분자 증가 → PG **증가** ✅
+- **ㄴ. 데이터 전송률을 높인다** → 분모 증가 → PG **감소** ❌
+- **ㄷ. 칩률을 높인다** → 분자 증가 → PG **증가** ✅ (칩률 = 확산 대역폭과 비례)
+- **ㄹ. 사용자 수를 줄인다** → 처리이득 공식에 사용자 수는 포함되지 않음 → PG **변화 없음** ❌ (사용자 수는 간섭에 영향을 주지만, 처리이득 자체를 변화시키지는 않습니다)
+
+**정답: ①** (ㄱ, ㄷ)
+
+**함정 분석**: ㄹ은 "사용자가 줄면 간섭이 줄어서 성능이 좋아지니까 처리이득도 올라갈 것"이라고 착각하게 만드는 선지입니다. 처리이득은 시스템 설계 파라미터(칩률, 데이터율)에 의해 결정되며, 사용자 수와는 독립적입니다.
+
+</details>
+
+<hr />
+<h2 id="_13">📚 핵심 개념 최종 정리 — 시험 직전 체크시트<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="part-3_1">Part 3 전체 개념 지도<a class="headerlink" href="#part-3_1" title="Permanent link">&para;</a></h3>
+<div class="mermaid">mindmap
+  root((Part 3&lt;br/&gt;통신 시스템&lt;br/&gt;효율성))
+    정보이론
+      샤논 채널 용량
+        C = B log₂ 1+SNR
+        SNR dB 변환 주의
+      나이퀴스트 정리
+        C = 2B log₂ M
+        무잡음 채널 전용
+      대역폭 효율
+        bps/Hz 단위
+    다중화
+      FDM
+        주파수 분할
+      TDM
+        시간 분할
+      CDM
+        코드 분할
+      WDM
+        파장 분할 - 광통신
+    다중접속
+      FDMA
+        1G AMPS
+        보호대역
+      TDMA
+        2G GSM
+        보호시간
+      CDMA
+        3G WCDMA
+        처리이득
+        소프트 핸드오버
+      OFDMA
+        4G LTE
+        부반송파 할당
+        PAPR 단점
+    이동통신 진화
+      5G NR
+        massive MIMO
+        초저지연</div>
+<h3 id="10_1">⚡ 시험 직전 최종 체크 포인트 10가지<a class="headerlink" href="#10_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th>체크 포인트</th>
+<th>한 줄 요약</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>SNR이 dB로 주어지면?</td>
+<td>10^(dB/10)으로 <strong>반드시</strong> 변환</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>샤논 vs 나이퀴스트 구분?</td>
+<td>잡음 유무 → 잡음 있으면 샤논, 없으면 나이퀴스트</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>처리이득 단위?</td>
+<td>칩률과 데이터율의 <strong>단위를 통일</strong> 후 나눗셈</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>FDMA의 보호 요소?</td>
+<td><strong>보호대역</strong>(Guard Band) — 주파수 영역</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>TDMA의 보호 요소?</td>
+<td><strong>보호시간</strong>(Guard Time) — 시간 영역</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td>소프트 핸드오버 가능한 방식?</td>
+<td><strong>CDMA</strong>만 가능</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>OFDM vs OFDMA?</td>
+<td>OFDM = 전송기술, OFDMA = 다중<strong>접속</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td>OFDM의 단점?</td>
+<td>높은 <strong>PAPR</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td>GSM의 다중접속?</td>
+<td><strong>TDMA + FDMA</strong> 혼합</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td>LTE의 다중접속?</td>
+<td>하향: <strong>OFDMA</strong>, 상향: <strong>SC-FDMA</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_14">📝 형성 평가<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<div class="assessment">
+<h3 id="_15">📝 형성 평가<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p><strong>객관식 1.</strong> 대역폭이 200kHz이고 SNR이 10dB인 채널의 샤논 용량에 가장 가까운 값은?</p>
+<p>① 약 200 kbps<br />
+② 약 460 kbps<br />
+③ 약 692 kbps<br />
+④ 약 2,000 kbps</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③**
+
+- 10dB → 비율 = 10^(10/10) = **10**
+- C = 200,000 × log₂(1 + 10) = 200,000 × log₂(11)
+- log₂(11) = ln(11)/ln(2) ≈ 2.397/0.693 ≈ **3.459**
+- C ≈ 200,000 × 3.459 ≈ **691,800 bps ≈ 692 kbps**
+
+②는 SNR을 dB 그대로(10) 대입하여 log₂(11)이 아닌 log₂(3)≈1.58을 적용하거나 계산 실수를 한 경우, ①은 대역폭만 답으로 쓴 경우입니다.
+
+</details>
+<hr />
+<p><strong>객관식 2.</strong> 다음 중 CDMA 시스템의 특성에 대한 설명으로 <strong>틀린</strong> 것은?</p>
+<p>① 확산 스펙트럼 기술을 사용하여 보안성이 우수하다<br />
+② 처리이득은 확산 대역폭을 데이터 대역폭으로 나눈 값이다<br />
+③ 사용자 수가 증가해도 통신 품질이 일정하게 유지된다(하드 용량)<br />
+④ 동일 주파수 대역을 모든 사용자가 공유한다</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③**
+
+CDMA는 **소프트 용량(soft capacity)** 특성을 가집니다. 사용자 수가 증가하면 다중접속 간섭(MAI)이 점진적으로 증가하여 통신 품질이 서서히 저하됩니다. "하드 용량"은 FDMA나 TDMA처럼 정해진 채널/슬롯이 모두 차면 더 이상 수용 불가능한 특성을 의미합니다. 따라서 ③의 설명은 CDMA가 아니라 FDMA/TDMA의 특성에 가깝습니다.
+
+</details>
+<hr />
+<p><strong>객관식 3.</strong> 5G NR(New Radio)에서 사용하는 다중접속 기술의 조합으로 올바른 것은?</p>
+<p>① FDMA + TDMA<br />
+② CDMA + OFDM<br />
+③ OFDMA + massive MIMO<br />
+④ SC-FDMA 단독</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③**
+
+5G NR은 4G LTE의 **OFDMA**를 기반으로 하면서, **massive MIMO**(대규모 다중입출력) 기술을 결합하여 공간 영역에서의 다중화를 추가했습니다. 이를 통해 같은 시간, 같은 주파수에서도 여러 사용자에게 서로 다른 빔을 형성하여 동시 서비스가 가능합니다.
+
+</details>
+<hr />
+<p><strong>서술형.</strong> 어떤 통신 시스템을 설계할 때, 나이퀴스트 공식으로 계산한 최대 전송률이 5Mbps이고, 샤논 공식으로 계산한 최대 전송률이 3Mbps라면, 실제로 달성 가능한 최대 전송률은 얼마이며 그 이유는 무엇입니까? (3~5문장으로 서술)</p>
+<details>
+<summary>모범 답안 확인</summary>
+
+실제로 달성 가능한 최대 전송률은 **3Mbps**(샤논 용량)입니다. 나이퀴스트 공식은 무잡음 환경에서의 이론적 한계를 나타내고, 샤논 공식은 잡음이 존재하는 실제 환경에서의 한계를 나타냅니다. 현실 채널에는 항상 잡음이 존재하므로, 두 값 중 **더 작은 값**이 실제 전송률의 상한이 됩니다. 즉, 나이퀴스트 한계(5Mbps)가 아무리 높아도, 잡음으로 인해 샤논 한계(3Mbps)를 초과할 수 없습니다. 이는 시스템 설계 시 대역폭(나이퀴스트)과 SNR(샤논) 모두를 고려해야 함을 의미합니다.
+
+</details>
+<hr />
+<h3 id="_16">✅ 자기점검 체크리스트<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> SNR이 dB로 주어진 문제에서 선형 변환을 수행한 후 샤논 공식을 적용할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> FDMA, TDMA, CDMA, OFDMA의 분할 자원, 보호 요소, 간섭 유형을 정확히 구분할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CDMA의 처리이득을 단위를 통일하여 올바르게 계산할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> OFDM과 OFDMA의 차이를 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 1G~5G의 세대별 다중접속 기술을 대응시킬 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 나이퀴스트 용량과 샤논 용량 중 실제 한계가 되는 것을 판단할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 기출 문제의 함정 선지 패턴(SNR 단위, 용어 혼동, 처리이득 단위)을 인식하고 회피할 수 있다</li>
+</ul>
+</div>
+<hr />
+<h2 id="_17">💭 성찰 &amp; 다음 차시 미리보기<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<h3 id="_18">📌 오늘의 학습 성찰<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>이번 차시에서는 Part 3의 모든 개념을 <strong>실전 문제</strong>로 통합하여 연습했습니다. 특히 다음 세 가지를 확인하시기 바랍니다.</p>
+<ol>
+<li>
+<p><strong>공식을 아는 것</strong>과 <strong>문제에 적용하는 것</strong>은 다릅니다. SNR 단위 변환이나 처리이득 단위 통일처럼, 공식을 적용하기 <strong>전</strong>에 확인해야 할 사항이 있습니다.</p>
+</li>
+<li>
+<p><strong>함정 선지는 패턴이 있습니다.</strong> 용어 뒤바꾸기(FDMA↔TDMA 특성), 단위 혼동(dB↔비율), 부분적으로 맞는 진술(OFDM vs OFDMA) 등 출제자가 즐겨 사용하는 패턴을 익히면 오답률을 크게 줄일 수 있습니다.</p>
+</li>
+<li>
+<p><strong>이동통신 세대별 기술 매핑</strong>은 단순 암기가 아니라, 각 세대가 이전 기술의 한계를 어떻게 극복했는지를 이해하면 자연스럽게 기억됩니다.</p>
+</li>
+</ol>
+<h3 id="_19">🔜 다음 차시 미리보기<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p><strong>15차시: Part 4 통신 시스템의 안정성 — 오류 검출과 정정의 원리</strong></p>
+<p>다음 차시부터는 Part 4로 넘어갑니다. 통신 채널에서 전송된 데이터에 오류가 발생했을 때, 이를 <strong>발견</strong>하고 <strong>고치는</strong> 방법을 다룹니다. 패리티 검사, CRC, 해밍 코드 등의 오류 제어 기술이 어떤 원리로 동작하는지 학습하겠습니다. 여러분이 인터넷에서 파일을 다운로드할 때 데이터가 깨지지 않는 이유가 바로 이 기술 덕분입니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../chapter13/" class="md-footer__link md-footer__link--prev" aria-label="이전: 13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapter15/" class="md-footer__link md-footer__link--next" aria-label="다음: 15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              <div class="md-ellipsis">
+                15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 노용철TV | <a href='https://eduflow-greatsong.fly.dev/'>EduFlow</a>로 제작
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/title-link.js"></script>
+      
+        <script src="../javascripts/mermaid-config.js"></script>
+      
+        <script src="../javascripts/scroll-progress.js"></script>
+      
+        <script src="../javascripts/eduflow-nav.js"></script>
+      
+        <script src="../javascripts/lightbox.js"></script>
+      
+    
+  </body>
+</html>

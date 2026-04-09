@@ -1,0 +1,3140 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="비전공자도 이해할 수 있도록 일상 비유와 실전 기출 문제로 구성한 통신공학 완전정복 교재. 한전KDN 등 공공기관 채용 필기시험 대비용 자기주도 학습 자료입니다.">
+      
+      
+        <meta name="author" content="노용철TV (EduFlow)">
+      
+      
+      
+        <link rel="prev" href="../chapter10/">
+      
+      
+        <link rel="next" href="../chapter12/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>11차시: 여럿이 동시에 통신하기 - TDMA와 FDMA - 통신공학 단박에 끝내기</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11-tdma-fdma" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-header__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            통신공학 단박에 끝내기
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              11차시: 여럿이 동시에 통신하기 - TDMA와 FDMA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter05/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../chapter09/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter15/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-nav__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    통신공학 단박에 끝내기
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1차시: 통신공학 전체 그림 그리기 - 신호와 시스템의 기초
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2차시: 신호를 수식으로 표현하기 - 주파수 영역의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3차시: 아날로그 통신의 두 주인공 - AM과 FM 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4차시: 아날로그에서 디지털로 - 표본화와 PCM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5차시: 디지털 신호를 전송하는 방법 - ASK, FSK, PSK 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6차시: 더 효율적으로 전송하기 - QAM과 고차 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7차시: 신뢰성 확보하기 - 오류 검출과 정정 부호
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8차시: Part 2 종합 실전 문제풀이 - 디지털 변복조 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9차시: 통신 채널의 한계 - 샤논 법칙과 채널 용량
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10차시: 한 채널을 여럿이 쓰는 방법 - 다중화 기술의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11차시: 여럿이 동시에 통신하기 - TDMA와 FDMA
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11차시: 여럿이 동시에 통신하기 - TDMA와 FDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="학습 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fdma-tdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 핵심 개념: FDMA와 TDMA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 실습: 프레임 구조 계산
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdma-vs-tdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 비교 분석: FDMA vs TDMA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 기출 유형 연습
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 왜 다중접속이 필요한가? (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fdma-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: FDMA - 주파수를 나누는 방식 (12분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tdma-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: TDMA - 시간을 나누는 방식 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-fdma-vs-tdma-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: FDMA vs TDMA 비교 및 계산 실습 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 형성 평가 및 성찰 (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 왜 이걸 배우나요?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 1: 다중접속의 기본 원리
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 1: 다중접속의 기본 원리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🍰 비유로 시작하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 2: FDMA (주파수분할 다중접속)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 2: FDMA (주파수분할 다중접속)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📻 비유: FM 라디오 방송
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 FDMA의 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 파라미터
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guard-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 보호 대역(Guard Band)이 왜 필요한가?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 채널 수 계산 공식
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 예제: AMPS 시스템 채널 수 계산
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdma_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FDMA의 특성 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 3: TDMA (시분할 다중접속)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 3: TDMA (시분할 다중접속)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗣️ 비유: 회의실의 돌아가며 발언하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 TDMA의 프레임 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 파라미터
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guard-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 보호 시간(Guard Time)이 왜 필요한가?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdma_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 TDMA에서의 데이터 전송 특성
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gsm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 예제: GSM 시스템의 프레임 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 자주 하는 실수: 동기화 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fdma-vs-tdma_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 FDMA vs TDMA 체계적 비교
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 FDMA vs TDMA 체계적 비교">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주파수-시간 평면에서의 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 따라하기 실습: 다중접속 시스템 설계 계산
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 따라하기 실습: 다중접속 시스템 설계 계산">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실습 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        풀이 단계
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 시험 대비: 자주 출제되는 포인트
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 시험 대비: 자주 출제되는 포인트">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 주의할 점과 자주 하는 실수
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 기출 빈출 공식 모음
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tdma-fdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 심화: 왜 TDMA와 FDMA를 넘어서야 했는가?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12차시: 간섭 없이 많은 사용자를 수용하기 - CDMA의 원리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18차시: 전체 통합 실전 모의고사 - 시험 완성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19차시: 최종 정리와 시험 전략 - 합격을 위한 마무리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="학습 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fdma-tdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 핵심 개념: FDMA와 TDMA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 실습: 프레임 구조 계산
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdma-vs-tdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 비교 분석: FDMA vs TDMA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 기출 유형 연습
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 왜 다중접속이 필요한가? (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fdma-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: FDMA - 주파수를 나누는 방식 (12분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-tdma-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: TDMA - 시간을 나누는 방식 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-fdma-vs-tdma-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: FDMA vs TDMA 비교 및 계산 실습 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 형성 평가 및 성찰 (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 왜 이걸 배우나요?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 1: 다중접속의 기본 원리
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 1: 다중접속의 기본 원리">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🍰 비유로 시작하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 2: FDMA (주파수분할 다중접속)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 2: FDMA (주파수분할 다중접속)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📻 비유: FM 라디오 방송
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 FDMA의 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 파라미터
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guard-band" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 보호 대역(Guard Band)이 왜 필요한가?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 채널 수 계산 공식
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 예제: AMPS 시스템 채널 수 계산
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdma_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FDMA의 특성 정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 3: TDMA (시분할 다중접속)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 3: TDMA (시분할 다중접속)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗣️ 비유: 회의실의 돌아가며 발언하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 TDMA의 프레임 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 파라미터
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guard-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 보호 시간(Guard Time)이 왜 필요한가?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdma_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 TDMA에서의 데이터 전송 특성
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gsm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 예제: GSM 시스템의 프레임 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 자주 하는 실수: 동기화 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fdma-vs-tdma_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 FDMA vs TDMA 체계적 비교
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 FDMA vs TDMA 체계적 비교">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주파수-시간 평면에서의 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 따라하기 실습: 다중접속 시스템 설계 계산
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 따라하기 실습: 다중접속 시스템 설계 계산">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실습 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        풀이 단계
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 시험 대비: 자주 출제되는 포인트
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 시험 대비: 자주 출제되는 포인트">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 주의할 점과 자주 하는 실수
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 기출 빈출 공식 모음
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tdma-fdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 심화: 왜 TDMA와 FDMA를 넘어서야 했는가?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="네비게이션" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../chapter09/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="11-tdma-fdma">11차시: 여럿이 동시에 통신하기 - TDMA와 FDMA<a class="headerlink" href="#11-tdma-fdma" title="Permanent link">&para;</a></h1>
+<div class="lesson-banner">
+<p><strong>⏰ 50분</strong> · TDMA · FDMA · 다중접속 · 보호 구간 · <strong>난이도</strong> ●●●○○</p>
+<p><strong>학습목표</strong>: TDMA와 FDMA의 원리를 이해하고, 핵심 파라미터를 계산하며, 두 방식의 장단점을 비교하여 실무 적용 사례를 설명할 수 있다</p>
+<blockquote>
+<p><strong>오늘의 질문</strong>: "한 개의 도로에 수백 대의 차가 동시에 달려야 한다면, 어떻게 충돌 없이 해결할 수 있을까요?"</p>
+</blockquote>
+</div>
+<h2 id="_1">학습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> TDMA(시분할 다중접속)와 FDMA(주파수분할 다중접속)의 원리를 이해하고 차이를 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 슬롯(slot), 프레임(frame), 보호 시간(guard time), 보호 대역(guard band) 등 핵심 개념을 정의하고 활용할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> TDMA와 FDMA의 장단점을 비교하고 실무 적용(2G 휴대폰, FM 라디오 등)을 설명할 수 있다</li>
+</ul>
+<hr />
+<div class="cards-grid">
+<div class="card card-orange">
+<h3 id="fdma-tdma">🧠 핵심 개념: FDMA와 TDMA<a class="headerlink" href="#fdma-tdma" title="Permanent link">&para;</a></h3>
+<p>주파수를 나누는 방식과 시간을 나누는 방식, 두 가지 다중접속 기술의 원리를 학습합니다</p>
+</div>
+<div class="card card-blue">
+<h3 id="_2">🔧 실습: 프레임 구조 계산<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>슬롯 수, 프레임 길이, 보호 구간을 직접 계산하여 시스템 설계 감각을 기릅니다</p>
+</div>
+<div class="card card-green">
+<h3 id="fdma-vs-tdma">💬 비교 분석: FDMA vs TDMA<a class="headerlink" href="#fdma-vs-tdma" title="Permanent link">&para;</a></h3>
+<p>두 방식의 장단점을 체계적으로 비교하고, 실제 시스템 적용 사례를 분석합니다</p>
+</div>
+<div class="card card-red">
+<h3 id="_3">📝 기출 유형 연습<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>산업기사 수준의 다중접속 관련 계산 문제와 개념 문제를 풀어봅니다</p>
+</div>
+</div>
+<hr />
+<h2 id="_4">⏱️ 수업 흐름<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="steps">
+<div class="step">
+<h4 id="1-8">1단계: 왜 다중접속이 필요한가? (8분)<a class="headerlink" href="#1-8" title="Permanent link">&para;</a></h4>
+<p>다중접속의 개념과 필요성을 일상 비유를 통해 이해합니다. 10차시에서 배운 정보이론과의 연결고리를 확인합니다.</p>
+</div>
+<div class="step">
+<h4 id="2-fdma-12">2단계: FDMA - 주파수를 나누는 방식 (12분)<a class="headerlink" href="#2-fdma-12" title="Permanent link">&para;</a></h4>
+<p>FDMA의 원리, 보호 대역, 채널 용량 계산을 학습합니다. FM 라디오와 1세대(1G) 이동통신 사례를 통해 이해합니다.</p>
+</div>
+<div class="step">
+<h4 id="3-tdma-15">3단계: TDMA - 시간을 나누는 방식 (15분)<a class="headerlink" href="#3-tdma-15" title="Permanent link">&para;</a></h4>
+<p>TDMA의 원리, 슬롯·프레임 구조, 보호 시간을 학습합니다. 2세대(2G) GSM 시스템의 실제 프레임 구조를 분석합니다.</p>
+</div>
+<div class="step">
+<h4 id="4-fdma-vs-tdma-10">4단계: FDMA vs TDMA 비교 및 계산 실습 (10분)<a class="headerlink" href="#4-fdma-vs-tdma-10" title="Permanent link">&para;</a></h4>
+<p>두 방식을 체계적으로 비교하고, 기출 유형의 계산 문제를 직접 풀어봅니다.</p>
+</div>
+<div class="step">
+<h4 id="5-5">5단계: 형성 평가 및 성찰 (5분)<a class="headerlink" href="#5-5" title="Permanent link">&para;</a></h4>
+<p>핵심 개념을 확인하는 문제를 풀고, 다음 차시(CDMA)와의 연결을 미리 살펴봅니다.</p>
+</div>
+</div>
+<hr />
+<h2 id="_5">📚 왜 이걸 배우나요?<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>여러분이 스마트폰으로 전화를 걸 때, 같은 지역에서 수백, 수천 명의 사용자가 동시에 통화하고 있습니다. 하나의 기지국이 사용할 수 있는 주파수 자원은 한정되어 있습니다. 그렇다면 어떻게 이 한정된 자원을 여러 사용자가 동시에 사용할 수 있는 것일까요?</p>
+<p>이 문제를 해결하는 기술이 바로 <strong>다중접속(Multiple Access)</strong> 입니다.</p>
+<p>다중접속 기술은 이동통신의 세대 구분과 직결됩니다. 1G는 FDMA, 2G는 TDMA(와 CDMA), 3G는 CDMA, 4G/5G는 OFDMA를 사용합니다. 따라서 FDMA와 TDMA를 이해하는 것은 통신 시스템 전체의 발전 흐름을 파악하는 출발점이 됩니다.</p>
+<p>공공기관 통신이론 시험에서도 다중접속은 빈출 주제입니다. 특히 <strong>채널 수 계산</strong>, <strong>프레임 구조</strong>, <strong>보호 구간의 역할</strong>에 관한 문제가 자주 출제됩니다.</p>
+<hr />
+<h2 id="1">📚 핵심 개념 1: 다중접속의 기본 원리<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="_6">🍰 비유로 시작하기<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>하나의 케이크를 여러 사람이 나눠 먹는 상황을 생각해 보겠습니다.</p>
+<ul>
+<li><strong>방법 1</strong>: 케이크를 여러 조각으로 잘라서 각자 한 조각씩 가져간다 → <strong>FDMA</strong> (주파수를 조각냄)</li>
+<li><strong>방법 2</strong>: 케이크를 통째로 두고, 한 사람씩 차례로 한 입씩 먹는다 → <strong>TDMA</strong> (시간을 나눔)</li>
+<li><strong>방법 3</strong>: 모두가 동시에 먹되, 각자 다른 색의 포크를 사용하여 누가 먹은 것인지 구분한다 → <strong>CDMA</strong> (코드로 구분, 12차시에서 학습)</li>
+</ul>
+<p>여기서 케이크는 <strong>전체 주파수 대역(통신 자원)</strong> 에 해당합니다.</p>
+<h3 id="_7">📐 정의<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><strong>다중접속(Multiple Access)</strong> 이란, 다수의 사용자가 하나의 통신 채널(주파수 대역)을 공유하면서 동시에 통신할 수 있도록 하는 기술입니다.</p>
+<p>다중접속의 핵심 아이디어는 <strong>통신 자원을 분리 가능한 단위로 나누어 각 사용자에게 배분</strong>하는 것입니다. 무엇을 기준으로 나누느냐에 따라 방식이 달라집니다.</p>
+<p><em>다중접속 방식의 분류 — 어떤 자원을 나누는가에 따라 방식이 결정됩니다:</em></p>
+<div class="mermaid">flowchart TD
+    A["다중접속&lt;br/&gt;(Multiple Access)"] --&gt; B["FDMA&lt;br/&gt;주파수 분할"]
+    A --&gt; C["TDMA&lt;br/&gt;시간 분할"]
+    A --&gt; D["CDMA&lt;br/&gt;코드 분할"]
+    A --&gt; E["OFDMA&lt;br/&gt;직교 주파수 분할"]
+    B --&gt; B1["1G 아날로그&lt;br/&gt;이동통신"]
+    C --&gt; C1["2G GSM"]
+    D --&gt; D1["3G WCDMA&lt;br/&gt;IS-95"]
+    E --&gt; E1["4G LTE&lt;br/&gt;5G NR"]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">분할 기준</th>
+<th style="text-align: center;">방식</th>
+<th style="text-align: left;">비유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">주파수</td>
+<td style="text-align: center;">FDMA</td>
+<td style="text-align: left;">라디오 채널처럼 각자 다른 주파수 사용</td>
+</tr>
+<tr>
+<td style="text-align: center;">시간</td>
+<td style="text-align: center;">TDMA</td>
+<td style="text-align: left;">돌아가며 한 사람씩 발언하는 회의</td>
+</tr>
+<tr>
+<td style="text-align: center;">코드</td>
+<td style="text-align: center;">CDMA</td>
+<td style="text-align: left;">같은 공간에서 각자 다른 언어로 대화</td>
+</tr>
+<tr>
+<td style="text-align: center;">주파수+시간</td>
+<td style="text-align: center;">OFDMA</td>
+<td style="text-align: left;">바둑판처럼 주파수와 시간을 동시에 나눔</td>
+</tr>
+</tbody>
+</table>
+<p>이번 차시에서는 가장 기본이 되는 <strong>FDMA</strong>와 <strong>TDMA</strong>에 집중하겠습니다.</p>
+<hr />
+<h2 id="2-fdma">📚 핵심 개념 2: FDMA (주파수분할 다중접속)<a class="headerlink" href="#2-fdma" title="Permanent link">&para;</a></h2>
+<h3 id="fm">📻 비유: FM 라디오 방송<a class="headerlink" href="#fm" title="Permanent link">&para;</a></h3>
+<p>여러분이 자동차 라디오에서 채널을 맞출 때를 떠올려 보겠습니다. KBS 1FM은 97.3 MHz, MBC FM은 91.9 MHz에서 방송됩니다. 각 방송국은 서로 다른 주파수 대역을 사용하므로, 여러 방송국이 동시에 방송해도 서로 간섭하지 않습니다.</p>
+<p>FDMA도 정확히 같은 원리입니다. <strong>전체 주파수 대역을 여러 개의 좁은 채널로 나누어, 각 사용자에게 하나씩 할당</strong>하는 것입니다.</p>
+<h3 id="_8">📐 정의<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><strong>FDMA(Frequency Division Multiple Access, 주파수분할 다중접속)</strong> 는 전체 사용 가능한 주파수 대역폭을 여러 개의 부(副)채널로 분할하고, 각 사용자에게 고유한 주파수 채널을 배타적으로 할당하는 다중접속 방식입니다.</p>
+<h3 id="fdma">🔍 FDMA의 구조<a class="headerlink" href="#fdma" title="Permanent link">&para;</a></h3>
+<p>FDMA 시스템의 주파수 배치 구조를 살펴보겠습니다.</p>
+<p><em>FDMA에서 전체 대역폭이 개별 채널과 보호 대역으로 나뉘는 구조:</em></p>
+<div class="svg-diagram">
+<p><svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+<br />
+<!-- 전체 배경 --></p>
+<p><rect x="50" y="30" width="600" height="60" rx="4" fill="#e8eaf6" stroke="#3949ab" stroke-width="1.5"/>
+  <text x="350" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a237e">전체 주파수 대역폭 (W)</text></p>
+<!-- 채널 1 -->
+<p><rect x="55" y="35" width="100" height="50" rx="3" fill="#42a5f5" opacity="0.85"/>
+  <text x="105" y="58" text-anchor="middle" font-size="11" fill="white" font-weight="bold">사용자 1</text>
+  <text x="105" y="74" text-anchor="middle" font-size="10" fill="white">채널 (Bc)</text></p>
+<!-- 보호대역 1 -->
+<p><rect x="155" y="35" width="25" height="50" rx="2" fill="#ffcc80" opacity="0.7"/>
+  <text x="167" y="105" text-anchor="middle" font-size="9" fill="#e65100">보호<br/>대역</text></p>
+<!-- 채널 2 -->
+<p><rect x="180" y="35" width="100" height="50" rx="3" fill="#66bb6a" opacity="0.85"/>
+  <text x="230" y="58" text-anchor="middle" font-size="11" fill="white" font-weight="bold">사용자 2</text>
+  <text x="230" y="74" text-anchor="middle" font-size="10" fill="white">채널 (Bc)</text></p>
+<!-- 보호대역 2 -->
+<p><rect x="280" y="35" width="25" height="50" rx="2" fill="#ffcc80" opacity="0.7"/>
+  <text x="292" y="105" text-anchor="middle" font-size="9" fill="#e65100">보호<br/>대역</text></p>
+<!-- 채널 3 -->
+<p><rect x="305" y="35" width="100" height="50" rx="3" fill="#ef5350" opacity="0.8"/>
+  <text x="355" y="58" text-anchor="middle" font-size="11" fill="white" font-weight="bold">사용자 3</text>
+  <text x="355" y="74" text-anchor="middle" font-size="10" fill="white">채널 (Bc)</text></p>
+<!-- 보호대역 3 -->
+<p><rect x="405" y="35" width="25" height="50" rx="2" fill="#ffcc80" opacity="0.7"/></p>
+<!-- 점점점 -->
+<p><text x="460" y="65" text-anchor="middle" font-size="18" fill="#5c6bc0">· · ·</text></p>
+<!-- 채널 N -->
+<p><rect x="500" y="35" width="100" height="50" rx="3" fill="#ab47bc" opacity="0.8"/>
+  <text x="550" y="58" text-anchor="middle" font-size="11" fill="white" font-weight="bold">사용자 N</text>
+  <text x="550" y="74" text-anchor="middle" font-size="10" fill="white">채널 (Bc)</text></p>
+<!-- 화살표: 주파수 축 -->
+<p><line x1="50" y1="140" x2="650" y2="140" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="660" y="144" font-size="12" fill="#333">주파수 (f)</text></p>
+<!-- 시간 축 설명 -->
+<p><text x="350" y="175" text-anchor="middle" font-size="11" fill="#555">각 사용자는 통화 중 자신의 주파수 채널을 계속 점유합니다</text>
+  <text x="350" y="195" text-anchor="middle" font-size="11" fill="#555">→ 시간 축 전체를 한 사용자가 독점</text></p>
+<p><defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#333"/>
+    </marker>
+  </defs>
+</svg></p>
+</div>
+<h3 id="_9">핵심 파라미터<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>FDMA 시스템을 이해하기 위해 반드시 알아야 할 용어들을 정리하겠습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">용어</th>
+<th style="text-align: center;">기호</th>
+<th style="text-align: left;">의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>전체 대역폭</strong></td>
+<td style="text-align: center;">W</td>
+<td style="text-align: left;">시스템에 할당된 총 주파수 대역폭</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>채널 대역폭</strong></td>
+<td style="text-align: center;">B<sub>c</sub></td>
+<td style="text-align: left;">한 사용자에게 할당되는 주파수 폭</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>보호 대역</strong></td>
+<td style="text-align: center;">B<sub>g</sub> (Guard Band)</td>
+<td style="text-align: left;">인접 채널 간 간섭 방지를 위한 빈 주파수 영역</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>채널 수</strong></td>
+<td style="text-align: center;">N</td>
+<td style="text-align: left;">동시에 수용 가능한 사용자 수</td>
+</tr>
+</tbody>
+</table>
+<h3 id="guard-band">⚠️ 보호 대역(Guard Band)이 왜 필요한가?<a class="headerlink" href="#guard-band" title="Permanent link">&para;</a></h3>
+<p>이론적으로는 주파수 채널을 빈틈없이 배치할 수 있어야 합니다. 그러나 현실에서는 <strong>필터의 불완전성</strong> 때문에 신호가 정확히 할당된 대역 안에만 머물지 않습니다. 인접 채널의 신호가 약간씩 넘어오는 현상, 즉 <strong>인접 채널 간섭(ACI: Adjacent Channel Interference)</strong> 이 발생합니다.</p>
+<p>보호 대역은 이 간섭을 방지하기 위해 채널 사이에 두는 <strong>빈 주파수 공간</strong>입니다. 아파트에서 옆집 소음이 들리지 않도록 벽을 두껍게 만드는 것과 같은 원리입니다.</p>
+<h3 id="_10">📊 채널 수 계산 공식<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>FDMA에서 동시 수용 가능한 채널 수(사용자 수)를 계산하는 공식은 다음과 같습니다.</p>
+<p>$$N = \frac{W}{B_c + B_g}$$</p>
+<p>또는 보호 대역이 채널 대역폭에 이미 포함된 경우:</p>
+<p>$$N = \frac{W}{B_c}$$</p>
+<blockquote>
+<p><strong>주의</strong>: 시험 문제에서 보호 대역을 별도로 주는지, 채널 대역폭에 포함시키는지를 반드시 확인해야 합니다.</p>
+</blockquote>
+<h3 id="amps">📝 예제: AMPS 시스템 채널 수 계산<a class="headerlink" href="#amps" title="Permanent link">&para;</a></h3>
+<p><strong>문제</strong>: 1세대(1G) 이동통신인 AMPS(Advanced Mobile Phone System)는 다음과 같은 사양을 가지고 있습니다.</p>
+<ul>
+<li>전체 할당 대역폭: 12.5 MHz (상향/하향 각각)</li>
+<li>채널 대역폭: 30 kHz (보호 대역 포함)</li>
+</ul>
+<p>동시에 수용할 수 있는 최대 채널 수를 구하시오.</p>
+<p><strong>풀이</strong>:</p>
+<p>$$N = \frac{W}{B_c} = \frac{12.5 \times 10^6}{30 \times 10^3} = \frac{12{,}500{,}000}{30{,}000} \approx 416 \text{ 채널}$$</p>
+<p>즉, AMPS는 한 방향(상향 또는 하향)에 약 416개의 음성 채널을 동시에 운용할 수 있었습니다. 실제로 AMPS는 832개 채널(상·하향 합산)을 제공했으며, 이 중 일부는 제어 채널로 사용되었습니다.</p>
+<h3 id="fdma_1">FDMA의 특성 정리<a class="headerlink" href="#fdma_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">항목</th>
+<th style="text-align: left;">내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>자원 분할 기준</strong></td>
+<td style="text-align: left;">주파수</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>한 사용자당 점유</strong></td>
+<td style="text-align: left;">좁은 대역폭을 연속적으로(시간 내내) 사용</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>동기화 필요성</strong></td>
+<td style="text-align: left;">낮음 (각자 독립된 주파수 사용)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>장점</strong></td>
+<td style="text-align: left;">구현이 단순, 동기화 불필요, 아날로그 호환</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>단점</strong></td>
+<td style="text-align: left;">주파수 이용 효율 낮음, 보호 대역으로 자원 낭비, 유연한 할당 어려움</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>대표 시스템</strong></td>
+<td style="text-align: left;">AMPS(1G), FM 라디오, 일부 위성통신</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-tdma">📚 핵심 개념 3: TDMA (시분할 다중접속)<a class="headerlink" href="#3-tdma" title="Permanent link">&para;</a></h2>
+<h3 id="_11">🗣️ 비유: 회의실의 돌아가며 발언하기<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>여러 사람이 한 회의실에서 회의를 합니다. 동시에 말하면 아무것도 알아들을 수 없으므로, 사회자가 <strong>발언 순서</strong>를 정합니다. "1번, 30초 동안 말씀하세요. 다음 2번, 30초..." 이런 식으로 진행하면, 같은 공간(주파수)을 여러 사람이 충돌 없이 사용할 수 있습니다.</p>
+<p>발언이 한 바퀴 돌면 다시 1번부터 시작합니다. 이 한 바퀴가 <strong>프레임(frame)</strong>, 각 사람에게 주어진 시간이 <strong>타임 슬롯(time slot)</strong> 입니다.</p>
+<h3 id="_12">📐 정의<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><strong>TDMA(Time Division Multiple Access, 시분할 다중접속)</strong> 는 하나의 주파수 채널의 사용 시간을 여러 개의 타임 슬롯으로 나누고, 각 사용자에게 특정 슬롯을 할당하여 시간적으로 번갈아 가며 통신하는 다중접속 방식입니다.</p>
+<h3 id="tdma">🔍 TDMA의 프레임 구조<a class="headerlink" href="#tdma" title="Permanent link">&para;</a></h3>
+<p>TDMA의 핵심은 <strong>프레임(frame)</strong> 과 <strong>타임 슬롯(time slot)</strong> 이라는 시간 구조입니다.</p>
+<p><em>TDMA 프레임 구조 — 하나의 프레임이 여러 타임 슬롯으로 구성되는 모습:</em></p>
+<div class="svg-diagram">
+<p><svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+<br />
+<!-- 프레임 1 --></p>
+<p><text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a237e">프레임 (Frame) — Tf</text>
+  <rect x="30" y="30" width="640" height="60" rx="4" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/></p>
+<!-- 슬롯들 -->
+<p><rect x="35" y="35" width="90" height="50" rx="3" fill="#42a5f5"/>
+  <text x="80" y="58" text-anchor="middle" font-size="10" fill="white" font-weight="bold">슬롯 1</text>
+  <text x="80" y="72" text-anchor="middle" font-size="9" fill="white">사용자 A</text></p>
+<p><rect x="130" y="35" width="12" height="50" rx="2" fill="#ffcc80" opacity="0.7"/></p>
+<p><rect x="147" y="35" width="90" height="50" rx="3" fill="#66bb6a"/>
+  <text x="192" y="58" text-anchor="middle" font-size="10" fill="white" font-weight="bold">슬롯 2</text>
+  <text x="192" y="72" text-anchor="middle" font-size="9" fill="white">사용자 B</text></p>
+<p><rect x="242" y="35" width="12" height="50" rx="2" fill="#ffcc80" opacity="0.7"/></p>
+<p><rect x="259" y="35" width="90" height="50" rx="3" fill="#ef5350" opacity="0.85"/>
+  <text x="304" y="58" text-anchor="middle" font-size="10" fill="white" font-weight="bold">슬롯 3</text>
+  <text x="304" y="72" text-anchor="middle" font-size="9" fill="white">사용자 C</text></p>
+<p><rect x="354" y="35" width="12" height="50" rx="2" fill="#ffcc80" opacity="0.7"/></p>
+<p><text x="400" y="65" text-anchor="middle" font-size="16" fill="#5c6bc0">· · ·</text></p>
+<p><rect x="440" y="35" width="90" height="50" rx="3" fill="#ab47bc" opacity="0.85"/>
+  <text x="485" y="58" text-anchor="middle" font-size="10" fill="white" font-weight="bold">슬롯 N</text>
+  <text x="485" y="72" text-anchor="middle" font-size="9" fill="white">사용자 N</text></p>
+<!-- 보호 시간 라벨 -->
+<p><text x="136" y="105" text-anchor="middle" font-size="8" fill="#e65100">Tg</text>
+  <text x="248" y="105" text-anchor="middle" font-size="8" fill="#e65100">Tg</text>
+  <text x="360" y="105" text-anchor="middle" font-size="8" fill="#e65100">Tg</text></p>
+<!-- 시간 축 -->
+<p><line x1="30" y1="130" x2="670" y2="130" stroke="#333" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <text x="680" y="134" font-size="12" fill="#333">시간 (t)</text></p>
+<!-- 프레임 반복 설명 -->
+<p><text x="350" y="160" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">↓ 프레임이 반복됩니다 ↓</text></p>
+<!-- 프레임 2 (반복) -->
+<p><rect x="30" y="175" width="640" height="45" rx="4" fill="#fce4ec" stroke="#c62828" stroke-width="1" stroke-dasharray="4"/>
+  <rect x="35" y="180" width="90" height="35" rx="3" fill="#42a5f5" opacity="0.5"/>
+  <text x="80" y="202" text-anchor="middle" font-size="9" fill="white">사용자 A</text>
+  <rect x="147" y="180" width="90" height="35" rx="3" fill="#66bb6a" opacity="0.5"/>
+  <text x="192" y="202" text-anchor="middle" font-size="9" fill="white">사용자 B</text>
+  <rect x="259" y="180" width="90" height="35" rx="3" fill="#ef5350" opacity="0.5"/>
+  <text x="304" y="202" text-anchor="middle" font-size="9" fill="white">사용자 C</text></p>
+<p><text x="350" y="250" text-anchor="middle" font-size="11" fill="#555">각 사용자는 매 프레임마다 자신의 슬롯에서만 데이터를 전송합니다</text>
+  <text x="350" y="268" text-anchor="middle" font-size="10" fill="#888">Tg = 보호 시간 (Guard Time)</text></p>
+<p><defs>
+    <marker id="arrow2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#333"/>
+    </marker>
+  </defs>
+</svg></p>
+</div>
+<h3 id="_13">핵심 파라미터<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">용어</th>
+<th style="text-align: center;">기호</th>
+<th style="text-align: left;">의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>프레임</strong></td>
+<td style="text-align: center;">T<sub>f</sub> (Frame)</td>
+<td style="text-align: left;">모든 사용자가 한 번씩 전송할 수 있는 시간 단위. 프레임이 반복됩니다</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>타임 슬롯</strong></td>
+<td style="text-align: center;">T<sub>s</sub> (Time Slot)</td>
+<td style="text-align: left;">한 사용자에게 할당된 전송 시간 구간</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>보호 시간</strong></td>
+<td style="text-align: center;">T<sub>g</sub> (Guard Time)</td>
+<td style="text-align: left;">슬롯 간 겹침(간섭) 방지를 위한 빈 시간 구간</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>슬롯 수</strong></td>
+<td style="text-align: center;">N</td>
+<td style="text-align: left;">하나의 프레임에 포함된 타임 슬롯 수 = 동시 사용자 수</td>
+</tr>
+</tbody>
+</table>
+<p>이들 사이의 관계를 수식으로 표현하면 다음과 같습니다:</p>
+<p>$$T_f = N \times (T_s + T_g)$$</p>
+<p>또는 보호 시간이 슬롯에 포함된 경우:</p>
+<p>$$T_f = N \times T_s$$</p>
+<h3 id="guard-time">⚠️ 보호 시간(Guard Time)이 왜 필요한가?<a class="headerlink" href="#guard-time" title="Permanent link">&para;</a></h3>
+<p>TDMA에서 각 사용자는 정해진 시간에만 전송해야 합니다. 그런데 사용자마다 기지국까지의 거리가 다르기 때문에, 신호가 도달하는 시간에 차이가 발생합니다. 이를 <strong>전파 지연 차이(propagation delay difference)</strong> 라고 합니다.</p>
+<p>멀리 있는 사용자의 신호는 늦게 도착하므로, 다음 슬롯의 신호와 겹칠 수 있습니다. 보호 시간은 이 겹침을 방지하기 위한 <strong>시간적 여유분</strong>입니다.</p>
+<p>비유하자면, 릴레이 경주에서 바톤을 넘겨받는 구간(교환 구간)과 같습니다. 이 구간 없이 바로 이어 달리면 바톤을 놓칠 수 있습니다.</p>
+<h3 id="tdma_1">📝 TDMA에서의 데이터 전송 특성<a class="headerlink" href="#tdma_1" title="Permanent link">&para;</a></h3>
+<p>FDMA에서는 사용자가 <strong>좁은 대역폭을 연속적으로</strong> 사용합니다. 반면 TDMA에서는 사용자가 <strong>넓은 대역폭을 짧은 시간 동안 간헐적으로</strong> 사용합니다.</p>
+<p>이것은 중요한 차이를 만듭니다. TDMA 사용자는 자신의 슬롯 동안에 데이터를 <strong>압축하여 빠르게(burst)</strong> 전송해야 합니다.</p>
+<p><em>FDMA와 TDMA에서 한 사용자의 전송 패턴 비교:</em></p>
+<div class="mermaid">flowchart LR
+    subgraph FDMA["FDMA: 한 사용자의 전송"]
+        direction TB
+        F1["좁은 대역폭&lt;br/&gt;(30 kHz)"] --&gt; F2["연속 전송&lt;br/&gt;(통화 내내)"]
+    end
+    subgraph TDMA["TDMA: 한 사용자의 전송"]
+        direction TB
+        T1["넓은 대역폭&lt;br/&gt;(200 kHz)"] --&gt; T2["간헐 전송&lt;br/&gt;(할당된 슬롯만)"]
+    end</div>
+<h3 id="gsm">📝 예제: GSM 시스템의 프레임 구조<a class="headerlink" href="#gsm" title="Permanent link">&para;</a></h3>
+<p><strong>문제</strong>: 2세대(2G) 이동통신인 GSM은 다음과 같은 TDMA 구조를 가지고 있습니다.</p>
+<ul>
+<li>하나의 TDMA 프레임 길이: 4.615 ms</li>
+<li>프레임당 타임 슬롯 수: 8개</li>
+<li>각 타임 슬롯 길이: 약 577 μs (마이크로초)</li>
+</ul>
+<p>(1) 하나의 200 kHz FDMA 채널에서 TDMA로 동시 수용 가능한 사용자 수는?</p>
+<p>(2) GSM이 25 MHz 대역폭을 사용하고, 채널 대역폭이 200 kHz(보호 대역 포함)라면, 전체 시스템이 수용 가능한 최대 사용자 수는?</p>
+<p><strong>풀이</strong>:</p>
+<p><strong>(1)</strong> 하나의 FDMA 채널(200 kHz) 안에서 8개의 타임 슬롯을 사용하므로:</p>
+<p>$$\text{TDMA 사용자 수} = 8 \text{ 명/채널}$$</p>
+<p><strong>(2)</strong> 먼저 FDMA 채널 수를 구합니다:</p>
+<p>$$N_{FDMA} = \frac{25 \text{ MHz}}{200 \text{ kHz}} = \frac{25{,}000}{200} = 125 \text{ 채널}$$</p>
+<p>각 채널에 8명씩 수용하므로:</p>
+<p>$$N_{총} = 125 \times 8 = 1{,}000 \text{ 사용자}$$</p>
+<p>이 예제에서 알 수 있듯이, <strong>GSM은 FDMA와 TDMA를 결합</strong>한 시스템입니다. 먼저 주파수를 나누고(FDMA), 각 주파수 채널 안에서 다시 시간을 나눕니다(TDMA).</p>
+<p><em>GSM의 FDMA + TDMA 결합 구조:</em></p>
+<div class="mermaid">flowchart TD
+    A["전체 대역 25 MHz"] --&gt; B["FDMA로 분할&lt;br/&gt;200 kHz × 125채널"]
+    B --&gt; C["각 채널 내부"]
+    C --&gt; D["TDMA로 분할&lt;br/&gt;8개 타임 슬롯"]
+    D --&gt; E["총 125 × 8&lt;br/&gt;= 1,000 사용자"]</div>
+<h3 id="_14">⚠️ 자주 하는 실수: 동기화 문제<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>TDMA는 모든 사용자가 <strong>정확한 시간에 맞춰 전송</strong>해야 합니다. 이를 <strong>동기화(synchronization)</strong> 라고 합니다.</p>
+<ul>
+<li>FDMA는 각 사용자가 독립된 주파수를 쓰므로, 시간 동기화가 크게 중요하지 않습니다</li>
+<li>TDMA는 슬롯 경계를 정확히 맞추지 않으면 인접 슬롯과 간섭이 발생합니다</li>
+<li>따라서 TDMA 시스템은 <strong>정밀한 타이밍 제어</strong> 회로가 필요하며, 이것이 시스템 복잡도를 높이는 요인 중 하나입니다</li>
+</ul>
+<hr />
+<h2 id="fdma-vs-tdma_1">📚 FDMA vs TDMA 체계적 비교<a class="headerlink" href="#fdma-vs-tdma_1" title="Permanent link">&para;</a></h2>
+<p>이제 두 방식을 여러 관점에서 비교하겠습니다. 이 비교표는 시험에서도 자주 출제되는 내용이므로, 각 항목의 이유까지 함께 이해하는 것이 중요합니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">비교 항목</th>
+<th style="text-align: left;">FDMA</th>
+<th style="text-align: left;">TDMA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>분할 기준</strong></td>
+<td style="text-align: left;">주파수</td>
+<td style="text-align: left;">시간</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>한 사용자 점유</strong></td>
+<td style="text-align: left;">좁은 대역 × 전체 시간</td>
+<td style="text-align: left;">전체 대역 × 짧은 시간</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>보호 구간</strong></td>
+<td style="text-align: left;">보호 대역 (Guard Band)</td>
+<td style="text-align: left;">보호 시간 (Guard Time)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>보호 구간 목적</strong></td>
+<td style="text-align: left;">인접 채널 간섭 방지</td>
+<td style="text-align: left;">전파 지연 차이에 의한 슬롯 겹침 방지</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>동기화 요구</strong></td>
+<td style="text-align: left;">낮음</td>
+<td style="text-align: left;">높음 (정밀한 시간 동기 필요)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>전송 방식</strong></td>
+<td style="text-align: left;">연속 전송</td>
+<td style="text-align: left;">버스트(burst) 전송</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>아날로그 호환</strong></td>
+<td style="text-align: left;">가능</td>
+<td style="text-align: left;">불가 (디지털 전용)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>주파수 효율</strong></td>
+<td style="text-align: left;">낮음</td>
+<td style="text-align: left;">FDMA보다 높음</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>구현 복잡도</strong></td>
+<td style="text-align: left;">낮음</td>
+<td style="text-align: left;">중간</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>대표 시스템</strong></td>
+<td style="text-align: left;">AMPS (1G), FM 라디오</td>
+<td style="text-align: left;">GSM (2G), IS-136</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>현재 사용</strong></td>
+<td style="text-align: left;">위성통신 일부</td>
+<td style="text-align: left;">레거시 시스템</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">주파수-시간 평면에서의 비교<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<p>통신 자원은 <strong>주파수 축</strong>과 <strong>시간 축</strong>으로 이루어진 2차원 평면으로 표현할 수 있습니다. 이 평면에서 FDMA와 TDMA가 자원을 나누는 방식을 비교하면, 두 방식의 본질적 차이가 명확해집니다.</p>
+<div class="svg-diagram">
+<p><svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+<br />
+<!-- FDMA 영역 --></p>
+<p><text x="175" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1565c0">FDMA</text></p>
+<!-- FDMA 축 -->
+<p><line x1="50" y1="250" x2="300" y2="250" stroke="#333" stroke-width="1.2"/>
+  <line x1="50" y1="250" x2="50" y2="40" stroke="#333" stroke-width="1.2"/>
+  <text x="175" y="275" text-anchor="middle" font-size="11" fill="#333">시간 →</text>
+  <text x="28" y="145" text-anchor="middle" font-size="11" fill="#333" transform="rotate(-90, 28, 145)">주파수 →</text></p>
+<!-- FDMA 채널들 (수평 스트라이프) -->
+<p><rect x="55" y="45" width="240" height="35" fill="#42a5f5" opacity="0.7" rx="2"/>
+  <text x="175" y="67" text-anchor="middle" font-size="10" fill="white" font-weight="bold">사용자 1 (f₁)</text></p>
+<p><rect x="55" y="90" width="240" height="35" fill="#66bb6a" opacity="0.7" rx="2"/>
+  <text x="175" y="112" text-anchor="middle" font-size="10" fill="white" font-weight="bold">사용자 2 (f₂)</text></p>
+<p><rect x="55" y="135" width="240" height="35" fill="#ef5350" opacity="0.7" rx="2"/>
+  <text x="175" y="157" text-anchor="middle" font-size="10" fill="white" font-weight="bold">사용자 3 (f₃)</text></p>
+<p><rect x="55" y="180" width="240" height="35" fill="#ab47bc" opacity="0.7" rx="2"/>
+  <text x="175" y="202" text-anchor="middle" font-size="10" fill="white" font-weight="bold">사용자 4 (f₄)</text></p>
+<!-- 구분선 -->
+<p><line x1="350" y1="30" x2="350" y2="270" stroke="#ccc" stroke-width="1" stroke-dasharray="6"/></p>
+<!-- TDMA 영역 -->
+<p><text x="525" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#c62828">TDMA</text></p>
+<!-- TDMA 축 -->
+<p><line x1="400" y1="250" x2="650" y2="250" stroke="#333" stroke-width="1.2"/>
+  <line x1="400" y1="250" x2="400" y2="40" stroke="#333" stroke-width="1.2"/>
+  <text x="525" y="275" text-anchor="middle" font-size="11" fill="#333">시간 →</text>
+  <text x="378" y="145" text-anchor="middle" font-size="11" fill="#333" transform="rotate(-90, 378, 145)">주파수 →</text></p>
+<!-- TDMA 슬롯들 (수직 스트라이프) -->
+<p><rect x="405" y="45" width="50" height="195" fill="#42a5f5" opacity="0.7" rx="2"/>
+  <text x="430" y="148" text-anchor="middle" font-size="9" fill="white" font-weight="bold" transform="rotate(-90, 430, 148)">사용자 1 (t₁)</text></p>
+<p><rect x="465" y="45" width="50" height="195" fill="#66bb6a" opacity="0.7" rx="2"/>
+  <text x="490" y="148" text-anchor="middle" font-size="9" fill="white" font-weight="bold" transform="rotate(-90, 490, 148)">사용자 2 (t₂)</text></p>
+<p><rect x="525" y="45" width="50" height="195" fill="#ef5350" opacity="0.7" rx="2"/>
+  <text x="550" y="148" text-anchor="middle" font-size="9" fill="white" font-weight="bold" transform="rotate(-90, 550, 148)">사용자 3 (t₃)</text></p>
+<p><rect x="585" y="45" width="50" height="195" fill="#ab47bc" opacity="0.7" rx="2"/>
+  <text x="610" y="148" text-anchor="middle" font-size="9" fill="white" font-weight="bold" transform="rotate(-90, 610, 148)">사용자 4 (t₄)</text></p>
+<!-- 설명 -->
+<p><text x="175" y="295" text-anchor="middle" font-size="10" fill="#1565c0">주파수를 나누고, 시간은 전부 사용</text>
+  <text x="525" y="295" text-anchor="middle" font-size="10" fill="#c62828">시간을 나누고, 주파수는 전부 사용</text>
+</svg></p>
+</div>
+<p>이 그림에서 알 수 있듯이:</p>
+<ul>
+<li><strong>FDMA</strong>는 주파수 축을 <strong>수평으로 잘라</strong> 각 사용자에게 할당합니다. 각 사용자는 시간 축 전체를 사용합니다.</li>
+<li><strong>TDMA</strong>는 시간 축을 <strong>수직으로 잘라</strong> 각 사용자에게 할당합니다. 각 사용자는 주파수 축 전체를 사용합니다.</li>
+</ul>
+<p>두 방식 모두, 전체 자원(주파수 × 시간)에서 한 사용자가 차지하는 면적의 크기는 동일합니다.</p>
+<hr />
+<h2 id="_15">🔧 따라하기 실습: 다중접속 시스템 설계 계산<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>통신이론 시험에서 자주 출제되는 유형의 문제를 단계별로 풀어보겠습니다.</p>
+<h3 id="_16">실습 문제<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>어떤 이동통신 시스템의 사양이 다음과 같습니다:</p>
+<ul>
+<li>전체 할당 대역폭: <strong>10 MHz</strong></li>
+<li>FDMA 채널 대역폭: <strong>200 kHz</strong> (보호 대역 포함)</li>
+<li>각 FDMA 채널 내 TDMA 타임 슬롯 수: <strong>4개</strong></li>
+<li>프레임 길이: <strong>5 ms</strong></li>
+<li>보호 시간: 각 슬롯 사이에 <strong>50 μs</strong></li>
+</ul>
+<h3 id="_17">풀이 단계<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p><strong>1단계: FDMA 채널 수 계산</strong></p>
+<p>$$N_{FDMA} = \frac{W}{B_c} = \frac{10 \times 10^6}{200 \times 10^3} = 50 \text{ 채널}$$</p>
+<p><strong>2단계: 전체 동시 사용자 수 계산</strong></p>
+<p>$$N_{총} = N_{FDMA} \times N_{TDMA} = 50 \times 4 = 200 \text{ 사용자}$$</p>
+<p><strong>3단계: 유효 슬롯 시간 계산</strong></p>
+<p>프레임 길이에서 보호 시간을 제외한 나머지가 실제 데이터 전송에 사용됩니다.</p>
+<p>4개 슬롯 사이에 보호 시간은 4개(마지막 슬롯 뒤에도 다음 프레임과의 보호 시간 필요)입니다:</p>
+<p>$$T_{보호총합} = 4 \times 50 \text{ μs} = 200 \text{ μs} = 0.2 \text{ ms}$$</p>
+<p>유효 전송 시간:</p>
+<p>$$T_{유효} = T_f - T_{보호총합} = 5 \text{ ms} - 0.2 \text{ ms} = 4.8 \text{ ms}$$</p>
+<p>각 슬롯의 유효 전송 시간:</p>
+<p>$$T_{s(유효)} = \frac{T_{유효}}{N_{TDMA}} = \frac{4.8 \text{ ms}}{4} = 1.2 \text{ ms}$$</p>
+<p><strong>4단계: 프레임 효율 계산</strong></p>
+<p>$$\eta = \frac{T_{유효}}{T_f} \times 100\% = \frac{4.8}{5} \times 100\% = 96\%$$</p>
+<p>이 시스템은 보호 시간으로 인해 4%의 시간 자원이 낭비되고 있습니다.</p>
+<p><strong>5단계: 결과 정리</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">항목</th>
+<th style="text-align: left;">계산 결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">FDMA 채널 수</td>
+<td style="text-align: left;">50개</td>
+</tr>
+<tr>
+<td style="text-align: left;">TDMA 슬롯 수(채널당)</td>
+<td style="text-align: left;">4개</td>
+</tr>
+<tr>
+<td style="text-align: left;">전체 동시 사용자 수</td>
+<td style="text-align: left;">200명</td>
+</tr>
+<tr>
+<td style="text-align: left;">슬롯당 유효 전송 시간</td>
+<td style="text-align: left;">1.2 ms</td>
+</tr>
+<tr>
+<td style="text-align: left;">프레임 효율</td>
+<td style="text-align: left;">96%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_18">📌 시험 대비: 자주 출제되는 포인트<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<h3 id="_19">⚠️ 주의할 점과 자주 하는 실수<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p><strong>1. 보호 구간의 위치 파악</strong></p>
+<ul>
+<li>FDMA의 보호 대역: <strong>주파수 축</strong>에서 채널 사이에 존재</li>
+<li>TDMA의 보호 시간: <strong>시간 축</strong>에서 슬롯 사이에 존재</li>
+<li>문제에서 "보호 대역"과 "보호 시간"을 혼동하면 안 됩니다</li>
+</ul>
+<p><strong>2. FDMA+TDMA 결합 시스템</strong></p>
+<p>GSM처럼 두 방식을 결합한 시스템에서는 <strong>곱하기</strong>로 전체 사용자 수를 구합니다:</p>
+<p>$$N_{총} = N_{FDMA} \times N_{TDMA}$$</p>
+<p><strong>3. 단위 환산 실수</strong></p>
+<ul>
+<li>MHz → Hz: ×10⁶</li>
+<li>kHz → Hz: ×10³  </li>
+<li>ms → s: ×10⁻³</li>
+<li>μs → s: ×10⁻⁶</li>
+</ul>
+<p>시험에서 단위 환산 실수가 가장 빈번합니다. 반드시 통일된 단위(Hz, s)로 변환 후 계산하는 습관을 들이는 것이 좋습니다.</p>
+<p><strong>4. "보호 대역 포함" vs "보호 대역 별도"</strong></p>
+<p>문제에서 채널 대역폭에 보호 대역이 포함되었는지, 별도인지에 따라 계산 방법이 달라집니다:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">조건</th>
+<th style="text-align: left;">계산식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">보호 대역 <strong>포함</strong></td>
+<td style="text-align: left;">N = W / B<sub>c</sub></td>
+</tr>
+<tr>
+<td style="text-align: left;">보호 대역 <strong>별도</strong></td>
+<td style="text-align: left;">N = W / (B<sub>c</sub> + B<sub>g</sub>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_20">📊 기출 빈출 공식 모음<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">공식</th>
+<th style="text-align: left;">적용 대상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">N = W / B<sub>c</sub></td>
+<td style="text-align: left;">FDMA 채널 수 (보호 대역 포함 시)</td>
+</tr>
+<tr>
+<td style="text-align: left;">N = W / (B<sub>c</sub> + B<sub>g</sub>)</td>
+<td style="text-align: left;">FDMA 채널 수 (보호 대역 별도 시)</td>
+</tr>
+<tr>
+<td style="text-align: left;">T<sub>f</sub> = N × (T<sub>s</sub> + T<sub>g</sub>)</td>
+<td style="text-align: left;">TDMA 프레임 길이</td>
+</tr>
+<tr>
+<td style="text-align: left;">η = (T<sub>f</sub> - N × T<sub>g</sub>) / T<sub>f</sub></td>
+<td style="text-align: left;">TDMA 프레임 효율</td>
+</tr>
+<tr>
+<td style="text-align: left;">N<sub>총</sub> = N<sub>FDMA</sub> × N<sub>TDMA</sub></td>
+<td style="text-align: left;">FDMA+TDMA 결합 시 총 사용자 수</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tdma-fdma">📚 심화: 왜 TDMA와 FDMA를 넘어서야 했는가?<a class="headerlink" href="#tdma-fdma" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../chapter10/" class="md-footer__link md-footer__link--prev" aria-label="이전: 10차시: 한 채널을 여럿이 쓰는 방법 - 다중화 기술의 이해">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                10차시: 한 채널을 여럿이 쓰는 방법 - 다중화 기술의 이해
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapter12/" class="md-footer__link md-footer__link--next" aria-label="다음: 12차시: 간섭 없이 많은 사용자를 수용하기 - CDMA의 원리">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              <div class="md-ellipsis">
+                12차시: 간섭 없이 많은 사용자를 수용하기 - CDMA의 원리
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 노용철TV | <a href='https://eduflow-greatsong.fly.dev/'>EduFlow</a>로 제작
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/title-link.js"></script>
+      
+        <script src="../javascripts/mermaid-config.js"></script>
+      
+        <script src="../javascripts/scroll-progress.js"></script>
+      
+        <script src="../javascripts/eduflow-nav.js"></script>
+      
+        <script src="../javascripts/lightbox.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3121 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="비전공자도 이해할 수 있도록 일상 비유와 실전 기출 문제로 구성한 통신공학 완전정복 교재. 한전KDN 등 공공기관 채용 필기시험 대비용 자기주도 학습 자료입니다.">
+      
+      
+        <meta name="author" content="노용철TV (EduFlow)">
+      
+      
+      
+        <link rel="prev" href="../chapter12/">
+      
+      
+        <link rel="next" href="../chapter14/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA - 통신공학 단박에 끝내기</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans KR";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#13-ofdm-ofdma" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-header__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            통신공학 단박에 끝내기
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter01/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter05/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../chapter09/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../chapter15/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="통신공학 단박에 끝내기" class="md-nav__button md-logo" aria-label="통신공학 단박에 끝내기" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    통신공학 단박에 끝내기
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 1 - Part 1 기초 개념 완성 - 신호부터 아날로그까지
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1차시: 통신공학 전체 그림 그리기 - 신호와 시스템의 기초
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2차시: 신호를 수식으로 표현하기 - 주파수 영역의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3차시: 아날로그 통신의 두 주인공 - AM과 FM 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4차시: 아날로그에서 디지털로 - 표본화와 PCM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 2 - Part 2 디지털 통신의 핵심 - 변복조와 신뢰성
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5차시: 디지털 신호를 전송하는 방법 - ASK, FSK, PSK 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6차시: 더 효율적으로 전송하기 - QAM과 고차 변조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7차시: 신뢰성 확보하기 - 오류 검출과 정정 부호
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8차시: Part 2 종합 실전 문제풀이 - 디지털 변복조 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9차시: 통신 채널의 한계 - 샤논 법칙과 채널 용량
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10차시: 한 채널을 여럿이 쓰는 방법 - 다중화 기술의 이해
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11차시: 여럿이 동시에 통신하기 - TDMA와 FDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12차시: 간섭 없이 많은 사용자를 수용하기 - CDMA의 원리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="학습 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ofdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 OFDM의 원리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fftifft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 FFT/IFFT와 순환 전두사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 OFDMA와 다중접속
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 기출 유형 연습
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ofdm-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 도입 — 왜 OFDM인가? (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-1-ofdm-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: 핵심 개념 ① — OFDM의 원리와 직교성 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-ofdma-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: 핵심 개념 ② — OFDMA와 다중접속 (12분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: 따라하기 실습 — 계산 문제 풀기 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 평가 및 성찰 (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤔 왜 이걸 배우나요?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ofdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 ① — OFDM의 원리와 직교성
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 ① — OFDM의 원리와 직교성">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎵 비유: 오케스트라의 합주
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 정식 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 직교성이란 무엇인가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm-ifft-fft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ OFDM 송수신 과정 — IFFT와 FFT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cyclic-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ 순환 전두사(Cyclic Prefix)의 역할
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ OFDM의 장점과 한계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ OFDM의 장점과 한계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#papr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 PAPR 문제 상세
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ofdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 ② — OFDMA와 다중접속
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 ② — OFDMA와 다중접속">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ofdm-ofdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 OFDM에서 OFDMA로
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdma_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 OFDMA의 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 자원 블록(Resource Block) 개념
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdma-vs-sc-fdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 OFDMA vs SC-FDMA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5g-nr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📱 5G NR에서의 진화
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 다중접속 방식 종합 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ofdm_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 따라하기 실습 — OFDM 파라미터 계산
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 따라하기 실습 — OFDM 파라미터 계산">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 실습 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        풀이 과정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LTE 대역폭별 파라미터 정리표
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 추가 연습 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 자주 하는 실수와 주의할 점
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 핵심 개념 요약 정리
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 형성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 다음 차시 미리보기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이번 차시를 돌아보며
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part 4 - Part 4 네트워크와 최신 기술 - 시험 완성과 실무 이해
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15차시: 통신 구조의 기본 - OSI 모델과 계층별 역할
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16차시: 이동통신의 진화 - 2G부터 4G까지의 기술 변화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17차시: 차세대 통신의 비전 - 5G와 6G의 주요 기술
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18차시: 전체 통합 실전 모의고사 - 시험 완성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19차시: 최종 정리와 시험 전략 - 합격을 위한 마무리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        학습 목표
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="학습 목표">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ofdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 OFDM의 원리
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fftifft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 FFT/IFFT와 순환 전두사
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💬 OFDMA와 다중접속
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 기출 유형 연습
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 수업 흐름
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⏱️ 수업 흐름">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ofdm-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1단계: 도입 — 왜 OFDM인가? (5분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-1-ofdm-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2단계: 핵심 개념 ① — OFDM의 원리와 직교성 (15분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-2-ofdma-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3단계: 핵심 개념 ② — OFDMA와 다중접속 (12분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4단계: 따라하기 실습 — 계산 문제 풀기 (10분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5단계: 평가 및 성찰 (8분)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤔 왜 이걸 배우나요?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-ofdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 ① — OFDM의 원리와 직교성
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 ① — OFDM의 원리와 직교성">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎵 비유: 오케스트라의 합주
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 정식 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📐 직교성이란 무엇인가
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm-ifft-fft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ OFDM 송수신 과정 — IFFT와 FFT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cyclic-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ 순환 전두사(Cyclic Prefix)의 역할
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ OFDM의 장점과 한계
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚠️ OFDM의 장점과 한계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#papr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 PAPR 문제 상세
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ofdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 핵심 개념 ② — OFDMA와 다중접속
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 핵심 개념 ② — OFDMA와 다중접속">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ofdm-ofdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 OFDM에서 OFDMA로
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdma_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 OFDMA의 정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 자원 블록(Resource Block) 개념
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdma-vs-sc-fdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 OFDMA vs SC-FDMA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5g-nr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📱 5G NR에서의 진화
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 다중접속 방식 종합 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ofdm_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 따라하기 실습 — OFDM 파라미터 계산
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 따라하기 실습 — OFDM 파라미터 계산">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 실습 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        풀이 과정
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LTE 대역폭별 파라미터 정리표
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 추가 연습 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ 자주 하는 실수와 주의할 점
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 핵심 개념 요약 정리
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 형성 평가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 형성 평가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 자기점검 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💭 성찰 &amp; 다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💭 성찰 &amp; 다음 차시 미리보기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        이번 차시를 돌아보며
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        다음 차시 미리보기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="네비게이션" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../chapter09/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Part 3 - Part 3 통신 시스템의 효율성 - 정보이론과 다중접속
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="13-ofdm-ofdma">13차시: 차세대 통신의 핵심 기술 - OFDM과 OFDMA<a class="headerlink" href="#13-ofdm-ofdma" title="Permanent link">&para;</a></h1>
+<div class="lesson-banner">
+<p><strong>⏰ 50분</strong> · OFDM · 부분파(Subcarrier) · OFDMA · PAPR · <strong>난이도</strong> ●●●○○</p>
+<p><strong>학습목표</strong>: OFDM의 직교 부분파 원리를 이해하고, OFDMA를 통한 다중접속 방식과 LTE/5G 적용을 설명할 수 있습니다.</p>
+<blockquote>
+<p><strong>오늘의 질문</strong>: "스마트폰으로 영상 통화를 하면서 동시에 웹서핑을 할 때, 데이터가 뒤섞이지 않고 동시에 전달되는 비결은 무엇일까요?"</p>
+</blockquote>
+</div>
+<hr />
+<h2 id="_1">학습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> OFDM(직교주파수분할다중화)의 원리를 이해하고 부분파(subcarrier) 개념을 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> OFDM의 장점(높은 스펙트럼 효율, 다중경로 대응)과 한계(높은 PAPR, 동기화 민감도)를 분석할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> OFDMA를 통한 다중접속 원리를 이해하고 4G(LTE), 5G 등 실무 적용을 설명할 수 있다</li>
+</ul>
+<hr />
+<div class="cards-grid">
+<div class="card card-orange">
+<h3 id="ofdm">🧠 OFDM의 원리<a class="headerlink" href="#ofdm" title="Permanent link">&para;</a></h3>
+<p>하나의 넓은 채널을 수백 개의 좁은 부분파로 나누어 데이터를 동시에 전송하는 기술의 핵심 구조를 이해합니다.</p>
+</div>
+<div class="card card-blue">
+<h3 id="fftifft">🔧 FFT/IFFT와 순환 전두사<a class="headerlink" href="#fftifft" title="Permanent link">&para;</a></h3>
+<p>OFDM을 실제로 구현하는 핵심 도구인 FFT/IFFT 연산과, 다중경로 간섭을 방지하는 순환 전두사(CP)의 역할을 학습합니다.</p>
+</div>
+<div class="card card-green">
+<h3 id="ofdma">💬 OFDMA와 다중접속<a class="headerlink" href="#ofdma" title="Permanent link">&para;</a></h3>
+<p>OFDM의 부분파를 여러 사용자에게 유연하게 할당하는 OFDMA 방식과 LTE/5G에서의 적용을 분석합니다.</p>
+</div>
+<div class="card card-red">
+<h3 id="_2">📝 기출 유형 연습<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>부분파 수 계산, 대역폭 구성, PAPR 문제 등 시험에 자주 출제되는 유형을 직접 풀어봅니다.</p>
+</div>
+</div>
+<hr />
+<h2 id="_3">⏱️ 수업 흐름<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="steps">
+<div class="step">
+<h4 id="1-ofdm-5">1단계: 도입 — 왜 OFDM인가? (5분)<a class="headerlink" href="#1-ofdm-5" title="Permanent link">&para;</a></h4>
+<p>기존 단일 반송파 방식의 한계를 확인하고, OFDM이 등장한 배경과 핵심 아이디어를 직관적 비유로 파악합니다.</p>
+</div>
+<div class="step">
+<h4 id="2-1-ofdm-15">2단계: 핵심 개념 ① — OFDM의 원리와 직교성 (15분)<a class="headerlink" href="#2-1-ofdm-15" title="Permanent link">&para;</a></h4>
+<p>부분파(subcarrier), 직교성(orthogonality), FFT/IFFT를 통한 구현, 순환 전두사(Cyclic Prefix)의 역할을 체계적으로 학습합니다.</p>
+</div>
+<div class="step">
+<h4 id="3-2-ofdma-12">3단계: 핵심 개념 ② — OFDMA와 다중접속 (12분)<a class="headerlink" href="#3-2-ofdma-12" title="Permanent link">&para;</a></h4>
+<p>OFDM을 다중 사용자 환경에 확장한 OFDMA의 원리를 이해하고, LTE와 5G NR에서의 구체적 적용을 살펴봅니다.</p>
+</div>
+<div class="step">
+<h4 id="4-10">4단계: 따라하기 실습 — 계산 문제 풀기 (10분)<a class="headerlink" href="#4-10" title="Permanent link">&para;</a></h4>
+<p>부분파 간격, 심볼 시간, 대역폭 계산 등 시험 빈출 유형을 단계별로 풀어봅니다.</p>
+</div>
+<div class="step">
+<h4 id="5-8">5단계: 평가 및 성찰 (8분)<a class="headerlink" href="#5-8" title="Permanent link">&para;</a></h4>
+<p>형성 평가 문제를 풀고, 학습 목표 달성 여부를 자가 점검한 후 다음 차시를 미리 봅니다.</p>
+</div>
+</div>
+<hr />
+<h2 id="_4">🤔 왜 이걸 배우나요?<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>여러분이 매일 사용하는 스마트폰의 LTE와 5G, 집에서 쓰는 Wi-Fi(802.11a/g/n/ac/ax) — 이 모든 무선 기술의 핵심에 <strong>OFDM</strong>이 있습니다.</p>
+<p>12차시에서 학습한 FDMA, TDMA, CDMA는 각각 주파수, 시간, 코드를 기준으로 사용자를 구분했습니다. 그런데 이 방식들은 <strong>고속 데이터 전송</strong> 환경에서 한 가지 공통된 문제에 부딪힙니다. 바로 <strong>다중경로 페이딩(multipath fading)</strong> 입니다.</p>
+<p>도심의 빌딩 숲에서 전파는 직진하지 않습니다. 건물에 반사되고, 회절되며, 여러 경로를 거쳐 수신기에 도달합니다. 이때 서로 다른 시간에 도착한 신호끼리 간섭을 일으켜 데이터가 뭉개지는 현상이 발생합니다. 전송 속도가 높아질수록(즉, 심볼 시간이 짧아질수록) 이 문제는 더욱 심각해집니다.</p>
+<p>OFDM은 이 문제를 우아하게 해결합니다. <strong>"빠르게 한 줄로 보내는 대신, 느리게 여러 줄로 동시에 보내자"</strong> — 이것이 OFDM의 핵심 발상입니다.</p>
+<hr />
+<h2 id="1-ofdm">📚 핵심 개념 ① — OFDM의 원리와 직교성<a class="headerlink" href="#1-ofdm" title="Permanent link">&para;</a></h2>
+<h3 id="_5">🎵 비유: 오케스트라의 합주<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>오케스트라를 떠올려 보겠습니다. 수십 개의 악기가 동시에 연주하지만, 각 악기의 음색과 음높이가 다르기 때문에 우리 귀는 바이올린과 첼로, 플루트의 소리를 구분할 수 있습니다. 각 악기가 서로의 소리를 방해하지 않으면서도 하나의 화음을 만들어내는 것입니다.</p>
+<p>OFDM도 같은 원리입니다. 하나의 넓은 주파수 대역을 수백~수천 개의 <strong>좁은 부분파(subcarrier)</strong> 로 나누고, 각 부분파가 서로 간섭 없이 동시에 데이터를 전송합니다. 악기가 음높이로 구분되듯, 부분파는 <strong>직교성(orthogonality)</strong> 이라는 수학적 성질로 구분됩니다.</p>
+<h3 id="_6">📖 정식 정의<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><strong>OFDM(Orthogonal Frequency Division Multiplexing, 직교주파수분할다중화)</strong> 은 넓은 대역폭을 다수의 직교하는 협대역 부분파로 분할하고, 각 부분파에 저속 데이터 스트림을 실어 병렬로 전송하는 다중반송파 변조 방식입니다.</p>
+<h3 id="_7">📐 직교성이란 무엇인가<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>OFDM에서 가장 핵심이 되는 개념은 <strong>직교성</strong>입니다.</p>
+<p>수학적으로, 두 신호 $f_i(t)$와 $f_j(t)$가 한 심볼 구간 $T$ 동안 다음 조건을 만족하면 <strong>직교한다</strong>고 합니다.</p>
+<p>$$\int_0^T f_i(t) \cdot f_j^*(t) \, dt = 0 \quad (i 
+eq j)$$</p>
+<p>쉽게 말하면, 두 부분파를 한 심볼 시간 동안 곱해서 적분하면 결과가 정확히 0이 된다는 뜻입니다. 이 조건이 만족되면, 수신기에서 특정 부분파만 골라내어 원래 데이터를 추출할 수 있습니다. 나머지 부분파의 영향은 수학적으로 사라집니다.</p>
+<p>직교 조건을 충족하기 위한 <strong>부분파 간격(subcarrier spacing)</strong> 은 다음과 같습니다.</p>
+<p>$$\Delta f = \frac{1}{T_s}$$</p>
+<p>여기서 $T_s$는 유효 심볼 시간(OFDM 심볼의 유효 구간)입니다. 예를 들어 유효 심볼 시간이 66.7μs라면, 부분파 간격은 $1 / 66.7 \times 10^{-6} = 15\text{kHz}$가 됩니다. 이 값은 LTE에서 실제로 사용하는 부분파 간격입니다.</p>
+<p><strong>직교성의 핵심 효과:</strong> 아래 그림은 기존 FDM과 OFDM의 주파수 스펙트럼 차이를 보여줍니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">비교 항목</th>
+<th style="text-align: center;">기존 FDM</th>
+<th style="text-align: center;">OFDM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">부분파 배치</td>
+<td style="text-align: center;">보호 대역(guard band)으로 분리</td>
+<td style="text-align: center;">부분파가 겹치지만 직교</td>
+</tr>
+<tr>
+<td style="text-align: center;">스펙트럼 효율</td>
+<td style="text-align: center;">보호 대역만큼 낭비</td>
+<td style="text-align: center;">약 50% 이상 향상</td>
+</tr>
+<tr>
+<td style="text-align: center;">부분파 간 간섭</td>
+<td style="text-align: center;">보호 대역으로 방지</td>
+<td style="text-align: center;">직교성으로 방지</td>
+</tr>
+</tbody>
+</table>
+<div class="mermaid">flowchart LR
+    subgraph FDM["기존 FDM"]
+        direction LR
+        F1["부분파1"] ~~~ G1["보호&lt;br/&gt;대역"] ~~~ F2["부분파2"] ~~~ G2["보호&lt;br/&gt;대역"] ~~~ F3["부분파3"]
+    end
+    subgraph OFDM["OFDM"]
+        direction LR
+        O1["부분파1"] ~~~ O2["부분파2&lt;br/&gt;(겹침)"] ~~~ O3["부분파3&lt;br/&gt;(겹침)"] ~~~ O4["부분파4&lt;br/&gt;(겹침)"]
+    end
+    FDM --&gt;|"스펙트럼 효율 향상"| OFDM</div>
+<blockquote>
+<p>위 다이어그램은 FDM에서 보호 대역으로 인해 낭비되던 주파수를, OFDM이 직교 부분파의 겹침(overlap)을 통해 절약하는 구조를 나타냅니다.</p>
+</blockquote>
+<h3 id="ofdm-ifft-fft">⚙️ OFDM 송수신 과정 — IFFT와 FFT<a class="headerlink" href="#ofdm-ifft-fft" title="Permanent link">&para;</a></h3>
+<p>OFDM의 이론은 수학적으로 우아하지만, 실제로 수백 개의 정현파(사인파) 발진기를 만드는 것은 비현실적입니다. 이 문제를 해결한 것이 바로 <strong>IFFT(역고속 푸리에 변환)</strong> 와 <strong>FFT(고속 푸리에 변환)</strong> 입니다.</p>
+<p><strong>핵심 아이디어:</strong> 주파수 영역에서 각 부분파에 데이터를 할당한 뒤, IFFT를 수행하면 시간 영역의 OFDM 신호가 자동으로 생성됩니다. 수신 측에서는 FFT를 수행하면 각 부분파의 데이터를 다시 분리할 수 있습니다.</p>
+<div class="mermaid">flowchart LR
+    A["입력 데이터&lt;br/&gt;(직렬)"] --&gt; B["직렬→병렬&lt;br/&gt;변환(S/P)"]
+    B --&gt; C["부분파 매핑&lt;br/&gt;(QAM/QPSK)"]
+    C --&gt; D["IFFT"]
+    D --&gt; E["순환 전두사&lt;br/&gt;(CP) 삽입"]
+    E --&gt; F["병렬→직렬&lt;br/&gt;변환(P/S)"]
+    F --&gt; G["채널 전송"]
+    G --&gt; H["CP 제거"]
+    H --&gt; I["FFT"]
+    I --&gt; J["부분파 역매핑"]
+    J --&gt; K["출력 데이터&lt;br/&gt;(직렬)"]</div>
+<blockquote>
+<p>위 다이어그램은 OFDM의 전체 송수신 과정을 나타냅니다. 송신기(IFFT)와 수신기(FFT)가 대칭 구조임을 확인할 수 있습니다.</p>
+</blockquote>
+<p>각 단계를 좀 더 자세히 살펴보겠습니다.</p>
+<p><strong>① 직렬→병렬 변환(S/P):</strong> 고속 직렬 데이터 스트림을 $N$개의 저속 병렬 스트림으로 나눕니다. 예를 들어 원래 데이터 전송률이 $R$ bps라면, 각 부분파는 $R/N$ bps만 담당합니다.</p>
+<p><strong>② 부분파 매핑:</strong> 각 병렬 스트림을 QPSK, 16-QAM, 64-QAM 등의 변조 방식으로 매핑합니다. 이때 각 부분파마다 채널 상태에 따라 다른 변조 방식을 적용할 수도 있습니다(적응적 변조).</p>
+<p><strong>③ IFFT 연산:</strong> $N$개의 주파수 영역 심볼을 입력으로 받아 시간 영역 OFDM 심볼을 출력합니다. 이 과정에서 $N$개의 직교 부분파가 자동으로 생성됩니다.</p>
+<p><strong>④ 순환 전두사(CP) 삽입:</strong> OFDM 심볼의 끝부분을 복사하여 앞에 붙입니다 (이 부분은 바로 아래에서 상세히 설명합니다).</p>
+<p><strong>⑤ 수신 측:</strong> CP를 제거한 후 FFT를 수행하면, 각 부분파의 데이터가 깔끔하게 분리됩니다.</p>
+<h3 id="cyclic-prefix">🛡️ 순환 전두사(Cyclic Prefix)의 역할<a class="headerlink" href="#cyclic-prefix" title="Permanent link">&para;</a></h3>
+<p>순환 전두사(CP)는 OFDM의 핵심 장치 중 하나입니다. 다중경로 환경에서 <strong>심볼 간 간섭(ISI, Inter-Symbol Interference)</strong> 을 제거하는 역할을 합니다.</p>
+<p><strong>비유:</strong> 편지를 여러 통 연달아 보낼 때, 앞 편지의 마지막 페이지가 뒤 편지의 첫 페이지와 뒤섞일 수 있습니다. 이를 방지하기 위해 각 편지 사이에 <strong>빈 페이지(보호 구간)</strong> 를 끼워 넣는 것과 비슷합니다. 다만, CP는 단순한 빈 구간이 아니라 OFDM 심볼의 끝부분을 복사한 것이므로, 직교성까지 보존하는 효과가 있습니다.</p>
+<div class="mermaid">flowchart LR
+    A["OFDM 심볼&lt;br/&gt;(유효 구간 Ts)"] --&gt; B["끝부분 복사"]
+    B --&gt; C["앞에 삽입"]
+    C --&gt; D["CP + 유효 심볼&lt;br/&gt;(총 시간 = Tcp + Ts)"]</div>
+<blockquote>
+<p>CP의 길이($T_{CP}$)는 채널의 최대 지연 확산(delay spread)보다 길어야 합니다.</p>
+</blockquote>
+<p><strong>CP의 동작 원리를 정리하면 다음과 같습니다.</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">항목</th>
+<th style="text-align: left;">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>CP 길이 조건</strong></td>
+<td style="text-align: left;">$T_{CP} \geq \tau_{max}$ (채널의 최대 지연 확산)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ISI 제거</strong></td>
+<td style="text-align: left;">CP 구간에서 이전 심볼의 잔여 신호가 흡수됨</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>직교성 보존</strong></td>
+<td style="text-align: left;">CP 덕분에 선형 컨벌루션이 원형 컨벌루션으로 변환되어 FFT 연산이 정확하게 동작</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>대가</strong></td>
+<td style="text-align: left;">CP 시간만큼 실제 데이터 전송에 사용되지 못함 → 오버헤드 발생</td>
+</tr>
+</tbody>
+</table>
+<p>CP로 인한 <strong>오버헤드 비율</strong>은 다음과 같이 계산됩니다.</p>
+<p>$$\text{CP 오버헤드} = \frac{T_{CP}}{T_{CP} + T_s}$$</p>
+<p>LTE의 경우 일반 CP는 약 4.7μs, 유효 심볼 시간은 약 66.7μs이므로, 오버헤드는 약 $4.7 / (4.7 + 66.7) \approx 6.6\%$입니다.</p>
+<h3 id="ofdm_1">⚠️ OFDM의 장점과 한계<a class="headerlink" href="#ofdm_1" title="Permanent link">&para;</a></h3>
+<p>OFDM은 강력한 기술이지만, 모든 기술이 그렇듯 장단점이 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">구분</th>
+<th style="text-align: left;">내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>장점 ①</strong> 높은 스펙트럼 효율</td>
+<td style="text-align: left;">부분파가 겹쳐도 직교성으로 분리 가능 → 보호 대역 불필요</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>장점 ②</strong> 다중경로 페이딩 대응</td>
+<td style="text-align: left;">협대역 부분파는 주파수 선택적 페이딩을 평탄 페이딩으로 변환. CP가 ISI 제거</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>장점 ③</strong> 간단한 등화기</td>
+<td style="text-align: left;">각 부분파가 협대역이므로, 단순한 1-탭(one-tap) 주파수 영역 등화기만으로 충분</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>장점 ④</strong> 유연한 자원 할당</td>
+<td style="text-align: left;">부분파 단위로 변조/전력을 조절하는 적응적 자원 할당 가능</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>한계 ①</strong> 높은 PAPR</td>
+<td style="text-align: left;">여러 부분파의 신호가 동위상으로 합쳐질 때 순간 첨두 전력이 매우 높아짐</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>한계 ②</strong> 주파수 오프셋 민감</td>
+<td style="text-align: left;">부분파 간 직교성이 주파수 동기에 민감 → 도플러 효과나 발진기 오차에 취약</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>한계 ③</strong> CP 오버헤드</td>
+<td style="text-align: left;">CP 삽입으로 실제 전송 효율 감소</td>
+</tr>
+</tbody>
+</table>
+<h4 id="papr">🔍 PAPR 문제 상세<a class="headerlink" href="#papr" title="Permanent link">&para;</a></h4>
+<p><strong>PAPR(Peak-to-Average Power Ratio, 첨두 대 평균 전력비)</strong> 는 OFDM의 대표적 단점입니다.</p>
+<p>$N$개의 부분파가 모두 같은 위상으로 합쳐지는 최악의 경우, PAPR은 다음과 같습니다.</p>
+<p>$$\text{PAPR}<em 10="10">{max} = 10 \log</em>$$}(N) \;\text{[dB]</p>
+<p>예를 들어 $N = 1024$개의 부분파를 사용하면, 최대 PAPR은 $10 \log_{10}(1024) = 30\text{dB}$입니다. 이는 순간적으로 평균 전력의 1000배에 달하는 첨두 전력이 발생할 수 있다는 의미입니다.</p>
+<p>높은 PAPR은 전력 증폭기(PA)의 선형 영역을 벗어나게 하여 신호 왜곡을 유발합니다. 이를 해결하기 위한 대표적 기법은 다음과 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">PAPR 저감 기법</th>
+<th style="text-align: left;">원리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>클리핑(Clipping)</strong></td>
+<td style="text-align: left;">일정 임계값 이상의 신호를 잘라냄 (간단하지만 왜곡 발생)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SLM(Selective Mapping)</strong></td>
+<td style="text-align: left;">여러 후보 신호 중 PAPR이 가장 낮은 것을 선택</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PTS(Partial Transmit Sequence)</strong></td>
+<td style="text-align: left;">부분파 블록별 위상을 최적화하여 PAPR 감소</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DFT-s-OFDM</strong></td>
+<td style="text-align: left;">DFT 확산을 통해 단일반송파 특성 부여 (5G 상향링크에서 사용)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-ofdma">📚 핵심 개념 ② — OFDMA와 다중접속<a class="headerlink" href="#2-ofdma" title="Permanent link">&para;</a></h2>
+<h3 id="ofdm-ofdma">🎯 OFDM에서 OFDMA로<a class="headerlink" href="#ofdm-ofdma" title="Permanent link">&para;</a></h3>
+<p>12차시에서 학습한 FDMA, TDMA, CDMA가 각각 주파수, 시간, 코드로 사용자를 구분했다면, <strong>OFDMA(Orthogonal Frequency Division Multiple Access)</strong> 는 <strong>OFDM의 부분파를 사용자별로 할당</strong>하여 다중접속을 실현합니다.</p>
+<p><strong>비유:</strong> OFDM이 "하나의 오케스트라가 모든 악기를 동원해 하나의 곡을 연주하는 것"이라면, OFDMA는 "여러 연주자에게 각각 다른 악기를 나눠주어 동시에 자기 파트를 연주하게 하는 것"입니다.</p>
+<h3 id="ofdma_1">📖 OFDMA의 정의<a class="headerlink" href="#ofdma_1" title="Permanent link">&para;</a></h3>
+<p><strong>OFDMA</strong>는 전체 부분파를 시간-주파수 자원 블록(Resource Block) 단위로 나누어, 각 사용자에게 필요한 만큼의 자원 블록을 동적으로 할당하는 다중접속 방식입니다.</p>
+<div class="mermaid">flowchart TD
+    A["전체 주파수 대역"] --&gt; B["부분파 1~100:&lt;br/&gt;사용자 A"]
+    A --&gt; C["부분파 101~200:&lt;br/&gt;사용자 B"]
+    A --&gt; D["부분파 201~400:&lt;br/&gt;사용자 C"]
+    A --&gt; E["부분파 401~500:&lt;br/&gt;사용자 D"]</div>
+<blockquote>
+<p>위 다이어그램은 OFDMA에서 각 사용자에게 서로 다른 부분파 묶음을 할당하는 개념을 보여줍니다. 사용자 C처럼 더 많은 데이터가 필요한 경우 더 많은 부분파를 배정받을 수 있습니다.</p>
+</blockquote>
+<h3 id="resource-block">📊 자원 블록(Resource Block) 개념<a class="headerlink" href="#resource-block" title="Permanent link">&para;</a></h3>
+<p>LTE에서 OFDMA의 자원 할당 단위는 <strong>자원 블록(RB, Resource Block)</strong> 입니다. 자원 블록은 시간과 주파수의 2차원 격자에서 정의됩니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">파라미터</th>
+<th style="text-align: left;">LTE 값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">부분파 간격 ($\Delta f$)</td>
+<td style="text-align: left;">15 kHz</td>
+</tr>
+<tr>
+<td style="text-align: left;">1 RB당 부분파 수</td>
+<td style="text-align: left;">12개</td>
+</tr>
+<tr>
+<td style="text-align: left;">1 RB의 주파수 폭</td>
+<td style="text-align: left;">$12 \times 15\text{kHz} = 180\text{kHz}$</td>
+</tr>
+<tr>
+<td style="text-align: left;">1 슬롯 시간</td>
+<td style="text-align: left;">0.5 ms (7 OFDM 심볼)</td>
+</tr>
+<tr>
+<td style="text-align: left;">1 서브프레임</td>
+<td style="text-align: left;">1 ms (2 슬롯)</td>
+</tr>
+<tr>
+<td style="text-align: left;">1 프레임</td>
+<td style="text-align: left;">10 ms (10 서브프레임)</td>
+</tr>
+</tbody>
+</table>
+<p>이 시간-주파수 격자 위에서, 기지국은 각 사용자의 채널 상태와 데이터 요구량에 따라 자원 블록을 유연하게 배분합니다. 채널 상태가 좋은 부분파에 높은 변조차수(예: 64-QAM)를 적용하고, 상태가 나쁜 부분파에는 낮은 변조차수(예: QPSK)를 적용하는 것도 가능합니다.</p>
+<h3 id="ofdma-vs-sc-fdma">🔄 OFDMA vs SC-FDMA<a class="headerlink" href="#ofdma-vs-sc-fdma" title="Permanent link">&para;</a></h3>
+<p>4G LTE에서는 <strong>하향링크(다운링크: 기지국→단말)</strong> 에 OFDMA를, <strong>상향링크(업링크: 단말→기지국)</strong> 에 <strong>SC-FDMA(Single Carrier FDMA)</strong> 를 사용합니다.</p>
+<p>그 이유는 바로 PAPR 문제 때문입니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">비교 항목</th>
+<th style="text-align: left;">OFDMA (하향링크)</th>
+<th style="text-align: left;">SC-FDMA (상향링크)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>PAPR</strong></td>
+<td style="text-align: left;">높음</td>
+<td style="text-align: left;">낮음 (단일 반송파 특성)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>전력 증폭기</strong></td>
+<td style="text-align: left;">기지국은 고성능 PA 사용 가능</td>
+<td style="text-align: left;">단말은 배터리 제한 → 효율적 PA 필요</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>구현</strong></td>
+<td style="text-align: left;">표준 OFDM</td>
+<td style="text-align: left;">DFT + OFDM (DFT-s-OFDM)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>스펙트럼 효율</strong></td>
+<td style="text-align: left;">높음</td>
+<td style="text-align: left;">OFDMA보다 다소 낮음</td>
+</tr>
+</tbody>
+</table>
+<p>기지국은 전원 공급이 안정적이므로 높은 PAPR을 감당할 수 있는 고성능 전력 증폭기를 사용할 수 있습니다. 반면, 스마트폰과 같은 단말은 배터리로 동작하므로 전력 효율이 중요합니다. SC-FDMA는 OFDM 과정 앞에 DFT를 추가하여 단일 반송파와 유사한 특성을 만들어 PAPR을 낮춥니다.</p>
+<h3 id="5g-nr">📱 5G NR에서의 진화<a class="headerlink" href="#5g-nr" title="Permanent link">&para;</a></h3>
+<p>5G NR(New Radio)은 OFDM/OFDMA를 기반으로 하되, 여러 가지 유연성을 추가했습니다.</p>
+<p><strong>① 가변 부분파 간격(Numerology)</strong></p>
+<p>LTE는 15kHz 고정이었지만, 5G NR은 $15 \times 2^\mu$ kHz ($\mu = 0, 1, 2, 3, 4$)로 가변적입니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Numerology ($\mu$)</th>
+<th style="text-align: center;">부분파 간격</th>
+<th style="text-align: center;">심볼 시간</th>
+<th style="text-align: left;">주요 용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">15 kHz</td>
+<td style="text-align: center;">66.7 μs</td>
+<td style="text-align: left;">Sub-6GHz 일반 셀</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">30 kHz</td>
+<td style="text-align: center;">33.3 μs</td>
+<td style="text-align: left;">Sub-6GHz 고용량</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">60 kHz</td>
+<td style="text-align: center;">16.7 μs</td>
+<td style="text-align: left;">Sub-6GHz / mmWave</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">120 kHz</td>
+<td style="text-align: center;">8.33 μs</td>
+<td style="text-align: left;">mmWave (밀리미터파)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">240 kHz</td>
+<td style="text-align: center;">4.17 μs</td>
+<td style="text-align: left;">mmWave (동기 신호)</td>
+</tr>
+</tbody>
+</table>
+<p>부분파 간격이 넓어지면 심볼 시간이 짧아져 지연 시간(latency)이 줄어듭니다. 반면 CP 오버헤드 비율은 동일하게 유지됩니다. 밀리미터파 대역에서는 도플러 확산이 크므로 넓은 부분파 간격이 유리합니다.</p>
+<p><strong>② 상향링크의 변화</strong></p>
+<p>5G NR에서는 상향링크에서도 <strong>CP-OFDM</strong>(일반 OFDM)과 <strong>DFT-s-OFDM</strong> 을 선택적으로 사용할 수 있습니다. 셀 가장자리처럼 커버리지가 중요한 경우 DFT-s-OFDM을, 셀 중심처럼 용량이 중요한 경우 CP-OFDM을 사용합니다.</p>
+<div class="mermaid">flowchart TD
+    A["5G NR&lt;br/&gt;OFDM 기반"] --&gt; B["하향링크&lt;br/&gt;CP-OFDM"]
+    A --&gt; C["상향링크"]
+    C --&gt; D["CP-OFDM&lt;br/&gt;(셀 중심, 고용량)"]
+    C --&gt; E["DFT-s-OFDM&lt;br/&gt;(셀 가장자리, 커버리지)"]
+    A --&gt; F["가변 Numerology&lt;br/&gt;(15~240 kHz)"]</div>
+<blockquote>
+<p>5G NR의 OFDM 기반 구조를 요약한 다이어그램입니다.</p>
+</blockquote>
+<h3 id="_8">📋 다중접속 방식 종합 비교<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>12차시에서 학습한 내용과 이번 차시의 OFDMA를 종합하여 정리하겠습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">방식</th>
+<th style="text-align: left;">분할 자원</th>
+<th style="text-align: left;">대표 시스템</th>
+<th style="text-align: center;">스펙트럼 효율</th>
+<th style="text-align: center;">다중경로 대응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">FDMA</td>
+<td style="text-align: left;">주파수</td>
+<td style="text-align: left;">1G (AMPS)</td>
+<td style="text-align: center;">낮음</td>
+<td style="text-align: center;">취약</td>
+</tr>
+<tr>
+<td style="text-align: left;">TDMA</td>
+<td style="text-align: left;">시간</td>
+<td style="text-align: left;">2G (GSM)</td>
+<td style="text-align: center;">중간</td>
+<td style="text-align: center;">등화기 필요</td>
+</tr>
+<tr>
+<td style="text-align: left;">CDMA</td>
+<td style="text-align: left;">코드</td>
+<td style="text-align: left;">3G (WCDMA)</td>
+<td style="text-align: center;">중상</td>
+<td style="text-align: center;">RAKE 수신기</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OFDMA</strong></td>
+<td style="text-align: left;"><strong>주파수+시간 (부분파)</strong></td>
+<td style="text-align: left;"><strong>4G (LTE)</strong></td>
+<td style="text-align: center;"><strong>높음</strong></td>
+<td style="text-align: center;"><strong>CP로 ISI 제거</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OFDMA 확장</strong></td>
+<td style="text-align: left;"><strong>가변 Numerology</strong></td>
+<td style="text-align: left;"><strong>5G (NR)</strong></td>
+<td style="text-align: center;"><strong>매우 높음</strong></td>
+<td style="text-align: center;"><strong>유연한 CP</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ofdm_2">🔧 따라하기 실습 — OFDM 파라미터 계산<a class="headerlink" href="#ofdm_2" title="Permanent link">&para;</a></h2>
+<p>시험에서 자주 출제되는 OFDM 관련 계산 문제를 단계별로 풀어보겠습니다.</p>
+<h3 id="_9">📝 실습 문제<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>문제:</strong> 전체 대역폭이 20MHz인 LTE 시스템에서 부분파 간격이 15kHz일 때, 다음을 구하시오.
+(1) FFT 크기(부분파 수)
+(2) 유효 심볼 시간
+(3) CP를 포함한 전체 심볼 시간 (일반 CP = 4.69μs)
+(4) 사용 가능한 자원 블록(RB) 수</p>
+</blockquote>
+<h3 id="_10">풀이 과정<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><strong>1단계: FFT 크기 계산</strong></p>
+<p>$$N_{FFT} = \frac{\text{대역폭}}{\Delta f} = \frac{20 \times 10^6}{15 \times 10^3} \approx 1333$$</p>
+<p>FFT 크기는 2의 거듭제곱이어야 하므로, $N_{FFT} = 2048$을 사용합니다.</p>
+<p>실제 샘플링 주파수는 $f_s = N_{FFT} \times \Delta f = 2048 \times 15\text{kHz} = 30.72\text{MHz}$가 됩니다.</p>
+<blockquote>
+<p><strong>주의:</strong> 전체 2048개 부분파 중 실제 데이터 전송에 사용되는 것은 1200개입니다. 나머지는 보호 대역(guard band)과 DC 부분파(미사용)입니다.</p>
+</blockquote>
+<p><strong>2단계: 유효 심볼 시간 계산</strong></p>
+<p>$$T_s = \frac{1}{\Delta f} = \frac{1}{15 \times 10^3} \approx 66.67 \;\mu\text{s}$$</p>
+<p><strong>3단계: 전체 심볼 시간 계산</strong></p>
+<p>$$T_{total} = T_{CP} + T_s = 4.69 + 66.67 = 71.36 \;\mu\text{s}$$</p>
+<p><strong>4단계: 사용 가능한 RB 수 계산</strong></p>
+<p>1 RB = 12 부분파이고, 사용 가능한 부분파 수가 1200개이므로:</p>
+<p>$$N_{RB} = \frac{1200}{12} = 100 \;\text{RB}$$</p>
+<h3 id="lte">LTE 대역폭별 파라미터 정리표<a class="headerlink" href="#lte" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">시스템 대역폭</th>
+<th style="text-align: center;">FFT 크기</th>
+<th style="text-align: center;">사용 부분파 수</th>
+<th style="text-align: center;">RB 수</th>
+<th style="text-align: center;">샘플링 주파수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1.4 MHz</td>
+<td style="text-align: center;">128</td>
+<td style="text-align: center;">72</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">1.92 MHz</td>
+</tr>
+<tr>
+<td style="text-align: center;">3 MHz</td>
+<td style="text-align: center;">256</td>
+<td style="text-align: center;">180</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">3.84 MHz</td>
+</tr>
+<tr>
+<td style="text-align: center;">5 MHz</td>
+<td style="text-align: center;">512</td>
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">7.68 MHz</td>
+</tr>
+<tr>
+<td style="text-align: center;">10 MHz</td>
+<td style="text-align: center;">1024</td>
+<td style="text-align: center;">600</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">15.36 MHz</td>
+</tr>
+<tr>
+<td style="text-align: center;">15 MHz</td>
+<td style="text-align: center;">1536</td>
+<td style="text-align: center;">900</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">23.04 MHz</td>
+</tr>
+<tr>
+<td style="text-align: center;">20 MHz</td>
+<td style="text-align: center;">2048</td>
+<td style="text-align: center;">1200</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">30.72 MHz</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>이 표는 시험에서 빈출되는 핵심 데이터입니다. 대역폭, FFT 크기, RB 수의 관계를 파악하는 것이 중요합니다.</p>
+</blockquote>
+<h3 id="_11">📝 추가 연습 문제<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>문제:</strong> 5G NR에서 Numerology μ=1(부분파 간격 30kHz)을 사용하고, 100MHz 대역폭일 때 사용 가능한 RB 수를 구하시오. (FFT 크기 = 4096, 사용 부분파 수 = 3276)</p>
+</blockquote>
+<details><summary>풀이 확인</summary>
+
+1 RB = 12 부분파이므로:
+
+$$N_{RB} = \frac{3276}{12} = 273 \;\text{RB}$$
+
+참고로 5G NR 100MHz / 30kHz 부분파 간격에서의 최대 RB 수는 273개입니다.
+
+</details>
+
+<hr />
+<h2 id="_12">⚠️ 자주 하는 실수와 주의할 점<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">번호</th>
+<th style="text-align: left;">자주 하는 실수</th>
+<th style="text-align: left;">올바른 이해</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">OFDM과 OFDMA를 혼동함</td>
+<td style="text-align: left;">OFDM은 다중반송파 <strong>변조</strong> 기술, OFDMA는 이를 활용한 다중 <strong>접속</strong> 기술</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">직교성이 주파수 간격만으로 결정된다고 생각함</td>
+<td style="text-align: left;">직교성은 $\Delta f = 1/T_s$라는 관계에서 <strong>심볼 시간과 함께</strong> 결정됨</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">CP를 단순한 빈 구간으로 이해함</td>
+<td style="text-align: left;">CP는 심볼 끝부분의 <strong>복사본</strong>이며, 원형 컨벌루션을 만들어 직교성을 보존함</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">FFT 크기 = 사용 부분파 수라고 생각함</td>
+<td style="text-align: left;">FFT 크기(예: 2048)는 2의 거듭제곱이고, 실제 사용 부분파(예: 1200)는 이보다 적음</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">PAPR이 높으면 성능이 좋다고 오해함</td>
+<td style="text-align: left;">높은 PAPR은 전력 증폭기의 비효율을 초래하는 <strong>단점</strong>임</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">LTE 상향링크에 OFDMA를 사용한다고 답함</td>
+<td style="text-align: left;">LTE 상향링크는 SC-FDMA(DFT-s-OFDM), 5G NR은 CP-OFDM/DFT-s-OFDM 선택 가능</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_13">📋 핵심 개념 요약 정리<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<div class="mermaid">mindmap
+  root((OFDM과 OFDMA))
+    OFDM 원리
+      부분파(Subcarrier)
+      직교성(Δf = 1/Ts)
+      높은 스펙트럼 효율
+    구현 기술
+      IFFT(송신)
+      FFT(수신)
+      "순환 전두사(CP)"
+    장점과 한계
+      다중경로 대응
+      유연한 자원 할당
+      높은 PAPR
+      주파수 오프셋 민감
+    OFDMA
+      부분파 사용자 할당
+      자원 블록(RB)
+      LTE 하향링크
+    5G NR 진화
+      가변 Numerology
+      CP-OFDM / DFT-s-OFDM</div>
+<blockquote>
+<p>OFDM과 OFDMA의 핵심 개념을 한눈에 정리한 마인드맵입니다.</p>
+</blockquote>
+<hr />
+<div class="assessment">
+<h2 id="_14">📝 형성 평가<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p><strong>객관식 1.</strong> OFDM에서 부분파 간 간섭이 발생하지 않는 이유로 가장 적절한 것은 무엇입니까?</p>
+<p>① 각 부분파 사이에 보호 대역(guard band)이 있기 때문이다
+② 각 부분파가 직교(orthogonal) 조건을 만족하기 때문이다
+③ 각 부분파가 서로 다른 코드로 확산되기 때문이다
+④ 각 부분파가 서로 다른 시간 슬롯에서 전송되기 때문이다</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ②**
+
+OFDM의 핵심 원리는 부분파 간의 **직교성**입니다. 부분파 간격 $\Delta f = 1/T_s$를 만족하면, 부분파의 스펙트럼이 서로 겹치더라도 수신기의 FFT 연산에서 다른 부분파의 영향이 수학적으로 0이 됩니다. 보호 대역은 시스템 대역 바깥의 간섭을 방지하기 위한 것이지, 부분파 간 간섭 방지 용도가 아닙니다.
+
+</details>
+<hr />
+<p><strong>객관식 2.</strong> LTE에서 상향링크(업링크)에 OFDMA 대신 SC-FDMA를 사용하는 주된 이유는 무엇입니까?</p>
+<p>① SC-FDMA의 스펙트럼 효율이 더 높기 때문이다
+② SC-FDMA가 다중경로 페이딩에 더 강하기 때문이다
+③ SC-FDMA의 PAPR이 낮아 단말의 전력 효율에 유리하기 때문이다
+④ SC-FDMA가 더 많은 사용자를 수용할 수 있기 때문이다</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ③**
+
+단말기는 배터리로 동작하므로 전력 효율이 매우 중요합니다. OFDMA는 높은 PAPR로 인해 전력 증폭기의 효율이 떨어지는 반면, SC-FDMA(DFT-s-OFDM)는 DFT 사전 처리를 통해 단일 반송파와 유사한 특성을 가지므로 PAPR이 낮습니다. 따라서 단말의 배터리 소모를 줄일 수 있습니다.
+
+</details>
+<hr />
+<p><strong>객관식 3.</strong> LTE에서 전체 대역폭이 10MHz, 부분파 간격이 15kHz일 때 사용 가능한 자원 블록(RB) 수는 몇 개입니까?</p>
+<p>① 25개
+② 50개
+③ 75개
+④ 100개</p>
+<details>
+<summary>정답 확인</summary>
+
+**정답: ②**
+
+10MHz 대역폭에서 FFT 크기는 1024이고, 실제 사용 부분파 수는 600개입니다. 1 RB = 12 부분파이므로, $600 / 12 = 50$ RB입니다. 본문의 "LTE 대역폭별 파라미터 정리표"에서도 확인할 수 있습니다.
+
+</details>
+<hr />
+<p><strong>서술형 1.</strong> 순환 전두사(Cyclic Prefix)가 단순한 빈 보호 구간(Zero Guard Interval)이 아니라 OFDM 심볼의 끝부분 복사본인 이유를 설명하시오. (직교성 보존의 관점에서 서술)</p>
+<details>
+<summary>모범답안 확인</summary>
+
+순환 전두사(CP)가 OFDM 심볼의 끝부분을 복사하여 앞에 붙이는 이유는 **원형 컨벌루션(circular convolution)** 조건을 만들기 위해서입니다.
+
+다중경로 채널에서 수신 신호는 송신 신호와 채널 임펄스 응답의 **선형 컨벌루션**으로 표현됩니다. 그런데 FFT 기반 OFDM 수신기가 올바르게 동작하려면 **원형 컨벌루션**이 필요합니다.
+
+CP는 심볼의 끝부분을 앞에 복사함으로써, 수신기가 CP를 제거하고 FFT 창(window)을 적용할 때 해당 구간의 신호가 마치 주기적으로 반복되는 것처럼 보이게 합니다. 이로 인해 선형 컨벌루션이 원형 컨벌루션과 동일한 결과를 만들어내고, FFT 후 각 부분파의 데이터가 **단순한 복소수 곱셈**으로 복원됩니다.
+
+만약 CP 대신 단순히 빈 구간(0을 삽입)을 넣으면, 원형 컨벌루션 조건이 깨져 **부분파 간 간섭(ICI, Inter-Carrier Interference)** 이 발생하고 직교성이 파괴됩니다. 따라서 CP는 ISI 제거뿐만 아니라 **직교성 보존**이라는 핵심 역할을 수행합니다.
+
+</details>
+<hr />
+<h3 id="_15">✅ 자기점검 체크리스트<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> OFDM의 원리를 설명하고, 부분파(subcarrier)와 직교성의 의미를 말할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> IFFT/FFT를 이용한 OFDM 송수신 과정을 단계별로 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 순환 전두사(CP)의 역할과 ISI 제거 원리를 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> OFDM의 장점(스펙트럼 효율, 다중경로 대응)과 한계(PAPR, 주파수 오프셋 민감)를 분석할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> OFDMA의 자원 할당 원리를 설명하고, LTE의 RB 구조를 말할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> LTE 상향링크에서 SC-FDMA를 사용하는 이유를 PAPR 관점에서 설명할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 대역폭, 부분파 간격이 주어졌을 때 RB 수를 계산할 수 있다</li>
+</ul>
+</div>
+<hr />
+<h2 id="_16">💭 성찰 &amp; 다음 차시 미리보기<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h3 id="_17">이번 차시를 돌아보며<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>이번 차시에서는 현대 무선통신의 핵심 기술인 OFDM과 OFDMA를 학습했습니다. 하나의 넓은 채널을 수많은 좁은 부분파로 나누어 병렬 전송한다는 단순한 발상이, 직교성이라는 수학적 성질과 FFT라는 효율적 알고리즘을 만나 실용화되었다는 점이 핵심입니다.</p>
+<p>특히 다음 세 가지를 기억하시기 바랍니다.</p>
+<ol>
+<li><strong>직교성($\Delta f = 1/T_s$)</strong> 이 OFDM의 모든 것의 출발점입니다</li>
+<li><strong>순환 전두사(CP)</strong> 는 단순한 보호 구간이 아니라 직교성을 보존하는 장치입니다</li>
+<li><strong>OFDMA</strong>는 OFDM의 부분파를 사용자별로 유연하게 할당하여 4G/5G를 가능하게 한 다중접속 기술입니다</li>
+</ol>
+<h3 id="_18">다음 차시 미리보기<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p><strong>14차시: 디지털 통신의 성능 척도 — 비트오류율(BER)과 신호 대 잡음비(SNR)</strong></p>
+<p>다음 차시에서는 통신 시스템의 성능을 정량적으로 평가하는 핵심 지표를 학습합니다. "이 시스템이 얼마나 정확하게 데이터를 전달하는가?"를 수치로 표현하는 방법, 그리고 변조 방식과 채널 코딩이 BER 성능에 미치는 영향을 분석합니다. 이번 차시에서 배운 OFDM의 각 부분파에 적용되는 변조 방식(QPSK, 16-QAM 등)의 성능 차이를 이해하는 데 직접적으로 연결되는 내용입니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../chapter12/" class="md-footer__link md-footer__link--prev" aria-label="이전: 12차시: 간섭 없이 많은 사용자를 수용하기 - CDMA의 원리">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                12차시: 간섭 없이 많은 사용자를 수용하기 - CDMA의 원리
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chapter14/" class="md-footer__link md-footer__link--next" aria-label="다음: 14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              <div class="md-ellipsis">
+                14차시: Part 3 종합 실전 문제풀이 - 정보이론과 다중접속 완전정복
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 노용철TV | <a href='https://eduflow-greatsong.fly.dev/'>EduFlow</a>로 제작
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "navigation.instant", "navigation.path", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/title-link.js"></script>
+      
+        <script src="../javascripts/mermaid-config.js"></script>
+      
+        <script src="../javascripts/scroll-progress.js"></script>
+      
+        <script src="../javascripts/eduflow-nav.js"></script>
+      
+        <script src="../javascripts/lightbox.js"></script>
+      
+    
+  </body>
+</html>
